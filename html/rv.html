@@ -20,14 +20,16 @@
 <body class="">
 
 <div class="wrapper">
-<div class="navbar navbar-static-top navbar-inverse">
+<div class="navbar navbar-static-top navbar-default">
 <div class="container">
-<span>
-<a class='navbar-brand' rel="nofollow" href='../index.html'>Vedic APIs <span class="version">1.0</span></a>  
-</span>
-
+<span><a class='navbar-brand' href='../index.html'>Vedic API <span class="version">1.0</span></a></span>
+<ul class="nav navbar-nav pull-right">
+<li><a href='../html/about.html'>About</a></li>
+<li><a href = '../html/rv.html'>rv API reference</a></li>
+<li><a href = '../html/vs.html'>vs API reference</a></li>
+</ul>
 </div>
-</div>
+</div><!-- ./navbar -->
 
 <div class="container">
 
@@ -95,7 +97,7 @@ This is an integer resource. Filtering is allowed, and you can use ranges, for e
 Valid values for this resource are 1 through 10 (because there are only 10 mandals in the Rig Veda).</li>
 <li><code>sukta</code>: The sukta number for the verse. For example, <samp>136</samp>.<br/>
 This is an integer resource. Filtering is allowed, and you can use ranges, for example, <samp>sukta=10..20</samp> returns all of the suktas numbered between 10 and 20 (both inclusive) from all of the 10 mandals.<br/>
-The number of suktas in each mandal is different; for example, mandal 1 contains ... suktas. The highest value possible for this resource is ... (which is the number in the ... mandal).</li>
+The number of suktas in each mandal is different; for example, mandal 10 contains 59 suktas. The highest value possible for this resource is 191 (which is the number in the 1st mandal).</li>
 <li><code>sungby</code>: The composer of the verse. For example, <samp>Vishwamitra</samp>.<br/>
 This is a string resource. Filtering is allowed, and partial values can be used. For example <samp>*aindra</samp> returns all of the verses composed by anyone whose name ends with <samp>aindra</samp>.</li>
 <li><code>sungfor</code>: The god, person, or thing that the verse is composed for. For example, <samp>Agni</samp> or <samp>plough</samp>.<br/>This is a string resource. Filtering is allowed, and partial values can be used.</li>
