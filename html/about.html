@@ -5,38 +5,35 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
-<title>Vedic APIs</title>
+<title>About the Vedic APIs</title>
 
-<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css"/>
-<link rel="stylesheet" type="text/css" href="./css/prettify.css"/>
+<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css"/>
+<link rel="stylesheet" type="text/css" href="../css/prettify.css"/>
+<link rel="stylesheet" type="text/css" href="../css/tabs.css"/>
+<link rel="stylesheet" type="text/css" href="../css/common.css"/>
 
-<link rel="stylesheet" type="text/css" href="./css/tabs.css"/>
-<link rel="stylesheet" type="text/css" href="./css/common.css"/>
+<script src="..js/jquery.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
 
-<!--<link rel="icon" type="image/png" href="favicon.ico" />-->
+<link rel="icon" type="image/png" href="../favicon.ico" />
 
 </head>
 
 <body class="">
 
 <div class="wrapper">
- 
 <div class="navbar navbar-static-top navbar-default">
 <div class="container">
-<span><a class='navbar-brand' href='index.html'>Vedic API <span class="version">1.0</span></a></span>
+<span><a class='navbar-brand' href='../index.html'>Vedic API <span class="version">1.0</span></a></span>
 <ul class="nav navbar-nav pull-right">
-<li><a href='./html/about.html'>About</a></li>
-<li><a href = './html/rv.html'>rv API reference</a></li>
-<li><a href = './html/vs.html'>vs API reference</a></li>
+<li><a href='../html/about.html'>About</a></li>
+<li><a href = '../html/rv.html'>rv API reference</a></li>
+<li><a href = '../html/vs.html'>vs API reference</a></li>
 </ul>
 </div>
 </div><!-- ./navbar -->
 
 <div class="container">
-
-<!--<ul class="breadcrumb">
-<li class="active"><a href="/">MB API root</a></li>
-</ul>-->
 
 <!-- Content -->
 <div id="content">
@@ -44,97 +41,63 @@
 <div class="content-main">
 
 <div class="well">
-<h1 class="page-header">The Vedic APIs</h1>
-<p class = "lead">All of the data in the Vedas, presented as JSON or XML objects through APIs</p>
+<h1 class = "page-header">About the Vedic APIs</h1>
+<p class = "lead">Some questions, some answers</p>
 </div><!-- /well -->
 
 <div id = "intro">
-<p>These APIs make available to you two kinds of data: data regarding the gods, poets, and poem meters used in all of the Rig Veda verses, and data regarding the descriptions of all (almost) nouns mentioned in the entire vedic literature. Here are two examples:</p>
-<table>
-<tr>
-<td><pre>
-[
-    {
-        "mandal": 1,
-        "sukta": 2,
-        "sungby": "Madhuchchhanda Vaishwamitra",
-        "sungfor": "Vayu",
-        "meter": "Gayatri"
-    }
-]
-</pre></td>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-<td><pre>
-[
-    {
-        "word": "aksh",
-        "nagari": "\u0905\u0915\u094d\u0937",
-        "description": "the axle of a chariot",
-        "category": "chariot"
-    }
-]
-</pre><br/></td>
-</tr>
-</table>
-<p>The data is returned as JSON or XML objects. You can programmatically process the data to make visually appealing or easily consumable information. Some use case ideas are listed at <a href = "./html/about.html#poc">What can I do with this data?</a></p>
-<hr/>
-</div><!-- /intro -->
+<p>Vedic literature comprises the four Vedas (Rig, Sama, Yajur, Atharva). Each Veda is a set of <abbr title = "Samhitas are hymns or songs to gods.">Samhitas</abbr>, <abbr title = "The Brahmanas contain instructions on rituals">Brahmanas</abbr> and <abbr title = "the Upanishads are for philosophical discourses">Upanishads</abbr>. These APIs make available tp you the data from this body of literature.</p>
+</div><!-- \intro -->
 
-<div id = "condoc">
-<h2>Making requests to the APIs</h2>
-<p>The following APIs are available:</p>
+<div id = "base">
+<h3>Why did you make these APIs</h3>
+<p>Because they weren't there. Data from vedic literature is not available online in a format that can be used easily by apps.</p>
+<h3>What is the source of this data</h3>
+<p>The main source is these books:</p>
 <ul>
-<li><code>rv</code>: Returns the gods, poets, and meters from all of the Rig Veda verses.</li>
-<li><code>vs</code>: Returns the descriptions of all nouns (names, places, animals, things) from the entire vedic literature.</li>
+<li>Rig Veda Samhita, the English translation according to H. H. Wilson and the Bhashya of Sayanacharya, by Ravi Prakash Arya and K. L. Joshi (Volumes 1 through 4)</li>
+<li>Vedic Index of Names and Subjects, by A. A. Macdonell and A. B. Keith (Volumes <a href = "https://archive.org/details/in.ernet.dli.2015.284764" target = "_blank">1</a> and <a href = "https://archive.org/details/in.ernet.dli.2015.211118" target = "_blank">2</a>)</li>
+<!--<li>Vedic Mythology, by A. A. Macdonell (<a href = "https://archive.org/details/MacdonellArthurVedicMythology1897216P.Scan" target = "_blank">thin book worth its weight in gold</a>)</li>
+<li>The Nighantu and the Nirukta of Sri Yaskacharya, by Lakshman Sarup (<a href = "https://archive.org/details/nighantuniruktao00yaskuoft" target = "_blank">single-volume edition</a>)</li>
+<li>The Practical Sanskrit-English Dictionary, by V. S. Apte (<a href = "https://dsalsrv04.uchicago.edu/dictionaries/apte/" target = "_blank">searchable</a>)</li>-->
 </ul>
-<div id = "auth">
-<h3>Authentication</h3>
-<p>Not needed. These are open APIs</p>
-</div><!-- /auth -->
-<div id = "license">
-<h3>License</h3>
-<p>These APIs are distributed under the MIT license. This means you are free to use the data any which way you want, so long as you don't hold me liable and you give me an attribution. See <a href = "https://opensource.org/licenses/MIT" target = "_blank">The MIT License (MIT)</a>.</p>
-<p>All content on this website, unless otherwise stated, is distributed under the Creative Commons license. This means the content is dedicated as-is without any liability to the worldwide public domain. See <a href = "https://wiki.creativecommons.org/wiki/CC0_FAQ" target = "_blank">The Creative Commons Zero v1.0 Universal license</a>.</p>
-</div><!-- /license -->
-<div id = "limits">
-<h3>Rate limits</h3>
-<p>The APIs are hosted on <a href = "https://www.sheetlabs.com" target = "_blank">Sheetlabs</a>, which limits the monthly API calls (for free accounts like mine) to 10,000. This limit includes all of us making all of our calls to all of these APIs. Because the APIs need no authentication, I am neither tracking who makes how many calls nor throttling calls on IP-address basis. Just use the APIs in a fair manner, is all that I can say.</p>
-</div><!-- /limits -->
-<p>More about these APIs is at <a href = "html/about.html">About the Vedic APIs</a>.</p>
-<hr/>
-</div><!-- /condoc -->
-
-<div id = "taskdoc">
-<h2>Getting started</h2>
-<div id = "url">
-<h3>Endpoints</h3>
+<p>Additional sources are several other books.</p>
+<h3 id = "poc">What can I do with this data?</h3>
+<p>Here are some ideas:</p>
 <ul>
-<li><code>https://sheetlabs.com/RV/rv</code>, for gods, poets, and meters.</li>
-<li><code>https://sheetlabs.com/RV/vs</code>, for descriptions of nouns.</li>
+<li>Make an insult-spewing Twitter bot.<br/>
+API to use: <code>vs</code><br/>
+<span style="margin-left:4%"><samp>May your <var>{<code>word</code> from the <code>category=family</code> filter}</var> be blighted with <var>{<code>word</code> from the <code>category=disease</code> filter</var>}.</samp></span><br/>
+<span style="margin-left:4%"><samp><mark>May your <u>didhishupati</u> be blighted with <u>sirshashok</u>.</samp></mark></span></li>
+<li>Become a vedic career consultant.<br/>
+API to use: <code>vs</code><br/>
+<span style="margin-left:4%"><samp>Considered <var>{<code>word</code> from the <code>category=occupation</code> filter}</var> as a career yet? You would be <var>{<code>description</code> for the <code>word</code>}</var>. To become a <var>{<code>word</code>}</var>, you must study <var>{comma-separated list of one item each from <code>category=subject</code>, <code>category=literature</code>, and <code>category=poison</code>}.</samp></span><br/>
+<span style="margin-left:4%"><mark><samp>Considered <u>pratyenas</u> as a career yet? You would be <u>servant of the king or an officer of the police</u>. To become a <u>pratyenas</u>, you must study <u>nakshatravidya</u>, <u>stoma</u>, and <u>kandavish</u>.</samp></mark></span></li>
+<li>Link up with other resources to tweet a sukta a day.<br/>
+API to use: <code>rv</code>
+<span style="margin-left:4%"><samp>
+<ol>
+<li>Pick the <var><code>mandal</code></var> and <var><code>sukta</code></var>.</li>
+<li>Translate the numbers into the nagari script. For example, if <code>mandal</code> is 1 and <code>sukta</code> is 1, create <code><var>१.१</var></code>.</li>
+<li>Append this number to the base URL of the wikisource pages that contains the Rig Veda Samhita texts. For example, if the base URL is <code>https://sa.wikisource.org/wiki/%E0%A4%8B%E0%A4%97%E0%A5%8D%E0%A4%B5%E0%A5%87%E0%A4%A6%E0%A4%83</code>, create <code>https://sa.wikisource.org/wiki/%E0%A4%8B%E0%A4%97%E0%A5%8D%E0%A4%B5%E0%A5%87%E0%A4%A6%E0%A4%83<var>_%E0%A4%B8%E0%A5%82%E0%A4%95%E0%A5%8D%E0%A4%A4%E0%A4%82_%E0%A5%A7.%E0%A5%A7</var></code></li>
+<li>Tweet this URL as a Vedic Hymn Of The Day.</li>
+</ol>
+</samp></span></li>
+<li>Make infographics out of the numbers.<br/>
+API to use: <code>rv</code><br/>
+<span style="margin-left:4%">For example, here is a pie chart of the gods in the Rig Veda, where the slices represent the proportion of hymns sung to them.</span><br/>
+<span style="margin-left:4%"><img src = "../images/RV_1.PNG"/></span></li>
+<li>Make an app that sends a fact a day.<br/>
+API to use: <code>rv</code> and <code>vs</code></li>
+<li>Plot the rivers, mountains, and places on a present-day map.<br/>
+API to use: <code>vs</code></li>
 </ul>
-</div><!-- /url  -->
-<div id = "parameters">
-<h3>Resources</h3>
-<p>Optional. When supplied, the parameters are used for filtering the returned data.</p>
-<p>The following parameters are available:</p>
-<ul>
-<li><code>rv</code>: <code>mandal</code>, <code>sukta</code>, <code>sungby</code>, <code>sungfor</code>, and <code>meter</code></li>
-<li><code>vs</code>: <code>word</code>, <code>nagari</code>, <code>description</code>, and <code>category</code></li>
-</ul>
-<p>The mandals and suktas of the <code>rv</code> API are integers; the remaining parameters of the <code>rv</code> API and all of the parameters of the <code>vs</code> API are strings.</p>
-<p>For details of the API endpoints and resources, see <a href = "html/rv.html">rv API reference documentation</a> and <a href = "html/vs.html">vs API reference documentation</a>.</p>
-</div><!-- /parameters -->
-<div id = "filter">
-<h3>Filtering</h3>
-<p>Optional. All of the parameters can be used for filtering except the <code>nagari</code> parameter of <code>vs</code> API.</p>
-<p>You can specify a range for the integers, or partial text for the strings. You can supply more than one parameter in a single call by separating them with an ampersand (<code>&amp;</code>), for example, <code>https://sheetlabs.com/RV/rv?mandal=10&meter=gayatri&sungby=*dra</code>.</p>
-</div><!-- /filter -->
-<div id = "demo">
-<h3>Demos</h3>
-<p>Interactive demos, through Jupyter notebooks, are at <a href = "https://mybinder.org/repo/AninditaBasu/rigVeda" target = "_blank">rv API demo</a> and vs API demo. Some use cases are at <a href = "html/about.html#poc">What can I do with these APIs></a></p>
-</div><!-- /demo-->
-<hr/>
-</div><!-- /taskdoc -->
+<p>I'll be very happy to link back to your implementation if you send me a URL. (The <strong>Examples</strong> page is not up yet.)</p>
+<h3>I found an error in the data.</h3>
+<p>Log a <a href ="https://github.com/AninditaBasu/rigVeda/issues"  data-toggle="tooltip" data-placement="top" title="Pull request not needed. Just your repo link." target = "_blank">GitHub issue</a>.<p>
+<h3>And you are who?</h3>
+<p><a href = "https://twitter.com/@anindita_basu">Anindita Basu</a></p>
+</div><!-- /base -->
 
 </div><!-- / "content-main" -->
 
