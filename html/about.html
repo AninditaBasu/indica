@@ -46,12 +46,15 @@
 </div><!-- /well -->
 
 <div id = "intro">
-<p>Vedic literature comprises the four Vedas (Rig, Sama, Yajur, Atharva). Each Veda is a set of <abbr title = "Samhitas are hymns or songs to gods.">Samhitas</abbr>, <abbr title = "The Brahmanas contain instructions on rituals">Brahmanas</abbr> and <abbr title = "the Upanishads are for philosophical discourses">Upanishads</abbr>. These APIs make available tp you the data from this body of literature.</p>
+<p>Vedic literature comprises the four Vedas (Rig, Saam, Yajur, Atharv). Each Veda is a set of <abbr title = "Samhitas are hymns or songs to gods.">Samhitas</abbr>, <abbr title = "The Brahmanas contain instructions on rituals">Brahmanas</abbr> and <abbr title = "the Upanishads are for philosophical discourses">Upanishads</abbr>. Even though the text of these books is available in digital form, it is difficult to programmatically use the text because it is usually in the form of scanned pages. I made these APIs so that at least some of the text contained in vedic literature can be used programmatically.</p>
+<p>This page contains some questions and answers around these APIs. If your question remains unanswered, ping me (contact is at the end of this page).</p>
+<hr/>
 </div><!-- \intro -->
 
 <div id = "base">
 <h3>Why did you make these APIs</h3>
 <p>Because they weren't there. Data from vedic literature is not available online in a format that can be used easily by apps.</p>
+<hr/>
 <h3>What is the source of this data</h3>
 <p>The main source is these books:</p>
 <ul>
@@ -62,19 +65,19 @@
 <li>The Practical Sanskrit-English Dictionary, by V. S. Apte (<a href = "https://dsalsrv04.uchicago.edu/dictionaries/apte/" target = "_blank">searchable</a>)</li>-->
 </ul>
 <p>Additional sources are several other books.</p>
+<hr/>
 <h3 id = "poc">What can I do with this data?</h3>
-<p>Here are some ideas:</p>
-<ul>
-<li>Make an insult-spewing Twitter bot.<br/>
-API to use: <code>vs</code><br/>
+<p>Here are some ideas. (Also, I'll be very happy to link back to your implementation if you send me a URL. I plan to include an <strong>Examples</strong> page as soon as I can.)</p>
+<h4>Make an insult-spewing Twitter bot</h4>
+<p>API to use: <code>vs</code><br/>
 <span style="margin-left:4%"><samp>May your <var>{<code>word</code> from the <code>category=family</code> filter}</var> be blighted with <var>{<code>word</code> from the <code>category=disease</code> filter</var>}.</samp></span><br/>
-<span style="margin-left:4%"><samp><mark>May your <u>didhishupati</u> be blighted with <u>sirshashok</u>.</samp></mark></span></li>
-<li>Become a vedic career consultant.<br/>
-API to use: <code>vs</code><br/>
+<span style="margin-left:4%"><samp><mark>May your <u>didhishupati</u> be blighted with <u>sirshashok</u>.</samp></mark></span></p>
+<h4>Become a vedic career consultant</h4>
+<p>API to use: <code>vs</code><br/>
 <span style="margin-left:4%"><samp>Considered <var>{<code>word</code> from the <code>category=occupation</code> filter}</var> as a career yet? You would be <var>{<code>description</code> for the <code>word</code>}</var>. To become a <var>{<code>word</code>}</var>, you must study <var>{comma-separated list of one item each from <code>category=subject</code>, <code>category=literature</code>, and <code>category=poison</code>}.</samp></span><br/>
-<span style="margin-left:4%"><mark><samp>Considered <u>pratyenas</u> as a career yet? You would be <u>servant of the king or an officer of the police</u>. To become a <u>pratyenas</u>, you must study <u>nakshatravidya</u>, <u>stoma</u>, and <u>kandavish</u>.</samp></mark></span></li>
-<li>Link up with other resources to tweet a vedic hymn a day.<br/>
-API to use: <code>rv</code>
+<span style="margin-left:4%"><mark><samp>Considered <u>pratyenas</u> as a career yet? You would be <u>servant of the king or an officer of the police</u>. To become a <u>pratyenas</u>, you must study <u>nakshatravidya</u>, <u>stoma</u>, and <u>kandavish</u>.</samp></mark></span></p>
+<h4>Link up with other resources to tweet a vedic hymn a day</h4>
+<p>API to use: <code>rv</code>
 <span style="margin-left:4%"><samp>
 <ol>
 <li>Pick the <var><code>mandal</code></var> and <var><code>sukta</code></var>.</li>
@@ -85,20 +88,23 @@ API to use: <code>rv</code>
 <li>Append this number to the base URL of the wikisource pages that contains the Rig Veda Samhita texts. For example, if the base URL is <code>https://sa.wikisource.org/wiki/%E0%A4%8B%E0%A4%97%E0%A5%8D%E0%A4%B5%E0%A5%87%E0%A4%A6%E0%A4%83</code>, create <code>https://sa.wikisource.org/wiki/%E0%A4%8B%E0%A4%97%E0%A5%8D%E0%A4%B5%E0%A5%87%E0%A4%A6%E0%A4%83<var>_%E0%A4%B8%E0%A5%82%E0%A4%95%E0%A5%8D%E0%A4%A4%E0%A4%82_%E0%A5%A7.%E0%A5%A7</var></code></li>
 </ol></li>
 <li>Tweet this URL as a Vedic Hymn Of The Day.</li>
-</ol>
-</samp></span></li>
-<li>Make infographics out of the numbers.<br/>
-API to use: <code>rv</code><br/>
+</ol></samp></span></p>
+<h4>Make infographics out of the numbers</h4>
+<p>API to use: <code>rv</code><br/>
 <span style="margin-left:4%">For example, here is a pie chart of the gods in the Rig Veda, where the slices represent the proportion of hymns sung to them.</span><br/>
-<span style="margin-left:4%"><img src = "../images/RV_1.PNG"/></span></li>
-<li>Make an app that sends a fact a day.<br/>
-API to use: <code>rv</code> and <code>vs</code></li>
-<li>Plot the rivers, mountains, and places on a present-day map.<br/>
-API to use: <code>vs</code></li>
-</ul>
-<p>I'll be very happy to link back to your implementation if you send me a URL. (The <strong>Examples</strong> page is not up yet.)</p>
+<span style="margin-left:4%"><img src = "../images/RV_1.PNG"/></span></p>
+<h4>Make an app that sends a fact a day.</h4>
+<p>API to use: <code>rv</code> and <code>vs</code></p>
+<h4>Plot the rivers, mountains, and places on a present-day map.</h4>
+<p>API to use: <code>vs</code></p>
+<hr/>
 <h3>I found an error in the data.</h3>
-<p>Log a <a href ="https://github.com/AninditaBasu/rigVeda/issues"  data-toggle="tooltip" data-placement="top" title="Pull request not needed. Just your repo link." target = "_blank">GitHub issue</a>.<p>
+<p>Please log a <a href ="https://github.com/AninditaBasu/rigVeda/issues"  data-toggle="tooltip" data-placement="top" title="Pull request not needed. Just your repo link." target = "_blank">GitHub issue</a>.<p>
+<hr/>
+<h3>Do you have a Python/Java/PHP/<var>{language_name}</var> SDK that I could use?</h3>
+<p>Er, no. I am not a professional coder.</p>
+<p>I'd be very happy to link back to your SDK if you go ahead and make one.</p>
+<hr/>
 <h3>And you are who?</h3>
 <p><a href = "https://twitter.com/@anindita_basu">Anindita Basu</a></p>
 </div><!-- /base -->
