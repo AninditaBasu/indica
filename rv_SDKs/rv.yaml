@@ -1,0 +1,74 @@
+swagger: '2.0'
+info:
+  description: 'This API returns information about all of the verses in Rig Veda. The results are JSON objects that contain the name of the god, poet, and meter of each verse in Rig Veda, together with the mandal and sukta number.'
+  title: rv API
+  version: 'v1'
+  license:
+    name: 'Distributed under the MIT license'
+    url: 'https://opensource.org/licenses/MIT'
+  contact:
+    email: 'ab.techwriter@gmail.com'
+externalDocs:
+  description: 'Documentation'
+  url: 'https://aninditabasu.github.io/rigVeda/'
+host: sheetlabs.com
+schemes:
+  - https
+basePath: /RV/rv
+paths:
+  /:
+    get:
+      summary: 'Fetch all records from the database'
+      responses:
+        '200':
+          description: 'Records fetched'
+        '401':
+          description: 'The API needs an authentication key.'
+  /sungby:
+    get:
+      summary: 'Fetch all verses composed by a specific rishi'
+      parameters:
+        - in: query
+          name: sungby
+          type: string
+          required: true
+          description: 'The name of the rishi. Wildcard characters allowed, for example *mitra'
+      responses:
+        '200':
+          description: 'Verses fetched successfully.'
+        '401':
+          description: 'You need an authentication key.'
+        '404':
+          description: 'No such rishi composed anything that went into the Rig Veda.'
+  /sungfor:
+    get:
+      summary: 'Fetch all verses addressed to a specific god, goddess, or object'
+      parameters:
+        - in: query
+          name: sungfor
+          type: string
+          required: true
+          description: 'The name of the god, goddess, or object. Wildcard characters allowed, for example *dra'
+      responses:
+        '200':
+          description: 'Verses fetched successfully.'
+        '401':
+          description: 'You need an authentication key.'
+        '404':
+          description: 'No such god or thing had verses composed in their honour.'
+  /meter:
+    get:
+      summary: 'Fetch all verses composed in a specific meter'
+      parameters:
+        - in: query
+          name: meter
+          type: string
+          required: true
+          description: 'The name of the meter. Wildcard characters allowed, for example *tri'
+      responses:
+        '200':
+          description: 'Verses fetched successfully.'
+        '401':
+          description: 'You need an authentication key.'
+        '404':
+          description: 'Rig Veda does not have any verses in that meter.'
