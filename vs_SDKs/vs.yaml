@@ -1,7 +1,7 @@
 swagger: '2.0'
 info:
   description: 'This API returns data regarding the descriptions of almost all nouns in vedic literature. The results are JSON objects that contain the word transliterated to roman, the word in nagari, the meaning of the word, and the category the word belongs to.'
-  title: rv API
+  title: vs API
   version: 'v1'
   license:
     name: 'Distributed under the MIT license'
