@@ -5,7 +5,7 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
-<title>The VedicSociety API reference</title>
+<title>The RigVeda API reference</title>
 
 <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css"/>
 <link rel="stylesheet" type="text/css" href="../css/prettify.css"/>
@@ -39,8 +39,8 @@
 <div class="content-main">
 
 <div class="well">
-<h1 class = "page-header">vs API reference</h1>
-<p class = "lead">A description of all of the nouns in vedic literature, including the flora, fauna, geography, food, relationships, and objects</p>
+<h1 class = "page-header">rv API reference</h1>
+<p class = "lead">All of the poets and gods in the Rig Veda, presented with the mandal and sukta numbers, and the meters the verses are composed in.</p>
 </div><!-- /well -->
 
 <div id = "intro">
@@ -49,8 +49,8 @@
 
 <div id = "base">
 <h2>Endpoint</h2>
-<p><code>https://sheetlabs.com/RV/vs</code></p>
-<p>The default response format is JSON. To get the response in an XML format, use <code>https://sheetlabs.com/RV/vs.xml</code> as the endpoint.</p>
+<p><code>https://sheetlabs.com/RV/rv</code></p>
+<p>The default response format is JSON. To get the response in an XML format, use <code>https://sheetlabs.com/RV/rv.xml</code> as the endpoint.</p>
 </div><!-- /base -->
 
 <div id = "example">
@@ -58,16 +58,32 @@
 <pre>
 [
     {
-        "word": "aksh",
-        "nagari": "\u0905\u0915\u094d\u0937",
-        "description": "the axle of a chariot",
-        "category": "chariot"
+        "mandal": 1,
+        "sukta": 2,
+        "sungby": "Madhuchchhanda Vaishwamitra",
+        "sungfor": "Vayu",
+        "meter": "Gayatri"
     },
     {
-        "word": "aksh",
-        "nagari": "\u0905\u0915\u094d\u0937",
-        "description": "dice",
-        "category": "dicing"
+        "mandal": 1,
+        "sukta": 2,
+        "sungby": "Madhuchchhanda Vaishwamitra",
+        "sungfor": "Indra",
+        "meter": "Gayatri"
+    },
+    {
+        "mandal": 1,
+        "sukta": 2,
+        "sungby": "Madhuchchhanda Vaishwamitra",
+        "sungfor": "Mitra",
+        "meter": "Gayatri"
+    },
+    {
+        "mandal": 1,
+        "sukta": 2,
+        "sungby": "Madhuchchhanda Vaishwamitra",
+        "sungfor": "Varun",
+        "meter": "Gayatri"
     }
 ]
 </pre>
@@ -77,31 +93,24 @@
 <h2>Resources</h2>
 <p>The <code>GET</code> calls are served over <code>HTTPS</code>. The following resources are available:</p>
 <ul>
-<li><code>word</code>: The noun, in Sanskrit, transliterated into the roman script. For example, <samp>agnishala</samp>.</li>
-<li><code>nagari</code>: The UTF-value of the noun in the Nagari script. For example, <samp>आल</samp> is returned as <samp>\u0906\u0932</samp>.</li>
-<li><code>description</code>: The description of the word. For example, <samp>boa constrictor, mentioned in the list of victims at the ashwamedh (horse sacrifice)</samp>.</li>
-<li><code>category</code>: The category to which the word belongs. For example, <samp>disease</samp>. The following categories are available:
-<ul>
-<li>Flora: <samp>grass</samp>, <samp>plant</samp>, <samp>tree</samp></li>
-<li>Fauna: <samp>animal</samp>, <samp>bird</samp>, <samp>cattle</samp>, <samp>fish</samp>, <samp>insect</samp>, <samp>snake</samp>, <samp>worm</samp></li>
-<li>Things: <samp>building</samp>, <samp>chariot</samp>, <samp>food</samp>, <samp>grain</samp>, <samp>metal</samp>, <samp>object</samp>, <samp>ship</samp>, <samp>weapon</samp>, <samp>war</samp></li>
-<li>Measurements: <samp>number</samp>, <samp>distance</samp>, <samp>time</samp>, <samp>weight</samp></li>
-<li>Geography: <samp>mountain</samp>, <samp>place</samp>, <samp>river</samp></li>
-<li>Knowledge: <samp>astronomy</samp>, <samp>disease</samp>, <samp>literature</samp>, <samp>medicine</samp>, <samp>poison</samp>, <samp>subject</samp></li>
-<li>Entertainment: <samp>dicing</samp>, <samp>games</samp>, <samp>music</samp></li>
-<li>Toilette: <samp>clothing</samp>, <samp>hair</samp>, <samp>ornament</samp></li>
-<li>Legal: <samp>law</samp>, <samp>morals</samp></li>
-<li>Societal: <samp>agriculture</samp>, <samp>caste</samp>, <samp>family</samp>, <samp>occupation</samp>, <samp>priest</samp>, <samp>royalty</samp>, <samp>trade</samp>, <samp>tribe</samp></li>
+<li><code>mandal</code>: The mandal number for the verse. For example, <samp>7</samp>.<br/>
+This is an integer resource. Filtering is allowed, and you can use ranges, for example, <samp>1..2</samp> returns all of the verses in the first and second mandals.<br/>
+Valid values for this resource are 1 through 10 (because there are only 10 mandals in the Rig Veda).</li>
+<li><code>sukta</code>: The sukta number for the verse. For example, <samp>136</samp>.<br/>
+This is an integer resource. Filtering is allowed, and you can use ranges, for example, <samp>sukta=10..20</samp> returns all of the suktas numbered between 10 and 20 (both inclusive) from all of the 10 mandals.<br/>
+The number of suktas in each mandal is different; for example, mandal 10 contains 59 suktas. The highest value possible for this resource is 191 (which is the number in the 1st mandal).</li>
+<li><code>sungby</code>: The composer of the verse. For example, <samp>Vishwamitra</samp>.<br/>
+This is a string resource. Filtering is allowed, and partial values can be used. For example <samp>*aindra</samp> returns all of the verses composed by anyone whose name ends with <samp>aindra</samp>.</li>
+<li><code>sungfor</code>: The god, person, or thing that the verse is composed for. For example, <samp>Agni</samp> or <samp>plough</samp>.<br/>This is a string resource. Filtering is allowed, and partial values can be used.</li>
+<li><code>meter</code>: The meter that the verse is composed in. For example, <samp>Trishtubh</samp>.<br/>
+This is a string resource. Filtering is allowed, and partial values can be used.</li>
 </ul>
-</li>
-</ul>
-<p>All of these resources are string resources. Filtering is allowed on all resources except <code>nagari</code>. You can use partial values for filtering.  For example, <code>https://sheetlabs.com/RV/vs?word=raj*</code> returns all nouns that begin with <samp>raj</samp>. 
-<p>A noun can belong to more than one category. For example, <samp>aj</samp> is both an <samp>animal</samp> and the name of a <samp>tribe</samp>.</p>
+<p>To filter results, you can use more than one resource, separated by an ampersand (<code>&amp;</code>), for example, <code>https://sheetlabs.com/RV/rv?mandal=10&meter=gayatri&sungby=*dra</code>.</p>
 </div><!-- /resources -->
 
 <div id = "libs">
 <h2>SDKs</h2>
-<p>See if your language is covered here: <a href = "https://github.com/AninditaBasu/rigVeda/tree/master/vs_SDKs" target = "_blank">GitHub repo</a>. If not, raise a <a href ="https://github.com/AninditaBasu/rigVeda/issues"  data-toggle="tooltip" data-placement="top" target = "_blank">GitHub issue</a>.</p>
+<p>See if your language is covered here: <a href = "https://github.com/AninditaBasu/rigVeda/tree/master/rv_SDKs" target = "_blank">GitHub repo</a>. If not, raise a <a href ="https://github.com/AninditaBasu/rigVeda/issues"  data-toggle="tooltip" data-placement="top" target = "_blank">GitHub issue</a>.</p>
 
 </div><!-- /libs -->
 
