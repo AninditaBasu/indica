@@ -1,0 +1,74 @@
+swagger: '2.0'
+info:
+  description: 'This API returns data regarding the descriptions of almost all nouns in vedic literature. The results are JSON objects that contain the word transliterated to roman, the word in nagari, the meaning of the word, and the category the word belongs to.'
+  title: rv API
+  version: 'v1'
+  license:
+    name: 'Distributed under the MIT license'
+    url: 'https://opensource.org/licenses/MIT'
+  contact:
+    email: 'ab.techwriter@gmail.com'
+externalDocs:
+  description: 'Documentation'
+  url: 'https://aninditabasu.github.io/rigVeda/'
+host: sheetlabs.com
+schemes:
+  - https
+basePath: /RV/vs
+paths:
+  /:
+    get:
+      summary: 'Fetch all records from the database'
+      responses:
+        '200':
+          description: 'Records fetched'
+        '401':
+          description: 'The API needs an authentication key.'
+  /word:
+    get:
+      summary: 'Fetch the meaning of a specific word'
+      parameters:
+        - in: query
+          name: word
+          type: string
+          required: true
+          description: 'The sanskrit word transliterated into roman, for example, rajan. Wildcards allowed; example: *aj*.'
+      responses:
+        '200':
+          description: 'Word meaning fetched successfully.'
+        '401':
+          description: 'You need an authentication key.'
+        '404':
+          description: 'No such word exists in the database.'
+  /description:
+    get:
+      summary: 'Fetch all meanings that contain a specific string'
+      parameters:
+        - in: query
+          name: description
+          type: string
+          required: true
+          description: 'The string you are looking for in the word meaning, for example, chariot. Wildcards allowed; example: char*.'
+      responses:
+        '200':
+          description: 'Words fetched successfully.'
+        '401':
+          description: 'You need an authentication key.'
+        '404':
+          description: 'This string does not exist in the database.'
+  /category:
+    get:
+      summary: 'Fetch all words in a specific category'
+      parameters:
+        - in: query
+          name: category
+          type: string
+          required: true
+          description: 'Example category name: disease. Wildcards allowed; example: dis*. For a list of valid categories, see the documentation.'
+      responses:
+        '200':
+          description: 'Words fetched successfully.'
+        '401':
+          description: 'You need an authentication key.'
+        '404':
+          description: 'No such category exists in the database.'
