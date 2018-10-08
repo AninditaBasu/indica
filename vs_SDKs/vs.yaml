@@ -63,8 +63,57 @@ paths:
         - in: query
           name: category
           type: string
+          enum:
+            - grass
+            - plant
+            - tree
+            - animal
+            - bird
+            - cattle
+            - fish
+            - insect
+            - snake
+            - worm
+            - building
+            - chariot
+            - food
+            - grain
+            - metal
+            - object
+            - ship
+            - weapon
+            - war
+            - number
+            - distance
+            - time
+            - weight
+            - mountain
+            - place
+            - river
+            - astronomy
+            - disease
+            - literature
+            - medicine
+            - poison
+            - subject
+            - dicing
+            - games
+            - music
+            - clothing
+            - hair
+            - ornament
+            - law
+            - morals
+            - agriculture
+            - caste
+            - family
+            - occupation
+            - priest
+            - royalty
+            - trade
+            - tribe
           required: true
-          description: 'Example category name: disease. Wildcards allowed; example: dis*. For a list of valid categories, see the documentation.'
+          description: 'Click to select from a list'
       responses:
         '200':
           description: 'Words fetched successfully.'
