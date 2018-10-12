@@ -1,0 +1,33 @@
+.sidenav {
+    width: 250px;
+    position: fixed;
+    z-index: 1;
+    top: 70px;
+    left: 70px;
+    background: #f8f8f8;
+    overflow-x: hidden;
+    padding: 8px 0;
+	border-style:solid; border-color:#777; border-width:1px;
+}
+
+.sidenav a li {
+    padding: 6px 8px 6px 8px;
+    text-decoration: none;
+	color: #428bca;
+    display: block;
+}
+
+.sidenav a:hover {
+    color: #064579;
+}
+
+.main {
+    margin-left: 320px; /* Same width as the sidebar + left position in px */
+    font-size: 28px; /* Increased text to enable scrolling */
+    padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 12px;}
+    .sidenav a {font-size: 18px;}
+}
