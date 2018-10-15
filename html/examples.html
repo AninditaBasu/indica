@@ -129,20 +129,40 @@
 <div class="row">
 <div class="col-sm-4">
 <p class="lead">Make a bot that tweets a word a day</p>
-<p>API to use: <code>vs</code></p>
 <img src = '../images/VS_1.png' class='img-thumbnail' alt='alfaaz_bot'/>
+<p>API to use: <code>vs</code></p>
+<p>Example code:</p>
+<pre>
+...
+for k,v in (api_data[random_word]).items():
+    if k == 'nagari':
+        hindi = str(v)
+    if k == 'description':
+        meaning = str(v)
+...
+tweet_text = 'TEST' + '\nRandom vedic word of the day: ' + hindi + ' (' + translit + ')' '\nMeaning: ' + meaning + '\nDictionary lookup: ' + apte_url
+</pre>
 </div>
 <div class="col-sm-4">
 <p class="lead">Make an insult-spewing Twitter bot</p>
-<p>API to use: <code>vs</code><br/>
-<span style="margin-left:4%"><samp>May your <var>{<code>word</code> from the <code>category=family</code> filter}</var> be blighted with <var>{<code>word</code> from the <code>category=disease</code> filter</var>}.</samp></span><br/>
-<span style="margin-left:4%"><samp><mark>May your <u>didhishupati</u> be blighted with <u>sirshashok</u>.</samp></mark></span></p>
+<img src = '../images/VS_2.png' class='img-thumbnail' alt='alfaaz_bot'/>
+<p>API to use: <code>vs</code></p>
+<p>Algorithm:</p>
+<pre>
+...
+May your {'nagari' where 'category'='family'} be blighted with {'nagari', where 'category'='disease'}
+\n
+* 'word' ('description')
+\n
+** 'word' ('description')
+...
+</pre>
 </div>
 <div class="col-sm-4">
 <p class="lead">Become a vedic career consultant</p>
-<p>API to use: <code>vs</code><br/>
-<span style="margin-left:4%"><samp>Considered <var>{<code>word</code> from the <code>category=occupation</code> filter}</var> as a career yet? You would be <var>{<code>description</code> for the <code>word</code>}</var>. To become a <var>{<code>word</code>}</var>, you must study <var>{comma-separated list of one item each from <code>category=subject</code>, <code>category=literature</code>, and <code>category=poison</code>}.</samp></span><br/>
-<span style="margin-left:4%"><mark><samp>Considered <u>pratyenas</u> as a career yet? You would be <u>servant of the king or an officer of the police</u>. To become a <u>pratyenas</u>, you must study <u>nakshatravidya</u>, <u>stoma</u>, and <u>kandavish</u>.</samp></mark></span></p>
+<p><span style="margin-left:4%"><mark><samp>Considered <u>pratyenas</u> as a career yet? You would be <u>servant of the king or an officer of the police</u>. To become a <u>pratyenas</u>, you must study <u>nakshatravidya</u>, <u>stoma</u>, and <u>kandavish</u>.</samp></mark></span><br/><br/><br/></p>
+<p>API to use: <code>vs</code></p>
+<p><span style="margin-left:4%"><samp>Considered <var>{<code>word</code> from the <code>category=occupation</code> filter}</var> as a career yet? You would be <var>{<code>description</code> for the <code>word</code>}</var>. To become a <var>{<code>word</code>}</var>, you must study <var>{comma-separated list of one item each from <code>category=subject</code>, <code>category=literature</code>, and <code>category=poison</code>}.</samp></span></p>
 </div>
 </div><!-- /row -->
 <div class="row">
