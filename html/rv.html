@@ -32,7 +32,8 @@
 	<li><a href='../index.html#url'>Endpoints</a></li>
 	<li><a href='../index.html#parameters'>Resources</a></li>
 	<li><a href='../index.html#filter'>Filtering</a></li>
-	<li><a href='../index.html#demo'>Demos</a></li>	
+	<li><a href='../index.html#demo'>Demos</a></li>
+	<li><a href='../index.html#reldoc'>Release history</a></li>
 	</ul>
 </li>
 <li><b><a href = 'rv.html'>rv API reference</a></b>
@@ -92,32 +93,31 @@
 <pre>
 [
     {
-        "mandal": 1,
-        "sukta": 2,
-        "sungby": "Madhuchchhanda Vaishwamitra",
-        "sungfor": "Vayu",
-        "meter": "Gayatri"
+        "mandal": 7,
+        "sukta": 43,
+        "sungby": "Vasishth Maitravaruni",
+        "sungbycategory": "human male",
+        "sungfor": "Vishwadeva",
+        "sungforcategory": "divine male",
+        "meter": "Trishtup"
     },
     {
-        "mandal": 1,
-        "sukta": 2,
-        "sungby": "Madhuchchhanda Vaishwamitra",
-        "sungfor": "Indra",
-        "meter": "Gayatri"
+        "mandal": 7,
+        "sukta": 43,
+        "sungby": "Vasishth Maitravaruni",
+        "sungbycategory": "human male",
+        "sungfor": "Agni",
+        "sungforcategory": "divine male",
+        "meter": "Trishtup"
     },
     {
-        "mandal": 1,
-        "sukta": 2,
-        "sungby": "Madhuchchhanda Vaishwamitra",
-        "sungfor": "Mitra",
-        "meter": "Gayatri"
-    },
-    {
-        "mandal": 1,
-        "sukta": 2,
-        "sungby": "Madhuchchhanda Vaishwamitra",
-        "sungfor": "Varun",
-        "meter": "Gayatri"
+        "mandal": 7,
+        "sukta": 44,
+        "sungby": "Vasishth Maitravaruni",
+        "sungbycategory": "human male",
+        "sungfor": "Dadhikra",
+        "sungforcategory": "animal",
+        "meter": "Jagati"
     }
 ]
 </pre>
@@ -136,7 +136,33 @@ This is an integer resource. Filtering is allowed, and you can use ranges, for e
 The number of suktas in each mandal is different; for example, mandal 10 contains 59 suktas. The highest value possible for this resource is 191 (which is the number in the 1st mandal).</li>
 <li><code>sungby</code>: The composer of the verse. For example, <samp>Vishwamitra</samp>.<br/>
 This is a string resource. Filtering is allowed, and partial values can be used. For example <samp>*aindra</samp> returns all of the verses composed by anyone whose name ends with <samp>aindra</samp>.</li>
+<li><code>sungbycategory</code>: The category that composer of the verse belongs to. For example, <samp>human male</samp>. The following categories are available:
+	<ul>
+	<li>animal</li>
+	<li>demon male</li>
+	<li>divine female</li>
+	<li>divine male</li>
+	<li>human female</li>
+	<li>human male</li>	
+	</ul>
+This is a string resource. Filtering is allowed, and partial values can be used. For example <samp>*ale</samp> returns all of the verses composed by all human and divine males and females.</li>
 <li><code>sungfor</code>: The god, person, or thing that the verse is composed for. For example, <samp>Agni</samp> or <samp>plough</samp>.<br/>This is a string resource. Filtering is allowed, and partial values can be used.</li>
+<li><code>sungforcategory</code>: The category that the subject of the verse belongs. For example, <samp>object</samp>. The following categories are available:
+	<ul>
+	<li>abstract</li>
+	<li>animal</li>
+	<li>demon male</li>
+	<li>divine female</li>
+	<li>divine human</li>
+	<li>divine male</li>
+	<li>human couple</li>
+	<li>human female</li>
+	<li>human male</li>
+	<li>human unborn</li>
+	<li>object</li>
+	<li>plant</li>
+	</ul>
+This is a string resource. Filtering is allowed, and partial values can be used.</li>
 <li><code>meter</code>: The meter that the verse is composed in. For example, <samp>Trishtubh</samp>.<br/>
 This is a string resource. Filtering is allowed, and partial values can be used.</li>
 </ul>
