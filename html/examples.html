@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 
 <head>
@@ -169,26 +169,27 @@ May your {'nagari' where 'category'='family'} be blighted with {'nagari', where 
 </div>
 <div class="col-sm-4">
 <p class="lead">Become a vedic career consultant</p>
-<p><span style="margin-left:4%"><mark><samp>Considered <u>pratyenas</u> as a career yet? You would be <u>servant of the king or an officer of the police</u>. To become a <u>pratyenas</u>, you must study <u>nakshatravidya</u>, <u>stoma</u>, and <u>kandavish</u>.</samp></mark></span><br/><br/><br/></p>
+<p><mark><samp>Considered <u>pratyenas</u> as a career yet? You would be <u>servant of the king or an officer of the police</u>. To become a <u>pratyenas</u>, you must study <u>nakshatravidya</u>, <u>stoma</u>, and <u>kandavish</u>.</samp></mark><br/><br/><br/></p>
 <p>API to use: <code>vs</code></p>
-<p><span style="margin-left:4%"><samp>Considered <var>{<code>word</code> from the <code>category=occupation</code> filter}</var> as a career yet? You would be <var>{<code>description</code> for the <code>word</code>}</var>. To become a <var>{<code>word</code>}</var>, you must study <var>{comma-separated list of one item each from <code>category=subject</code>, <code>category=literature</code>, and <code>category=poison</code>}.</samp></span></p>
+<p><samp>Considered <var>{<code>word</code> from the <code>category=occupation</code> filter}</var> as a career yet? You would be <var>{<code>description</code> for the <code>word</code>}</var>. To become a <var>{<code>word</code>}</var>, you must study <var>{comma-separated list of one item each from <code>category=subject</code>, <code>category=literature</code>, and <code>category=poison</code>}.</samp></p>
 </div>
 </div><!-- /row -->
 <div class="row">
 <div class="col-sm-12">
 <p class="lead">Link up with other resources to tweet a vedic hymn a day</p>
-<p>API to use: <code>rv</code>
-<span style="margin-left:4%"><samp>
+<p>API to use: <code>rv</code></p>
+
 <ol>
 <li>Pick the <var><code>mandal</code></var> and <var><code>sukta</code></var>.</li>
-<li>Append this number to the base URL of the external resource that contains the hymn. For example, if the base URL is <code>https://en.wikisource.org/wiki/The_Rig_Veda/</code>, create <code>https://en.wikisource.org/wiki/The_Rig_Veda/Mandala_<var>{1}</var>/Hymn_<var>{1}</var></code>.</li>
+<li>Append this number to the base URL of the external resource that contains the hymn. For example, if the base URL is <code>https://en.wikisource.org/wiki/The_Rig_Veda/</code>, create <code>https://en.wikisource.org/wiki/The_Rig_Veda/Mandala_<var>1</var>/Hymn_<var>2</var></code>.</li>
 <li>If you want the sanskrit text as well, do these two additional things:
 <ol>
-<li>Translate the numbers into the nagari script. For example, if <code>mandal</code> is 1 and <code>sukta</code> is 1, create <code><var>?.?</var></code>.</li>
-<li>Append this number to the base URL of the wikisource pages that contains the Rig Veda Samhita texts. For example, if the base URL is <code>https://sa.wikisource.org/wiki/%E0%A4%8B%E0%A4%97%E0%A5%8D%E0%A4%B5%E0%A5%87%E0%A4%A6%E0%A4%83</code>, create <code>https://sa.wikisource.org/wiki/%E0%A4%8B%E0%A4%97%E0%A5%8D%E0%A4%B5%E0%A5%87%E0%A4%A6%E0%A4%83<var>_%E0%A4%B8%E0%A5%82%E0%A4%95%E0%A5%8D%E0%A4%A4%E0%A4%82_%E0%A5%A7.%E0%A5%A7</var></code></li>
+<li>Translate the numbers into the nagari script. For example, if <code>mandal</code> is 1 and <code>sukta</code> is 2, create <code><var>१.२</var></code>.</li>
+<li>Append this number to the base URL of the wikisource pages that contains the Rig Veda Samhita texts. For example, if the base URL is <code>https://sa.wikisource.org/wiki/ऋग्वेदः_सूक्तं_</code>, create <code>https://sa.wikisource.org/wiki/ऋग्वेदः_सूक्तं_१.२</var></code></li>
 </ol></li>
-<li>Tweet this URL as a Vedic Hymn Of The Day.</li>
-</ol></samp></span></p>
+<li>Tweet the details as a Vedic Hymn Of The Day.</li>
+<img src = '../images/tweet_mockup.png' class='img-thumbnail' alt='tweet mockup'/>
+</ol>
 </div>
 </div><!-- /row -->
 <hr/>
@@ -199,11 +200,11 @@ May your {'nagari' where 'category'='family'} be blighted with {'nagari', where 
 <div class="container">
 <h2>Culture</h2>
 <p class="lead">Plot the rivers, mountains, and places on a present-day map</p>
-<p>API to use: <code>vs</code></p>
+<p>API to use: <code>vs</code>, where the resource is <code>category</code>, and the values of the category are <code>mountain</code>, <code>place</code>, and <code>river</code></p>
 <p class="lead">Talk about the occupations that people were invested in</p>
-<p>API to use: <code>vs</code></p>
+<p>API to use: <code>vs</code>, where the resource is <code>category</code> and the value is <code>occupation</code></p>
 <p class="lead">Talk about the meters of songs</p>
-<p>API to use: <code>rv</code></p>
+<p>API to use: <code>rv</code>, where the resource is <code>meter</code></p>
 </div>
 </div><!-- /culture -->
 
