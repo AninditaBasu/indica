@@ -34,6 +34,7 @@
 	<li><a href='index.html#parameters'>Resources</a></li>
 	<li><a href='index.html#filter'>Filtering</a></li>
 	<li><a href='index.html#demo'>Demos</a></li>	
+	<li><a href='index.html#reldoc'>Release history</a></li>
 	</ul>
 </li>
 <li><b><a href = './html/rv.html'>rv API reference</a></b>
@@ -88,9 +89,11 @@
 [
     {
         "mandal": 1,
-        "sukta": 2,
+        "sukta": 1,
         "sungby": "Madhuchchhanda Vaishwamitra",
-        "sungfor": "Vayu",
+        "sungbycategory": "human male",
+        "sungfor": "Agni",
+        "sungforcategory": "divine male",
         "meter": "Gayatri"
     }
 ]
@@ -151,7 +154,7 @@
 <h3>Resources</h3>
 <p>The following resources are available:</p>
 <ul>
-<li><code>rv</code>: <code>mandal</code>, <code>sukta</code>, <code>sungby</code>, <code>sungfor</code>, and <code>meter</code></li>
+<li><code>rv</code>: <code>mandal</code>, <code>sukta</code>, <code>sungby</code>, <code>sungbycategory</code>, <code>sungfor</code>, <code>sungforcategory</code>, and <code>meter</code></li>
 <li><code>vs</code>: <code>word</code>, <code>nagari</code>, <code>description</code>, and <code>category</code></li>
 </ul>
 <p>The mandals and suktas of the <code>rv</code> API are integers; the remaining parameters of the <code>rv</code> API and all of the parameters of the <code>vs</code> API are strings.</p>
@@ -168,6 +171,14 @@
 </div><!-- /demo-->
 <hr/>
 </div><!-- /taskdoc -->
+
+<div id = "reldoc">
+<h2>Release history</h2>
+<h3>1.0</h3>
+<p>August 2018: Initital offering</p>
+<h3>1.1</h3>
+<p>October 2018: Added the following resources to the <code>rv</code> API: <code>sungbycategory</code>and <code>sungforcategory</code></p>
+</div><!-- /reldoc -->
 
 </div><!-- / "content-main" -->
 
