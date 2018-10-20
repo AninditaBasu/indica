@@ -96,9 +96,12 @@
 
 <div id = "intro">
 <p>These APIs make available to you two kinds of data: data regarding the gods, poets, and poem meters used in all of the Rig Veda verses, and data regarding the descriptions of all (almost) nouns mentioned in the entire vedic literature. Here are two examples:</p>
+<div class="table-responsive">
 <table>
 <tr>
-<td><pre>
+<td>
+<p>From the <code>rv</code> API:</p>
+<pre>
 [
     {
         "mandal": 1,
@@ -110,9 +113,12 @@
         "meter": "Gayatri"
     }
 ]
-</pre></td>
+</pre>
+</td>
 <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-<td><pre>
+<td>
+<p>From the <code>vs</code> API:<br/><br/><br/></p>
+<pre>
 [
     {
         "word": "aksh",
@@ -121,9 +127,11 @@
         "category": "chariot"
     }
 ]
-</pre><br/></td>
+</pre>
+</td>
 </tr>
 </table>
+</div><!-- /table-responsive>
 <p>The data is returned as JSON or XML objects. You can programmatically process the data to make visually appealing or easily consumable information (see <a href = "./html/examples.html">Examples</a>).</p>
 <hr/>
 </div><!-- /intro -->
