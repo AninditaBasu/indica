@@ -14,7 +14,7 @@ externalDocs:
 host: sheetlabs.com
 schemes:
   - https
-basePath: /RV/rv
+basePath: /IND/rv
 paths:
   /:
     get:
