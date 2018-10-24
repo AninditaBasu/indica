@@ -2,7 +2,7 @@ swagger: '2.0'
 info:
   description: 'This API returns data regarding the descriptions of almost all nouns in vedic literature. The results are JSON objects that contain the word transliterated to roman, the word in nagari, the meaning of the word, and the category the word belongs to.'
   title: vs API
-  version: 'v1'
+  version: '1.1'
   license:
     name: 'Distributed under the MIT license'
     url: 'https://opensource.org/licenses/MIT'
@@ -32,7 +32,7 @@ paths:
           name: word
           type: string
           required: true
-          description: 'The sanskrit word transliterated into roman, for example, rajan. Wildcards allowed; example: *aj*.'
+          description: 'The Sanskrit word transliterated into English, for example, rajan. Wildcards allowed; example: *aj*.'
       responses:
         '200':
           description: 'Word meaning fetched successfully.'
@@ -120,4 +120,4 @@ paths:
         '401':
           description: 'You need an authentication key.'
         '404':
-          description: 'No such category exists in the database.'
+          description: 'No such category exists in this API.'
