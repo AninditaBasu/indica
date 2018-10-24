@@ -87,18 +87,19 @@
 
 <div class="well">
 <h1 class = "page-header">rv API reference</h1>
-<p class = "lead">All of the poets and gods in the Rig Veda, presented with the mandal and sukta numbers, and the meters the verses are composed in.</p>
+<p class = "lead">All of the poets and gods in the Rig Veda, presented with the mandal and sukta numbers, and the meters the verses are composed in</p>
+<p class = "small">rv = Rig Veda</p>
 </div><!-- /well -->
 
 <div id = "intro">
-<p>You can make only <code>GET</code> calls to the database.</p>
+<p>You can make only <code>GET</code> calls to the API.</p>
 <hr/>
 </div><!-- \intro -->
 
 <div id = "base">
 <h2>Endpoint</h2>
-<p><code>https://sheetlabs.com/RV/rv</code></p>
-<p>The default response format is JSON. To get the response in an XML format, use <code>https://sheetlabs.com/RV/rv.xml</code> as the endpoint.</p>
+<p><code>https://sheetlabs.com/IND/rv</code></p>
+<p>The default response format is JSON. To get the response in an XML format, use <code>https://sheetlabs.com/IND/rv.xml</code> as the endpoint.</p>
 <hr/>
 </div><!-- /base -->
 
@@ -180,14 +181,15 @@ This is a string resource. Filtering is allowed, and partial values can be used.
 <li><code>meter</code>: The meter that the verse is composed in. For example, <samp>Trishtubh</samp>.<br/>
 This is a string resource. Filtering is allowed, and partial values can be used.</li>
 </ul>
-<p>To filter results, you can use more than one resource, separated by an ampersand (<code>&amp;</code>), for example, <code>https://sheetlabs.com/RV/rv?mandal=10&meter=gayatri&sungby=*dra</code>.</p>
+<p>To filter results, you can use more than one resource, separated by an ampersand (<code>&amp;</code>), for example, <code>https://sheetlabs.com/IND/rv?mandal=10&meter=gayatri&sungby=*dra</code>.</p>
 <hr/>
 </div><!-- /resources -->
 
 <div id = "libs">
 <h2>SDKs</h2>
-<p>Some Python code is available in this <a href = 'https://github.com/AninditaBasu/rigVeda/blob/master/rv_demo_basic.ipynb' target = '_blank'>ipynb file</a>.</p>
-<p>See if your language is covered at <a href = "https://github.com/AninditaBasu/rigVeda/tree/master/rv_SDKs" target = "_blank">GitHub repo</a>. If not, raise a <a href ="https://github.com/AninditaBasu/rigVeda/issues"  data-toggle="tooltip" data-placement="top" target = "_blank">GitHub issue</a>. Or, create an SDK and send me a link to your repo, and I'll list it here.</p>
+<p>Some Python code is available in this <a href = 'https://github.com/AninditaBasu/indica/blob/master/rv_demo_basic.ipynb' target = '_blank'>ipynb file</a>.</p>
+<p>Some client libraries are at <a href = "https://github.com/AninditaBasu/indica/tree/master/rv_SDKs" target = "_blank">GitHub repo</a>. These are generated automatically through Swagger and do not work on their own; you need to create an application that will use the SDK to make API calls. To get started, see the <code>README.md</code> file in the SDK.</p>
+<p>If the language that you want is not listed, raise a <a href ="https://github.com/AninditaBasu/indica/issues"  data-toggle="tooltip" data-placement="top" target = "_blank">GitHub issue</a>.</p>
 </div><!-- /libs -->
 
 </div><!-- / "content-main" -->
