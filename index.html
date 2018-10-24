@@ -139,8 +139,8 @@
 <h2>Making requests to the APIs</h2>
 <p>The following APIs are available:</p>
 <ul>
-<li><code>rv</code>: Returns the gods and poets, their categories, and the meters from all of the Rig Veda verses, together with the mandal and sukta number.</li>
-<li><code>vs</code>: Returns the descriptions of all nouns (names, places, animals, things) from the entire vedic literature.</li>
+<li><code>rv</code>: The Rig Veda API. Returns the gods and poets, their categories, and the meters from all of the Rig Veda verses, together with the mandal and sukta number.</li>
+<li><code>vs</code>: The Vedic Society API. Returns the descriptions of all nouns (names, places, animals, things) from the entire vedic literature.</li>
 </ul>
 <div id = "auth">
 <h3>Authentication</h3>
@@ -165,10 +165,10 @@
 <h3>Endpoints</h3>
 <p>JSON output is returned by the following endpoints:
 <ul>
-<li><code>https://sheetlabs.com/RV/rv</code>, for gods, poets, and meters.</li>
-<li><code>https://sheetlabs.com/RV/vs</code>, for descriptions of nouns.</li>
+<li><code>https://sheetlabs.com/IND/rv</code>, for gods, poets, and meters.</li>
+<li><code>https://sheetlabs.com/IND/vs</code>, for descriptions of nouns.</li>
 </ul>
-<p>To get output in the XML format, append <code>.xml</code> to the endpoint, like this: <code>https://sheetlabs.com/RV/rv.xml</code>.</p>
+<p>To get output in the XML format, append <code>.xml</code> to the endpoint, like this: <code>https://sheetlabs.com/IND/rv.xml</code>.</p>
 </div><!-- /url  -->
 <div id = "parameters">
 <h3>Resources</h3>
@@ -182,12 +182,12 @@
 <div id = "filter">
 <h3>Filtering</h3>
 <p>Optional. All of the parameters can be used for filtering except the <code>nagari</code> parameter of <code>vs</code> API.</p>
-<p>You can specify a range for the integers, or partial text for the strings. You can supply more than one parameter in a single call by separating them with an ampersand (<code>&amp;</code>), for example, <code>https://sheetlabs.com/RV/rv?mandal=10&meter=gayatri&sungby=*dra</code>.</p>
+<p>You can specify a range for the integers, or partial text for the strings. You can supply more than one parameter in a single call by separating them with an ampersand (<code>&amp;</code>), for example, <code>https://sheetlabs.com/IND/rv?mandal=10&meter=gayatri&sungby=*dra</code>.</p>
 </div><!-- /filter -->
 <div id = "demo">
 <h3>Demos</h3>
-<p>Use these <a href = "https://mybinder.org/repo/AninditaBasu/rigVeda" target = "_blank">.ipynb files</a> to run interactive demos.</p>
-<p>Or, open <code>http://editor.swagger.io/</code> in a browser, and use these YAML files (<a href = 'https://github.com/AninditaBasu/rigVeda/blob/master/rv_SDKs/rv.yaml'>rv.yaml</a> and <a href = 'https://github.com/AninditaBasu/rigVeda/blob/master/vs_SDKs/vs.yaml'>vs.yaml</a>) to get a sense of what kind of data the APIs return.</p>
+<p>Use these <a href = "https://mybinder.org/repo/AninditaBasu/indica" target = "_blank">.ipynb files</a> to run interactive demos.</p>
+<p>Or, open <code>http://editor.swagger.io/</code> in a browser, and use these YAML files (<a href = 'https://github.com/AninditaBasu/indica/blob/master/rv_SDKs/rv.yaml'>rv.yaml</a> and <a href = 'https://github.com/AninditaBasu/indica/blob/master/vs_SDKs/vs.yaml'>vs.yaml</a>) to get a sense of what kind of data the APIs return.</p>
 </div><!-- /demo-->
 <hr/>
 </div><!-- /taskdoc -->
@@ -197,7 +197,11 @@
 <h3>1.0</h3>
 <p>August 2018: Initital offering</p>
 <h3>1.1</h3>
-<p>October 2018: Added the following resources to the <code>rv</code> API: <code>sungbycategory</code>and <code>sungforcategory</code></p>
+<p>October 2018:</p>
+<ul>
+<li>Changed the endpoint of the APIs from <code>https://sheetlabs.com/RV/</code> to <code>https://sheetlabs.com/IND/</code></li>
+<li>Added the following two resources to the <code>rv</code> API: <code>sungbycategory</code>and <code>sungforcategory</code></li>
+</ul>
 </div><!-- /reldoc -->
 
 </div><!-- / "content-main" -->
