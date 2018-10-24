@@ -70,7 +70,7 @@
         <ul class="dropdown-menu">
 			<li><a href='examples.html#datavis'>Infographics</a></li>
 			<li><a href='examples.html#bots'>Twitter bots</a></li>
-			<li><a href='examples.html#culture'>Culture</a></li>
+			<li><a href='examples.html#culture'>Teaching aids</a></li>
         </ul>
       </li>
 	  <li><a href='about.html'>About</a></li>
@@ -209,13 +209,18 @@ May your {'nagari' where 'category'='family'} be blighted with {'nagari', where 
 
 <div id = "culture">
 <div class="container">
-<h2>Culture</h2>
-<p class="lead">Plot the rivers, mountains, and places on a present-day map</p>
-<p>API to use: <code>vs</code>, where the resource is <code>category</code>, and the values of the category are <code>mountain</code>, <code>place</code>, and <code>river</code></p>
-<p class="lead">Talk about the occupations that people were invested in</p>
-<p>API to use: <code>vs</code>, where the resource is <code>category</code> and the value is <code>occupation</code></p>
-<p class="lead">Talk about the meters of songs</p>
-<p>API to use: <code>rv</code>, where the resource is <code>meter</code></p>
+<h2>Teaching aids</h2>
+<p>Use the data to weave stories like this one:</p>
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Remember those history lessons in school? Where the usual suspects would be sections like &#39;Position of women in society&#39;, &#39;Contribution of king &lt;name&gt; to &lt;whatever&gt;&#39;, &#39;Art and architecture of &lt;dynasty&gt;, and such? 📚<br>This thread&#39;s a bit on women poets in the Rig Veda.</p>&mdash; Anindita Basu (@anindita_basu) <a href="https://twitter.com/anindita_basu/status/1054686484966436864?ref_src=twsrc%5Etfw">October 23, 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<p class = "small"><span class = "mark">Click the tweet to see the entire thread.</span></p>
+<p>This tweet used the <code>rv</code> API to pick only those verses that were written by female poets: <code>['sungbycategory'] == 'human female'</code></p>
+<p>Some more story ideas:</p>
+<ul>
+<li>Talk about the rivers, mountains, and places mentioned in the book. Use the <code>vs</code> API, where the resource is <code>category</code>, and the values of the category are <code>mountain</code>, <code>place</code>, and <code>river</code>.</li>
+<li>Talk about the occupations that people were invested in. Use the <code>vs</code> API, where the resource is <code>category</code> and the value is <code>occupation</code>.</li>
+<li>Talk about the occupations that people were invested in. Use the <code>vs</code> API, where the resource is <code>category</code> and the value is <code>occupation</code>.</li>
+</ul>
 </div>
 </div><!-- /culture -->
 
