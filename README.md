@@ -1,10 +1,10 @@
 # the vedic APIs
 
-Documentation is at https://aninditabasu.github.io/rigVeda/. 
+Documentation is at https://aninditabasu.github.io/indica/. 
 
 ## Demo
 
-An interactive demo (without you having to clone or download this repo, or having to code) is at https://mybinder.org/repo/AninditaBasu/rigVeda.
+An interactive demo (without you having to clone or download this repo, or having to code) is at https://mybinder.org/repo/AninditaBasu/indica.
 
 ## SDKs
 
@@ -12,4 +12,4 @@ The client libraries are in the folders with the `_SDKs` suffix. If an SDK in th
 
 ## Bugs and requests
 
-To log bugs and requests, use https://github.com/AninditaBasu/rigVeda/issues.
+To log bugs and requests, use https://github.com/AninditaBasu/indica/issues.
