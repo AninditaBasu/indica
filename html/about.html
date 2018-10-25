@@ -9,7 +9,6 @@
 <title>About the Vedic APIs</title>
 
 <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css"/>
-<link rel="stylesheet" type="text/css" href="../css/prettify.css"/>
 <link rel="stylesheet" type="text/css" href="../css/tabs.css"/>
 <link rel="stylesheet" type="text/css" href="../css/common.css"/>
 
@@ -24,11 +23,17 @@
 
 <div class="wrapper">
 
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="../index.html">Vedic API <span class="version">1.1</span></a>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#indicaNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span> 
+      </button>
+	  <a class="navbar-brand" href="../index.html">Vedic API <span class="version">1.1</span></a>
     </div>
+	<div class="collapse navbar-collapse" id="indicaNavbar">
     <ul class="nav navbar-nav">
       <li class="dropdown">
 	    <a class="dropdown-toggle" data-toggle="dropdown" href="index.html">Home
@@ -75,10 +80,14 @@
       </li>
 	  <li><a href='about.html'>About</a></li>
     </ul>
+	<ul class="nav navbar-nav navbar-right">
+      <li><a href="https://twitter.com/intent/tweet?text=@anindita_basu" target = "_blank"><span class="glyphicon glyphicon-envelope"></span> Contact</a></li>
+    </ul>
+	</div><!--indicaNavbar-->
   </div>
 </nav>
 
-<div class="container">
+<div class="container" style="margin-top:70px">
 
 <!-- Content -->
 <div id="content">
@@ -100,6 +109,9 @@
 <h3>Why did you make these APIs</h3>
 <p>Because they weren't there.</p>
 <hr/>
+<h3 id = "poc">What can I do with this data</h3>
+<p>See <a href = 'examples.html'>Examples</a>. (Also, I'll be very happy to link back to your implementation if you send me a URL.)</p>
+<hr/>
 <h3>What is the source of this data</h3>
 <p>The main sources are these books:</p>
 <ul>
@@ -113,16 +125,14 @@
 <li>The Practical Sanskrit-English Dictionary, by V. S. Apte (<a href = "https://dsalsrv04.uchicago.edu/dictionaries/apte/" target = "_blank">searchable</a>)</li>
 </ul>
 <hr/>
-<h3 id = "poc">What can I do with this data?</h3>
-<p>See <a href = 'examples.html'>Examples</a>. (Also, I'll be very happy to link back to your implementation if you send me a URL.)</p>
+<h3>I found an error in the data</h3>
+<p>Please log a <a href ="https://github.com/AninditaBasu/indica/issues" target = "_blank">GitHub issue</a>.<p>
 <hr/>
-<h3>I found an error in the data.</h3>
-<p>Please log a <a href ="https://github.com/AninditaBasu/indica/issues"  data-toggle="tooltip" data-placement="top" title="Pull request not needed. Just your repo link." target = "_blank">GitHub issue</a>.<p>
+<h3>Any SDKs that I could use</h3>
+<p>Some SDKs are at <a href = "https://github.com/AninditaBasu/indica" target = "_blank">GitHub repo</a>. These SDKs are generated automatically through Swagger and do not work on their own; you need to create an application that will use the SDK to make API calls. To get started, see the <code>README.md</code> file in the SDK.</p>
+<p>If the language that you want is not listed, log a <a href ="https://github.com/AninditaBasu/indica/issues" target = "_blank">GitHub issue</a>. Or, if you are on Swagger, generate your own client SDK by using the <code>YAML</code> files in the GitHub repo.</p>
 <hr/>
-<h3>Any SDKs that I could use?</h3>
-<p>See if your language is covered in the <a href = "https://github.com/AninditaBasu/indica" target = "_blank">GitHub repo</a>. If not, raise a <a href ="https://github.com/AninditaBasu/indica/issues"  data-toggle="tooltip" data-placement="top" target = "_blank">GitHub issue</a>. Or, create an SDK and send me a link to your repo, and I'll list it here.</p>
-<hr/>
-<h3>And you are who?</h3>
+<h3>And you are...</h3>
 <p><a href = "https://twitter.com/@anindita_basu">Anindita Basu</a></p>
 </div><!-- /base -->
 
