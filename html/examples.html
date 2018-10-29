@@ -41,11 +41,13 @@
         <ul class="dropdown-menu">
 			<li><a href='../index.html#auth'>Authentication</a></li>
 			<li><a href='../index.html#licence'>License</a></li>
-			<li><a href='../index.html#limits'>Rate limits</a></li>		
+			<li><a href='../index.html#limits'>Rate limits</a></li>
+			<li role="presentation" class="divider"></li>
 			<li><a href='../index.html#url'>Endpoints</a></li>
 			<li><a href='../index.html#parameters'>Resources</a></li>
 			<li><a href='../index.html#filter'>Filtering</a></li>
 			<li><a href='../index.html#demo'>Demos</a></li>
+			<li role="presentation" class="divider"></li>
 			<li><a href='../index.html#reldoc'>Release history</a></li>
 		</ul>
 	  </li>
@@ -219,11 +221,17 @@ May your {'nagari' where 'category'='family'} be blighted with {'nagari', where 
 <div id = "culture">
 <div class="container">
 <h2>Teaching aids</h2>
-<p>Use the data to weave stories like this one:</p>
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Remember those history lessons in school? Where the usual suspects would be sections like &#39;Position of women in society&#39;, &#39;Contribution of king &lt;name&gt; to &lt;whatever&gt;&#39;, &#39;Art and architecture of &lt;dynasty&gt;, and such? 📚<br>This thread&#39;s a bit on women poets in the Rig Veda.</p>&mdash; Anindita Basu (@anindita_basu) <a href="https://twitter.com/anindita_basu/status/1054686484966436864?ref_src=twsrc%5Etfw">October 23, 2018</a></blockquote>
+<p>Use the data to weave stories like these <span class = "mark small">(click the tweets to read the entire story)</span>:</p>
+<div class="row">
+  <div class="col-sm-6"><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Remember those history lessons in school? Where the usual suspects would be sections like &#39;Position of women in society&#39;, &#39;Contribution of king &lt;name&gt; to &lt;whatever&gt;&#39;, &#39;Art and architecture of &lt;dynasty&gt;, and such? 📚<br>This thread&#39;s a bit on women poets in the Rig Veda.</p>&mdash; Anindita Basu (@anindita_basu) <a href="https://twitter.com/anindita_basu/status/1054686484966436864?ref_src=twsrc%5Etfw">October 23, 2018</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-<p class = "small"><span class = "mark">Click the tweet to see the entire thread.</span></p>
-<p>This tweet used the <code>rv</code> API to pick only those verses that were written by female poets: <code>['sungbycategory'] == 'human female'</code></p>
+<p>This tweet-thread used the <code>rv</code> API to pick only those verses that were written by female poets: <code>['sungbycategory'] == 'human female'</code></p>
+</div><!-- the first col-sm-6 -->
+  <div class="col-sm-6"><blockquote class="twitter-tweet" data-conversation="none" data-lang="en"><p lang="en" dir="ltr">Let&#39;s do one of those &quot;Non-verbal Reasoning&quot; questions: Spot the odd one out in this picture: <a href="https://t.co/Ms6OuO15Ay">pic.twitter.com/Ms6OuO15Ay</a></p>&mdash; Anindita Basu (@anindita_basu) <a href="https://twitter.com/anindita_basu/status/1055748183756746752?ref_src=twsrc%5Etfw">October 26, 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<p>This tweet-thread used the <code>rv</code> API to pick only those verses where <code>['sungby'] == ['sungfor']</code>. It also used the <code>rv</code> API to aggregate the number of <code>sukta</code> in each <code>mandal</code>, grouped by <code>['sungfor']</code>, and draw the piecharts.</p>
+</div><!-- the second col-sm-6 -->
+</div><!-- row -->
 <p>Some more story ideas:</p>
 <ul>
 <li>Talk about the rivers, mountains, and places mentioned in the book. Use the <code>vs</code> API, where the resource is <code>category</code>, and the values of the category are <code>mountain</code>, <code>place</code>, and <code>river</code>.</li>
