@@ -13,3 +13,7 @@ The client libraries are in the folders with the `_SDKs` suffix. If an SDK in th
 ## Bugs and requests
 
 To log bugs and requests, use https://github.com/AninditaBasu/indica/issues.
+
+## Contact
+
+If you're using these APIs, please drop me a note, no? It'll make my day. anindita.basu@live.com
