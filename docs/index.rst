@@ -1,3 +1,9 @@
+.. toctree::
+
+   Home <the Vedic APIs>
+   Endpoints
+   Resources
+
 the Vedic APIs
 ==============
 
