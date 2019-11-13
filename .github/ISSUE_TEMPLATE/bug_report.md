@@ -2,8 +2,8 @@
 name: Issue
 about: File a bug to help improve the API
 title: "[Bug]: [Issue title] "
-labels: 'bug'
-assignees: 'AninditaBasu'
+labels: bug
+assignees: AninditaBasu
 
 ---
 
