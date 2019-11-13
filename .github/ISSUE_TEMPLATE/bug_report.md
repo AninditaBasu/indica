@@ -1,5 +1,5 @@
 ---
-name: Bug report
+name: Issue
 about: File a bug to help improve the API
 title: "[Bug]: [Issue title] "
 labels: 'bug'
