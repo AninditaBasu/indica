@@ -1,9 +1,9 @@
 ---
 name: Bug report
-about: Create a report to help us improve
-title: "[Bug] "
-labels: ''
-assignees: ''
+about: File a bug to help improve the API
+title: "[Bug]: [Issue title] "
+labels: 'bug'
+assignees: 'AninditaBasu'
 
 ---
 
@@ -11,12 +11,12 @@ assignees: ''
 A clear and concise description of what the bug is.
 
 **To Reproduce**
-Steps to reproduce the behavior:
+Steps to reproduce the behaviour:
 1. Ping the '...' API with '...' parameters.
 2. See error
 
 **Expected behavior**
-A clear and concise description of what you expected to happen.
+A clear and concise description of what you expected in the response body.
 
 **Screenshots**
 If applicable, add screenshots to help explain your problem.
