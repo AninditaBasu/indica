@@ -1,6 +1,8 @@
 ---
 name: Question
 about: Use this template if you have questions about this project.
+labels: question
+assignees: AninditaBasu
 ---
 
 _Use this template if you have questions about this project. Don't forget to check our [documentation](https://aninditabasu.github.io/indica/index.html); we update them based on the questions we receive._
