@@ -10,7 +10,9 @@ First things first, we'd like all interactions in this repository to follow the 
 
 - :question: Have a question? See [About this project](https://aninditabasu.github.io/indica/html/about.html), and if your question remains unanswered, open an issue. 
 
-- :bug: Found a bug? Open an issue.
+- :beetle: Found a bug? Open an issue.
+
+- :tada: Built an app with these APIs? Open an issue to ask it to be mentioned in the docs.
 
 ## How we work
 
