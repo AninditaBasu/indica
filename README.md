@@ -1,14 +1,17 @@
 # the vedic APIs
 
-These APIs make available to you two kinds of data: data regarding the gods and poets, their categories, and poem meters used in all of the Rig Veda verses, and data regarding the descriptions of all the nouns (except proper nouns) mentioned in vedic literature.
+These APIs give you two kinds of data: 
+
+- The gods and poets, their categories, and poem meters used in all of the Rig Veda verses
+- The descriptions of all the nouns (except proper nouns) mentioned in vedic literature
 
 ## How to use
 
-You can programmatically process the data to make visually appealing or easily consumable information.
+The APIs are available through `GET` calls over `HTTPS`, and return data in `JSON` or `XML`. You can programmatically process the data to make visually appealing or easily consumable information.
 
-An interactive demo, without you having to code or to clone or download this repo, is at https://mybinder.org/repo/AninditaBasu/indica. To run a demo, click an `ipynb` file.
+To help you get an idea of the kind of data available to you, I've created an interactive demo at https://mybinder.org/repo/AninditaBasu/indica. To run a demo, click an `ipynb` file there. You don't need to clone or download this repo to see the demo :slightly_smiling_face:
 
-Client libraries are in the folders with the `_SDKs` suffix. These SDKs are generated automatically through Swagger and do not work on their own; you need to create an application that will use the SDK to make API calls. To get started, see the `README.md` file in the SDK. If an SDK in the language of your choice is not there, you can use the `.yaml` files in those folders to generate one through https://editor.swagger.io.
+Client libraries are in the folders with the `_SDKs` suffix. These SDKs are generated automatically through Swagger and do not work on their own; you need to create an application that will use the SDK to make API calls. To get started, see the `README.md` file in the SDK. If an SDK in the language of your choice is not included here, you can use the `.yaml` files in `_SDKs` folders to generate one through https://editor.swagger.io.
 
 API documentation is at https://aninditabasu.github.io/indica/.
 
@@ -16,7 +19,7 @@ If you build an app with these APIs, please let me know. I'll include your imple
 
 ## How to contribute
 
-:slightly_smiling_face: Thank you for wanting to help with this project.
+Thank you for wanting to help with this project :heart:
 
 - :bulb: Have an idea for improvement? Open an issue first, and let's talk about it.
 
