@@ -1,2 +1,1 @@
 matplotlib==2.1
-Flask==1.0
