@@ -41,5 +41,6 @@ I'd like all interactions in this repository to follow the [code of conduct](cod
 
 ## Plans
 
-- Turn the edicts of Asoka into an API
-- Turn the Arthashastra into an API
+- [ ] Turn the edicts of Asoka into an API
+- [ ] Turn the Arthashastra into an API
+- [ ] Shall we do a [Mahabharat API](https://dev.to/aninditabasu/building-a-chatbot-with-the-ramp-stack-part-2-designing-the-database-131e) as well?
