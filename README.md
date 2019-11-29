@@ -17,6 +17,12 @@ API documentation is at https://aninditabasu.github.io/indica/.
 
 If you build an app with these APIs, please let me know. I'll include your implementation on a Gallery page to showcase it.
 
+## Showcase
+
+I built a rough-and-ready app (`tarzezindagi.py`).
+
+See [https://pesha.herokuapp.com/](https://pesha.herokuapp.com/). ![GitHub Pipenv locked dependency version](https://img.shields.io/github/pipenv/locked/dependency-version/AninditaBasu/indica/flask) ![GitHub Pipenv locked dependency version](https://img.shields.io/github/pipenv/locked/dependency-version/AninditaBasu/indica/gunicorn) ![GitHub Pipenv locked dependency version](https://img.shields.io/github/pipenv/locked/dependency-version/AninditaBasu/indica/requests) 
+
 ## How to contribute
 
 Thank you for wanting to help with this project :heart:
@@ -29,6 +35,6 @@ Thank you for wanting to help with this project :heart:
 
 - :tada: Built an app with these APIs? Open an issue to ask it to be showcased in the docs.
 
-We use labels to organize the to-do list; therefore, when opening an issue, tag it with the appropriate label (but please just stick to the ones already on the list; don't create any :smiley:). We'll respond fast (usually within 24 hours).
+I use labels to organize the to-do list; therefore, when opening an issue, tag it with the appropriate label (but please just stick to the ones already on the list; don't create any :smiley:). I'll respond fast (usually within 24 hours).
 
-We'd like all interactions in this repository to follow the [code of conduct](code-of-conduct.md).
+I'd like all interactions in this repository to follow the [code of conduct](code-of-conduct.md).
