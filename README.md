@@ -37,4 +37,9 @@ Thank you for wanting to help with this project :heart:
 
 I use labels to organize the to-do list; therefore, when opening an issue, tag it with the appropriate label (but please just stick to the ones already on the list; don't create any :smiley:). I'll respond fast (usually within 24 hours).
 
-I'd like all interactions in this repository to follow the [code of conduct](code-of-conduct.md).
+I'd like all interactions in this repository to follow the [code of conduct](code-of-conduct.md), please.
+
+## Plans
+
+- Turn the edicts of Asoka into an API
+- Turn the Arthashastra into an API
