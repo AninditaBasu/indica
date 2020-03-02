@@ -18,7 +18,7 @@ As of now, two APIs are available:
 
 ## How to use
 
-To get an idea of the kind of data available to you, see an interactive demo (no need to clone or download this repo to see the demo :slightly_smiling_face:):
+The API documentation is at https://aninditabasu.github.io/indica/. To get an idea of the kind of data available to you, see an interactive demo (no need to clone or download this repo to see the demo :slightly_smiling_face:):
 
 1.  Go to https://mybinder.org/repo/AninditaBasu/indica.
 2.  Click an `ipynb` file on that page. 
@@ -27,15 +27,9 @@ What can you do with this data, you ask? A sample app that uses this data is at 
 
 > If you build an app with these APIs, please let me know. I'll include your implementation on a `Gallery` page in the documentation, and also include it under `Showcase` on this page.
 
-The API documentation is at https://aninditabasu.github.io/indica/.
-
 ## Showcase
 
-- Rough-and-ready Vedic Career Advice app (`tarzezindagi.py`) 
-  
-  ![GitHub Pipenv locked dependency version](https://img.shields.io/github/pipenv/locked/dependency-version/AninditaBasu/indica/flask) ![GitHub Pipenv locked dependency version](https://img.shields.io/github/pipenv/locked/dependency-version/AninditaBasu/indica/gunicorn) ![GitHub Pipenv locked dependency version](https://img.shields.io/github/pipenv/locked/dependency-version/AninditaBasu/indica/requests) 
-
-  See [https://pesha.herokuapp.com/](https://pesha.herokuapp.com/). 
+- [Vedic Career Advice app](https://pesha.herokuapp.com/) (`tarzezindagi.py`)  ![GitHub Pipenv locked dependency version](https://img.shields.io/github/pipenv/locked/dependency-version/AninditaBasu/indica/flask) ![GitHub Pipenv locked dependency version](https://img.shields.io/github/pipenv/locked/dependency-version/AninditaBasu/indica/gunicorn) ![GitHub Pipenv locked dependency version](https://img.shields.io/github/pipenv/locked/dependency-version/AninditaBasu/indica/requests)
 
 - _Your app goes here..._
 
