@@ -40,6 +40,13 @@ paths:
           description: 'You need an authentication key.'
         '404':
           description: 'No such word exists in the database.'
+      x-code-samples:
+        responseBody:
+          content: 
+            '- word: rajan
+               nagari: राजन
+               description: king
+               category: royalty'  
   /description:
     get:
       summary: 'Fetch all meanings that contain a specific string'
