@@ -18,7 +18,13 @@ As of now, two APIs are available:
 
 ## How to use
 
-The API documentation is at https://aninditabasu.github.io/indica/. To get an idea of the kind of data available to you, see an interactive demo (no need to clone or download this repo to see the demo :slightly_smiling_face:):
+A rough-and-ready reference documentation is at:
+
+
+
+A fuller documentation is at https://aninditabasu.github.io/indica/. 
+
+For an interactive demo (no need to clone or download this repo to see the demo :slightly_smiling_face:):
 
 1.  Go to https://mybinder.org/repo/AninditaBasu/indica.
 2.  Click an `ipynb` file on that page. 

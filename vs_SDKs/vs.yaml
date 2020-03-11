@@ -1,6 +1,16 @@
 swagger: '2.0'
 info:
-  description: 'This API returns data regarding the descriptions of almost all nouns in vedic literature. The results are JSON objects that contain the word transliterated to roman, the word in nagari, the meaning of the word, and the category the word belongs to.'
+  description: | 
+    # Introduction
+    This API returns data regarding almost all nouns in vedic literature. The results are JSON objects that contain the word transliterated to the Roman script, the word in the Nagari script, the meaning of the word, and the category the word belongs to. Proper nouns are not included (yet).
+    
+    The API uses the Swagger 2.0 specification.
+    
+    # Authentication
+    This is an open API.
+    
+    # Rate limits
+    Total monthly calls are limited to 10,000.
   title: vs API
   version: '1.1'
   x-logo:
@@ -21,12 +31,12 @@ basePath: /IND/vs
 paths:
   /:
     get:
-      summary: 'Fetch all records from the database'
+      summary: 'Fetch all entries in this API'
       responses:
         '200':
-          description: 'Records fetched'
-        '401':
-          description: 'The API needs an authentication key.'
+          description: 'Entries fetched'
+        '404':
+          description: 'No entry found'
   /word:
     get:
       summary: 'Fetch the meaning of a specific Sanskrit word'
@@ -38,11 +48,9 @@ paths:
           description: 'The Sanskrit word transliterated into English, for example, rajan. Wildcards are allowed, for example, \*aj\*.'
       responses:
         '200':
-          description: 'Word meaning fetched successfully.'
-        '401':
-          description: 'You need an authentication key.'
+          description: 'Entries fetched.'
         '404':
-          description: 'No such word exists in the database.'
+          description: 'No such word exists in this API.'
   /description:
     get:
       summary: 'Fetch all meanings that contain a specific English string'
@@ -54,11 +62,9 @@ paths:
           description: 'The string you are looking for in the word meaning, for example, chariot. Wildcards are allowed, for example, char\*.'
       responses:
         '200':
-          description: 'Words fetched successfully.'
-        '401':
-          description: 'You need an authentication key.'
+          description: 'Entries fetched.'
         '404':
-          description: 'This string does not exist in the database.'
+          description: 'No such string exists in this API.'
   /category:
     get:
       summary: 'Fetch all words in a specific category'
@@ -119,8 +125,6 @@ paths:
           description: 'Click to select from a list'
       responses:
         '200':
-          description: 'Words fetched successfully.'
-        '401':
-          description: 'You need an authentication key.'
+          description: 'Entries fetched.'
         '404':
           description: 'No such category exists in this API.'
