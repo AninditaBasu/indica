@@ -1,7 +1,7 @@
 swagger: '2.0'
 info:
-  description: 'This API returns information about all of the verses in Rig Veda. The results are JSON objects that contain the name of the god, poet, and meter of the verses in Rig Veda, the category of the god and the poet, and the mandal and sukta number.'
-  title: rv API
+  description: 'This API returns data regarding the descriptions of almost all nouns in vedic literature. The results are JSON objects that contain the word transliterated to roman, the word in nagari, the meaning of the word, and the category the word belongs to.'
+  title: vs API
   version: '1.1'
   license:
     name: 'Distributed under the MIT license'
@@ -14,7 +14,7 @@ externalDocs:
 host: sheetlabs.com
 schemes:
   - https
-basePath: /IND/rv
+basePath: /IND/vs
 paths:
   /:
     get:
@@ -24,128 +24,107 @@ paths:
           description: 'Records fetched'
         '401':
           description: 'The API needs an authentication key.'
-  /mandal:
+  /word:
     get:
-      summary: 'Fetch all verses in a specific book'
+      summary: 'Fetch the meaning of a specific word'
       parameters:
         - in: query
-          name: mandal
-          type: integer
-          enum:
-            - 1
-            - 2
-            - 3
-            - 4
-            - 5
-            - 6
-            - 7
-            - 8
-            - 9
-            - 10
-          required: true
-          description: 'Click to select the mandal number from the list.'
-      responses:
-        '200':
-          description: 'Verses fetched successfully.'
-        '401':
-          description: 'You need an authentication key.'
-  /sungby:
-    get:
-      summary: 'Fetch all verses composed by a specific rishi'
-      parameters:
-        - in: query
-          name: sungby
+          name: word
           type: string
           required: true
-          description: 'The name of the rishi. Wildcard characters allowed, for example *mitra'
+          description: 'The Sanskrit word transliterated into English, for example, rajan. Wildcards allowed; example: *aj*.'
       responses:
         '200':
-          description: 'Verses fetched successfully.'
+          description: 'Word meaning fetched successfully.'
         '401':
           description: 'You need an authentication key.'
         '404':
-          description: 'No such rishi composed anything that went into the Rig Veda.'
-  /sungbycategory:
+          description: 'No such word exists in the database.'
+      x-code-samples:
+        responseBody:
+          content: 
+            '- word: rajan
+               nagari: राजन
+               description: king
+               category: royalty'  
+  /description:
     get:
-      summary: 'Fetch all verses composed by a specific category of beings'
+      summary: 'Fetch all meanings that contain a specific string'
       parameters:
         - in: query
-          name: sungbycategory
+          name: description
           type: string
-          enum:
-            - animal
-            - demon male
-            - divine female
-            - divine male
-            - human female
-            - human male
           required: true
-          description: 'Click to select from the list.'
+          description: 'The string you are looking for in the word meaning, for example, chariot. Wildcards allowed; example: char*.'
       responses:
         '200':
-          description: 'Verses fetched successfully.'
+          description: 'Words fetched successfully.'
         '401':
           description: 'You need an authentication key.'
         '404':
-          description: 'No such poet category exists in this API.'
-  /sungfor:
+          description: 'This string does not exist in the database.'
+  /category:
     get:
-      summary: 'Fetch all verses addressed to a specific god, goddess, or object'
+      summary: 'Fetch all words in a specific category'
       parameters:
         - in: query
-          name: sungfor
-          type: string
-          required: true
-          description: 'The name of the god, goddess, or object. Wildcard characters allowed, for example *dra'
-      responses:
-        '200':
-          description: 'Verses fetched successfully.'
-        '401':
-          description: 'You need an authentication key.'
-        '404':
-          description: 'No such god or thing had verses composed in their honour.'
-  /sungforcategory:
-    get:
-      summary: 'Fetch all verses composed for a specific category'
-      parameters:
-        - in: query
-          name: sungforcategory
+          name: category
           type: string
           enum:
-            - abstract
-            - animal
-            - demon male
-            - divine female
-            - divine human
-            - divine male
-            - human couple
-            - human female
-            - human male
-            - human unborn
-            - object
+            - grass
             - plant
+            - tree
+            - animal
+            - bird
+            - cattle
+            - fish
+            - insect
+            - snake
+            - worm
+            - building
+            - chariot
+            - food
+            - grain
+            - metal
+            - object
+            - ship
+            - weapon
+            - war
+            - number
+            - distance
+            - time
+            - weight
+            - mountain
+            - place
+            - river
+            - astronomy
+            - disease
+            - literature
+            - medicine
+            - poison
+            - subject
+            - dicing
+            - games
+            - music
+            - clothing
+            - hair
+            - ornament
+            - law
+            - morals
+            - agriculture
+            - caste
+            - family
+            - occupation
+            - priest
+            - royalty
+            - trade
+            - tribe
           required: true
-          description: 'Click to select from the list.'
+          description: 'Click to select from a list'
       responses:
         '200':
-          description: 'Verses fetched successfully.'
+          description: 'Words fetched successfully.'
         '401':
           description: 'You need an authentication key.'
         '404':
           description: 'No such category exists in this API.'
-  /meter:
-    get:
-      summary: 'Fetch all verses composed in a specific meter'
-      parameters:
-        - in: query
-          name: meter
-          type: string
-          required: true
-          description: 'The name of the meter. Wildcard characters allowed, for example *tri'
-      responses:
-        '200':
-          description: 'Verses fetched successfully.'
-        '401':
-          description: 'You need an authentication key.'
-        '404':
-          description: 'Rig Veda does not have any verses in that meter.'
