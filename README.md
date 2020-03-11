@@ -18,18 +18,21 @@ As of now, two APIs are available:
 
 ## How to use
 
-A rough-and-ready reference documentation is at:
+Rough-and-ready reference documentation is at:
 
+- [rv YAML](https://raw.githack.com/AninditaBasu/indica/master/rv_SDKs/rv_redoc.html)
+- [vs YAML](https://raw.githack.com/AninditaBasu/indica/master/vs_SDKs/vs_redoc.html)
 
-
-A fuller documentation is at https://aninditabasu.github.io/indica/. 
+A fuller documentation is at [Indica documentation](https://aninditabasu.github.io/indica/). 
 
 For an interactive demo (no need to clone or download this repo to see the demo :slightly_smiling_face:):
 
 1.  Go to https://mybinder.org/repo/AninditaBasu/indica.
 2.  Click an `ipynb` file on that page. 
 
-What can you do with this data, you ask? A sample app that uses this data is at [https://pesha.herokuapp.com/](https://pesha.herokuapp.com/). Am sure you'll have your own ideas too. The APIs are available through `GET` calls over `HTTPS`, and return data in `JSON` or `XML`. You can programmatically process the data to make visually appealing or easily consumable information.
+What can you do with this data, you ask? A sample app that uses this data is at [https://pesha.herokuapp.com/](https://pesha.herokuapp.com/). Am sure you'll have your own ideas too. 
+
+The APIs are available through `GET` calls over `HTTPS`, and return data in `JSON` or `XML`. You can programmatically process the data to make visually appealing or easily consumable information.
 
 > If you build an app with these APIs, please let me know. I'll include your implementation on a `Gallery` page in the documentation, and also include it under `Showcase` on this page.
 
