@@ -3,8 +3,11 @@ info:
   description: 'This API returns data regarding the descriptions of almost all nouns in vedic literature. The results are JSON objects that contain the word transliterated to roman, the word in nagari, the meaning of the word, and the category the word belongs to.'
   title: vs API
   version: '1.1'
+  x-logo:
+    url: 'https://AninditaBasu.github.io/images/indica.png'
+    altText: 'Indica logo'
   license:
-    name: 'Distributed under the MIT license'
+    name: 'MIT License'
     url: 'https://opensource.org/licenses/MIT'
   contact:
     email: 'ab.techwriter@gmail.com'
@@ -39,10 +42,10 @@ paths:
         '401':
           description: 'You need an authentication key.'
         '404':
-          description: 'No such word exists in the database.' 
+          description: 'No such word exists in the database.'
   /description:
     get:
-      summary: 'Fetch all meanings that contain a specific English word'
+      summary: 'Fetch all meanings that contain a specific English string'
       parameters:
         - in: query
           name: description
