@@ -26,36 +26,29 @@ paths:
           description: 'The API needs an authentication key.'
   /word:
     get:
-      summary: 'Fetch the meaning of a specific word'
+      summary: 'Fetch the meaning of a specific Sanskrit word'
       parameters:
         - in: query
           name: word
           type: string
           required: true
-          description: 'The Sanskrit word transliterated into English, for example, rajan. Wildcards allowed; example: *aj*.'
+          description: 'The Sanskrit word transliterated into English, for example, rajan. Wildcards are allowed, for example, \*aj\*.'
       responses:
         '200':
           description: 'Word meaning fetched successfully.'
         '401':
           description: 'You need an authentication key.'
         '404':
-          description: 'No such word exists in the database.'
-      x-code-samples:
-        responseBody:
-          content: 
-            '- word: rajan
-               nagari: राजन
-               description: king
-               category: royalty'  
+          description: 'No such word exists in the database.' 
   /description:
     get:
-      summary: 'Fetch all meanings that contain a specific string'
+      summary: 'Fetch all meanings that contain a specific English word'
       parameters:
         - in: query
           name: description
           type: string
           required: true
-          description: 'The string you are looking for in the word meaning, for example, chariot. Wildcards allowed; example: char*.'
+          description: 'The string you are looking for in the word meaning, for example, chariot. Wildcards are allowed, for example, char\*.'
       responses:
         '200':
           description: 'Words fetched successfully.'
