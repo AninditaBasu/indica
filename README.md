@@ -42,7 +42,7 @@ The APIs are openly available through `GET` calls over `HTTPS`, and return data 
 What can you do with this data, you ask? This repo contains the code for two sample apps:
 
 - `tarzezindagi.py`, a fun app for vedic career advice. Clone this repo and run the code locally to see the app in function (I ran out of free Heroku hours to host it).
-- `life.py`, an app that introduces a fictional child from the vedic times. Here's a hosted version on Heroku.
+- `life.py`, an app that introduces a fictional child from the vedic times. Here's a Heroku-hosted version as [Life in ancient India](https://life-ancient-india.herokuapp.com/).
  
 Am sure you'll have your own ideas too. 
 

@@ -285,4 +285,7 @@ def first_page():
     return render_template('life.html', sungby1=sungby1, sungby2=sungby2, sungby3=sungby3, animal=animal, animal_en=animal_en, animal_desc=animal_desc, building=building, building_en=building_en, building_desc=building_desc, clothing=clothing, clothing_en=clothing_en, clothing_desc=clothing_desc, distance=distance, distance_en=distance_en, distance_desc=distance_desc, ornament=ornament, ornament_en=ornament_en, ornament_desc=ornament_desc, games=games, games_en=games_en, games_desc=games_desc, subject=subject, subject_en=subject_en, subject_desc=subject_desc, grass=grass, grass_en=grass_en, grass_desc=grass_desc, grain=grain, grain_en=grain_en, grain_desc=grain_desc, literature=literature, literature_en=literature_en, literature_desc=literature_desc, metal=metal, metal_en=metal_en, metal_desc=metal_desc, object=object, object_en=object_en, object_desc=object_desc, occupation=occupation, occupation_en=occupation_en, occupation_desc=occupation_desc, place=place, place_en=place_en, place_desc=place_desc, plant=plant, plant_en=plant_en, plant_desc=plant_desc, river=river, river_en=river_en, river_desc=river_desc, time=time, time_en=time_en, time_desc=time_desc, tree=tree, tree_en=tree_en, tree_desc=tree_desc, weight=weight, weight_en=weight_en, weight_desc=weight_desc, number1=number1, number2=number2, number3=number3, number4=number4, number5=number5)
 
 
-app.run()
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port)
+	#app.run()
