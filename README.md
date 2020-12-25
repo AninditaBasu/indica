@@ -1,5 +1,7 @@
 # the Indica APIs
 
+![GitHub Pipenv locked dependency version](https://img.shields.io/github/pipenv/locked/dependency-version/AninditaBasu/indica/flask) ![GitHub Pipenv locked dependency version](https://img.shields.io/github/pipenv/locked/dependency-version/AninditaBasu/indica/gunicorn) ![GitHub Pipenv locked dependency version](https://img.shields.io/github/pipenv/locked/dependency-version/AninditaBasu/indica/requests)
+
 As of now, two APIs are available: 
 
 - `rv`: Data about the gods and poets, their categories, and poem meters used in all of the Rig Veda verses
@@ -8,39 +10,47 @@ As of now, two APIs are available:
 <hr/>
 
 ## Contents
+-  [Documentaion](#documentation)
 -  [How to use](#how-to-use)
 -  [Showcase](#showcase)
 -  [How to contribute](#how-to-contribute)
 -  [Resources](#resources)
--  [Plans](#plans)
+-  [Plans](#plans-for-indica)
 
 <hr/>
 
-## How to use
+## Documentation
 
-Rough-and-ready reference documentation is at:
+API reference documentation is at:
 
 - [rv YAML](https://raw.githack.com/AninditaBasu/indica/master/rv_SDKs/rv_redoc.html)
 - [vs YAML](https://raw.githack.com/AninditaBasu/indica/master/vs_SDKs/vs_redoc.html)
 
-A fuller documentation is at [Indica documentation](https://aninditabasu.github.io/indica/). 
+Detailed documentation is at [Indica documentation](https://aninditabasu.github.io/indica/). 
 
-For an interactive demo (no need to clone or download this repo to see the demo :slightly_smiling_face:):
+## How to use
+
+For an interactive demo:
 
 1.  Go to https://mybinder.org/repo/AninditaBasu/indica.
 2.  Click an `ipynb` file on that page. 
-
-What can you do with this data, you ask? A sample app that uses this data is at [https://pesha.herokuapp.com/](https://pesha.herokuapp.com/). Am sure you'll have your own ideas too. 
 
 The APIs are available through `GET` calls over `HTTPS`, and return data in `JSON` or `XML`. You can programmatically process the data to make visually appealing or easily consumable information.
 
 > If you build an app with these APIs, please let me know. I'll include your implementation on a `Gallery` page in the documentation, and also include it under `Showcase` on this page.
 
+What can you do with this data, you ask? This repo contains the code for two sample apps:
+
+- `tarzezindagi.py`, a fun app for vedic career advice. Clone this repo and run the code locally to see it.
+- `life.py`, an app that introduces a fictional child from the vedic times. Here's a hosted version.
+ 
+Am sure you'll have your own ideas too. 
+
 ## Showcase
 
-- [Vedic Career Advice app](https://pesha.herokuapp.com/) (`tarzezindagi.py`)  ![GitHub Pipenv locked dependency version](https://img.shields.io/github/pipenv/locked/dependency-version/AninditaBasu/indica/flask) ![GitHub Pipenv locked dependency version](https://img.shields.io/github/pipenv/locked/dependency-version/AninditaBasu/indica/gunicorn) ![GitHub Pipenv locked dependency version](https://img.shields.io/github/pipenv/locked/dependency-version/AninditaBasu/indica/requests)
-
-- _Your app goes here..._
+- [Vedic Career Advice](tarzezindagi.py)  
+- [Intro by an ancient ancestor](life.py)
+- _...Link to your app or implementation goes here..._
 
 ## How to contribute
 
@@ -62,8 +72,8 @@ All interactions in this repository are supposed to follow the [code of conduct]
 
 Client libraries are in the folders with the `_SDKs` suffix. These SDKs are generated automatically through Swagger and do not work on their own; you need to create an application that will use the SDK to make API calls. To get started, see the `README.md` file in the SDK. If an SDK in the language of your choice is not included here, you can use the `.yaml` files in `_SDKs` folders to generate one through https://editor.swagger.io.
 
-## Plans
+## Plans for Indica
 
 - [ ] Turn the edicts of Asoka into an API
 - [ ] Turn the Arthashastra into an API
-- [ ] Shall we do a [Mahabharat API](https://dev.to/aninditabasu/building-a-chatbot-with-the-ramp-stack-part-2-designing-the-database-131e) as well?
+- [ ] Shall we do a Mahabharat API as well? An info-bot is up at [MBverse](https://mb-verse.herokuapp.com/).

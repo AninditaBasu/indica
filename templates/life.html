@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="../static/bootstrap.min.css">
+
+<meta name="description" content="A demo app that pulls data from the Indica APIs to show what life in the vedic times was like">
+<meta name="robots" content="index, follow">
+<meta name="googlebot" content="index, follow">
+
+<meta name="twitter:url" content="https://pesha.herokuapp.com/">
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:site" content="@anindita_basu"/>
+<meta name="twitter:title" content="Child of ancient India" />
+<meta name="twitter:description" content="This is what my life's like"/>
+
+<title>A peek into {{ sungby1}}'s world, ancient India, circa 3200 BC</title>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Meet {{ sungby1 }}</h1>
+
+<h2>&nbsp;</h2>
+
+    <p>My name is {{ sungby1 }}, and I live in this <abbr title = "{{building}}, {{building_desc}}">{{ building_en }}</abbr>. I am studying to become a <abbr title = "{{occupation}}, {{occupation_desc}}">{{ occupation_en }}</abbr>, but this has resulted in my living almost {{ number1 }} <abbr title = "{{distance}}, {{distance_desc}}">{{ distance_en }}</abbr> away from my family. I miss home. Our house stands beside a <abbr title = "{{place}}, {{place_desc}}">{{ place_en }}</abbr> on the banks of the <abbr title = "{{river}}, {{river_desc}}">{{ river_en }}</abbr>. A thicket of <abbr title = "{{tree}}, {{tree_desc}}">{{ tree_en }}</abbr> trees surrounds the house, and a path lined with <abbr title = "{{grass}}, {{grass_desc}}">{{ grass_en }}</abbr> leads the way to the market, where my father sells <abbr title = "{{metal}}, {{metal_desc}}">{{ metal_en }}</abbr>, <abbr title = "{{object}}, {{object_desc}}">{{ object_en }}</abbr>, <abbr title = "{{ornament}}, {{ornament_desc}}">{{ ornament_en }}</abbr>, and <abbr title = "{{clothing}}, {{clothing_desc}}">{{ clothing_en }}</abbr>. We make enough money to be able to sponsor the <abbr title = "{{games}}, {{games_desc}}">{{ games_en }}</abbr> tournament that's held every {{ number2 }} <abbr title = "{{time}}, {{time_desc}}">{{ time_en }}</abbr> in the village.  If you're ever travelling through my village, please stop by my home and say Hello to my pet <abbr title = "{{animal}}, {{animal_desc}}">{{ animal_en }}</abbr>, whose name is {{ sungby2 }} and who devours about {{ number3 }} <abbr title = "{{weight}}, {{weight_desc}}">{{ weight_en }}</abbr> of <abbr title = "{{plant}}, {{plant_desc}}">{{ plant_en }}</abbr> every day.</p>
+
+    <p>It was nice talking with you, but let me now return to my <abbr title = "{{subject}}, {{subject_desc}}">{{ subject_en }}</abbr> and <abbr title = "{{literature}}, {{literature_desc}}">{{ literature_en }}</abbr> studies. Else, my teacher might think I'm wasting my time and set some hard task for me. For example, just {{ number4 }} days ago, my friend {{ sungby3 }} was ordered to collect {{ number5 }} <abbr title = "{{grain}}, {{grain_desc}}">{{ grain_en }}</abbr>, all within a day. I don't want to have to do something difficult like that.</p>
+
+    <p> So long then, and hoping we meet again soon.</p>
+
+<hr/>
+
+<h2>Reference</h2>
+
+<dl>
+    <dt>{{building_en}}</dt>
+    <dd>{{building}}, {{building_desc}}</dd>
+    <dt>{{ occupation_en }}</dt>
+    <dd>{{occupation}}, {{occupation_desc}}</dd>
+    <dt>{{ distance_en }}</dt>
+    <dd>{{distance}}, {{distance_desc}}</dd>
+    <dt>{{ place_en }}</dt>
+    <dd> {{place}}, {{place_desc}}</dd>
+    <dt>{{ river_en }}</dt>
+    <dd> {{river}}, {{river_desc}}</dd>
+    <dt>{{ tree_en }}</dt>
+    <dd>{{tree}}, {{tree_desc}}</dd>
+    <dt>{{ grass_en }}</dt>
+    <dd>{{grass}}, {{grass_desc}}</dd>
+    <dt>{{ metal_en }}</dt>
+    <dd>{{metal}}, {{metal_desc}}</dd>
+    <dt>{{ object_en }}</dt>
+    <dd>{{object}}, {{object_desc}}</dd>
+    <dt>{{ ornament_en }}</dt>
+    <dd>{{ornament}}, {{ornament_desc}}</dd>
+    <dt>{{ clothing_en }}</dt>
+    <dd>{{clothing}}, {{clothing_desc}}</dd>
+    <dt>{{ games_en }}</dt>
+    <dd>{{games}}, {{games_desc}}</dd>
+    <dt>{{ time_en }}</dt>
+    <dd>{{time}}, {{time_desc}}</dd>
+    <dt>{{ animal_en }}</dt>
+    <dd>{{animal}}, {{animal_desc}}</dd>
+    <dt>{{ weight_en }}</dt>
+    <dd>{{weight}}, {{weight_desc}}</dd>
+    <dt>{{ plant_en }}</dt>
+    <dd>{{plant}}, {{plant_desc}}</dd>
+    <dt>{{ subject_en }}</dt>
+    <dd>{{subject}}, {{subject_desc}}</dd>
+    <dt>{{ literature_en }}</dt>
+    <dd>{{literature}}, {{literature_desc}}</dd>
+    <dt>{{ grain_en }}</dt>
+    <dd>{{grain}}, {{grain_desc}}</dd>
+</dl>
+
+<hr/>
+
+<footer class="small">
+<div class="row">
+  <div class="col text-center">Coded in Python and hosted on Heroku.<br/>&copy; <a href = "http://aninditabasu.github.io/">Anindita Basu</a></div>
+</div>
+</footer>
+
+</div>
+
+</body>
+
+</html>
