@@ -1,1 +1,1 @@
-web: gunicorn tarzezindagi:app
+web: gunicorn life:app

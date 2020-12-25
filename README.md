@@ -35,21 +35,21 @@ For an interactive demo:
 1.  Go to https://mybinder.org/repo/AninditaBasu/indica.
 2.  Click an `ipynb` file on that page. 
 
-The APIs are available through `GET` calls over `HTTPS`, and return data in `JSON` or `XML`. You can programmatically process the data to make visually appealing or easily consumable information.
+The APIs are openly available through `GET` calls over `HTTPS`, and return data in the `JSON` format. You can programmatically process the data to make visually appealing or easily consumable information.
 
 > If you build an app with these APIs, please let me know. I'll include your implementation on a `Gallery` page in the documentation, and also include it under `Showcase` on this page.
 
 What can you do with this data, you ask? This repo contains the code for two sample apps:
 
-- `tarzezindagi.py`, a fun app for vedic career advice. Clone this repo and run the code locally to see it.
-- `life.py`, an app that introduces a fictional child from the vedic times. Here's a hosted version.
+- `tarzezindagi.py`, a fun app for vedic career advice. Clone this repo and run the code locally to see the app in function (I ran out of free Heroku hours to host it).
+- `life.py`, an app that introduces a fictional child from the vedic times. Here's a hosted version on Heroku.
  
 Am sure you'll have your own ideas too. 
 
 ## Showcase
 
 - [Vedic Career Advice](tarzezindagi.py)  
-- [Intro by an ancient ancestor](life.py)
+- [Intro by an ancient child](life.py)
 - _...Link to your app or implementation goes here..._
 
 ## How to contribute
@@ -64,13 +64,15 @@ Thank you for wanting to help with this project :heart:
 
 - :tada: Built an app with these APIs? Open an issue to ask it to be showcased in the docs.
 
-The to-do list is organised through labels; therefore, when opening an issue, tag it with the appropriate label (but please just stick to the ones already on the list; don't create any :smiley:).
+The to-do list is organised through labels; therefore, when opening an issue, tag it with the appropriate label (but please just stick to the ones already on the list; don't create any more :smiley:).
 
 All interactions in this repository are supposed to follow the [code of conduct](code-of-conduct.md), please.
 
 ## Resources
 
 Client libraries are in the folders with the `_SDKs` suffix. These SDKs are generated automatically through Swagger and do not work on their own; you need to create an application that will use the SDK to make API calls. To get started, see the `README.md` file in the SDK. If an SDK in the language of your choice is not included here, you can use the `.yaml` files in `_SDKs` folders to generate one through https://editor.swagger.io.
+
+If something doesn't work or is broken, it might be that I didn't update something. The latest documentation is at [Indica](https://aninditabasu.github.io/indica/); head over there and RTFM?
 
 ## Plans for Indica
 
