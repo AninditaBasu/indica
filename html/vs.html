@@ -117,8 +117,8 @@
 
 <div id = "base">
 <h2>Endpoint</h2>
-<p><code>https://sheetlabs.com/IND/vs</code></p>
-<p>The default response format is JSON. To get the response in an XML format, use <code>https://sheetlabs.com/IND/vs.xml</code> as the endpoint.</p>
+<p><code>https://api-vs.herokuapp.com/vs/v1/</code></p>
+<p>The response format is JSON.</p>
 <hr/>
 </div><!-- /base -->
 
@@ -145,28 +145,29 @@
 
 <div id = "resources">
 <h2>Resources</h2>
-<p>The <code>GET</code> calls are served over <code>HTTPS</code>. The following resources are available:</p>
+<p>The <code>GET</code> calls are served over <code>HTTPS</code>. The following string resources are available:</p>
 <ul>
-<li><code>word</code>: The noun, in Sanskrit, transliterated into the roman script. For example, <samp>agnishala</samp>.</li>
-<li><code>nagari</code>: The noun, in the Nagari script. For example, <samp>आल</samp>.</li>
-<li><code>description</code>: The description of the noun. For example, <samp>boa constrictor, mentioned in the list of victims at the ashwamedh (horse sacrifice)</samp>.</li>
-<li><code>category</code>: The category the noun belongs to. For example, <samp>disease</samp>. The following categories are available:
+<li><code>word</code>: The noun, in Sanskrit, transliterated into the roman script, for example, <code>agnishala</code>. Filtering is like this: <code>/resources?word=&lt;string&gt;</code>. For example, <code>/resources?word=shat</code> returns all words that contain <code>shat</code>, for example, kshatriya, prishat, or shatapati.</li>
+<li><code>nagari</code>: The noun, in the Nagari script, for example, <code>आल</code>. You cannot filter on this resource.</li>
+<li><code>description</code>: The description of the noun, for example, <code>boa constrictor, mentioned in the list of victims at the ashwamedh (horse sacrifice)</code>.  Filtering is like this: <code>/resources?description=&lt;string&gt;</code>. For example, <code>/resources?description=horse</code> returns all descriptions that contain the word <code>horse</code>.</li>
+<li><code>category</code>: The category the noun belongs to, for example, <code>disease</code>. The following categories are available:
 <ul>
-<li>Flora: <samp>grass</samp>, <samp>plant</samp>, <samp>tree</samp></li>
-<li>Fauna: <samp>animal</samp>, <samp>bird</samp>, <samp>cattle</samp>, <samp>fish</samp>, <samp>insect</samp>, <samp>snake</samp>, <samp>worm</samp></li>
-<li>Things: <samp>building</samp>, <samp>chariot</samp>, <samp>food</samp>, <samp>grain</samp>, <samp>metal</samp>, <samp>object</samp>, <samp>ship</samp>, <samp>weapon</samp>, <samp>war</samp></li>
-<li>Measurements: <samp>number</samp>, <samp>distance</samp>, <samp>time</samp>, <samp>weight</samp></li>
-<li>Geography: <samp>mountain</samp>, <samp>place</samp>, <samp>river</samp></li>
-<li>Knowledge: <samp>astronomy</samp>, <samp>disease</samp>, <samp>literature</samp>, <samp>medicine</samp>, <samp>poison</samp>, <samp>subject</samp></li>
-<li>Entertainment: <samp>dicing</samp>, <samp>games</samp>, <samp>music</samp></li>
-<li>Toilette: <samp>clothing</samp>, <samp>hair</samp>, <samp>ornament</samp></li>
-<li>Legal: <samp>law</samp>, <samp>morals</samp></li>
-<li>Societal: <samp>agriculture</samp>, <samp>caste</samp>, <samp>family</samp>, <samp>occupation</samp>, <samp>priest</samp>, <samp>royalty</samp>, <samp>trade</samp>, <samp>tribe</samp></li>
+<li>Flora: <code>grass</code>, <code>plant</code>, <code>tree</code></li>
+<li>Fauna: <code>animal</code>, <code>bird</code>, <code>cattle</code>, <code>fish</code>, <code>insect</code>, <code>snake</code>, <code>worm</code></li>
+<li>Things: <code>building</code>, <code>chariot</code>, <code>food</code>, <code>grain</code>, <code>metal</code>, <code>object</code>, <code>ship</code>, <code>weapon</code>, <code>war</code></li>
+<li>Measurements: <code>number</code>, <code>distance</code>, <code>time</code>, <code>weight</code></li>
+<li>Geography: <code>mountain</code>, <code>place</code>, <code>river</code></li>
+<li>Knowledge: <code>astronomy</code>, <code>disease</code>, <code>literature</code>, <code>medicine</code>, <code>poison</code>, <code>subject</code></li>
+<li>Entertainment: <code>dicing</code>, <code>games</code>, <code>music</code></li>
+<li>Toilette: <code>clothing</code>, <code>hair</code>, <code>ornament</code></li>
+<li>Legal: <code>law</code>, <code>morals</code></li>
+<li>Societal: <code>agriculture</code>, <code>caste</code>, <code>family</code>, <code>occupation</code>, <code>priest</code>, <code>royalty</code>, <code>trade</code>, <code>tribe</code></li>
 </ul>
+Filtering is like this: <code>/resources?category=&lt;string&gt;</code>. For example, <code>/resources?category=clothing</code> returns all nouns that are tagged as clothing. A noun can belong to more than one category. For example, <code>aj</code> is both an <code>animal</code> and the name of a <code>tribe</code>.
 </li>
 </ul>
-<p>All of these resources are string resources. Filtering is allowed on all resources except <code>nagari</code>. You can use partial values for filtering.  For example, <code>https://sheetlabs.com/IND/vs?word=raj*</code> returns all nouns that begin with <samp>raj</samp>. 
-<p>A noun can belong to more than one category. For example, <samp>aj</samp> is both an <samp>animal</samp> and the name of a <samp>tribe</samp>.</p>
+<p>Filtering on more than one parameter in a single API request is not supported. Filtering on the <code>nagari</code> resource is not supported.</p>
+<p></p>
 <hr/>
 </div><!-- /resources -->
 
@@ -184,7 +185,7 @@
 
 </div><!-- /.container -->
 
-<p class = "footer">&copy; 2018 <span class = "pull-right"><a href ="https://twitter.com/anindita_basu" target = "_blank" style = "color:#777">Contact</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href = "../sitemap.html" target = "_blank" style = "color:#777">Sitemap</a></span></p>
+<p class = "footer">&copy; 2018 - 2021 <span class = "pull-right"><a href ="https://twitter.com/anindita_basu" target = "_blank" style = "color:#777">Contact</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href = "../sitemap.html" target = "_blank" style = "color:#777">Sitemap</a></span></p>
 
 </div><!-- ./wrapper -->
    

@@ -117,8 +117,8 @@
 
 <div id = "base">
 <h2>Endpoint</h2>
-<p><code>https://sheetlabs.com/IND/rv</code></p>
-<p>The default response format is JSON. To get the response in an XML format, use <code>https://sheetlabs.com/IND/rv.xml</code> as the endpoint.</p>
+<p><code>https://api-rv.herokuapp.com/rv/v1</code></p>
+<p>The response format is JSON.</p>
 <hr/>
 </div><!-- /base -->
 
@@ -162,15 +162,16 @@
 <h2>Resources</h2>
 <p>The <code>GET</code> calls are served over <code>HTTPS</code>. The following resources are available:</p>
 <ul>
-<li><code>mandal</code>: The mandal number for the verse. For example, <samp>7</samp>.<br/>
-This is an integer resource. Filtering is allowed, and you can use ranges, for example, <samp>1..2</samp> returns all of the verses in the first and second mandals.<br/>
+<li><code>mandal</code>: The mandal number for the verse. For example, <code>7</code>.<br/>
+This is an integer resource. Filtering is like this: <code>/resources?mandal=&lt;number&gt;</code>. For example, <code>/resources?mandal=4</code> returns all of the verses in the 4th book.<br/>
 Valid values for this resource are 1 through 10 (because there are only 10 mandals in the Rig Veda).</li>
-<li><code>sukta</code>: The sukta number for the verse. For example, <samp>136</samp>.<br/>
-This is an integer resource. Filtering is allowed, and you can use ranges, for example, <samp>sukta=10..20</samp> returns all of the suktas numbered between 10 and 20 (both inclusive) from all of the 10 mandals.<br/>
-The number of suktas in each mandal is different; for example, mandal 10 contains 59 suktas. The highest value possible for this resource is 191 (which is the number in the 1st mandal).</li>
-<li><code>sungby</code>: The composer of the verse. For example, <samp>Vishwamitra</samp>.<br/>
-This is a string resource. Filtering is allowed, and partial values can be used. For example <samp>*aindra</samp> returns all of the verses composed by anyone whose name ends with <samp>aindra</samp>.</li>
-<li><code>sungbycategory</code>: The category that composer of the verse belongs to. For example, <samp>human male</samp>. The following categories are available:
+<li><code>sukta</code>: The sukta number for the verse. For example, <code>136</code>.<br/>
+This is an integer resource. Filtering is like this: <code>/resources?sukta=&lt;number&gt;</code>.  For example, <code>/resources?sukta=23</code> returns all of the suktas numbered 23 from all of the 10 books.<br/>
+The number of suktas in each book is different; for example, mandal 10 contains 59 suktas. The highest value possible for this resource is 191 (which is the number in the 1st mandal).</li>
+<li><code>sungby</code>: The composer of the verse. For example, <code>Vishwamitra</code>.<br/>
+This is a string resource. Filtering is like this: <code>/resources?sungby=&lt;string&gt;</code>. For example, <code>/resources?sungby=tra</code> returns all composers whose name contains <code>tra</code>.</li>
+<li><code>sungbycategory</code>: The category that composer of the verse belongs to. For example, <code>human male</code>.<br/>
+The following categories are available:
 	<ul>
 	<li>animal</li>
 	<li>demon male</li>
@@ -179,9 +180,10 @@ This is a string resource. Filtering is allowed, and partial values can be used.
 	<li>human female</li>
 	<li>human male</li>	
 	</ul>
-This is a string resource. Filtering is allowed, and partial values can be used. For example <samp>*ale</samp> returns all of the verses composed by all human and divine males and females.</li>
-<li><code>sungfor</code>: The god, person, or thing that the verse is composed for. For example, <samp>Agni</samp> or <samp>plough</samp>.<br/>This is a string resource. Filtering is allowed, and partial values can be used.</li>
-<li><code>sungforcategory</code>: The category that the subject of the verse belongs. For example, <samp>object</samp>. The following categories are available:
+This is a string resource. Filtering is like this: <code>/resources?sungbycategory=&lt;string&gt;</code>. For example <code>/resources?sungbycategory=ale</code> returns all of the verses composed by all males and females, whether human or divine.</li>
+<li><code>sungfor</code>: The god, person, or thing that the verse is composed for. For example, <code>Agni</code> or <code>plough</code>.<br/>This is a string resource. Filtering is like this: <code>/resources?sungfor=&lt;string&gt;</code>. For example, <code>/resources?sungfor=ni</code> returns all venerated beings or objects whose name contains <code>ni</code>, like Nirriti (god), Maitravaruni (human) or Sinivali (abstract thing).</li>
+<li><code>sungforcategory</code>: The category that the subject of the verse belongs. For example, <code>object</code>.<br/>
+The following categories are available:
 	<ul>
 	<li>abstract</li>
 	<li>animal</li>
@@ -196,11 +198,11 @@ This is a string resource. Filtering is allowed, and partial values can be used.
 	<li>object</li>
 	<li>plant</li>
 	</ul>
-This is a string resource. Filtering is allowed, and partial values can be used.</li>
-<li><code>meter</code>: The meter that the verse is composed in. For example, <samp>Trishtubh</samp>.<br/>
-This is a string resource. Filtering is allowed, and partial values can be used.</li>
+This is a string resource. Filtering is like this: <code>/resources?sungforcategory=&lt;string&gt;</code>.  For example <code>/resources?sungforcategory=animal</code> returns all animals.</li>
+<li><code>meter</code>: The meter that the verse is composed in. For example, <code>Trishtubh</code>.<br/>
+This is a string resource.  Filtering is like this: <code>/resources?meter=&lt;string&gt;</code>.  For example <code>/resources?meter=tup</code> returns all meters that contain <code>tup</code>, such as Anushtup and Trishtup.</li>
 </ul>
-<p>To filter results, you can use more than one resource, separated by an ampersand (<code>&amp;</code>), for example, <code>https://sheetlabs.com/IND/rv?mandal=10&meter=gayatri&sungby=*dra</code>.</p>
+<p>Filtering on more than one parameter in a single API request is not supported.</p>
 <hr/>
 </div><!-- /resources -->
 
@@ -218,7 +220,7 @@ This is a string resource. Filtering is allowed, and partial values can be used.
 
 </div><!-- /.container -->
 
-<p class = "footer">&copy; 2018 <span class = "pull-right"><a href ="https://twitter.com/anindita_basu" target = "_blank" style = "color:#777">Contact</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href = "../sitemap.html" target = "_blank" style = "color:#777">Sitemap</a></span></p>
+<p class = "footer">&copy; 2018 - 2021 <span class = "pull-right"><a href ="https://twitter.com/anindita_basu" target = "_blank" style = "color:#777">Contact</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href = "../sitemap.html" target = "_blank" style = "color:#777">Sitemap</a></span></p>
 
 </div><!-- ./wrapper -->
    
