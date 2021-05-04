@@ -19,12 +19,7 @@ As of now, the following two APIs are available:
 
 ## Documentation
 
-API reference documentation is at:
-
-- [rv YAML](https://raw.githack.com/AninditaBasu/indica/master/rv_SDKs/rv_redoc.html)
-- [vs YAML](https://raw.githack.com/AninditaBasu/indica/master/vs_SDKs/vs_redoc.html)
-
-Detailed documentation is at [Indica documentation](https://aninditabasu.github.io/indica/). 
+See [Indica documentation](https://aninditabasu.github.io/indica/). 
 
 ## How to use
 
@@ -68,7 +63,7 @@ All interactions in this repository are supposed to follow the [code of conduct]
 
 ## Resources
 
-Client libraries are in the folders with the `_SDKs` suffix. These SDKs are generated automatically through Swagger and do not work on their own; you need to create an application that will use the SDK to make API calls. To get started, see the `README.md` file in the SDK. If an SDK in the language of your choice is not included here, you can use the `.yaml` files in `_SDKs` folders to generate one through https://editor.swagger.io.
+Use the `.yaml` files in the `_SDKs` folders to generate a client library in a language of your choice. SDKs in several languages can be generated at https://editor.swagger.io with these `.yaml` files. Remember, though, that the SDK wouldn't work on its own; you need to create an application that will use the SDK to make API calls.
 
 If something doesn't work or is broken, it might be that I didn't update it. The latest documentation is at [Indica](https://aninditabasu.github.io/indica/); head over there and RTFM?
 
