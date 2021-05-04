@@ -9,12 +9,14 @@ info:
     # Authentication
     This is an open API.
     
-    # Rate limits
-    Total monthly calls are limited to 10,000.
+    # Try it out
+    This sandbox can be used to get data for only one kind of resource, that is, to fetch the data for a category being sung to.
+    
+    The remaining resources work a similar fashion. For details, see the reference documentation.
   title: rv API
-  version: '1.1'
+  version: '1.2'
   x-logo:
-    url: 'https://AninditaBasu.github.io/images/indica.png'
+    url: 'https://raw.githubusercontent.com/AninditaBasu/indica/gh-pages/favicon.ico'
     altText: 'Indica logo'
   license:
     name: 'Distributed under the MIT license'
@@ -24,96 +26,14 @@ info:
 externalDocs:
   description: 'Documentation'
   url: 'https://aninditabasu.github.io/indica/'
-host: sheetlabs.com
+host: api-rv.herokuapp.com
 schemes:
   - https
-basePath: /IND/rv
+basePath: /rv/v1
 paths:
-  /:
+  /resources:
     get:
-      summary: 'Fetch all entries in this API'
-      responses:
-        '200':
-          description: 'Entries fetched'
-        '404':
-          description: 'No entry found'
-  /mandal:
-    get:
-      summary: 'Fetch all verses in a specific book (mandal)'
-      parameters:
-        - in: query
-          name: mandal
-          type: integer
-          enum:
-            - 1
-            - 2
-            - 3
-            - 4
-            - 5
-            - 6
-            - 7
-            - 8
-            - 9
-            - 10
-          required: true
-          description: 'Click to select the mandal number from the list.'
-      responses:
-        '200':
-          description: 'Verses fetched.'
-        '404':
-          description: 'No verses found.'
-  /sungby:
-    get:
-      summary: 'Fetch all verses composed by a specific rishi (poet)'
-      parameters:
-        - in: query
-          name: sungby
-          type: string
-          required: true
-          description: 'The name of the rishi. Wildcard characters allowed, for example \*mitra*'
-      responses:
-        '200':
-          description: 'Verses fetched.'
-        '404':
-          description: 'No such rishi composed anything that went into the Rig Veda.'
-  /sungbycategory:
-    get:
-      summary: 'Fetch all verses composed by a specific category of poets'
-      parameters:
-        - in: query
-          name: sungbycategory
-          type: string
-          enum:
-            - animal
-            - demon male
-            - divine female
-            - divine male
-            - human female
-            - human male
-          required: true
-          description: 'Click to select from the list.'
-      responses:
-        '200':
-          description: 'Verses fetched.'
-        '404':
-          description: 'No such poet category exists in this API.'
-  /sungfor:
-    get:
-      summary: 'Fetch all verses addressed to a specific god, human, or thing'
-      parameters:
-        - in: query
-          name: sungfor
-          type: string
-          required: true
-          description: 'The name of the god, goddess, or object. Wildcard characters allowed, for example \*dra*'
-      responses:
-        '200':
-          description: 'Verses fetched.'
-        '404':
-          description: 'No such god or thing have verses in the Rig Veda composed in their honour.'
-  /sungforcategory:
-    get:
-      summary: 'Fetch all verses composed for a specific category of god, human, or thing'
+      summary: 'Fetch all verses sung for a specific category of god, person, or object'
       parameters:
         - in: query
           name: sungforcategory
@@ -132,23 +52,9 @@ paths:
             - object
             - plant
           required: true
-          description: 'Click to select from the list.'
+          description: 'Click to select one of these available values.'
       responses:
         '200':
           description: 'Verses fetched.'
         '404':
-          description: 'No such category exists in this API.'
-  /meter:
-    get:
-      summary: 'Fetch all verses composed in a specific meter'
-      parameters:
-        - in: query
-          name: meter
-          type: string
-          required: true
-          description: 'The name of the meter. Wildcard characters allowed, for example \*tri*'
-      responses:
-        '200':
-          description: 'Verses fetched.'
-        '404':
-          description: 'Rig Veda does not have any verses in that meter.'
+          description: 'No verses found.'
