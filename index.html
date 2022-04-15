@@ -126,20 +126,21 @@
 
 <div class="well">
 <h1 class="page-header">The Vedic APIs</h1>
-<p class = "lead">All of the data in the Vedas, presented as JSON dictionaries through APIs</p>
+<p class = "lead">Vedic data as JSON dictionaries</p>
 </div><!-- /well -->
 
 <div id = "intro">
-<p>These APIs make available to you two kinds of data:</p>
+<p>The Vedic APIs make available to you two kinds of data:</p>
 <ul>
-<li>The gods and poets, their categories, and poem meters used in all of the Rig Veda verses</li>
-<li>The descriptions of all the  nouns (except proper nouns) mentioned in vedic literature</li>
+<li>Gods and poets, their categories, and poem meters of all the Rig Veda verses</li>
+<li>Descriptions of all nouns (except proper nouns) mentioned in all vedic literature</li>
 </ul>
 <p>Here is an example each from the two data sets:</p>
 <div class="table-responsive">
 <table>
 <tr>
 <td>
+<h4>The `rv` endpoint</h4>
 <pre>
 [
     {
@@ -156,6 +157,7 @@
 </td>
 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 <td>
+<h4>The `vs` endpoint</h4>
 <pre>
 [
     {
@@ -171,7 +173,6 @@
 </table>
 </div><!-- /table-responsive-->
 <p>You can programmatically process the data to make visually appealing or easily consumable information (see <a href = "./html/examples.html">Examples</a>).</p>
-<p>Here's the code for a <a href = "https://github.com/AninditaBasu/indica/blob/master/tarzezindagi.py">career advice app</a> made with these APIs. And here's a sample app for a fictional take on the <a href = "https://life-ancient-india.herokuapp.com/">life of a child in vedic times</a>.</p>
 <hr/>
 </div><!-- /intro -->
 
@@ -216,11 +217,11 @@
 </ul>
 </div><!-- /url  -->
 <div id = "parameters">
-<h3>Resources</h3>
-<p>The following resources are available:</p>
+<h3>Parameters</h3>
+<p>The endpoints must be suffixed with one of the following parameters:</p>
 <ul>
-<li><code>rv</code>: <code>mandal</code>, <code>sukta</code>, <code>sungby</code>, <code>sungbycategory</code>, <code>sungfor</code>, <code>sungforcategory</code>, and <code>meter</code></li>
-<li><code>vs</code>: <code>word</code>, <code>nagari</code>, <code>description</code>, and <code>category</code></li>
+<li>The <code>rv</code> endpoint: <code>mandal</code>, <code>sukta</code>, <code>sungby</code>, <code>sungbycategory</code>, <code>sungfor</code>, <code>sungforcategory</code>, and <code>meter</code></li>
+<li>The <code>vs</code> endpoint: <code>word</code>, <code>nagari</code>, <code>description</code>, and <code>category</code></li>
 </ul>
 <p>The mandals and suktas of the <code>rv</code> API are integers; the remaining parameters of the <code>rv</code> API and all of the parameters of the <code>vs</code> API are strings.</p>
 </div><!-- /parameters -->
