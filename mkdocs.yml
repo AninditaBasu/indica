@@ -5,7 +5,7 @@ copyright: '&copy; 2018-2022 Anindita Basu.'
 docs_dir: docs
 
 nav:
-- 'Overview': 'index.md'
+- 'Home': 'index.md'
 - API reference:
     - 'Rig Veda API': 'api_rv.md'
     - 'Vedic Society API': 'api_vs.md'

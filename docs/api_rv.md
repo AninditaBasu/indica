@@ -90,7 +90,7 @@ Querying on more than one parameter in a single API request is not supported. Fo
 	request(options, callback);
 	```
 
-## Example response
+### Example response
 
 ```json
 [
