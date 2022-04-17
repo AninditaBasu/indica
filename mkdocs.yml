@@ -1,0 +1,79 @@
+site_name: The Indica APIs
+site_description: Data from ancient India as JSON dictionaries
+copyright: '&copy; 2018-2022 Anindita Basu.'
+
+docs_dir: docs
+
+nav:
+- 'Overview': 'index.md'
+- API reference:
+    - 'Rig Veda API': 'api_rv.md'
+    - 'Vedic Society API': 'api_vs.md'
+- 'Examples': 'examples.md'
+
+extra:
+  social:
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/anindita_basu
+      name: Anindita on Twitter
+  analytics:
+    provider: google
+    property: UA-137483668-1
+
+# ===============================
+# mkdocs-material theme entries start here
+# https://squidfunk.github.io/mkdocs-material/getting-started/
+#
+theme:
+    name: material
+    language: en
+    favicon: assets/images/favicon.ico
+    custom_dir: overrides
+# mkdocs-material theme entries end here
+# ===============================
+
+#
+# Extensions list (https://squidfunk.github.io/mkdocs-material/reference/abbreviations/):
+#  - meta, which is part of the standard Markdown library, and is for front matter in a doc file
+#  - admonition, which is part of the standard Markdown library, and is for notes and warnings
+#  - def_list, which is part of the standard Markdown library, and is for definition lists
+#  - pymdownx.tabbed, which is part of Python Markdown Extensions, and is used for tabbed content blocks
+#  - pymdownx.superfences, which is part of the standard Markdown library, and is for syntax highlighting of code blocks.
+#  - pymdownx.highlight, which is part of the standard Markdown library, and is for rendering line numbers as part of the line itself
+#  - pymdownx.details, which supercharges the Admonition extension, making the resulting call-outs collapsible
+#  - pymdownx.tasklist, which is part of Python Markdown Extensions and shows lists with styled checkboxes
+#  - toc, which is a Material for Mkdocs extension for the page-level ToC header
+#  - ...
+markdown_extensions:
+  - meta
+  - admonition
+  - def_list
+  - toc:
+      title: On this page
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.highlight
+  - pymdownx.details
+  - pymdownx.tasklist:
+      custom_checkbox: true
+      clickable_checkbox: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+#
+#
+# Plug-ins list:
+# - search, an in-built MkDocs plug-in for search
+# - macros, for jinja style includes, variables, and conditions (https://github.com/fralau/mkdocs_macros_plugin) 
+# - tags, for tagging pages for better search (https://squidfunk.github.io/mkdocs-material/setup/setting-up-tags/)
+# - ...
+plugins:
+    - search
+    - macros
+    - tags
+# end of mkdocs config file
