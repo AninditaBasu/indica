@@ -13,7 +13,9 @@ Data from ancient India, presented as JSON dictionaries.
 
 === "In the works :material-playlist-edit:"
 
-    - Mahabharat API: [An MVP](https://mb-verse.herokuapp.com/) is up but not the API yet
+    - Mahabharat API: A [query service](https://mb-verse.herokuapp.com/) is up but not the API yet.
+	
+	(Due to the [recent GitHub-Heroku incident](https://status.heroku.com/), this query service isn't working at the moment because the oAuth token has been revoked.)
 
 === "On the roadmap :material-list-status:"
 
@@ -65,43 +67,59 @@ The APIs are hosted on Heroku, where I have a limit of 500 hours a month. This l
 	-  1.0 (August 2018)
 	    -  First release
 
-## Coffee chat
+=== "Mahabharat query service"
 
-Why did you make these APIs?
+    - Beta (April 2020)
 
-:   Because they weren't there.
+## Coffee chat :material-coffee:
 
-What can I do with this data?
+??? question "Why did you make these APIs?"
 
-:   You can make a [fun career advice app](https://github.com/AninditaBasu/indica/blob/master/tarzezindagi.py) or [do a fictional take on the life of a child in vedic times](https://life-ancient-india.herokuapp.com/). Some more use cases are at [Examples](examples.md).
+    Because they weren't there.
+
+??? question "What can I do with this data?"
+
+    You can make a [fun career advice app](https://github.com/AninditaBasu/indica/blob/master/tarzezindagi.py) or [do a fictional take on the life of a child in vedic times](https://life-ancient-india.herokuapp.com/). Some more use cases are at [Examples](examples.md).
 
     Also, I'll be very happy to link back to your implementation or app if you send me a URL.
 
-What is the source of this data?
+??? question "What is the source of this data?"
 
-:   Vedic literature comprises the four Vedas (Rig, Saam, Yajur, Atharv). Each Veda is a set of these things:
+    === "Rig Veda API"
 
-    -  Samhitas: Hymns or songs to gods
-	-  Brahmanas: Instructions on rituals
-	-  Upanishads: Philosophical discourses.
+        - Rig Veda Samhita, the English translation according to H. H. Wilson and the Bhashya of Sayanacharya, by Ravi Prakash Arya and K. L. Joshi (Volumes 1 through 4)
+		-  [The Practical Sanskrit-English Dictionary, by V. S. Apte](https://dsal.uchicago.edu/dictionaries/apte/)
+
+    === "Vedic Society API"
 	
-	For the APIs, the following books were consulted:
+	    Vedic literature comprises the four Vedas (Rig, Saam, Yajur, Atharv). Each Veda is a set of these things:
+
+	    -  Samhitas: Hymns or songs to gods
+	    -  Brahmanas: Instructions on rituals
+	    -  Upanishads: Philosophical discourses
 	
-	-  Main sources:
-	    -  Rig Veda Samhita, the English translation according to H. H. Wilson and the Bhashya of Sayanacharya, by Ravi Prakash Arya and K. L. Joshi (Volumes 1 through 4)
-	    -  Vedic Index of Names and Subjects, by A. A. Macdonell and A. B. Keith ([Volume 1](https://archive.org/details/in.ernet.dli.2015.284764) and [2](https://archive.org/details/in.ernet.dli.2015.211118))
-	-  Additional sources:
-	    -  [Vedic Mythology, by A. A. Macdonell](https://archive.org/details/MacdonellArthurVedicMythology1897216P.Scan)
+	    For the API, the following books were consulted:
+	
+	    -  Vedic Index of Names and Subjects, by A. A. Macdonell and A. B. Keith ([Volume 1](https://archive.org/details/in.ernet.dli.2015.284764) and [Volume 2](https://archive.org/details/in.ernet.dli.2015.211118))
+	    -  [Vedic Mythology, by A. A. Macdonell](https://archive.org/details/in.ernet.dli.2015.47343/page/n5/mode/2up)
 	    -  [The Nighantu and the Nirukta of Sri Yaskacharya, by Lakshman Sarup](https://archive.org/details/nighantuniruktao00yaskuoft)
-	    -  [The Practical Sanskrit-English Dictionary, by V. S. Apte](https://dsalsrv04.uchicago.edu/dictionaries/apte/)
+	    -  [The Practical Sanskrit-English Dictionary, by V. S. Apte](https://dsal.uchicago.edu/dictionaries/apte/)
 
-I found an error in the data.
+    === "Mahabharat query service"
+	
+	    -  [The Mahabharata of Vyasa (K M Ganguli)](https://archive.org/details/TheMahabharataOfKrishna-dwaipayanaVyasa)
+	    -  [Puranic Encyclopedia (Vettam Mani)](https://archive.org/details/puranicencyclopa00maniuoft)
+	    -  [Mahabharata: A Cultural Index (M A Mehendale)](http://www.sanskrit-lexicon.uni-koeln.de/scans/MCIScan/2014/web/webtc/download.html)
+	    -  [Index to the Names in the Mahabharata (Sorensen)](http://www.sanskrit-lexicon.uni-koeln.de/scans/INMScan/2013/web/webtc/download.html)
+	    -  [A Classical Dictionary of Hindu Mythology and Religion (John Dowson)](https://archive.org/details/aclassicaldictio00dowsuoft/page/n28/mode/2up)
+		
+??? warning "I found an error in the data."
 
-:   Please log a [GitHub issue](https://github.com/AninditaBasu/indica/issues).
+    Please log a [GitHub issue](https://github.com/AninditaBasu/indica/issues).
 
-And you are...?
+??? info "And you are...?"
 
-:   [Anindita Basu](https://twitter.com/@anindita_basu).
+    [Anindita Basu](https://twitter.com/@anindita_basu).
 
 <hr/>
 
