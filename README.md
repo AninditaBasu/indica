@@ -46,9 +46,9 @@ Thank you for wanting to help with this project :heart:
 
 - :bulb: Have an idea for improvement? Open an issue, and let's talk about it.
 
-- :question: Have a question? See [About this project](https://aninditabasu.github.io/indica/html/about.html), and if your question remains unanswered, open an issue.
+- :question: Have a question? See [About this project](https://aninditabasu.github.io/indica/#coffee-chat), and if your question remains unanswered, open an issue.
 
-- :beetle: Found a bug? Open an issue.
+- :bug: Found a bug? Open an issue.
 
 - :tada: Built an app with these APIs? Open an issue to ask it to be showcased in the docs.
 
@@ -58,7 +58,7 @@ All interactions in this repository are supposed to follow the [code of conduct]
 
 ## Resources
 
-If something doesn't work or is broken, it might be that I didn't update it. The latest documentation is at [Indica](https://aninditabasu.github.io/indica/); head over there and RTFM?
+Documentation is at [Indica APIs](https://aninditabasu.github.io/indica/).
 
 ## Plans for Indica
 
