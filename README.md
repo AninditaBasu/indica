@@ -1,9 +1,9 @@
-# the Indica APIs
+# Indica APIs
 
 As of now, the following two APIs are available: 
 
-- `rv`: Data about the gods and poets, their categories, and poem meters used in all of the Rig Veda verses
-- `vs`: A descriptions of all the nouns  mentioned in vedic literature (proper nouns aren't included, though)
+- Rig Veda API: Data about the gods and poets, their categories, and poem meters used in all of the Rig Veda verses
+- Vedic Soceity API: A descriptions of all the nouns  mentioned in vedic literature (proper nouns aren't included, though)
 
 <hr/>
 
@@ -23,12 +23,7 @@ See [Indica documentation](https://aninditabasu.github.io/indica/).
 
 ## How to use
 
-The APIs are openly available through `GET` calls over `HTTPS`, and return data in the `JSON` format. You can programmatically process the data to make visually appealing or easily consumable information.
-
-For an interactive demo, use the `.ipynb` files in this repo. Or, use these gists that you can open with Google Colab and use interactively:
-
--  [gist for rv](https://gist.github.com/AninditaBasu/e7baf92b307a8d125243350fc02eafa9)
--  [gist for vs](https://gist.github.com/AninditaBasu/d6107cb10fdb385baad09db497dba4a7)
+The APIs are openly available through `GET` calls, and return data in the `JSON` format. You can programmatically process the data to make visually appealing or easily consumable information.
 
 > If you build an app with these APIs, please let me know. I'll include your implementation on a `Gallery` page in the documentation, and also include it under `Showcase` on this page.
 
@@ -63,12 +58,10 @@ All interactions in this repository are supposed to follow the [code of conduct]
 
 ## Resources
 
-Use the `.yaml` files in the `_SDKs` folders to generate a client library in a language of your choice. SDKs in several languages can be generated at https://editor.swagger.io with these `.yaml` files. Remember, though, that the SDK wouldn't work on its own; you need to create an application that will use the SDK to make API calls.
-
 If something doesn't work or is broken, it might be that I didn't update it. The latest documentation is at [Indica](https://aninditabasu.github.io/indica/); head over there and RTFM?
 
 ## Plans for Indica
 
 - [ ] Turn the edicts of Asoka into an API
 - [ ] Turn the Arthashastra into an API
-- [ ] Shall we do a Mahabharat API as well? An info-bot is up at [MBverse](https://mb-verse.herokuapp.com/) but the API is yet to be built.
+- [ ] Shall we do a Mahabharat API as well? An info-bot is up at [Mahabharat query](https://mahabharat.onrender.com) but the API is yet to be built.

@@ -77,7 +77,7 @@ The APIs are hosted on Heroku, where I have a limit of 500 hours a month. This l
 
 ??? question "What can I do with this data?"
 
-    You can make a [fun career advice app](https://github.com/AninditaBasu/indica/blob/master/tarzezindagi.py) or [do a fictional take on the life of a child in vedic times](https://life-ancient-india.herokuapp.com/). Some more use cases are at [Examples](examples.md).
+    You can make a [fun career advice app](https://github.com/AninditaBasu/indica/blob/master/tarzezindagi.py) or do a [fictional take on the life of a child in vedic times](https://life-ancient-india.herokuapp.com/). Some more ideas are at [Examples](examples.md).
 
     Also, I'll be very happy to link back to your implementation or app if you send me a URL.
 
@@ -114,6 +114,7 @@ The APIs are hosted on Heroku, where I have a limit of 500 hours a month. This l
 ??? warning "I found an error in the data."
 
     Please log a GitHub issue:
+	
     - [Rig Veda API and Vedic Society API](https://github.com/AninditaBasu/indica/issues)
 	- [Mahabharat query service](https://github.com/AninditaBasu/calm-wildwood/issues)
 
