@@ -13,9 +13,7 @@ Data from ancient India, presented as JSON dictionaries.
 
 === "In the works :material-playlist-edit:"
 
-    - Mahabharat API: A [query service](https://mb-verse.herokuapp.com/) is up but not the API yet.
-	
-	(Due to the [recent GitHub-Heroku incident](https://status.heroku.com/), this query service isn't working at the moment because the oAuth token has been revoked.)
+    - Mahabharat API: A [query service](https://mahabharat.onrender.com) is up but not the API yet.
 
 === "On the roadmap :material-list-status:"
 
@@ -115,7 +113,9 @@ The APIs are hosted on Heroku, where I have a limit of 500 hours a month. This l
 		
 ??? warning "I found an error in the data."
 
-    Please log a [GitHub issue](https://github.com/AninditaBasu/indica/issues).
+    Please log a GitHub issue:
+    - [Rig Veda API and Vedic Society API](https://github.com/AninditaBasu/indica/issues)
+	- [Mahabharat query service](https://github.com/AninditaBasu/calm-wildwood/issues)
 
 ??? info "And you are...?"
 
