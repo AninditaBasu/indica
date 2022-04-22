@@ -18,7 +18,7 @@ extra:
       name: Anindita on Twitter
   analytics:
     provider: google
-    property: UA-137483668-1
+    property: G-2FQGMZ1ZEN
 
 # ===============================
 # mkdocs-material theme entries start here
