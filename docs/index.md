@@ -4,7 +4,7 @@ title: The Indica APIs
 
 # Indica APIs
 
-Data from ancient India, presented as JSON dictionaries.
+The Indica APIs give you data from ancient India, presented as JSON dictionaries.
 
 === "Available :material-check-underline:"
 
@@ -85,7 +85,9 @@ The APIs are hosted on Heroku, where I have a limit of 500 hours a month. This l
 
     === "Rig Veda API"
 
-        - Rig Veda Samhita, the English translation according to H. H. Wilson and the Bhashya of Sayanacharya, by Ravi Prakash Arya and K. L. Joshi (Volumes 1 through 4)
+        For the API, the following books were consulted: 
+		
+		- Rig Veda Samhita, the English translation according to H. H. Wilson and the Bhashya of Sayanacharya, by Ravi Prakash Arya and K. L. Joshi (Volumes 1 through 4)
 		-  [The Practical Sanskrit-English Dictionary, by V. S. Apte](https://dsal.uchicago.edu/dictionaries/apte/)
 
     === "Vedic Society API"
@@ -105,7 +107,9 @@ The APIs are hosted on Heroku, where I have a limit of 500 hours a month. This l
 
     === "Mahabharat query service"
 	
-	    -  [The Mahabharata of Vyasa (K M Ganguli)](https://archive.org/details/TheMahabharataOfKrishna-dwaipayanaVyasa)
+	    The translation by Kisari Mohan Ganguli is followed. The following books were consulted:
+		
+		-  [The Mahabharata of Vyasa (K M Ganguli)](https://archive.org/details/TheMahabharataOfKrishna-dwaipayanaVyasa)
 	    -  [Puranic Encyclopedia (Vettam Mani)](https://archive.org/details/puranicencyclopa00maniuoft)
 	    -  [Mahabharata: A Cultural Index (M A Mehendale)](http://www.sanskrit-lexicon.uni-koeln.de/scans/MCIScan/2014/web/webtc/download.html)
 	    -  [Index to the Names in the Mahabharata (Sorensen)](http://www.sanskrit-lexicon.uni-koeln.de/scans/INMScan/2013/web/webtc/download.html)

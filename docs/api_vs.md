@@ -34,10 +34,10 @@ Querying on more than one parameter in a single API request is not supported. Qu
 	import requests
 
 	params = {
-		'sukta': '150',
+    	'category': 'dicing',
 	}
-
-	response = requests.get('https://api-rv.herokuapp.com/rv/v1/resources', params=params)
+	
+	response = requests.get('https://api-vs.herokuapp.com/vs/v1/resources', params=params)
 	```
 
 === "Java"
