@@ -1,0 +1,115 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: Simple Artist API
+  description: A simple API to illustrate OpenAPI concepts
+
+servers:
+  - url: https://api-rv.herokuapp.com/rv/v1/
+  
+paths:
+  /resources:
+    get:
+      description: Returns a list of verses  
+      parameters:
+        - name: mandal
+          in: query
+          description: Book number
+          schema:
+            type: integer
+            enum:
+              - 1
+              - 2
+              - 3
+              - 4
+              - 5
+              - 6
+              - 7
+              - 8
+              - 9
+              - 10
+        - name: sukta
+          in: query
+          description: Chapter number
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 191
+        - name: meter
+          in: query
+          description: Meter
+          schema:
+            type: string
+        - name: sungby
+          in: query
+          description: Name of the singer
+          schema:
+            type: string
+        - name: sungbycategory
+          in: query
+          description: Category of the singer
+          schema:
+            type: string
+            enum:
+              - animal
+              - demon male
+              - divine female
+              - divine male
+              - human female
+              - human male
+        - name: sungfor
+          in: query
+          description: Name of the subject of the verse
+          schema:
+            type: string
+        - name: sungforcategory
+          in: query
+          description: Category of the subject of the verse
+          schema:
+            type: string
+            enum:
+              - animal
+              - demon male
+              - divine female
+              - divine human
+              - divine male
+              - human couple
+              - human female
+              - human male
+              - human unborn
+              - object
+              - plant
+      responses:
+        '200':
+          description: Returned a list
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    mandal:
+                      type: integer
+                    sukta:
+                      type: integer
+                    meter:
+                      type: string
+                    sungby:
+                      type: string
+                    sungbycategory:
+                      type: string
+                    sungfor:
+                      type: string
+                    sungforcategory:
+                      type: string
+
+        '400':
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:   
+                  message:
+                    type: string
