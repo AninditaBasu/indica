@@ -12,7 +12,7 @@ Poets and gods in the Rig Veda, presented with the mandal and sukta numbers, and
 
 ## Endpoint
 
-`https://api-rv.herokuapp.com/rv/v1/resources?`
+`https://api-rv.herokuapp.com/rv/v2/meta/`
 
 ## Methods
 
@@ -20,12 +20,12 @@ Only `GET` calls are supported.
 
 ### Example request
 
-Querying on more than one parameter in a single API request is not supported. For the available parameters, see [Query parameters](#query-parameters).
+For the available parameters, see [Parameters](#parameters).
 
 === "cURL"
 
     ```shell
-	curl https://api-rv.herokuapp.com/rv/v1/resources?sukta=150
+	curl https://api-rv.herokuapp.com/rv/v2/meta/sukta/150
 	```
 
 === "Python"
@@ -133,15 +133,15 @@ Querying on more than one parameter in a single API request is not supported. Fo
 ]
 ```
 
-## Query parameters
+## Parameters
 
-Querying on more than one parameter in a single API request is not supported.
+All parameters are path parameters.
 
 ### `mandal`
 
 Returns all verses in that mandal.
 
-This is an integer parameter. The query is like this: `/resources?mandal=<number>`. For example, `/resources?mandal=4` returns all of the verses in the 4th book.
+This is an integer parameter. The path is like this: `/mandal/<mandal_number>`. For example, `/mandal/4` returns all of the verses in the 4th book.
 
 Valid values for this parameter are 1 through 10 (because there are only 10 mandals in the Rig Veda).
 
@@ -149,7 +149,7 @@ Valid values for this parameter are 1 through 10 (because there are only 10 mand
 
 Returns the sukta bearing that number from all the mandals.
 
-This is an integer parameter. The query is like this: `/resources?sukta=<number>`. For example, `/resources?sukta=23` returns all the suktas that are numbered 23 from all the 10 mandals.
+This is an integer parameter. The path is like this: `/sukta/<sukta_number>`. For example, `/sukta/23` returns all the suktas that are numbered 23 from all the 10 mandals.
 
 The number of suktas in each mandal is different; for example, mandal 5 contains 87 suktas. The highest value possible for this parameter is 191 (which is the number of suktas in the 1st and 10th mandals). The following table lists the number of verses in each book.
 
@@ -170,7 +170,7 @@ The number of suktas in each mandal is different; for example, mandal 5 contains
 
 Returns all verses sung by that person.
 
-This is a string parameter. The query is like this:  `/resources?sungby=<string>`. For example, `/resources?sungby=tra` returns all composers whose name contains `tra`.
+This is a string parameter. The path is like this:  `/sungby/<string>`. For example, `//sungby/tra` returns all composers whose name contains `tra`, for example `Vishwamitra`.
 
 ### `sungbycategory`
 
@@ -183,13 +183,13 @@ Returns all verses composed by that category of composer, for example, `human ma
 -  `human female`
 -  `human male`
 
-This is a string parameter. The query is like this:  `/resources?sungbycategory=<string>`. For example `/resources?sungbycategory=ale` returns all of the verses composed by all males and females, whether human or divine.
+This is a string parameter. The path is like this:  `/sungbycategory/<string>`. For example `/sungbycategory/ale` returns all of the verses composed by all males and females, whether human or divine.
 
 ### `sungfor`
 
 Returns all verses sung for that subject, for example, `Agni` or `plough`.
 
-This is a string parameter. The query is like this:  `/resources?sungfor=<string>`. For example, `/resources?sungfor=ni` returns all venerated beings or objects whose name contains `ni`, like Nirriti (god), Maitravaruni (human) or Sinivali (abstract thing).
+This is a string parameter. The path is like this:  `/sungfor/<string>`. For example, `/sungfor/ni` returns all venerated beings or objects whose name contains `ni`, like Nirriti (god), Maitravaruni (human) or Sinivali (abstract thing).
 
 ### `sungforcategory`
 
@@ -208,13 +208,17 @@ Returns all verses sung for that category, for example, `object`. The following 
 -  `object`
 -  `plant`
 
-This is a string parameter. The query is like this: `/resources?sungforcategory=<string>`. For example `/resources?sungforcategory=animal` returns all animals.
+This is a string parameter. The path is like this: `/sungforcategory/<string>`. For example `/sungforcategory/animal` returns all animals.
 
 ### `meter`
 
 Returns all verses that are composed in that meter.
 
-This is a string parameter. The query is like this: `/resources?meter=<string>`. For example `/resources?meter=tup` returns all meters that contain `tup`, such as Anushtup and Trishtup.
+This is a string parameter. The path is like this: `/meter/<string>`. For example `/meter/tup` returns all meters that contain `tup`, such as Anushtup and Trishtup.
+
+## Sandbox
+
+See [Interactive API](https://aninditabasu.github.io/indica/rv_meta_openapi3.html).
 
 <hr/>
 

@@ -1,0 +1,350 @@
+openapi: 3.0.0
+
+info:
+  version: 2.0.0
+  title: Rig Veda API
+  description: Meta information of the poetry in the Rig Veda. <br/><br/> Verse-by-verse info on poets, gods, their categories, and the meters.
+
+servers:
+  - url: https://api-rv.herokuapp.com/rv/v2/meta/
+  
+paths:
+  /mandal/{mandal_number}:
+    get:
+      description: Returns a list of verses in that mandal  
+      parameters:
+        - name: mandal_number
+          in: path
+          required: true
+          description: Book number
+          schema:
+            type: integer
+            enum:
+              - 1
+              - 2
+              - 3
+              - 4
+              - 5
+              - 6
+              - 7
+              - 8
+              - 9
+              - 10
+      responses:
+        '200':
+          description: Returned a list
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    mandal:
+                      type: integer
+                    sukta:
+                      type: integer
+                    meter:
+                      type: string
+                    sungby:
+                      type: string
+                    sungbycategory:
+                      type: string
+                    sungfor:
+                      type: string
+                    sungforcategory:
+                      type: string
+        '400':
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:   
+                  message:
+                    type: string
+
+  /sukta/{sukta_number}:
+    get:
+      description: Returns a list of verses for that sukta in all mandals  
+      parameters:
+        - name: sukta_number
+          in: path
+          required: true
+          description: Chapter number
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 191
+      responses:
+        '200':
+          description: Returned a list
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    mandal:
+                      type: integer
+                    sukta:
+                      type: integer
+                    meter:
+                      type: string
+                    sungby:
+                      type: string
+                    sungbycategory:
+                      type: string
+                    sungfor:
+                      type: string
+                    sungforcategory:
+                      type: string
+        '400':
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:   
+                  message:
+                    type: string
+
+  /meter/{meter}:
+    get:
+      description: Returns a list of verses in that meter. Can take partial strings. Is not case sensitive.  
+      parameters:                    
+        - name: meter
+          in: path
+          description: Meter
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Returned a list
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    mandal:
+                      type: integer
+                    sukta:
+                      type: integer
+                    meter:
+                      type: string
+                    sungby:
+                      type: string
+                    sungbycategory:
+                      type: string
+                    sungfor:
+                      type: string
+                    sungforcategory:
+                      type: string
+        '400':
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:   
+                  message:
+                    type: string
+
+  /sungby/{sungby}:
+    get:
+      description: Returns a list of verses by this singer. Can take partial strings. Is not case sensitive.  
+      parameters:   
+        - name: sungby
+          in: path
+          description: Name of the singer
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Returned a list
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    mandal:
+                      type: integer
+                    sukta:
+                      type: integer
+                    meter:
+                      type: string
+                    sungby:
+                      type: string
+                    sungbycategory:
+                      type: string
+                    sungfor:
+                      type: string
+                    sungforcategory:
+                      type: string
+        '400':
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:   
+                  message:
+                    type: string
+
+  /sungbycategory/{sungbycategory}:
+    get:
+      description: Returns a list of verses where singer of the verse belongs to this category.
+      parameters: 
+        - name: sungbycategory
+          in: path
+          description: Category of the singer of the verse.
+          required: true
+          schema:
+            type: string
+            enum:
+              - animal
+              - demon male
+              - divine female
+              - divine male
+              - human female
+              - human male
+      responses:
+        '200':
+          description: Returned a list
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    mandal:
+                      type: integer
+                    sukta:
+                      type: integer
+                    meter:
+                      type: string
+                    sungby:
+                      type: string
+                    sungbycategory:
+                      type: string
+                    sungfor:
+                      type: string
+                    sungforcategory:
+                      type: string
+        '400':
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:   
+                  message:
+                    type: string
+
+  /sungfor/{sungfor}:
+    get:
+      description: Returns a list of verses sung for this subject.
+      parameters:
+        - name: sungfor
+          in: path
+          description: Name of the subject of the verse
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Returned a list
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    mandal:
+                      type: integer
+                    sukta:
+                      type: integer
+                    meter:
+                      type: string
+                    sungby:
+                      type: string
+                    sungbycategory:
+                      type: string
+                    sungfor:
+                      type: string
+                    sungforcategory:
+                      type: string
+        '400':
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:   
+                  message:
+                    type: string
+
+  /sungforcategory/{sungforcategory}:
+    get:
+      description: Returns a list of verses where the subject of the verse belongs to this category.
+      parameters:    
+        - name: sungforcategory
+          in: path
+          description: Category of the subject of the verse
+          required: true
+          schema:
+            type: string
+            enum:
+              - animal
+              - demon male
+              - divine female
+              - divine human
+              - divine male
+              - human couple
+              - human female
+              - human male
+              - human unborn
+              - object
+              - plant
+      responses:
+        '200':
+          description: Returned a list
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    mandal:
+                      type: integer
+                    sukta:
+                      type: integer
+                    meter:
+                      type: string
+                    sungby:
+                      type: string
+                    sungbycategory:
+                      type: string
+                    sungfor:
+                      type: string
+                    sungforcategory:
+                      type: string
+        '400':
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:   
+                  message:
+                    type: string
