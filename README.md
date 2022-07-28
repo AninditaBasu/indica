@@ -1,8 +1,8 @@
 # Indica APIs
 
-As of now, the following two APIs are available: 
+The following two APIs are available: 
 
-- Rig Veda API: Data about the gods and poets, their categories, and poem meters used in all of the Rig Veda verses
+- Rig Veda API: Metadata for the Rig Veda. Contains info about the gods and poets, their categories, and poem meters used in all of the Rig Veda verses
 - Vedic Soceity API: A descriptions of all the nouns  mentioned in vedic literature (proper nouns aren't included, though)
 
 <hr/>
@@ -27,18 +27,7 @@ The APIs are openly available through `GET` calls, and return data in the `JSON`
 
 > If you build an app with these APIs, please let me know. I'll include your implementation on a `Gallery` page in the documentation, and also include it under `Showcase` on this page.
 
-What can you do with this data, you ask? This repo contains the code for two sample apps:
 
-- `tarzezindagi.py`, a fun app for vedic career advice. Clone this repo and run the code locally to see the app in function (I ran out of free Heroku hours to host it).
-- `life.py`, an app that introduces a fictional child from the vedic times. Here's a Heroku-hosted version as [Life in ancient India](https://life-ancient-india.herokuapp.com/).
- 
-Am sure you'll have your own ideas as well. 
-
-## Showcase
-
-- [Vedic Career Advice](tarzezindagi.py)  ![GitHub Pipenv locked dependency version](https://img.shields.io/github/pipenv/locked/dependency-version/AninditaBasu/indica/flask) ![GitHub Pipenv locked dependency version](https://img.shields.io/github/pipenv/locked/dependency-version/AninditaBasu/indica/gunicorn) ![GitHub Pipenv locked dependency version](https://img.shields.io/github/pipenv/locked/dependency-version/AninditaBasu/indica/requests)
-- [Intro by an ancient child](life.py) ![GitHub Pipenv locked dependency version](https://img.shields.io/github/pipenv/locked/dependency-version/AninditaBasu/indica/flask) ![GitHub Pipenv locked dependency version](https://img.shields.io/github/pipenv/locked/dependency-version/AninditaBasu/indica/gunicorn) ![GitHub Pipenv locked dependency version](https://img.shields.io/github/pipenv/locked/dependency-version/AninditaBasu/indica/requests)
-- _...Link to your app or implementation goes here..._
 
 ## How to contribute
 

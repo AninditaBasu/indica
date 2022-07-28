@@ -4,7 +4,7 @@ title: The Indica APIs
 
 # Indica APIs
 
-The Indica APIs give you data from ancient India, presented as JSON dictionaries.
+The Indica APIs give you JSON dictionaries of data from ancient India.
 
 === "Available :material-check-underline:"
 
@@ -42,13 +42,24 @@ The APIs are hosted on Heroku, where I have a limit of 500 hours a month. This l
 
 !!! note "Heavy use"
 
-    If you need to use the APIs rather heavily, please let me know. I'll generate for you a free token, which will give you access to an authenticated hosting service that I also use. This authenticated service has rate limits of 10,000 API calls a month.
+    If you need to use the APIs rather heavily, please let me know. I'll generate for you a free token, which will give you access to an authenticated hosting service that I also use. This authenticated service has a rate limit of 10,000 API calls a month for free accounts.
 
 ## Release history
 
 === "Rig Veda API"
 
-    -  1.2 (December 2020)
+    -  2.0 (July 2022)
+	    -  Deprecated all query parameters
+		-  Introduced the following path parameters:
+		    -  `/mandal/{mandal_number}`
+			-  `/sukta/{sukta_number}`
+			-  `/meter/{meter}`
+			-  `/sungby/{sungby}`
+			-  `/sungbycategory/{sungbycategory}`
+			-  `/sungfor/{sungfor}`
+			-  `/sungforcategory/{sungforcategory}`
+		-  Changed the endpoint to `https://api-rv.herokuapp.com/rv/v2/meta/`
+	-  1.2 (December 2020)
 	    -  Changed the endpoint to `https://api-rv.herokuapp.com/rv/v1`
 	-  1.1 (October 2018)
 	    - Changed the endpoint from `https://sheetlabs.com/RV/` to `https://sheetlabs.com/IND/`

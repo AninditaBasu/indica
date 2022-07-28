@@ -1,5 +1,5 @@
 site_name: The Indica APIs
-site_description: Data from ancient India as JSON dictionaries
+site_description: JSON data from ancient India through APIs
 copyright: '&copy; 2018-2022 Anindita Basu.'
 
 docs_dir: docs
@@ -10,6 +10,8 @@ nav:
     - 'Rig Veda API': 'api_rv.md'
     - 'Vedic Society API': 'api_vs.md'
 - 'Examples': 'examples.md'
+- Live sandbox:
+    - 'Rig Veda API': 'rv_meta_openapi3.html'
 
 extra:
   social:
@@ -27,8 +29,11 @@ extra:
 theme:
     name: material
     language: en
-    favicon: assets/images/favicon.ico
+    favicon: images/favicon.png
     custom_dir: overrides
+    palette:
+      primary: orange
+      accent: green
 # mkdocs-material theme entries end here
 # ===============================
 

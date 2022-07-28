@@ -2,11 +2,7 @@
 title: Examples
 ---
 
-Here's a [fun career advice app](https://github.com/AninditaBasu/indica/blob/master/tarzezindagi.py).
-
-And, this is [a fictional take on the life of a child in vedic times](https://life-ancient-india.herokuapp.com/).
-
-Some more ideas are listed on this page.
+Some ideas ...
 
 ## Teaching aids
 
