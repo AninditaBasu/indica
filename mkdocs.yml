@@ -71,7 +71,6 @@ markdown_extensions:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
 #
-#
 # Plug-ins list:
 # - search, an in-built MkDocs plug-in for search
 # - macros, for jinja style includes, variables, and conditions (https://github.com/fralau/mkdocs_macros_plugin) 

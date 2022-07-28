@@ -27,8 +27,6 @@ The APIs are openly available through `GET` calls, and return data in the `JSON`
 
 > If you build an app with these APIs, please let me know. I'll include your implementation on a `Gallery` page in the documentation, and also include it under `Showcase` on this page.
 
-
-
 ## How to contribute
 
 Thank you for wanting to help with this project :heart:
