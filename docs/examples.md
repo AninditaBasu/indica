@@ -1,6 +1,4 @@
----
-title: Examples
----
+# Examples
 
 Some ideas ...
 

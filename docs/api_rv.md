@@ -4,7 +4,7 @@ title: The Rig Veda API reference
 
 # Rig Veda API
 
-Metadata of the poets and gods in the Rig Veda, presented with the mandal and sukta numbers, and the meters the verses are composed in.
+Metadata of all the verses in the Rig Veda. Contains info on poets, gods, their categories, and the poetic meters.
 
 !!! danger "Timeout"
 

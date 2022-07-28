@@ -5,7 +5,7 @@ info:
   title: Rig Veda API
   description: '## Metadata of the poetry in the Rig Veda 
   
-  This API returns verse-by-verse info on poets, gods, their categories, and the meters.'
+  This API returns verse-by-verse info on poetic meters, and poets, gods, and their categories.'
   contact:
     email: ab.techwriter@gmail.com 
   license:
