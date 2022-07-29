@@ -40,7 +40,7 @@ Soliloquies and monologues are as old as humankind. People were speaking to them
 
 This tutorial shows you how to find (and read) the soliloquies and monologues in the Rig Veda.
 
-## Approach
+## Possible paths
 
 All the resources in the Rig Veda API return a response in the same JSON structure.
 
@@ -56,9 +56,9 @@ All the resources in the Rig Veda API return a response in the same JSON structu
 }
 ```
 
-Because I'm interested in people talking to themselves, I need the API to show me only those responses where `sungby` is the same as `sungfor`.
+Because I'm interested in people talking to themselves, I need the API to show me only those responses where `sungby` is the same as `sungfor`. 
 
-I can achieve this in more than one way.  The following content tabs show the steps for 3 different resources.
+To get the response, I can use any of the resources, but the steps for getting all the verses in all the books will be different for each resource. The following content tabs show the steps for 3 different resources.
 
 === "/mandal/{mandal}"
 

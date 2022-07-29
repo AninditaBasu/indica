@@ -136,7 +136,7 @@ For the available parameters, see [Parameters](#parameters).
 ]
 ```
 
-## Parameters
+## Path parameters
 
 All parameters are path parameters.
 
@@ -220,7 +220,7 @@ This is a string parameter. The path is like this: `/sungforcategory/<specific_s
 
 ## Live sandbox
 
-See [Interactive API](https://aninditabasu.github.io/indica/rv_meta_openapi3.html).
+See [Rig Veda API: Swagger sandbox](https://aninditabasu.github.io/indica/rv_meta_openapi3.html).
 
 <hr/>
 
