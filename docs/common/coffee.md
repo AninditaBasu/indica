@@ -1,0 +1,2 @@
+<a href="https://whimsy.myinstamojo.com/product/480613/coffee-ddbc0/" data-store-name="whimsy" data-domain="https://whimsy.myinstamojo.com" data-id="480613" rel="im-new-checkout" data-text="Like these APIs? Buy me a coffee." data-css-style="width:320px; border-radius:5px" data-layout="vertical"></a>
+<script src="https://manage.instamojo.com/assets/js/pay_button/button.min.js"></script>

@@ -224,5 +224,4 @@ See [Interactive API](https://aninditabasu.github.io/indica/rv_meta_openapi3.htm
 
 <hr/>
 
-<a href="https://whimsy.myinstamojo.com/product/480613/coffee-ddbc0/" data-store-name="whimsy" data-domain="https://whimsy.myinstamojo.com" data-id="480613" rel="im-new-checkout" data-text="Like this API? Buy me a coffee." data-css-style="background:#1273de; color:#ffffff; width:300px; border-radius:30px" data-layout="vertical"></a>
-<script src="https://manage.instamojo.com/assets/js/pay_button/button.min.js"></script>
+{%include 'common/coffee.md'%}

@@ -9,7 +9,8 @@ nav:
 - API reference:
     - 'Rig Veda API': 'api_rv.md'
     - 'Vedic Society API': 'api_vs.md'
-- 'Examples': 'examples.md'
+- Tutorials:
+    - 'Vedic soliloquies': 'how_to_soliloquy.md'
 - Live sandbox:
     - 'Rig Veda API': 'rv_meta_openapi3.html'
 #
@@ -41,6 +42,7 @@ theme:
 # Extensions list (https://squidfunk.github.io/mkdocs-material/reference/abbreviations/):
 #  - meta, which is part of the standard Markdown library, and is for front matter in a doc file
 #  - admonition, which is part of the standard Markdown library, and is for notes and warnings
+#  - attr_list, which enables the adding of HTML attributes and CSS classes to several Markdown elements
 #  - def_list, which is part of the standard Markdown library, and is for definition lists
 #  - pymdownx.tabbed, which is part of Python Markdown Extensions, and is used for tabbed content blocks
 #  - pymdownx.superfences, which is part of the standard Markdown library, and is for syntax highlighting of code blocks.
@@ -52,6 +54,7 @@ theme:
 markdown_extensions:
   - meta
   - admonition
+  - attr_list
   - def_list
   - toc:
       title: On this page
