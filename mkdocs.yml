@@ -30,7 +30,7 @@ extra:
 theme:
     name: material
     language: en
-    favicon: images/favicon.png
+    favicon: images/favicon.ico
     custom_dir: overrides
     palette:
       primary: orange
