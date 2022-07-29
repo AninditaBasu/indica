@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block extrahead %}
+    {% if page and page.meta and page.meta.og_title %}
+        <meta property="og:title" content="{{ page.meta.og_title }}" />
+    {% elif page and page.meta and page.meta.title %}
+        <meta property="og:title" content="{{ page.meta.title }}" />
+    {% endif %}
+
+    {% if page and page.meta and page.meta.og_type %}
+        <meta property="og:type" content="{{ page.meta.og_type }}" />
+    {% else %}
+        <meta property="og:type" content="website" />
+    {% endif %}
+
+    <meta property="og:url" content="{{ page.canonical_url }}" />
+
+    {% if page and page.meta and page.meta.page_path and page.meta.og_image %}
+        <meta property="og:image:url" content="{{ config.site_url ~ page.meta.page_path ~ page.meta.og_image }}" />
+    {% elif page and page.meta and page.meta.og_image %}
+        <meta property="og:image:url" content="{{ page.meta.og_image }}" />
+    {% else %}
+        <meta property="og:image:url" content="{{ config.site_url ~ config.theme.favicon }}" />
+    {% endif %}
+
+    {% if page and page.meta and page.meta.og_image_type %}
+        <meta property="og:image:type" content="{{ page.meta.og_image_type}}" />
+    {% else %}
+        <meta property="og:image:type" content="image/png" />
+    {% endif %}
+
+    {% if page and page.meta and page.meta.description %}
+        <meta property="og:description" content="{{ page.meta.description }}">
+    {% elif config.site_description %}
+        <meta property="og:description" content="{{ config.site_description }}">
+    {% endif %}
+
+    <meta property="og:locale" content="en-GB" />
+    <meta property="fb:app_id" content="{{ config.fb_appid }}" />
+{% endblock %}

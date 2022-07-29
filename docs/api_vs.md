@@ -1,5 +1,9 @@
 ---
-title: The Vedic Society API reference
+title: Vedic Society API reference documentation
+description: Nouns in vedic literature, including the flora, fauna, geography, food, relationships, and objects.
+author: Anindita Basu
+og_title: Vedic Society API reference documentation
+og_image: images/VS_1.png
 ---
 
 # Vedic Society API

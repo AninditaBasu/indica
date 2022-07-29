@@ -1,5 +1,9 @@
 ---
-title: The Rig Veda API reference
+title: Rig Veda API reference documentation
+description: Metadata of all the verses in the Rig Veda. Contains info on rishis, gods, chhandas.
+author: Anindita Basu
+og_title: Rig Veda API reference documentation
+og_image: images/RV_1.png
 ---
 
 # Rig Veda API

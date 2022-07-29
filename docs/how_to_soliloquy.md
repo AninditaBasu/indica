@@ -1,6 +1,9 @@
 ---
-description: This tutorial shows you how to find (and read) the soliloquies and monologues in the Rig Veda.
 title: Vedic soliloquies
+description: Find and read the soliloquies and monologues in the Rig Veda
+author: Anindita Basu
+og_title: Vedic soliloquies
+og_image: images/tweet_mockup_2.png
 ---
 
 # Tutorial: Vedic soliloquies
