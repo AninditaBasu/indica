@@ -16,7 +16,7 @@ Nouns in vedic literature, including the flora, fauna, geography, food, relation
 
 ## Endpoint
 
-`https://api-vs.herokuapp.com/vs/v1/resources?`
+`https://api-vs.herokuapp.com/vs/v2/`
 
 ## Methods
 
@@ -24,7 +24,8 @@ Only `GET` calls are supported.
 
 ### Example request
 
-Querying on more than one parameter in a single API request is not supported. Querying on the `nagari` parameter is not supported. For the available parameters, see [Query parameters](#query-parameters).
+For the available parameters, see [Parameters](#parameters).
+<!--Examples generated through https://curlconverter.com/-->
 
 === "cURL"
 
@@ -149,44 +150,44 @@ Querying on more than one parameter in a single API request is not supported. Qu
 ]
 ```
 
-## Query parameters
+## Parameters
 
-All the parameters are string parameters. Querying on more than one parameter in a single API request is not supported.
+All parameters are path parameters.
 
-### `word`
+### `words`
 
-Returns all nouns, in Sanskrit, transliterated into the roman script, that contains the word.
+Returns all nouns, transliterated from Sanskrit to the roman script, that contains the specified word or phrase.
+      
+The path is like this: `/words/<word>`. For example, `shat` returns the entries for all words that contain `shat`, for example, `kshatriya`, `prishat`, or `shatapati`.
 
-The query is like this: `/resources?word=<string>`. For example, `/resources?word=shat` returns all words that contain `shat`, for example, kshatriya, prishat, or shatapati.
+### `descriptions`
 
-### `nagari`
+Returns all nouns where the meaning contains the specified phrase.
 
-Returns the noun in the Nagari script, for example, `आल`. Querying on this parameter is not supported.
+The query is like this: `/descriptions<description>`. For example, `horse` returns all descriptions that contain the word `horse`.
 
-### `description`
+To get all nouns that contain `horse`, use the `words` parameter instead, and use a Sanskrit word for horse, such as `ashwa`.
 
-Returns all nouns that contain the string in the description of the noun.
+### `categories`
 
-The query is like this: `/resources?description=<string>`. For example, `/resources?description=horse` returns all descriptions that contain the word `horse`.
+Returns all nouns that belong to the specified category. The following categories are available:
 
-To get all nouns that contain `horse`, use the `word` parameter instead and use a Sanskrit word for horse, such as `ashwa`.
+|  Subject to explore | Available categories |
+| --- | --- |
+| Flora | `grass`, `plant`, `tree` | 
+| Fauna | `animal`, `bird`, `cattle`, `fish`, `insect`, `snake`, `worm` | 
+| Things | `building`, `chariot`, `food`, `grain`, `metal`, `object`, `ship`, `weapon`, `war` | 
+| Measurements | `number`, `distance`, `time`, `weight` | 
+| Geography | `mountain`, `place`, `river` | 
+| Knowledge | `astronomy`, `disease`, `literature`, `medicine`, `poison`, `subject` | 
+| Entertainment | `dicing`, `games`, `music` | 
+| Toilette | `clothing`, `hair`, `ornament` | 
+| Legal | `law`, `morals` | 
+| Societal | `agriculture`, `caste`, `family`, `occupation`, `priest`, `royalty`, `trade`, `tribe` | 
 
-### `category`
+The query is like this: `/categories/<category>`. For example, `clothing` returns all nouns that are tagged as an item of clothing.
 
-Returns all nouns that belong to that category. The following categories are available:
-
--  Flora: `grass`, `plant`, `tree`
--  Fauna: `animal`, `bird`, `cattle`, `fish`, `insect`, `snake`, `worm`
--  Things: `building`, `chariot`, `food`, `grain`, `metal`, `object`, `ship`, `weapon`, `war`
--  Measurements: `number`, `distance`, `time`, `weight`
--  Geography: `mountain`, `place`, `river`
--  Knowledge: `astronomy`, `disease`, `literature`, `medicine`, `poison`, `subject`
--  Entertainment: `dicing`, `games`, `music`
--  Toilette: `clothing`, `hair`, `ornament`
--  Legal: `law`, `morals`
--  Societal: `agriculture`, `caste`, `family`, `occupation`, `priest`, `royalty`, `trade`, `tribe`
-
-The query is like this: `/resources?category=<string>`. For example, `/resources?category=clothing` returns all nouns that are tagged as an item of clothing. A noun can belong to more than one category. For example, `aj` is both an `animal` and the name of a `tribe`.
+A noun can belong to more than one category. For example, `aj` is both an `animal` and the name of a `tribe`.
 
 <hr/>
 

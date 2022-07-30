@@ -140,7 +140,7 @@ For the available parameters, see [Parameters](#parameters).
 ]
 ```
 
-## Path parameters
+## Parameters
 
 All parameters are path parameters.
 

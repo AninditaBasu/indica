@@ -73,6 +73,13 @@ The APIs are hosted on Heroku, where I have a limit of 500 hours a month. This l
 
 === "Vedic Society API"
 
+    -  2.0 (July 2022)
+	    -  Deprecated all query parameters
+		-  Introduced the following path parameters:
+		    -  `/words/{word}`
+			-  `/descriptions/{description}`
+			-  `/categories/{category}`
+		-  Changed the endpoint to `https://api-vs.herokuapp.com/vs/v2/`
     -  1.2 (December 2020)
 	    -  Changed the endpoint to `https://api-vs.herokuapp.com/vs/v1`
 	-  1.1 (October 2018)
