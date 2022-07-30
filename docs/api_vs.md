@@ -77,7 +77,7 @@ For the available parameters, see [Parameters](#parameters).
 
 === "Javascript"
 
-    ```
+    ```js
 	fetch('https://api-vs.herokuapp.com/vs/v2/words/ash', {
 	    headers: {
 	        'accept': 'application/json'
