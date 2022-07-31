@@ -83,7 +83,7 @@ paths:
       
       Can take partial strings. For example, `tup` returns the metadata for all verses written in any meter that has `tup` in its name, such as `Anushtup` and `Trishtup`.<br/><br/>
       
-       Is not case sensitive. For example, the input `tup` is treated to be the same as `Tup`, `tUp`, or `TUP`.'
+       Is not case sensitive. For example, `tup` is treated to be the same as `Tup`, `tUp`, or `TUP`.'
       parameters:                    
         - name: meter
           in: path
@@ -155,7 +155,7 @@ paths:
       
       Can take partial strings. For example, `ni` returns all venerated beings or objects whose name contains `ni`, such as `Nirriti` (god), `Maitravaruni` (human), or `Sinivali` (abstract thing).<br/><br/>
       
-       Is not case sensitive. For example, the input `agni` is treated to be the same as `Agni`, `AGNI`, or `aGnI`.'
+       Is not case sensitive. For example, `agni` is treated to be the same as `Agni`, `AGNI`, or `aGnI`.'
       parameters:
         - name: sungfor
           in: path
@@ -178,7 +178,7 @@ paths:
       
       `sungfor` can take partial strings. For example, `ni` returns all verses to venerated beings or objects whose name contains `ni`, such as `Nirriti` (god), `Maitravaruni` (human), or `Sinivali` (abstract thing).<br/><br/>
       
-       `sungfor` is not case sensitive. For example, the input `agni` is treated to be the same as `Agni`, `AGNI`, or `aGnI`.<br/><br/>
+       `sungfor` is not case sensitive. For example, `agni` is treated to be the same as `Agni`, `AGNI`, or `aGnI`.<br/><br/>
        
        `mandal_number` must be an integer between 1 and 10.'
       parameters:
@@ -220,7 +220,7 @@ paths:
       
       `sungfor` and `sungby` can take partial strings. For example, `ni` returns all verses where the name contains `ni`, such as `Nirriti` (god), `Maitravaruni` (human), or `Sinivali` (abstract thing).<br/><br/>
       
-       `sungfor` and `sungby` are not case sensitive. For example, the input `agni` is treated to be the same as `Agni`, `AGNI`, or `aGnI`.'
+       `sungfor` and `sungby` are not case sensitive. For example, `agni` is treated to be the same as `Agni`, `AGNI`, or `aGnI`.'
       parameters:
         - name: sungfor
           in: path
