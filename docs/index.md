@@ -64,6 +64,7 @@ The APIs are hosted on Heroku, where I have a limit of 500 hours a month. This l
 		    -  `/god/{sungfor}/{mandal_number}`
 		    -  `/godbypoet/{sungfor}/{sungby}`
 		    -  `/godcategory/{sungforcategory}`
+			-  `/godcategorybypoetcategory/{sungforcategory}/{sungbycategory}`
 		-  Changed the endpoint to `https://api-rv.herokuapp.com/rv/v2/meta/`
 	-  1.2 (December 2020)
 	    -  Changed the endpoint to `https://api-rv.herokuapp.com/rv/v1`
