@@ -3,7 +3,7 @@ openapi: 3.0.0
 info:
   version: 2.0.0
   title: Rig Veda API
-  description: '## Metadata of the poetry in Rig Veda <br/>
+  description: '## Metadata of the poetry in Rig Veda
   
   This API returns verse-by-verse information on poets, gods, and poetic meters.'
   contact:
@@ -52,15 +52,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Meta'
-        '400':
-          description: Invalid request
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:   
-                  message:
-                    type: string
 
   /chapter/{sukta}:
     get:
@@ -84,15 +75,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Meta'
-        '400':
-          description: Invalid request
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:   
-                  message:
-                    type: string
 
   /meter/{meter}:
     get:
@@ -116,15 +98,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Meta'
-        '400':
-          description: Invalid request
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:   
-                  message:
-                    type: string
 
   /poet/{sungby}:
     get:
@@ -148,15 +121,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Meta'
-        '400':
-          description: Invalid request
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:   
-                  message:
-                    type: string
 
   /poetcategory/{poetcategory}:
     get:
@@ -183,15 +147,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Meta'
-        '400':
-          description: Invalid request
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:   
-                  message:
-                    type: string
 
   /god/{sungfor}:
     get:
@@ -215,15 +170,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Meta'
-        '400':
-          description: Invalid request
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:   
-                  message:
-                    type: string
 
   /god/{sungfor}/{mandal_number}:
     get:
@@ -266,15 +212,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Meta'
-        '400':
-          description: Invalid request
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:   
-                  message:
-                    type: string
 
   /godbypoet/{sungfor}/{sungby}:
     get:
@@ -304,15 +241,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Meta'
-        '400':
-          description: Invalid request
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:   
-                  message:
-                    type: string
 
   /godcategory/{sungforcategory}:
     get:
@@ -344,15 +272,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Meta'
-        '400':
-          description: Invalid request
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:   
-                  message:
-                    type: string
 
   /godcategorybypoetcategory/{sungforcategory}/{sungbycategory}:
     get:
@@ -397,16 +316,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Meta'
-        '400':
-          description: Invalid request
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:   
-                  message:
-                    type: string
-
 
 components:
   schemas:
