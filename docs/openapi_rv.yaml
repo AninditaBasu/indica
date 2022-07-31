@@ -106,7 +106,7 @@ paths:
       
       Can take partial strings. For example, `tra` returns the metadata of all verses composed by any poet whose name contains `tra`, such as `Vishwamitra` and `Vasishth Maitravaruni`.<br/><br/>
       
-       Is not case sensitive. For example, the input `tra` is treated to be the same as `Tra`, `tRa`, or `TRA`.'  
+       Is not case sensitive. For example, `tra` is treated to be the same as `Tra`, `tRa`, or `TRA`.'  
       parameters:   
         - name: sungby
           in: path
