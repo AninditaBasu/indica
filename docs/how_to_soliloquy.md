@@ -1,6 +1,6 @@
 ---
 title: Vedic soliloquies
-description: Find and read the soliloquies and monologues in the Rig Veda
+description: Find and read the soliloquies and monologues in Rig Veda
 author: Anindita Basu
 og_title: Vedic soliloquies
 og_image: images/tweet_mockup_2.png
@@ -41,11 +41,11 @@ A _soliloquy_ is an act of speaking one's thoughts aloud when alone, or regardle
 
 Soliloquies and monologues are as old as humankind. People were speaking to themselves, and speaking without waiting for a response, ever since they started speaking. Rig Veda, possibly the oldest book in the world, also has people soliloquising and monologising.
 
-This tutorial shows you how to find (and read) the soliloquies and monologues in the Rig Veda.
+This tutorial shows you how to find (and read) the soliloquies and monologues in Rig Veda.
 
 ## Possible paths
 
-All the resources in the Rig Veda API return a response in the same JSON structure.
+All the path parameters in the Rig Veda API return a response in the same JSON structure.
 
 ```json
 {
@@ -59,13 +59,13 @@ All the resources in the Rig Veda API return a response in the same JSON structu
 }
 ```
 
-Because I'm interested in people talking to themselves, I need the API to show me only those responses where `sungby` is the same as `sungfor`. 
+Because I'm interested in people talking to themselves, I need the verses where `sungby` is the same as `sungfor`. To do so, I can use any of the path parameters to get all verses in all books, and then programmatically extract only those verses where the poet is the same as the god.
 
-To get the response, I can use any of the resources, but the steps for getting all the verses in all the books will be different for each resource. The following content tabs show the steps for 3 different resources.
+The steps for getting this filtered list verses will depend on the path parameter that I use. The following content tabs show the steps for 3 different path parameters.
 
-=== "/mandal/{mandal}"
+=== "/book/{mandal}"
 
-    Use the `/mandal/{mandal}` resource.
+    Use the `/book/{mandal}` path parameter.
 	
       1.  Start a counter from 1.
 	  1.  Create an empty list to store the results.
@@ -76,9 +76,9 @@ To get the response, I can use any of the resources, but the steps for getting a
 	  1.  Remove duplicate entries from the list.
 	  1.  Iterate over this list, pick the mandal and sukta number combination, and use my favourite search engine to look up the poem.
 
-=== "/sungbycategory/{sungbycategory}"
+=== "/poetcategory/{sungbycategory}"
 
-    Use the `/sungbycategory/{sungbycategory}` resource.
+    Use the `/poetcategory/{sungbycategory}` path parameter.
 	
 	  1.  Create a list where the list items are the available categories.
 	  1.  Create an empty list to store the results.
@@ -89,15 +89,15 @@ To get the response, I can use any of the resources, but the steps for getting a
 	  1.  Remove duplicate entries from the generated result list.
 	  1.  Iterate over this list, pick the mandal and sukta number combination, and use my favourite search engine to look up the poem.
 
-=== "/sungforcategory/{sungforcategory}"
+=== "/godcategory/{sungforcategory}"
 		
-    Use the `/sungforcategory/{sungforcategory}` resource.
+    Use the `/godcategory/{sungforcategory}` path parameter.
    
-    The steps are the same as that for the `/sungbycategory/{sungbycategory}`. The only difference is, in step 1, the available categories in this list is different from the ones in `/sungbycategory/{sungbycategory}`.
+    The steps are the same as that for the `/poetcategory/{sungbycategory}`. The only difference is, in step 1, the available categories in the `/godcategory/{sungforcategory}` list is different from the ones in `/poetcategory/{sungbycategory}`.
 
 ## Example code in Python
 
-These steps use the `/sungbycategory/{sungbycategory}` resource.
+These steps use the `/poetcategory/{sungbycategory}` path parameter.
 
 1.  Create a list of all available categories.
 
@@ -105,14 +105,14 @@ These steps use the `/sungbycategory/{sungbycategory}` resource.
 	categories = ["animal", "demon male", "divine female", "divine male", "human female", "human male"]
 	```
 
-1.  Iterate over this list and make a `GET` call for each category to the `/sungbycategory/{sungbycategory}` resource.
+1.  Iterate over this list and make a `GET` call for each category to the `/poetcategory/{sungbycategory}` path parameter.
 
     ```python
 	headers = {
 	    'accept': 'application/json',
 	}
 
-	url_suffix = "https://api-rv.herokuapp.com/rv/v2/meta/"
+	url_suffix = "https://api-rv.herokuapp.com/rv/v2/meta/poetcategory/"
 
 	for item in category:
 		url = url_suffix + item
@@ -160,7 +160,7 @@ These steps use the `/sungbycategory/{sungbycategory}` resource.
 
 ## Results
 
-I now have a list of URLs that show me the soliloquies and monologues in the Rig Veda.
+I now have a list of URLs that show me the soliloquies and monologues in Rig Veda.
 
 ```
 https://en.wikisource.org/wiki/The_Rig_Veda/Mandala_10/Hymn_159
@@ -184,7 +184,7 @@ Process finished with exit code 0
 
 Maybe read the poem in the original Sanskrit?
 
-Wikisource has a Sanskrit site as well, and the URL format for the Rig Veda is like this: `https://sa.wikisource.org/wiki/ऋग्वेदः_सूक्तं_१.२`.
+Wikisource has a Sanskrit site as well, and the URL format for Rig Veda is like this: `https://sa.wikisource.org/wiki/ऋग्वेदः_सूक्तं_१.२`.
 
 I can see that the numerals need to be in the Nagari script. So, next what I'll do is convert the Arabic numerals to Nagari, append them to the URL, and read the poems.
 

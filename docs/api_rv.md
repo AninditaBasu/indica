@@ -1,6 +1,6 @@
 ---
 title: Rig Veda API reference documentation
-description: Metadata of all the verses in the Rig Veda. Contains info on rishis, gods, chhandas.
+description: Metadata of all the verses in Rig Veda. Contains info on rishis, gods, chhandas.
 author: Anindita Basu
 og_title: Rig Veda API reference documentation
 og_image: images/RV_1.png
@@ -8,7 +8,7 @@ og_image: images/RV_1.png
 
 # Rig Veda API
 
-Metadata of all the verses in the Rig Veda. Contains info on poets, gods, their categories, and the poetic meters.
+Metadata of all the verses in Rig Veda. Contains info on poets, gods, their categories, and the poetic meters.
 
 !!! danger "Timeout"
 
@@ -150,7 +150,7 @@ Returns the metadata of all verses in the specified mandal.
 
 This is an integer parameter. The path is like this: `/mandal/<mandal_number>`. For example, `/mandal/4` returns the metadata of all of the verses in the 4th book.
 
-Valid values for this parameter are 1 through 10 (because there are only 10 mandals in the Rig Veda).
+Valid values for this parameter are 1 through 10 (because there are only 10 mandals in Rig Veda).
 
 ### `sukta`
 

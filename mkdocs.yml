@@ -12,7 +12,7 @@ nav:
 - Tutorials:
     - 'Vedic soliloquies': 'how_to_soliloquy.md'
 - Live sandbox:
-    - 'Rig Veda API': 'rv_meta_openapi3.html'
+    - 'Rig Veda API': 'openapi_rv.html'
     - 'Vedic Society API': 'vs_openapi3.html'
 #
 extra:

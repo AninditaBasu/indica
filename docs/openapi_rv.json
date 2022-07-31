@@ -1,0 +1,599 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "version": "2.0.0",
+    "title": "Rig Veda API",
+    "description": "## Metadata of the poetry in Rig Veda <br/>\nThis API returns verse-by-verse information on poets, gods, and poetic meters.",
+    "contact": {
+      "email": "ab.techwriter@gmail.com"
+    },
+    "license": {
+      "name": "MIT license",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  },
+  "externalDocs": {
+    "description": "Indica APIs home",
+    "url": "https://aninditabasu.github.io/indica/"
+  },
+  "servers": [
+    {
+      "url": "https://api-rv.herokuapp.com/rv/v2/meta/",
+      "description": "Offline every night 12 hours from 9 PM IST"
+    }
+  ],
+  "paths": {
+    "/book/{mandal}": {
+      "get": {
+        "summary": "Find all verses in a mandal",
+        "description": "Returns the metadata of all verses in the specified mandal.<br/><br/>\nFor example, `4` returns the metadata of the verses in the 4th mandal.",
+        "parameters": [
+          {
+            "name": "mandal",
+            "in": "path",
+            "required": true,
+            "description": "Book number",
+            "schema": {
+              "type": "integer",
+              "enum": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returned a list",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Meta"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/chapter/{sukta}": {
+      "get": {
+        "summary": "Find all suktas by number in all mandals",
+        "description": "Returns the metadata of all verses for the specified sukta from all mandals.<br/><br/>\nFor example, `23` returns the metadata for all suktas numbered 23 from all the 10 mandals.",
+        "parameters": [
+          {
+            "name": "sukta",
+            "in": "path",
+            "required": true,
+            "description": "Chapter number",
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 191
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returned a list",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Meta"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/meter/{meter}": {
+      "get": {
+        "summary": "Find all verses in a poetic meter",
+        "description": "Returns the metadata of all verses in the specified poetic meter, for example, `gayatri`.<br/><br/>\nCan take partial strings. For example, `tup` returns the metadata for all verses written in any meter that has `tup` in its name, such as `Anushtup` and `Trishtup`.<br/><br/>\nIs not case sensitive. For example, the input `tup` is treated to be the same as `Tup`, `tUp`, or `TUP`.",
+        "parameters": [
+          {
+            "name": "meter",
+            "in": "path",
+            "description": "Poetic meter",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returned a list",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Meta"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/poet/{sungby}": {
+      "get": {
+        "summary": "Find all verses by a poet",
+        "description": "Returns the metadata of all verses by the specified poet, for example, `Bharadwaj`.<br/><br/>\nCan take partial strings. For example, `tra` returns the metadata of all verses composed by any poet whose name contains `tra`, such as `Vishwamitra` and `Vasishth Maitravaruni`.<br/><br/>\nIs not case sensitive. For example, the input `tra` is treated to be the same as `Tra`, `tRa`, or `TRA`.",
+        "parameters": [
+          {
+            "name": "sungby",
+            "in": "path",
+            "description": "Name of the poet",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returned a list",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Meta"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/poetcategory/{poetcategory}": {
+      "get": {
+        "summary": "Find all verses by a category of poets",
+        "description": "Returns the metadata of all verses where the poet belongs to the specified category.",
+        "parameters": [
+          {
+            "name": "poetcategory",
+            "in": "path",
+            "description": "Category the poet belongs to",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "animal",
+                "demon male",
+                "divine female",
+                "divine male",
+                "human female",
+                "human male"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returned a list",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Meta"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/god/{sungfor}": {
+      "get": {
+        "summary": "Find all verses addressed to someone or something",
+        "description": "Returns the metadata of all verses sung for the specified venerated being or object, for example `Agni` or `plough`.<br/><br/>\nCan take partial strings. For example, `ni` returns all venerated beings or objects whose name contains `ni`, such as `Nirriti` (god), `Maitravaruni` (human), or `Sinivali` (abstract thing).<br/><br/>\nIs not case sensitive. For example, the input `agni` is treated to be the same as `Agni`, `AGNI`, or `aGnI`.",
+        "parameters": [
+          {
+            "name": "sungfor",
+            "in": "path",
+            "description": "Name of the venerated being or object",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returned a list",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Meta"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/god/{sungfor}/{mandal_number}": {
+      "get": {
+        "summary": "Find all verses in a mandal that are addressed to someone or something",
+        "description": "Returns the metadata of all verses sung for the venerated being or object, for example `Agni` or `plough`, in mandal `1`.<br/><br/>\n`sungfor` can take partial strings. For example, `ni` returns all verses to venerated beings or objects whose name contains `ni`, such as `Nirriti` (god), `Maitravaruni` (human), or `Sinivali` (abstract thing).<br/><br/>\n`sungfor` is not case sensitive. For example, the input `agni` is treated to be the same as `Agni`, `AGNI`, or `aGnI`.<br/><br/>\n`mandal_number` must be an integer between 1 and 10.",
+        "parameters": [
+          {
+            "name": "sungfor",
+            "in": "path",
+            "description": "Name of the venerated being or object",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "mandal_number",
+            "in": "path",
+            "required": true,
+            "description": "Book number",
+            "schema": {
+              "type": "integer",
+              "enum": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returned a list",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Meta"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/godbypoet/{sungfor}/{sungby}": {
+      "get": {
+        "summary": "Find all verses in a mandal that are addressed to someone or something by someone",
+        "description": "Returns the metadata of all verses sung for the specified venerated being or object (for example `Agni` or `plough`) by the specified poet (for example, `Vasishth`).<br/><br/>\n`sungfor` and `sungby` can take partial strings. For example, `ni` returns all verses where the name contains `ni`, such as `Nirriti` (god), `Maitravaruni` (human), or `Sinivali` (abstract thing).<br/><br/>\n`sungfor` and `sungby` are not case sensitive. For example, the input `agni` is treated to be the same as `Agni`, `AGNI`, or `aGnI`.",
+        "parameters": [
+          {
+            "name": "sungfor",
+            "in": "path",
+            "description": "Name of the venerated being or object",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sungby",
+            "in": "path",
+            "description": "Name of the poet",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returned a list",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Meta"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/godcategory/{sungforcategory}": {
+      "get": {
+        "summary": "Find all verses sung for everyone or everything in a category",
+        "description": "Returns metadata of the verses where the venerated beings or objects belong to the specified category.",
+        "parameters": [
+          {
+            "name": "sungforcategory",
+            "in": "path",
+            "description": "Category of the venerated being or object",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "animal",
+                "demon male",
+                "divine female",
+                "divine human",
+                "divine male",
+                "human couple",
+                "human female",
+                "human male",
+                "human unborn",
+                "object",
+                "plant"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returned a list",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Meta"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/godcategorybypoetcategory/{sungforcategory}/{sungbycategory}": {
+      "get": {
+        "summary": "Find all verses sung for everyone or everything in a category by all poets in a category",
+        "description": "Returns metadata of the verses where the venerated being or object, as well as the poet, belong to specified categories.",
+        "parameters": [
+          {
+            "name": "sungforcategory",
+            "in": "path",
+            "description": "Category of the venerated being or object",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "animal",
+                "demon male",
+                "divine female",
+                "divine human",
+                "divine male",
+                "human couple",
+                "human female",
+                "human male",
+                "human unborn",
+                "object",
+                "plant"
+              ]
+            }
+          },
+          {
+            "name": "sungbycategory",
+            "in": "path",
+            "description": "Category of the poet",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "animal",
+                "demon male",
+                "divine female",
+                "divine male",
+                "human female",
+                "human male"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returned a list",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Meta"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Meta": {
+        "type": "object",
+        "properties": {
+          "mandal": {
+            "type": "integer",
+            "description": "Book number"
+          },
+          "sukta": {
+            "type": "integer",
+            "description": "Chapter number"
+          },
+          "meter": {
+            "type": "string",
+            "description": "Poetic meter"
+          },
+          "sungby": {
+            "type": "string",
+            "description": "Name of the poet"
+          },
+          "sungbycategory": {
+            "type": "string",
+            "description": "Category the poet belongs to"
+          },
+          "sungfor": {
+            "type": "string",
+            "description": "Whomsoever the poet is singing to"
+          },
+          "sungforcategory": {
+            "type": "string",
+            "description": "Category of whomsoever the poet is singing to"
+          }
+        }
+      }
+    }
+  }
+}

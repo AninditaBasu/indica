@@ -1,6 +1,6 @@
 ---
 title: The Indica APIs
-description: JSON dictionaries of data from ancient India. Includes metadata of all the verses in the Rig Veda (rishis, gods, chhandas) and a description of all nouns in vedic literature (including the flora, fauna, geography, food, relationships, and objects).
+description: JSON dictionaries of data from ancient India. Includes metadata of all the verses in Rig Veda (rishis, gods, chhandas) and a description of all nouns in vedic literature (including the flora, fauna, geography, food, relationships, and objects).
 author: Anindita Basu
 og_title: The Indica APIs
 og_image: images/signboard.png
@@ -55,13 +55,15 @@ The APIs are hosted on Heroku, where I have a limit of 500 hours a month. This l
     -  2.0 (July 2022)
 	    -  Deprecated all query parameters
 		-  Introduced the following path parameters:
-		    -  `/mandal/{mandal_number}`
-			-  `/sukta/{sukta_number}`
-			-  `/meter/{meter}`
-			-  `/sungby/{sungby}`
-			-  `/sungbycategory/{sungbycategory}`
-			-  `/sungfor/{sungfor}`
-			-  `/sungforcategory/{sungforcategory}`
+		    -  `/book/{mandal}`
+		    -  `/chapter/{sukta}`
+		    -  `/meter/{meter}`
+		    -  `/poet/{sungby}`
+		    -  `/poetcategory/{poetcategory}`
+		    -  `/god/{sungfor}`
+		    -  `/god/{sungfor}/{mandal_number}`
+		    -  `/godbypoet/{sungfor}/{sungby}`
+		    -  `/godcategory/{sungforcategory}`
 		-  Changed the endpoint to `https://api-rv.herokuapp.com/rv/v2/meta/`
 	-  1.2 (December 2020)
 	    -  Changed the endpoint to `https://api-rv.herokuapp.com/rv/v1`
