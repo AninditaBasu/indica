@@ -222,7 +222,7 @@
     "/god/{sungfor}/{mandal_number}": {
       "get": {
         "summary": "Find all verses in a mandal that are addressed to someone or something",
-        "description": "Returns the metadata of all verses sung for the venerated being or object, for example `Agni` or `plough`, in mandal `1`.<br/><br/>\n`sungfor` can take partial strings. For example, `ni` returns all verses to venerated beings or objects whose name contains `ni`, such as `Nirriti` (god), `Maitravaruni` (human), or `Sinivali` (abstract thing).<br/><br/>\n`sungfor` is not case sensitive. For example, `agni` is treated to be the same as `Agni`, `AGNI`, or `aGnI`.<br/><br/>\n`mandal_number` must be an integer between 1 and 10.",
+        "description": "Returns the metadata of all verses in a mandal that are sung for the venerated being or object, for example `Agni` or `plough`, in mandal `1`.<br/><br/>\n`sungfor` can take partial strings. For example, `ni` returns all verses to venerated beings or objects whose name contains `ni`, such as `Nirriti` (god), `Maitravaruni` (human), or `Sinivali` (abstract thing).<br/><br/>\n`sungfor` is not case sensitive. For example, `agni` is treated to be the same as `Agni`, `AGNI`, or `aGnI`.<br/><br/>\n`mandal_number` must be an integer between 1 and 10.",
         "parameters": [
           {
             "name": "sungfor",

@@ -8,6 +8,8 @@ og_image: images/signboard.png
 
 # Indica APIs
 
+<hr/>
+
 The Indica APIs give you JSON dictionaries of data from ancient India.
 
 === "Available :material-check-underline:"
@@ -23,8 +25,6 @@ The Indica APIs give you JSON dictionaries of data from ancient India.
 
     - Arthashashtra API
 	- Ashokan edicts API
-
-You can programmatically process the data to make visually appealing or easily consumable information (see the tutorials).
 
 ## Authentication
 
@@ -102,43 +102,13 @@ The APIs are hosted on Heroku, where I have a limit of 500 hours a month. This l
 
 ??? question "What can I do with this data?"
 
-    You can make a [fun career advice app](https://github.com/AninditaBasu/indica/blob/master/tarzezindagi.py) or do a [fictional take on the life of a child in vedic times](https://life-ancient-india.herokuapp.com/). Some more ideas are at [Examples](examples.md).
+    You can process the data to make visually appealing or easily consumable information. Some example are given in the Tutorials section.
 
     Also, I'll be very happy to link back to your implementation or app if you send me a URL.
 
 ??? question "What is the source of this data?"
 
-    === "Rig Veda API"
-
-        For the API, the following books were consulted: 
-		
-		- Rig Veda Samhita, the English translation according to H. H. Wilson and the Bhashya of Sayanacharya, by Ravi Prakash Arya and K. L. Joshi (Volumes 1 through 4)
-		-  [The Practical Sanskrit-English Dictionary, by V. S. Apte](https://dsal.uchicago.edu/dictionaries/apte/)
-
-    === "Vedic Society API"
-	
-	    Vedic literature comprises the four Vedas (Rig, Saam, Yajur, Atharv). Each Veda is a set of these things:
-
-	    -  Samhitas: Hymns or songs to gods
-	    -  Brahmanas: Instructions on rituals
-	    -  Upanishads: Philosophical discourses
-	
-	    For the API, the following books were consulted:
-	
-	    -  Vedic Index of Names and Subjects, by A. A. Macdonell and A. B. Keith ([Volume 1](https://archive.org/details/in.ernet.dli.2015.284764) and [Volume 2](https://archive.org/details/in.ernet.dli.2015.211118))
-	    -  [Vedic Mythology, by A. A. Macdonell](https://archive.org/details/in.ernet.dli.2015.47343/page/n5/mode/2up)
-	    -  [The Nighantu and the Nirukta of Sri Yaskacharya, by Lakshman Sarup](https://archive.org/details/nighantuniruktao00yaskuoft)
-	    -  [The Practical Sanskrit-English Dictionary, by V. S. Apte](https://dsal.uchicago.edu/dictionaries/apte/)
-
-    === "Mahabharat query service"
-	
-	    The translation by Kisari Mohan Ganguli is followed. The following books were consulted:
-		
-		-  [The Mahabharata of Vyasa (K M Ganguli)](https://archive.org/details/TheMahabharataOfKrishna-dwaipayanaVyasa)
-	    -  [Puranic Encyclopedia (Vettam Mani)](https://archive.org/details/puranicencyclopa00maniuoft)
-	    -  [Mahabharata: A Cultural Index (M A Mehendale)](http://www.sanskrit-lexicon.uni-koeln.de/scans/MCIScan/2014/web/webtc/download.html)
-	    -  [Index to the Names in the Mahabharata (Sorensen)](http://www.sanskrit-lexicon.uni-koeln.de/scans/INMScan/2013/web/webtc/download.html)
-	    -  [A Classical Dictionary of Hindu Mythology and Religion (John Dowson)](https://archive.org/details/aclassicaldictio00dowsuoft/page/n28/mode/2up)
+    See [About these APIs](about_mb.md)
 		
 ??? warning "I found an error in the data."
 

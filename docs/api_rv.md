@@ -8,131 +8,17 @@ og_image: images/RV_1.png
 
 # Rig Veda API
 
-Metadata of all the verses in Rig Veda. Contains info on poets, gods, their categories, and the poetic meters.
+<hr/>
 
-!!! danger "Timeout"
-
-    These APIs are offline every night between 9:00 PM IST and 9:00 AM IST.
-
-## Endpoint
-
-`https://api-rv.herokuapp.com/rv/v2/meta/`
-
-## Methods
-
-Only `GET` calls are supported.
-
-### Example request
-
-For the available parameters, see [Parameters](#parameters).
-<!--Examples generated through https://curlconverter.com/-->
-
-=== "cURL"
-
-    ```shell
-	curl -X 'GET' \
-  	'https://api-rv.herokuapp.com/rv/v2/meta/sukta/3' \
-  	-H 'accept: application/json'
-	```
-
-=== "Python"
-
-    ```python
-	import requests
-
-	headers = {
-    	'accept': 'application/json',
-	}
-
-	response = requests.get('https://api-rv.herokuapp.com/rv/v2/meta/sukta/3', headers=headers)
-	```
-
-=== "Java"
-
-    ```java
-    import java.io.IOException;
-    import java.io.InputStream;
-    import java.net.HttpURLConnection;
-    import java.net.URL;
-    import java.util.Scanner;
-
-    class Main {
-    
-    	public static void main(String[] args) throws IOException {
-    		URL url = new URL("https://api-rv.herokuapp.com/rv/v2/meta/sukta/3");
-    		HttpURLConnection httpConn = (HttpURLConnection) url.openConnection();
-    		httpConn.setRequestMethod("GET");
-    
-    		httpConn.setRequestProperty("accept", "application/json");
-    
-    		InputStream responseStream = httpConn.getResponseCode() / 100 == 2
-    				? httpConn.getInputStream()
-    				: httpConn.getErrorStream();
-    		Scanner s = new Scanner(responseStream).useDelimiter("\\A");
-    		String response = s.hasNext() ? s.next() : "";
-    		System.out.println(response);
-    	}
-    }
-    ```
-
-=== "Javascript"
-
-    ```js
-	fetch('https://api-rv.herokuapp.com/rv/v2/meta/sukta/3', {
-	    headers: {
-	        'accept': 'application/json'
-	    }
-	});
-	```
-
-=== "Node.js"
-
-    ```nodejsrepl
-	import fetch from 'node-fetch';
-
-	fetch('https://api-rv.herokuapp.com/rv/v2/meta/sukta/3', {
-	    headers: {
-	        'accept': 'application/json'
-	    }
-	});
-	```
-
-### Example response
+This API fetches metadata of the hymns in Rig Veda. The JSON response contains verse-by-verse information on poets, gods, their categories, and the poetic meters.
 
 ```json
 [
   {
     "mandal": 1,
-    "meter": "Ushnik",
-    "sukta": 150,
-    "sungby": "Dirghatamas Auchathya",
-    "sungbycategory": "human male",
-    "sungfor": "Agni",
-    "sungforcategory": "divine male"
-  },
-  {
-    "mandal": 10,
-    "meter": "Brihati",
-    "sukta": 150,
-    "sungby": "Mrilik Vasishth",
-    "sungbycategory": "human male",
-    "sungfor": "Agni",
-    "sungforcategory": "divine male"
-  },
-  {
-    "mandal": 10,
-    "meter": "Jagati",
-    "sukta": 150,
-    "sungby": "Mrilik Vasishth",
-    "sungbycategory": "human male",
-    "sungfor": "Agni",
-    "sungforcategory": "divine male"
-  },
-  {
-    "mandal": 10,
-    "meter": "Uparishtajjyoti",
-    "sukta": 150,
-    "sungby": "Mrilik Vasishth",
+    "meter": "Gayatri",
+    "sukta": 1,
+    "sungby": "Madhuchchhanda Vaishwamitra",
     "sungbycategory": "human male",
     "sungfor": "Agni",
     "sungforcategory": "divine male"
@@ -140,25 +26,75 @@ For the available parameters, see [Parameters](#parameters).
 ]
 ```
 
-## Parameters
+{% include 'common/timeout.md' %}
 
-All parameters are path parameters.
+## Base URL
 
-### `mandal`
+`https://api-rv.herokuapp.com/rv/v2/meta/`
 
-Returns the metadata of all verses in the specified mandal.
+The request URL is formed by appending an endpoint to the base URL.
 
-This is an integer parameter. The path is like this: `/mandal/<mandal_number>`. For example, `/mandal/4` returns the metadata of all of the verses in the 4th book.
+## Methods
+
+Only `GET` calls are supported. For the available parameters, see [Endpoints](#endpoints).
+
+=== "Example request"
+
+    ```shell
+    curl -X 'GET' \
+        'https://api-rv.herokuapp.com/rv/v2/meta//god/ganga' \
+        -H 'accept: application/json'
+    ```
+
+=== "Example response"
+
+    ```json
+	[
+  	{
+    	"mandal": 10,
+	    "meter": "Jagati",
+	    "sukta": 75,
+	    "sungby": "Sindhukshit Praiyamedh",
+	    "sungbycategory": "human male",
+	    "sungfor": "Ganga",
+	    "sungforcategory": "divine female"
+	  }
+	]
+	```
+
+## Endpoints
+
+All parameters are path parameters, and all of them return a response in the following format:
+
+```json
+{
+  "mandal": 0,
+  "sukta": 0,
+  "meter": "string",
+  "sungby": "string",
+  "sungbycategory": "string",
+  "sungfor": "string",
+  "sungforcategory": "string"
+}
+```
+
+The following endpoints are available. To form the request URL, the endpoint must be appended to the base URL.
+
+### `/book/{mandal}`
+
+Returns the metadata of all verses in the specified mandal. For example, `/mandal/4` returns the metadata of all of the verses in the 4th book.
+
+`{mandal}` is an integer parameter.
 
 Valid values for this parameter are 1 through 10 (because there are only 10 mandals in Rig Veda).
 
-### `sukta`
+### `/chapter/{sukta}`
 
-Returns the metadata of all verses for the specified sukta from all mandals.
+Returns the metadata of all verses for the specified sukta from all mandals. For example, `/sukta/23` returns the metadata for all suktas numbered 23 from all the 10 mandals.
 
-This is an integer parameter. The path is like this: `/sukta/<sukta_number>`. For example, `/sukta/23` returns the metadata for all suktas numbered 23 from all the 10 mandals.
+`{sukta}` is an integer parameter. 
 
-The number of suktas in each mandal is different; for example, mandal 5 contains 87 suktas while mandal 4 contains 58. The highest value possible for this parameter is 191 (which is the number of suktas in the 1st and 10th mandals). The following table lists the number of verses in each book.
+The number of suktas in each mandal is different. For example, mandal 5 contains 87 suktas while mandal 4 contains 58. The highest value possible for this parameter is 191 (which is the number of suktas in the 1st and 10th mandals). The following table lists the number of verses in each book.
 
 | Mandal | Sukta |
 | --- | --- |
@@ -173,21 +109,21 @@ The number of suktas in each mandal is different; for example, mandal 5 contains
 | 9 | 114 |
 | 10 | 191 |
 
-### `meter`
+### `/meter/{meter}`
 
-Returns the metadata of all verses in the specified poetic meter, for example, `gayatri`.
+Returns the metadata of all verses in the specified poetic meter. For example `/meter/tup` returns the metadata for all verses written in any meter that has `tup` in its name, such as `Anushtup` and `Trishtup`.
 
-This is a string parameter. The path is like this: `/meter/<string>`. For example `/meter/tup` returns the metadata for all verses written in any meter that has `tup` in its name, such as `Anushtup` and `Trishtup`.
+`{meter}` is a string parameter.
 
-### `sungby`
+### `/poet/{sungby}`
 
-Returns the metadata of all verses by the specified singer, for example, `Bharadwaj`.
+Returns the metadata of all verses by the specified poet. For example, `tra` returns the metadata of all verses composed by any poet whose name contains `tra`, such as `Vishwamitra` and `Vasishth Maitravaruni`.
 
-This is a string parameter. The path is like this: `/sungby/<string>`. For example, `tra` returns the metadata of all verses composed by any singer whose name contains `tra`, such as `Vishwamitra` and `Vasishth Maitravaruni`.
+`{sungby}` is a string parameter.
 
-### `sungbycategory`
+### `/poetcategory/{poetcategory}`
 
-Returns the metadata of all verses where the singer belongs to the specified category. The following categories are available:
+Returns the metadata of all verses where the poet belongs to the specified category. The following categories are available:
 
 -  `animal`
 -  `demon male`
@@ -196,16 +132,29 @@ Returns the metadata of all verses where the singer belongs to the specified cat
 -  `human female`
 -  `human male`
 
-This is a string parameter. The path is like this:  `/sungbycategory/<specific_string>`. 
+`{poetcategory}` is a string parameter. 
 
-### `sungfor`
-Returns the metadata of all verses sung for the specified god, human, or object, for example `Agni` or `plough`.
+### `/god/{sungfor}`
 
-This is a string parameter. The path is like this:  `/sungfor/<string>`. For example, `ni` returns all venerated beings or objects whose name contains `ni`, such as `Nirriti` (god), `Maitravaruni` (human), or `Sinivali` (abstract thing).
+Returns the metadata of all verses sung for the specified god. For example, `ni` returns all venerated beings or objects whose name contains `ni`, such as `Nirriti` (god), `Maitravaruni` (human), or `Sinivali` (abstract thing).
 
-### `sungforcategory`
+`{sungfor}` is a string parameter.
 
-Returns metadata of the verses where the subject belongs to the specified category. The following categories are available:
+### `/god/{sungfor}/{mandal_number}`
+
+Returns the metadata of all verses in a mandal that are sung for the specified god, for example `Agni` or `plough` in mandal `1`.
+
+`{sungfor}` is a string parameter and `{mandal_number}` an integer parameter.
+
+### `/godbypoet/{sungfor}/{sungby}`
+
+Returns the metadata of all verses sung for the specified god (for example `Agni` or `plough`) by the specified poet (for example, `Vasishth`).
+
+`{sungfor}` and `{sungby}` are string parameter.
+
+### `godcategory/{sungforcategory}`
+
+Returns metadata of all verses where a god belongs to the specified category. The following categories are available:
 
 -  `abstract`
 -  `animal`
@@ -220,11 +169,45 @@ Returns metadata of the verses where the subject belongs to the specified catego
 -  `object`
 -  `plant`
 
-This is a string parameter. The path is like this: `/sungforcategory/<specific_string>`.
+`{sungforcategory}` is a string parameter.
+
+### `/godcategorybypoetcategory/{sungforcategory}/{sungbycategory}`
+
+Returns metadata of all verses where the god and the poet belong to specified categories. The following categories are available:
+
+=== "categories of gods"
+
+    -  `abstract`
+    -  `animal`
+    -  `demon male`
+    -  `divine female`
+    -  `divine human`
+    -  `divine male`
+    -  `human couple`
+    -  `human female`
+    -  `human male`
+    -  `human unborn`
+    -  `object`
+    -  `plant`
+
+=== "categories of poets"
+
+    -  `animal`
+    -  `demon male`
+    -  `divine female`
+    -  `divine male`
+    -  `human female`
+    -  `human male`
+
+`{sungforcategory}` and `{sungbycategory}` are string parameters.
 
 ## Live sandbox
 
-See [Rig Veda API: Swagger sandbox](https://aninditabasu.github.io/indica/rv_meta_openapi3.html).
+See [Rig Veda API: Try it out](https://aninditabasu.github.io/indica/openapi_rv.html).
+
+## Tutorials
+
+-  [Vedic soliloquies](how_to_soliloquy.md)
 
 <hr/>
 

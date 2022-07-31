@@ -8,13 +8,15 @@ og_image: images/VS_1.png
 
 # Vedic Society API
 
-Nouns in vedic literature, including the flora, fauna, geography, food, relationships, and objects.
+<hr/>
+
+This API fetches the meanings of nouns from vedic literature.  The nouns are categorised as flora, fauna, geography, food, relationships, and more groups. The JSON response contains the word in Nagari script and transliterated roman script, the meaning, and the category.
 
 !!! danger "Timeout"
 
     These APIs are offline every night between 9:00 PM IST and 9:00 AM IST.
 
-## Endpoint
+## Base URL
 
 `https://api-vs.herokuapp.com/vs/v2/`
 
@@ -24,7 +26,7 @@ Only `GET` calls are supported.
 
 ### Example request
 
-For the available parameters, see [Parameters](#parameters).
+For the available parameters, see [Endpoints](#endpoints).
 <!--Examples generated through https://curlconverter.com/-->
 
 === "cURL"
@@ -152,9 +154,9 @@ For the available parameters, see [Parameters](#parameters).
 ]
 ```
 
-## Parameters
+## Endpoints
 
-All parameters are path parameters.
+All parameters are path parameters, and all of them return a response in the following format:
 
 ### `words`
 
@@ -190,6 +192,14 @@ Returns all nouns that belong to the specified category. The following categorie
 The path is like this: `/categories/<category>`. For example, `/categories/clothing` returns all nouns that are tagged as an item of clothing.
 
 A noun can belong to more than one category. For example, `aj` is both an `animal` and the name of a `tribe`.
+
+## Live sandbox
+
+See [Vedic Society API: Try it out](https://aninditabasu.github.io/indica/openapi_vs.html).
+
+## Tutorials
+
+-  ...
 
 <hr/>
 

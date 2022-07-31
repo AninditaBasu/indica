@@ -8,6 +8,8 @@ og_image: images/tweet_mockup_2.png
 
 # Tutorial: Vedic soliloquies
 
+<hr/>
+
 A _soliloquy_ is an act of speaking one's thoughts aloud when alone, or regardless of any listeners, especially by a character in a play. When directed to any listeners, a soliloquy is called a _monologue_. Here is an example each.
 
 === "Soliloquy"
@@ -76,13 +78,13 @@ The steps for getting this filtered list verses will depend on the path paramete
 	  1.  Remove duplicate entries from the list.
 	  1.  Iterate over this list, pick the mandal and sukta number combination, and use my favourite search engine to look up the poem.
 
-=== "/poetcategory/{sungbycategory}"
+=== "/poetcategory/{poetcategory}"
 
-    Use the `/poetcategory/{sungbycategory}` path parameter.
+    Use the `/poetcategory/{poetcategory}` path parameter.
 	
 	  1.  Create a list where the list items are the available categories.
 	  1.  Create an empty list to store the results.
-	  1.  Loop through the category list to get all verses where `{sungbycategory}` is equal to the category list item.
+	  1.  Loop through the category list to get all verses where `{poetcategory}` is equal to the category list item.
 	  1.  Loop through the returned JSON and find verses where `sungby` is the same as `sungfor`. Append those verses to the empty list.
       1.  Pick up the next item from the category list, and repeat steps 2, 3, and 4.
       1.  Repeat the previous steps till there are no more items in the category list.
@@ -93,11 +95,11 @@ The steps for getting this filtered list verses will depend on the path paramete
 		
     Use the `/godcategory/{sungforcategory}` path parameter.
    
-    The steps are the same as that for the `/poetcategory/{sungbycategory}`. The only difference is, in step 1, the available categories in the `/godcategory/{sungforcategory}` list is different from the ones in `/poetcategory/{sungbycategory}`.
+    The steps are the same as that for the `/poetcategory/{poetcategory}`. The only difference is, in step 1, the available categories in the `/godcategory/{sungforcategory}` list is different from the ones in `/poetcategory/{poetcategory}`.
 
 ## Example code in Python
 
-These steps use the `/poetcategory/{sungbycategory}` path parameter.
+These steps use the `/poetcategory/{poetcategory}` path parameter.
 
 1.  Create a list of all available categories.
 
@@ -105,7 +107,7 @@ These steps use the `/poetcategory/{sungbycategory}` path parameter.
 	categories = ["animal", "demon male", "divine female", "divine male", "human female", "human male"]
 	```
 
-1.  Iterate over this list and make a `GET` call for each category to the `/poetcategory/{sungbycategory}` path parameter.
+1.  Iterate over this list and make a `GET` call for each category to the `/poetcategory/{poetcategory}` path parameter.
 
     ```python
 	headers = {
@@ -205,8 +207,6 @@ Sanskrit version: [https://sa.wikisource.org/wiki/ऋग्वेदः_सू�
 A musical rendering:
 
 <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4mnYGUG890pny5QTjCaZWr?utm_source=generator" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
-
-
 
 <hr/>
 

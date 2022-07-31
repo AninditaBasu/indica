@@ -6,14 +6,15 @@ docs_dir: docs
 #
 nav:
 - 'Home': 'index.md'
-- API reference:
+- Reference docs:
     - 'Rig Veda API': 'api_rv.md'
     - 'Vedic Society API': 'api_vs.md'
 - Tutorials:
     - 'Vedic soliloquies': 'how_to_soliloquy.md'
 - Live sandbox:
     - 'Rig Veda API': 'openapi_rv.html'
-    - 'Vedic Society API': 'vs_openapi3.html'
+    - 'Vedic Society API': 'openapi_vs.html'
+- 'About these APIs': 'about.md'
 #
 extra:
   social:
