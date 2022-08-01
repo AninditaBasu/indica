@@ -61,9 +61,9 @@ All the path parameters in the Rig Veda API return a response in the same JSON s
 }
 ```
 
-Because I'm interested in people talking to themselves, I need the verses where `sungby` is the same as `sungfor`. To do so, I can use any of the path parameters to get all verses in all books, and then programmatically extract only those verses where the poet is the same as the god.
+Because you're interested in people talking to themselves, you need the verses where `sungby` is the same as `sungfor`. To do so, you can use any of the path parameters to get all verses in all books, and then programmatically extract only those verses where the poet is the same as the god.
 
-The steps for getting this filtered list verses will depend on the path parameter that I use. The following content tabs show the steps for 3 different path parameters.
+The steps for getting this filtered list verses will depend on the path parameter that you use. The following content tabs show the steps for 3 different path parameters.
 
 === "/book/{mandal}"
 
@@ -148,7 +148,7 @@ These steps use the `/poetcategory/{poetcategory}` path parameter.
 	
 1.  Iterate over this list, pick the mandal and sukta number combination, and look up the poem.
 
-    My favourite resource is Wikisource, so I'll go read the poems there. The URLs at Wikisource are in the following format: `https://en.wikisource.org/wiki/The_Rig_Veda/Mandala_1/Hymn_2`. Therefore, I'll compose the URLs to match this scheme.
+    A good resource, for example, is Wikisource, so you can go read the poems there. The URLs at Wikisource are in the following format: `https://en.wikisource.org/wiki/The_Rig_Veda/Mandala_1/Hymn_2`. Therefore, compose the URLs to match this scheme.
 
 	```python
 	for item in soliloquy_unique:
@@ -162,7 +162,7 @@ These steps use the `/poetcategory/{poetcategory}` path parameter.
 
 ## Results
 
-I now have a list of URLs that show me the soliloquies and monologues in Rig Veda.
+You now have a list of URLs that show me the soliloquies and monologues in Rig Veda.
 
 ```
 https://en.wikisource.org/wiki/The_Rig_Veda/Mandala_10/Hymn_159
@@ -188,7 +188,7 @@ Maybe read the poem in the original Sanskrit?
 
 Wikisource has a Sanskrit site as well, and the URL format for Rig Veda is like this: `https://sa.wikisource.org/wiki/ऋग्वेदः_सूक्तं_१.२`.
 
-I can see that the numerals need to be in the Nagari script. So, next what I'll do is convert the Arabic numerals to Nagari, append them to the URL, and read the poems.
+You can see that the numerals need to be in the Nagari script. So, the next step is to convert the Arabic numerals to Nagari, append them to the URL, and read the poems.
 
 ## Obiter dicta
 

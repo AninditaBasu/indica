@@ -36,17 +36,21 @@ The request URL is formed by appending an endpoint to the base URL.
 
 ## Methods
 
-Only `GET` calls are supported. For the available parameters, see [Endpoints](#endpoints).
+Only `GET` calls are supported. For the request parameters, see [Endpoints](#endpoints).
 
 === "Example request"
 
+    For the request parameters, see [Endpoints](#endpoints).
+
     ```shell
     curl -X 'GET' \
-        'https://api-rv.herokuapp.com/rv/v2/meta//god/ganga' \
+        'https://api-rv.herokuapp.com/rv/v2/meta/god/ganga' \
         -H 'accept: application/json'
     ```
 
 === "Example response"
+
+    For the response parameters, see [Response parameters](#response-parameters).
 
     ```json
 	[
@@ -64,21 +68,13 @@ Only `GET` calls are supported. For the available parameters, see [Endpoints](#e
 
 ## Endpoints
 
-All parameters are path parameters, and all of them return a response in the following format:
-
-```json
-{
-  "mandal": 0,
-  "sukta": 0,
-  "meter": "string",
-  "sungby": "string",
-  "sungbycategory": "string",
-  "sungfor": "string",
-  "sungforcategory": "string"
-}
-```
+All parameters are path parameters.
 
 The following endpoints are available. To form the request URL, the endpoint must be appended to the base URL.
+
+```bash
+request URL = base URL + endpoint
+```
 
 ### `/book/{mandal}`
 
@@ -87,27 +83,6 @@ Returns the metadata of all verses in the specified mandal. For example, `/manda
 `{mandal}` is an integer parameter.
 
 Valid values for this parameter are 1 through 10 (because there are only 10 mandals in Rig Veda).
-
-### `/chapter/{sukta}`
-
-Returns the metadata of all verses for the specified sukta from all mandals. For example, `/sukta/23` returns the metadata for all suktas numbered 23 from all the 10 mandals.
-
-`{sukta}` is an integer parameter. 
-
-The number of suktas in each mandal is different. For example, mandal 5 contains 87 suktas while mandal 4 contains 58. The highest value possible for this parameter is 191 (which is the number of suktas in the 1st and 10th mandals). The following table lists the number of verses in each book.
-
-| Mandal | Sukta |
-| --- | --- |
-| 1 | 191 |
-| 2 | 43 |
-| 3 | 62 |
-| 4 | 58 |
-| 5 | 87 | 
-| 6 | 75 |
-| 7 | 104 |
-| 8 | 103 |
-| 9 | 114 |
-| 10 | 191 |
 
 ### `/meter/{meter}`
 
@@ -152,7 +127,7 @@ Returns the metadata of all verses sung for the specified god (for example `Agni
 
 `{sungfor}` and `{sungby}` are string parameter.
 
-### `godcategory/{sungforcategory}`
+### `/godcategory/{sungforcategory}`
 
 Returns metadata of all verses where a god belongs to the specified category. The following categories are available:
 
@@ -200,6 +175,48 @@ Returns metadata of all verses where the god and the poet belong to specified ca
     -  `human male`
 
 `{sungforcategory}` and `{sungbycategory}` are string parameters.
+
+## Response parameters
+
+All the endpoints return a response in the following format:
+
+```json
+{
+  "mandal": 0,
+  "sukta": 0,
+  "meter": "string",
+  "sungby": "string",
+  "sungbycategory": "string",
+  "sungfor": "string",
+  "sungforcategory": "string"
+}
+```
+
+Here's a description of these parameter.
+
+-  `mandal`: The book number. Rig Veda has 10 books.
+-  `sukta`: The chapter number. Books contain chapters. The number of chapters in each book is different. For example, mandal 5 contains 87 suktas while mandal 4 contains 58. The highest value possible for this parameter is 191 (which is the number of suktas in the 1st and 10th mandals). The following table lists the number of verses in each book.
+
+    ??? note "Click to show/hide the table"
+	
+	    | Mandal (book) | Sukta (chapter) |
+	    | --- | --- |
+	    | 1 | 191 |
+	    | 2 | 43 |
+	    | 3 | 62 |
+	    | 4 | 58 |
+	    | 5 | 87 | 
+	    | 6 | 75 |
+	    | 7 | 104 |
+	    | 8 | 103 |
+	    | 9 | 114 |
+	    | 10 | 191 |
+
+-  `meter`: The poetic meter.
+-  `sungby`: The poet.
+-  `sungbycategory`: The category of the poet. For a list of categories, see [/poetcategory/{poetcategory}](#godcategorybypoetcategorysungforcategorysungbycategory).
+-  `sungfor`: The god.
+-  `sungforcategory`: The category of the god. For a list of categories, see [/godcategory/{sungforcategory}](#godcategorybypoetcategorysungforcategorysungbycategory).
 
 ## Live sandbox
 

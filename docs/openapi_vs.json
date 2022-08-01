@@ -13,8 +13,8 @@
     }
   },
   "externalDocs": {
-    "description": "Vedic Society API reference",
-    "url": "https://aninditabasu.github.io/indica/api_vs/"
+    "description": "Indica APIs home",
+    "url": "https://aninditabasu.github.io/indica/"
   },
   "servers": [
     {
@@ -40,26 +40,11 @@
         ],
         "responses": {
           "200": {
-            "description": "Returned a list",
+            "description": "Returns a response from the API app. If the query has any results, a JSON response is returned. If the query did not find a match in the database, a text message is returned.",
             "content": {
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Nouns"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Invalid request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "message": {
-                      "type": "string"
-                    }
-                  }
                 }
               }
             }
@@ -84,26 +69,11 @@
         ],
         "responses": {
           "200": {
-            "description": "Returned a list",
+            "description": "Returns a response from the API app. If the query has any results, a JSON response is returned. If the query did not find a match in the database, a text message is returned.",
             "content": {
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Nouns"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Invalid request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "message": {
-                      "type": "string"
-                    }
-                  }
                 }
               }
             }
@@ -178,26 +148,11 @@
         ],
         "responses": {
           "200": {
-            "description": "Returned a list",
+            "description": "Returns a response from the API app. If the query has any results, a JSON response is returned. If the query did not find a match in the database, a text message is returned.",
             "content": {
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Nouns"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Invalid request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "message": {
-                      "type": "string"
-                    }
-                  }
                 }
               }
             }

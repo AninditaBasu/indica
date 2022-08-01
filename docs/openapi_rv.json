@@ -52,38 +52,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Returned a list",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Meta"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/chapter/{sukta}": {
-      "get": {
-        "summary": "Find all suktas by number in all mandals",
-        "description": "Returns the metadata of all verses for the specified sukta from all mandals.<br/><br/>\nFor example, `23` returns the metadata for all suktas numbered 23 from all the 10 mandals.",
-        "parameters": [
-          {
-            "name": "sukta",
-            "in": "path",
-            "required": true,
-            "description": "Chapter number",
-            "schema": {
-              "type": "integer",
-              "minimum": 1,
-              "maximum": 191
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Returned a list",
+            "description": "Returns a response from the API app. If the query has any results, a JSON response is returned. If the query did not find a match in the database, a text message is returned.",
             "content": {
               "application/json": {
                 "schema": {
@@ -112,7 +81,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Returned a list",
+            "description": "Returns a response from the API app. If the query has any results, a JSON response is returned. If the query did not find a match in the database, a text message is returned.",
             "content": {
               "application/json": {
                 "schema": {
@@ -141,7 +110,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Returned a list",
+            "description": "Returns a response from the API app. If the query has any results, a JSON response is returned. If the query did not find a match in the database, a text message is returned.",
             "content": {
               "application/json": {
                 "schema": {
@@ -153,13 +122,13 @@
         }
       }
     },
-    "/poetcategory/{poetcategory}": {
+    "/poetcategory/{sungbycategory}": {
       "get": {
         "summary": "Find all verses by a category of poets",
         "description": "Returns the metadata of all verses where the poet belongs to the specified category.",
         "parameters": [
           {
-            "name": "poetcategory",
+            "name": "sungbycategory",
             "in": "path",
             "description": "Category the poet belongs to",
             "required": true,
@@ -178,7 +147,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Returned a list",
+            "description": "Returns a response from the API app. If the query has any results, a JSON response is returned. If the query did not find a match in the database, a text message is returned.",
             "content": {
               "application/json": {
                 "schema": {
@@ -207,7 +176,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Returned a list",
+            "description": "Returns a response from the API app. If the query has any results, a JSON response is returned. If the query did not find a match in the database, a text message is returned.",
             "content": {
               "application/json": {
                 "schema": {
@@ -219,10 +188,10 @@
         }
       }
     },
-    "/god/{sungfor}/{mandal_number}": {
+    "/god/{sungfor}/{mandal}": {
       "get": {
         "summary": "Find all verses in a mandal that are addressed to someone or something",
-        "description": "Returns the metadata of all verses in a mandal that are sung for the venerated being or object, for example `Agni` or `plough`, in mandal `1`.<br/><br/>\n`sungfor` can take partial strings. For example, `ni` returns all verses to venerated beings or objects whose name contains `ni`, such as `Nirriti` (god), `Maitravaruni` (human), or `Sinivali` (abstract thing).<br/><br/>\n`sungfor` is not case sensitive. For example, `agni` is treated to be the same as `Agni`, `AGNI`, or `aGnI`.<br/><br/>\n`mandal_number` must be an integer between 1 and 10.",
+        "description": "Returns the metadata of all verses in a mandal that are sung for the venerated being or object, for example `Agni` or `plough` in mandal `1`.<br/><br/>\n`sungfor` can take partial strings. For example, `ni` returns all verses to venerated beings or objects whose name contains `ni`, such as `Nirriti` (god), `Maitravaruni` (human), or `Sinivali` (abstract thing).<br/><br/>\n`sungfor` is not case sensitive. For example, `agni` is treated to be the same as `Agni`, `AGNI`, or `aGnI`.<br/><br/>\n`mandal` must be an integer between 1 and 10.",
         "parameters": [
           {
             "name": "sungfor",
@@ -234,7 +203,7 @@
             }
           },
           {
-            "name": "mandal_number",
+            "name": "mandal",
             "in": "path",
             "required": true,
             "description": "Book number",
@@ -257,7 +226,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Returned a list",
+            "description": "Returns a response from the API app. If the query has any results, a JSON response is returned. If the query did not find a match in the database, a text message is returned.",
             "content": {
               "application/json": {
                 "schema": {
@@ -295,7 +264,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Returned a list",
+            "description": "Returns a response from the API app. If the query has any results, a JSON response is returned. If the query did not find a match in the database, a text message is returned.",
             "content": {
               "application/json": {
                 "schema": {
@@ -337,7 +306,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Returned a list",
+            "description": "Returns a response from the API app. If the query has any results, a JSON response is returned. If the query did not find a match in the database, a text message is returned.",
             "content": {
               "application/json": {
                 "schema": {
@@ -396,7 +365,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Returned a list",
+            "description": "Returns a response from the API app. If the query has any results, a JSON response is returned. If the query did not find a match in the database, a text message is returned.",
             "content": {
               "application/json": {
                 "schema": {

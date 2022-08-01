@@ -37,9 +37,10 @@ theme:
     palette:
       primary: orange
       accent: green
+    features:
+      - navigation.top
 # mkdocs-material theme entries end here
 # ===============================
-
 #
 # Extensions list (https://squidfunk.github.io/mkdocs-material/reference/abbreviations/):
 #  - meta, which is part of the standard Markdown library, and is for front matter in a doc file
