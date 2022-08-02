@@ -23,9 +23,7 @@ Let him dry up from the root.
 - Atharva Veda, 7.59
 ```
 
-The Rig Veda APIs are restricted to only the Rig Veda verses, which don't really contain curses. But, you can still formulate curses by looking at the data returned by the Vedic Soceity API.
-
-This tutorial shows you how to curse like you were living in those times.
+This tutorial shows you how to curse like you were living in the vedic times.
 
 ## Possible paths
 
@@ -40,7 +38,9 @@ All the path parameters in the Vedic Society API return a response in the same J
 }
 ```
 
-First, you need words that from those categories that have an element of evil or of suffering in them. And then, you must string those words together to form sentences. Here's a pseudocode example:
+First, you find words that from those categories that have an element of evil or of suffering in them. And then, you string those words together to form sentences. 
+
+Here's a pseudocode example:
 
 ```bash
 
@@ -50,7 +50,7 @@ where /categories/{category} == 'disease':
 where /categories/{category} == 'family':
 	get word
 	get description
-sentence = 'May your ' + <family_word> + ' be blighted with ' + <disease_word> + '.
+curse = 'May your ' + <family_word> + ' be blighted with ' + <disease_word> + '.
 
 ```
 
@@ -115,6 +115,7 @@ May your बाल  be blighted with अर्शस.
 ```
 
 Or, maybe make the curses more colourful? You could compose entire verses by picking random entries from the following categories: `snake`, `worm`, `insect`, `weapon`, `medicine`, `poison`.
+
 
 <hr/>
 

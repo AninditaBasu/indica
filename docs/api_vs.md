@@ -12,6 +12,17 @@ og_image: images/VS_1.png
 
 This API fetches the meanings of nouns from vedic literature.  The nouns are categorised as flora, fauna, geography, food, relationships, and more groups. The JSON response contains the word in Nagari script and transliterated roman script, the meaning, and the category.
 
+```json
+[
+  {
+    "category": "law",
+    "description": "thief",
+    "nagari": "तायु",
+    "word": "tayu"
+  }
+]
+```
+
 {% include 'common/timeout.md' %}
 
 ## Base URL
@@ -56,35 +67,31 @@ Only `GET` calls are supported.
 
 ## Endpoints
 
-All parameters are path parameters.
-
-The following endpoints are available. To form the request URL, the endpoint must be appended to the base URL.
+All parameters are path parameters. To form the request URL, the endpoint must be appended to the base URL.
 
 ```bash
 request URL = base URL + endpoint
 ```
 
+The following endpoints are available. 
+
 ### `/words/{word}`
 
-Returns all nouns, transliterated from Sanskrit to the roman script, that contains the specified word or phrase.
-      
-For example, `/words/shat` returns the entries for all words that contain `shat`, for example, `kshatriya`, `prishat`, or `shatapati`.
+Returns all nouns, transliterated from Sanskrit to the Roman script, that contains the specified word or phrase.  For example, `/words/shat` returns the entries for all words that contain `shat`, such as  `kshatriya`, `prishat`, or `shatapati`.
 
 `{word}` is a string parameter.
 
 ### `/descriptions/{description}`
 
-Returns all nouns where the meaning contains the specified phrase.
+Returns all nouns where the meaning contains the specified phrase.  For example, `/descriptions/horse` returns all descriptions that contain the word `horse`.
 
-For example, `/descriptions/horse` returns all descriptions that contain the word `horse`.
-
-To get all nouns that contain `horse`, use the `words` parameter instead, and use a Sanskrit word for horse, such as `ashwa`.
+To get all nouns that contain `horse` (rather than all descriptions that contain `horse`), use the `words` parameter instead, and use a Sanskrit word for horse, such as `ashwa`.
 
 `{description}` is a string parameter.
 
 ### `/categories/{category}`
 
-Returns all nouns that belong to the specified category. The following categories are available:
+Returns all nouns that belong to the specified category. The following categories are available.
 
 |  Subject to explore | Available categories |
 | --- | --- |

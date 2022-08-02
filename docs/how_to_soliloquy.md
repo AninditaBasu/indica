@@ -116,12 +116,11 @@ These steps use the `/poetcategory/{poetcategory}` path parameter.
 
 	url_suffix = "https://api-rv.herokuapp.com/rv/v2/meta/poetcategory/"
 
+	import json
 	for item in category:
 		url = url_suffix + item
 		response = requests.get(url, headers=headers)
 		response_json = json.loads(json.dumps(response.json()))
-		
-		#...more code goes here for the next steps...
 	```
 
 1.  Loop through the returned JSON and find verses where `sungby` is the same as `sungfor`. Append those verses to the result list.
@@ -162,7 +161,7 @@ These steps use the `/poetcategory/{poetcategory}` path parameter.
 
 ## Results
 
-You now have a list of URLs that show me the soliloquies and monologues in Rig Veda.
+You now have a list of URLs for the soliloquies and monologues in Rig Veda.
 
 ```
 https://en.wikisource.org/wiki/The_Rig_Veda/Mandala_10/Hymn_159
@@ -188,7 +187,7 @@ Maybe read the poem in the original Sanskrit?
 
 Wikisource has a Sanskrit site as well, and the URL format for Rig Veda is like this: `https://sa.wikisource.org/wiki/ऋग्वेदः_सूक्तं_१.२`.
 
-You can see that the numerals need to be in the Nagari script. So, the next step is to convert the Arabic numerals to Nagari, append them to the URL, and read the poems.
+You can see that the numerals need to be in the Nagari script. So, you'd have to convert the Arabic numerals to Nagari, append them to the URL, and read the poems.
 
 ## Obiter dicta
 

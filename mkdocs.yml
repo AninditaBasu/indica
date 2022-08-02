@@ -11,6 +11,7 @@ nav:
     - 'Vedic Society API': 'api_vs.md'
 - Tutorials:
     - 'Vedic soliloquies': 'how_to_soliloquy.md'
+    - 'Vedic curses': 'how_to_curse.md'
 - Live sandbox:
     - 'Rig Veda API': 'openapi_rv.html'
     - 'Vedic Society API': 'openapi_vs.html'

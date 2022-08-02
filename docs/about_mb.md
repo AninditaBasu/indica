@@ -1,7 +1,7 @@
 The Bengal version of the Mahabharat, as translated by Kisari Mohan Ganguli, is followed. 
-		
-The following books were consulted:
-		
+
+The data is from the following books: 
+
 -  [The Mahabharata of Vyasa (K M Ganguli)](https://archive.org/details/TheMahabharataOfKrishna-dwaipayanaVyasa)
 -  [Puranic Encyclopedia (Vettam Mani)](https://archive.org/details/puranicencyclopa00maniuoft)
 -  [Mahabharata: A Cultural Index (M A Mehendale)](http://www.sanskrit-lexicon.uni-koeln.de/scans/MCIScan/2014/web/webtc/download.html)
