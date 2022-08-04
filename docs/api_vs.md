@@ -3,6 +3,7 @@ title: Vedic Society API reference documentation
 description: Nouns in vedic literature, including the flora, fauna, geography, food, relationships, and objects.
 author: Anindita Basu
 og_title: Vedic Society API reference documentation
+og_description: Nouns in vedic literature, including the flora, fauna, geography, food, relationships, and objects.
 og_image: images/VS_1.png
 ---
 
@@ -134,9 +135,9 @@ The `word`, `description`, and `category` parameters are already described in [E
 
 See [Vedic Society API: Try it out](https://aninditabasu.github.io/indica/openapi_vs.html).
 
-## Tutorials
+## Related
 
--  [Vedic curses](how_to_curse.md)
+-  [Tutorial: Vedic curses](how_to_curse.md)
 
 <hr/>
 

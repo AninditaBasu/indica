@@ -3,10 +3,11 @@ title: Rig Veda API reference documentation
 description: Metadata of all the verses in Rig Veda. Contains info on rishis, gods, chhandas.
 author: Anindita Basu
 og_title: Rig Veda API reference documentation
+og_description: Metadata of all the verses in Rig Veda. Contains info on rishis, gods, chhandas.
 og_image: images/RV_1.png
 ---
 
-# Rig Veda API
+# Rig Veda API reference
 
 <hr/>
 
@@ -27,6 +28,10 @@ This API fetches metadata of the hymns in Rig Veda. The JSON response contains v
 ```
 
 {% include 'common/timeout.md' %}
+
+## Context
+
+An explanation of the various elements in Rig Veda (and this API) is contained in [About the Rig Veda API](about_rv.md).
 
 ## Base URL
 
@@ -222,9 +227,9 @@ Here's a description of these parameter.
 
 See [Rig Veda API: Try it out](https://aninditabasu.github.io/indica/openapi_rv.html).
 
-## Tutorials
+## Related
 
--  [Vedic soliloquies](how_to_soliloquy.md)
+-  [Tutorial: Vedic soliloquies](how_to_soliloquy.md)
 
 <hr/>
 

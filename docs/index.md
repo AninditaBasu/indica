@@ -3,6 +3,7 @@ title: The Indica APIs
 description: JSON dictionaries of data from ancient India. Includes metadata of all the verses in Rig Veda (rishis, gods, chhandas) and a description of all nouns in vedic literature (including the flora, fauna, geography, food, relationships, and objects).
 author: Anindita Basu
 og_title: The Indica APIs
+og_description: JSON dictionaries of data from ancient India. Includes metadata of all the verses in Rig Veda (rishis, gods, chhandas) and a description of all nouns in vedic literature (including the flora, fauna, geography, food, relationships, and objects).
 og_image: images/signboard.png
 ---
 
@@ -11,6 +12,12 @@ og_image: images/signboard.png
 <hr/>
 
 The Indica APIs give you JSON dictionaries of data from ancient India.
+
+Do we know what life was like in ancient India? That depends. To begin with, `ancient` itself is open to several definitions. And secondly, our knowledge of the past is fragmented. We know about ancient India through its songs and stories, transmitted orally for the most part from one generation to the next.
+
+Indologists have sifted through these oral traditions and compiled scholarly books on ancient India. But, this treasure chest isn't available in a machine-readable, interoperable form. 
+
+These APIs aim to bridge that gap. The APIs speak in JSON, which is a language notation that's understood by almost all machines today.
 
 === "Available :material-check-underline:"
 
@@ -38,11 +45,11 @@ Not needed. These are open APIs.
 
 These APIs are distributed under the MIT license. This means you are free to use the data any which way you want, so long as you don't hold me liable and you give me an attribution. See [The MIT License (MIT)](https://opensource.org/licenses/MIT).
 
-All content on this website, unless otherwise stated, is distributed under the Creative Commons license. This means the content is dedicated as-is, without any liability. to the worldwide public domain. See [The Creative Commons Zero v1.0 Universal license](https://wiki.creativecommons.org/wiki/CC0_FAQ).
+All content on this website, unless otherwise stated, is distributed under the Creative Commons license. This means the content is dedicated as-is, without any liability, to the worldwide public domain. See [The Creative Commons Zero v1.0 Universal license](https://wiki.creativecommons.org/wiki/CC0_FAQ).
 
 ## Rate limits
 
-The APIs are hosted on Heroku, where I have a limit of 500 hours a month. This limit includes all my apps hosted on Heroku (I have apps there besides these APIs). I am neither tracking who makes how many calls to the APIs nor throttling calls on IP-address basis. My only request is, call these APIs in a fair manner so that I have some hours always available to run my other projects.
+The APIs are hosted on Heroku, where I have a limit of 500 hours a month. This limit includes all my apps hosted on Heroku (I have other apps there besides these APIs). I am neither tracking who makes how many calls to the APIs nor throttling calls on IP-address basis. My only request is, call these APIs in a fair manner so that I have some hours always available to run my other projects.
 
 !!! note "Heavy use"
 
@@ -56,12 +63,11 @@ The APIs are hosted on Heroku, where I have a limit of 500 hours a month. This l
 	    -  Deprecated all query parameters
 		-  Introduced the following path parameters:
 		    -  `/book/{mandal}`
-		    -  `/chapter/{sukta}`
 		    -  `/meter/{meter}`
 		    -  `/poet/{sungby}`
 		    -  `/poetcategory/{poetcategory}`
 		    -  `/god/{sungfor}`
-		    -  `/god/{sungfor}/{mandal_number}`
+		    -  `/god/{sungfor}/{mandal}`
 		    -  `/godbypoet/{sungfor}/{sungby}`
 		    -  `/godcategory/{sungforcategory}`
 			-  `/godcategorybypoetcategory/{sungforcategory}/{sungbycategory}`
@@ -108,11 +114,11 @@ The APIs are hosted on Heroku, where I have a limit of 500 hours a month. This l
 
 ??? question "What is the source of this data?"
 
-    See [About these APIs](about_mb.md)
-		
+    See [About these APIs](about_mb.md).
+
 ??? warning "I found an error in the data."
 
-    Please log a GitHub issue:
+    Please log an issue in these GitHub repositories:
 	
     - [Rig Veda API and Vedic Society API](https://github.com/AninditaBasu/indica/issues)
 	- [Mahabharat query service](https://github.com/AninditaBasu/calm-wildwood/issues)

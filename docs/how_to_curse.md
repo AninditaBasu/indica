@@ -3,6 +3,7 @@ title: Vedic curses
 description: Find and read the soliloquies and monologues in Rig Veda
 author: Anindita Basu
 og_title: Vedic curses
+og_description: Find and read the soliloquies and monologues in Rig Veda
 og_image: images/VS_2.png
 ---
 
@@ -25,9 +26,9 @@ Let him dry up from the root.
 
 This tutorial shows you how to curse like you were living in the vedic times.
 
-## Possible paths
+## Algorithm
 
-All the path parameters in the Vedic Society API return a response in the same JSON structure.
+All the path parameters in the [Vedic Society API](api_vs.md) return a response in the same JSON structure.
 
 ```json
 {
@@ -38,12 +39,11 @@ All the path parameters in the Vedic Society API return a response in the same J
 }
 ```
 
-First, you find words that from those categories that have an element of evil or of suffering in them. And then, you string those words together to form sentences. 
+First, you find words that from those categories that have an element of evil or of suffering in them (for example, `snake`, `worm`, or `poison`). And then, you string those words together to form sentences. 
 
-Here's a pseudocode example:
+The following pseudocode uses the `disease` and `family` categories to create a curse.
 
 ```bash
-
 where /categories/{category} == 'disease':
 	get word
 	get description
@@ -51,7 +51,6 @@ where /categories/{category} == 'family':
 	get word
 	get description
 curse = 'May your ' + <family_word> + ' be blighted with ' + <disease_word> + '.
-
 ```
 
 ## Example code in Python
@@ -115,7 +114,6 @@ May your बाल  be blighted with अर्शस.
 ```
 
 Or, maybe make the curses more colourful? You could compose entire verses by picking random entries from the following categories: `snake`, `worm`, `insect`, `weapon`, `medicine`, `poison`.
-
 
 <hr/>
 

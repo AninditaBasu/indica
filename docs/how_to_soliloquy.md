@@ -3,6 +3,7 @@ title: Vedic soliloquies
 description: Find and read the soliloquies and monologues in Rig Veda
 author: Anindita Basu
 og_title: Vedic soliloquies
+og_description: Find and read the soliloquies and monologues in Rig Veda
 og_image: images/tweet_mockup_2.png
 ---
 
@@ -45,9 +46,9 @@ Soliloquies and monologues are as old as humankind. People were speaking to them
 
 This tutorial shows you how to find (and read) the soliloquies and monologues in Rig Veda.
 
-## Possible paths
+## Algorithm
 
-All the path parameters in the Rig Veda API return a response in the same JSON structure.
+All the path parameters in the [Rig Veda API](api_rv.md) return a response in the same JSON structure.
 
 ```json
 {
@@ -63,7 +64,7 @@ All the path parameters in the Rig Veda API return a response in the same JSON s
 
 Because you're interested in people talking to themselves, you need the verses where `sungby` is the same as `sungfor`. To do so, you can use any of the path parameters to get all verses in all books, and then programmatically extract only those verses where the poet is the same as the god.
 
-The steps for getting this filtered list verses will depend on the path parameter that you use. The following content tabs show the steps for 3 different path parameters.
+The steps for getting this filtered list verses will depend on the path parameter that you use. The following pseudocodes show the steps with 3 different path parameters.
 
 === "/book/{mandal}"
 
@@ -76,7 +77,7 @@ The steps for getting this filtered list verses will depend on the path paramete
       1.  Increase the counter by 1.
       1.  Repeat the previous steps till counter value is 11.
 	  1.  Remove duplicate entries from the list.
-	  1.  Iterate over this list, pick the mandal and sukta number combination, and use my favourite search engine to look up the poem.
+	  1.  Iterate over this list, pick the mandal and sukta number combination, and use your favourite search engine to look up the poem.
 
 === "/poetcategory/{poetcategory}"
 
@@ -89,7 +90,7 @@ The steps for getting this filtered list verses will depend on the path paramete
       1.  Pick up the next item from the category list, and repeat steps 2, 3, and 4.
       1.  Repeat the previous steps till there are no more items in the category list.
 	  1.  Remove duplicate entries from the generated result list.
-	  1.  Iterate over this list, pick the mandal and sukta number combination, and use my favourite search engine to look up the poem.
+	  1.  Iterate over this list, pick the mandal and sukta number combination, and use your favourite search engine to look up the poem.
 
 === "/godcategory/{sungforcategory}"
 		
@@ -147,7 +148,7 @@ These steps use the `/poetcategory/{poetcategory}` path parameter.
 	
 1.  Iterate over this list, pick the mandal and sukta number combination, and look up the poem.
 
-    A good resource, for example, is Wikisource, so you can go read the poems there. The URLs at Wikisource are in the following format: `https://en.wikisource.org/wiki/The_Rig_Veda/Mandala_1/Hymn_2`. Therefore, compose the URLs to match this scheme.
+Wikisource is good resource for ancient texts, so you can go read the poems there. The URLs at Wikisource are in the following format: `https://en.wikisource.org/wiki/The_Rig_Veda/Mandala_1/Hymn_2`. Therefore, compose the URLs to match this scheme.
 
 	```python
 	for item in soliloquy_unique:
