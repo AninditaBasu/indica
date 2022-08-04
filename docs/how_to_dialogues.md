@@ -5,11 +5,17 @@ author: Anindita Basu
 og_title: Vedic dialogues
 og_description: Find and read the dialogues in Rig Veda
 og_image: images/tweet_mockup_2.png
+tags:
+  - Rig Veda API
 ---
 
 # Tutorial: Vedic dialogues
 
 <hr/>
+
+!!! important "Under development"
+
+    This tutorial is still being written.
 
 A _dialogue_ is a conversation between two or more people in a book, play, or film. Sometimes, countries also have dialgues amongst themselves, and these instances too can be said to belong to a play or film. Here is an example each.
 

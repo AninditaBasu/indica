@@ -5,6 +5,8 @@ author: Anindita Basu
 og_title: Vedic soliloquies
 og_description: Find and read the soliloquies and monologues in Rig Veda
 og_image: images/tweet_mockup_2.png
+tags:
+  - Rig Veda API
 ---
 
 # Tutorial: Vedic soliloquies

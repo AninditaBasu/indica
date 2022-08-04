@@ -5,6 +5,8 @@ author: Anindita Basu
 og_title: Vedic curses
 og_description: Find and read the soliloquies and monologues in Rig Veda
 og_image: images/VS_2.png
+tags:
+  - Vedic Society API
 ---
 
 # Tutorial: Vedic curses

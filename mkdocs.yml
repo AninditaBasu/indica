@@ -10,13 +10,13 @@ nav:
     - 'About the API': 'about_rv.md'
     - 'Reference documentation': 'api_rv.md'
     - 'Sandbox': 'openapi_rv.html'
+    - 'Tutorial: Vedic soliloquies': 'how_to_soliloquy.md'
 - Vedic Society API:
     - 'About the API': 'about_vs.md'
     - 'Reference documentation': 'api_vs.md'
     - 'Sandbox': 'openapi_vs.html'
-- Tutorials:
-    - 'Vedic soliloquies': 'how_to_soliloquy.md'
-    - 'Vedic curses': 'how_to_curse.md'
+    - 'Tutorial: Vedic curses': 'how_to_curse.md'
+- 'Tutorials index': 'tags.md'
 #
 extra:
   social:
@@ -87,5 +87,6 @@ markdown_extensions:
 plugins:
     - search
     - macros
-    - tags
+    - tags:
+        tags_file: tags.md
 # end of mkdocs config file
