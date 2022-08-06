@@ -1,5 +1,5 @@
 site_name: The Indica APIs
-site_description: JSON data from ancient India through APIs
+site_description: JSON data from ancient India served through REST APIs
 copyright: '&copy; 2018-2022 Anindita Basu.'
 #
 docs_dir: docs
@@ -14,7 +14,7 @@ nav:
     - 'About the API': 'about_vs.md'
     - 'Reference documentation': 'api_vs.md'
     - 'Sandbox': 'openapi_vs.html'
-- 'Tutorials list': 'tags.md'
+- 'HowTo-s': 'tags.md'
 #
 extra:
   social:
@@ -53,6 +53,7 @@ theme:
 #  - pymdownx.details, which supercharges the Admonition extension, making the resulting call-outs collapsible
 #  - pymdownx.tasklist, which is part of Python Markdown Extensions and shows lists with styled checkboxes
 #  - toc, which is a Material for Mkdocs extension for the page-level ToC header
+#  - footnotes, which is a Python Markdown Extension for footnotes
 #  - ...
 markdown_extensions:
   - meta
@@ -76,6 +77,7 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
+  - footnotes
 #
 # Plug-ins list:
 # - search, an in-built MkDocs plug-in for search

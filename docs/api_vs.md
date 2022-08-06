@@ -137,7 +137,7 @@ See [Vedic Society API: Try it out](https://aninditabasu.github.io/indica/openap
 
 ## Related
 
--  [Tutorial: Vedic curses](how_to_curse.md)
+See [Index](tags.md).
 
 <hr/>
 

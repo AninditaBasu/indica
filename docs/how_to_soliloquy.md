@@ -7,9 +7,10 @@ og_description: Find and read the soliloquies and monologues in Rig Veda
 og_image: images/tweet_mockup_2.png
 tags:
   - Rig Veda API
+  - Tutorial
 ---
 
-# Tutorial: Vedic soliloquies
+# How-to: Vedic soliloquies
 
 <hr/>
 
@@ -26,7 +27,7 @@ A _soliloquy_ is an act of speaking one's thoughts aloud when alone, or regardle
     A dagger of the mind, a false creation,
     Proceeding from the heat-oppressed brain?
 
-    (Shakespeare's Macbeth. Act 2, Scene 1.) 
+    Shakespeare, William. "Macbeth".) 
     ```
 
 === "Monologue"
@@ -41,7 +42,7 @@ A _soliloquy_ is an act of speaking one's thoughts aloud when alone, or regardle
     My heart is in the coffin there with Caesar,
     And I must pause till it come back to me.
 
-    (Shakespeare's Julius Caesar. Act 3, Scene 2.)
+    Shakespeare, William. "Julius Caesar".)
     ```
 
 Soliloquies and monologues are as old as humankind. People were speaking to themselves, and speaking without waiting for a response, ever since they started speaking. Rig Veda, possibly the oldest book in the world, also has people soliloquising and monologising.
@@ -209,6 +210,10 @@ Sanskrit version: [https://sa.wikisource.org/wiki/ऋग्वेदः_सू�
 A musical rendering:
 
 <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4mnYGUG890pny5QTjCaZWr?utm_source=generator" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+
+## More HowTo-s
+
+See [Index](tags.md).
 
 <hr/>
 

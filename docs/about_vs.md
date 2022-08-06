@@ -54,6 +54,7 @@ The nouns are categorised into flora, fauna, geography, food, relationships, and
 
 -  [Vedic Society API reference](api_vs.md)
 -  [Tutorial: Vedic curses](how_to_curse.md)
+-  [Dataviz: Word cloud](datavis_wordcloud.md)
 
 <hr/>
 

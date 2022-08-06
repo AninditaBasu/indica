@@ -33,13 +33,13 @@ These APIs aim to bridge that gap. The APIs speak in JSON, which is a language n
     - Arthashashtra API
 	- Ashokan edicts API
 
-## Authentication
-
-Not needed. These are open APIs.
-
 !!! danger "Timeout"
 
     These APIs are offline every night between 9:00 PM IST and 9:00 AM IST.
+
+## Authentication
+
+Not needed. These are open APIs.
 
 ## License
 
@@ -108,7 +108,7 @@ The APIs are hosted on Heroku, where I have a limit of 500 hours a month. This l
 
 ??? question "What can I do with this data?"
 
-    You can process the data to make visually appealing or easily consumable information. Some example are given in the Tutorials section.
+    You can process the data to make visually appealing or easily consumable information. See [How-tos and graphics](tags.md).
 
     Also, I'll be very happy to link back to your implementation or app if you send me a URL.
 

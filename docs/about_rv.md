@@ -115,6 +115,8 @@ For example, consider sukta 24 of mandal 1. It has verses addressed to five gods
 
 -  [Rig Veda API reference](api_rv.md)
 -  [Tutorial: Vedic soliloquies](how_to_soliloquy.md)
+-  [Tutorial: Vedic dialogues](how_to_dialogues.md)
+-  [Dataviz: Meters pie chart](datavis_meters_pie.md)
 
 <hr/>
 

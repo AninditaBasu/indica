@@ -229,7 +229,7 @@ See [Rig Veda API: Try it out](https://aninditabasu.github.io/indica/openapi_rv.
 
 ## Related
 
--  [Tutorial: Vedic soliloquies](how_to_soliloquy.md)
+See [Index](tags.md).
 
 <hr/>
 

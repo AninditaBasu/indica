@@ -1,12 +1,13 @@
 ---
 title: Vedic curses
-description: Find and read the soliloquies and monologues in Rig Veda
+description: Curse and insult generator
 author: Anindita Basu
 og_title: Vedic curses
-og_description: Find and read the soliloquies and monologues in Rig Veda
+og_description: Curse and insult generator
 og_image: images/VS_2.png
 tags:
   - Vedic Society API
+  - Tutorial
 ---
 
 # Tutorial: Vedic curses
@@ -116,6 +117,10 @@ May your बाल  be blighted with अर्शस.
 ```
 
 Or, maybe make the curses more colourful? You could compose entire verses by picking random entries from the following categories: `snake`, `worm`, `insect`, `weapon`, `medicine`, `poison`.
+
+## More HowTo-s
+
+See [Index](tags.md).
 
 <hr/>
 

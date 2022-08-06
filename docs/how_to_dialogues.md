@@ -7,9 +7,10 @@ og_description: Find and read the dialogues in Rig Veda
 og_image: images/tweet_mockup_2.png
 tags:
   - Rig Veda API
+  - Tutorial
 ---
 
-# Tutorial: Vedic dialogues
+# How-to: Vedic dialogues
 
 <hr/>
 
@@ -24,7 +25,7 @@ A _dialogue_ is a conversation between two or more people in a book, play, or fi
 	Jeeves: My mother thought me intelligent, Sir. 
 	Bertie: Well, you can't go by that! My mother thought me intelligent!
 
-    (Woodehouse's Very Good, Jeeves) 
+    - Woodehouse, P. G. "Very Good, Jeeves".) 
     ```
 
 === "Nations dialoguing"
@@ -43,7 +44,7 @@ A _dialogue_ is a conversation between two or more people in a book, play, or fi
 	As soon as the consultation with China and France has been completed, 
 	the text of the proposals on voting procedure will be made public.
 
-    (Yalta Conference Agreement, 1945)
+    - Yalta Conference Agreement, 1945
     ```
 
 Rig Veda doesn't contain conversations between countries, but it does contain human conversations.  This tutorial shows you how to find (and read) these conversations.
@@ -115,7 +116,7 @@ These steps use the `/book/{mandal}` path parameter.
 	    'accept': 'application/json',
 	}
 
-	url_suffix = "https://api-rv.herokuapp.com/rv/v2/meta/book/1"
+	url = "https://api-rv.herokuapp.com/rv/v2/meta/book/1"
 
 	import json
 	
@@ -217,6 +218,10 @@ Read the verse, maybe? Wikisource is good resource for ancient texts, so you can
 My favourite conversation in Rig Veda is in the tenth mandal and contained in chapter 95: [https://en.wikisource.org/wiki/The_Rig_Veda/Mandala_10/Hymn_95](https://en.wikisource.org/wiki/The_Rig_Veda/Mandala_10/Hymn_95).
 
 It's a conversation between a king named Pururava Aila and his queen Urvashi.
+
+## More HowTo-s
+
+See [Index](tags.md).
 
 <hr/>
 
