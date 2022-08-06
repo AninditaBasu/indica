@@ -33,10 +33,6 @@ These APIs aim to bridge that gap. The APIs speak in JSON, which is a language n
     - Arthashashtra API
 	- Ashokan edicts API
 
-!!! danger "Timeout"
-
-    These APIs are offline every night between 9:00 PM IST and 9:00 AM IST.
-
 ## Authentication
 
 Not needed. These are open APIs.

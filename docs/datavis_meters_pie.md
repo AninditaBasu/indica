@@ -1,16 +1,16 @@
 ---
-title: Sankey diagram of poets to gods
-description: Sankey diagram of poets to gods
+title: Pie chart of vedic metres
+description: Pie chart of the poetic meters in Rig Veda
 author: Anindita Basu
-og_title: Sankey diagram of poets to gods
-og_description: Sankey diagram of poets to gods
-og_image: images/vishwamitra.png
+og_title: Pie chart of vedic metres
+og_description: Pie chart of the poetic meters in Rig Veda
+og_image: images/gods.png
 tags:
   - Rig Veda API
   - Data visualisation
 ---
 
-# Sankey diagram: Poet-god relationships
+# Pie chart: Poetic meters
 
 <hr/>
 

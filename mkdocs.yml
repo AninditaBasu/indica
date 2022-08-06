@@ -1,5 +1,5 @@
 site_name: The Indica APIs
-site_description: JSON data from ancient India served through REST APIs
+site_description: JSON data from ancient India served through REST APIs. Includes metadata of all the verses in Rig Veda (rishis, gods, chhandas) and a description of all nouns in vedic literature (including the flora, fauna, geography, food, relationships, and objects).
 copyright: '&copy; 2018-2022 Anindita Basu.'
 #
 docs_dir: docs
