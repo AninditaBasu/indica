@@ -16,7 +16,7 @@ tags:
 
 Poetry is always meant to rendered aloud and, during its recitation, it's the _meter_ that sets its rhythm. Consider the following example, and read it out aloud. Your vocals will, in all probability, follow the pattern shown on the second content tab. 
 
-=== "Poem, no marks"
+=== "No marks"
 
     Poem, when read silently as text
 
@@ -29,7 +29,7 @@ Poetry is always meant to rendered aloud and, during its recitation, it's the _m
     - Carrol, Lewis. "The Hunting of the Snark".
     ```
 
-=== "Poem, with the stress points shown with `/`"
+=== "Stress points marked with `/`"
 
     Poem, showing the places where the sound has greater stress 
 
@@ -42,9 +42,9 @@ Poetry is always meant to rendered aloud and, during its recitation, it's the _m
     - Carrol, Lewis. "The Hunting of the Snark".
     ```
 
-Rig Veda is poetry. Its verses have a certain lilt, beat, rhythm, and meter that turn the words into charming lyrical music when recited aloud. Stressing the incorrect syllable can alter the entire meaning of a mantra. Traditional methods, transmitted orally, teach people which parts of a word must be stressed. In these modern times, printed books also carry this information.  See, for example, this verse, with and without the stress points marked out.
+Rig Veda is poetry. Its verses have a certain lilt, beat, rhythm, and meter that turn the words into charming lyrical music when recited aloud. Stressing the incorrect syllable can alter the entire meaning of a mantra. Traditional methods, transmitted orally, teach people which parts of a word must be stressed. In these modern times, printed books also carry this information.  See, for example, this verse, with and without marks on the stress points.
 
-=== "Rik mantra, no marks"
+=== "No marks"
 
     ```text
     तत्सवितुर्वरेण्यं भर्गो देवस्य धीमहि ।
@@ -53,7 +53,7 @@ Rig Veda is poetry. Its verses have a certain lilt, beat, rhythm, and meter that
     - Rig Veda, 3.62.10
     ```
 
-=== "Rik mantra, with the stress points shown with `'`"
+=== "Marked with `'`"
 
     ```text
     तत्स॑वि॒तुर्वरे॑ण्यं॒ भर्गो॑ दे॒वस्य॑ धीमहि ।
@@ -84,7 +84,7 @@ All the path parameters in the [Rig Veda API](api_rv.md) return a response in th
 
 In Rig Veda, books (or mandals) contain chapters, and chapters (or suktas) contain verses. Each verse is composed in one - and only one - meter.
 
-!!! note "Entity relationship"
+!!! tip "Entity relationship"
 
     For information on how mandals, suktas, poets, and gods are connected to each other, see the entity-relationship diagram at [About Rig Veda](about_rv.md).
 

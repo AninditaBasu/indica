@@ -67,7 +67,7 @@ All the path parameters in the [Rig Veda API](api_rv.md) return a response in th
 
 In Rig Veda, books (or mandals) contain chapters, and chapters (or suktas) contain verses. If a sukta has more than one verse, and if the poets are different in these verses, it's fair to assume that the sukta is a conversation between these poets.
 
-!!! note "Entity relationship"
+!!! tip "Entity relationship"
 
     For information on how mandals, suktas, poets, and gods are connected to each other, see the entity-relationship diagram at [About Rig Veda](about_rv.md).
 
