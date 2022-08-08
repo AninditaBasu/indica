@@ -10,7 +10,7 @@ tags:
   - Tutorial
 ---
 
-# How-to: Vedic soliloquies
+# HowTo: Vedic soliloquies
 
 <hr/>
 
@@ -27,7 +27,7 @@ A _soliloquy_ is an act of speaking one's thoughts aloud when alone, or regardle
     A dagger of the mind, a false creation,
     Proceeding from the heat-oppressed brain?
 
-    Shakespeare, William. "Macbeth".) 
+    Shakespeare, William. "Macbeth". 
     ```
 
 === "Monologue"
@@ -42,7 +42,7 @@ A _soliloquy_ is an act of speaking one's thoughts aloud when alone, or regardle
     My heart is in the coffin there with Caesar,
     And I must pause till it come back to me.
 
-    Shakespeare, William. "Julius Caesar".)
+    Shakespeare, William. "Julius Caesar".
     ```
 
 Soliloquies and monologues are as old as humankind. People were speaking to themselves, and speaking without waiting for a response, ever since they started speaking. Rig Veda, possibly the oldest book in the world, also has people soliloquising and monologising.
@@ -66,6 +66,10 @@ All the path parameters in the [Rig Veda API](api_rv.md) return a response in th
 ```
 
 Because you're interested in people talking to themselves, you need the verses where `sungby` is the same as `sungfor`. To do so, you can use any of the path parameters to get all verses in all books, and then programmatically extract only those verses where the poet is the same as the god.
+
+!!! note "Entity relationship"
+
+    For information on how mandals, suktas, poets and gods are connected to each other, see the entity-relationship diagram at [About Rig Veda](about_rv.md).
 
 The steps for getting this filtered list verses will depend on the path parameter that you use. The following pseudocodes show the steps with 3 different path parameters.
 

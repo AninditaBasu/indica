@@ -10,7 +10,7 @@ tags:
   - Tutorial
 ---
 
-# Tutorial: Vedic curses
+# HowTo: Vedic curses
 
 <hr/>
 
@@ -73,7 +73,7 @@ curse = 'May your ' + <family_word> + ' be blighted with ' + <disease_word> + '.
 
 1.  Loop through the returned JSON, and append the values of the `word` and `description` parameters to a dictionary.
 
-    ```python hl_lines="5"
+    ```python
 	import json
 	diseases = {}
 	

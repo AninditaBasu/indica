@@ -36,8 +36,8 @@ To create the corpus for the word cloud, you need the values from all the `descr
 The following pseudocode shows how to generate the corpus.
 
 ```bash
-category_list = [all categories mentioned in the documentation]
-where /categories/{category} == <item from category list>:
+category_list = [category1, category2, category3, ...]
+where /categories/{category} == <item from category_list>:
 	get description
     append to word_list
 convert word_list to word_text

@@ -42,7 +42,7 @@ Poetry is always meant to rendered aloud and, during its recitation, it's the _m
     - Carrol, Lewis. "The Hunting of the Snark".
     ```
 
-Rig Veda is poetry. Its verses have a certain lilt, beat, rhythm, and meter that turn the words into charming lyrical music when recited aloud. Stressing the incorrect syllable can alter the entire meaning of a mantra. Which parts of a word to stress is taught orally when teaching the rik mantras through traditional methods. In these modern times, printed books also carry this information.  See, for example, this verse, with and without the stress points marked out.
+Rig Veda is poetry. Its verses have a certain lilt, beat, rhythm, and meter that turn the words into charming lyrical music when recited aloud. Stressing the incorrect syllable can alter the entire meaning of a mantra. Traditional methods, transmitted orally, teach people which parts of a word must be stressed. In these modern times, printed books also carry this information.  See, for example, this verse, with and without the stress points marked out.
 
 === "Rik mantra, no marks"
 
@@ -82,7 +82,11 @@ All the path parameters in the [Rig Veda API](api_rv.md) return a response in th
 }
 ```
 
-In Rig Veda, books (or mandals) contain chapters, and chapters (or suktas) contain verses. Each verse is composed in one - and only one - meter. 
+In Rig Veda, books (or mandals) contain chapters, and chapters (or suktas) contain verses. Each verse is composed in one - and only one - meter.
+
+!!! note "Entity relationship"
+
+    For information on how mandals, suktas, poets, and gods are connected to each other, see the entity-relationship diagram at [About Rig Veda](about_rv.md).
 
 The following pseudocode uses the `/book/{mandal}` path parameter to fetch the data for meters, and generate the label names and numbers for a pie chart.
 

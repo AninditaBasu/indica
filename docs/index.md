@@ -15,7 +15,7 @@ The Indica APIs give you JSON dictionaries of data from ancient India.
 
 Do we know what life was like in ancient India? That depends. To begin with, `ancient` itself is open to several definitions. And secondly, our knowledge of the past is fragmented. We know about ancient India through its songs and stories, transmitted orally for the most part from one generation to the next.
 
-Indologists have sifted through these oral traditions and compiled scholarly books on ancient India. But, this treasure chest isn't available in a machine-readable, interoperable form. 
+Indologists have sifted through these oral traditions and compiled scholarly books. But, this treasure chest isn't available in a machine-readable, interoperable form. 
 
 These APIs aim to bridge that gap. The APIs speak in JSON, which is a language notation that's understood by almost all machines today.
 
@@ -104,7 +104,7 @@ The APIs are hosted on Heroku, where I have a limit of 500 hours a month. This l
 
 ??? question "What can I do with this data?"
 
-    You can process the data to make visually appealing or easily consumable information. See [How-tos and graphics](tags.md).
+    You can process the data to make visually appealing or easily consumable information. Some examples are at [HowTo-s and dataviz](tags.md).
 
     Also, I'll be very happy to link back to your implementation or app if you send me a URL.
 

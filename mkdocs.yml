@@ -14,7 +14,7 @@ nav:
     - 'About the API': 'about_vs.md'
     - 'Reference documentation': 'api_vs.md'
     - 'Sandbox': 'openapi_vs.html'
-- 'HowTo-s': 'tags.md'
+- 'HowTo-s and dataviz': 'tags.md'
 #
 extra:
   social:

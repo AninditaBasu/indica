@@ -10,7 +10,7 @@ tags:
   - Tutorial
 ---
 
-# How-to: Vedic dialogues
+# HowTo: Vedic dialogues
 
 <hr/>
 
@@ -25,7 +25,7 @@ A _dialogue_ is a conversation between two or more people in a book, play, or fi
 	Jeeves: My mother thought me intelligent, Sir. 
 	Bertie: Well, you can't go by that! My mother thought me intelligent!
 
-    - Woodehouse, P. G. "Very Good, Jeeves".) 
+    - Woodehouse, P. G. "Very Good, Jeeves".
     ```
 
 === "Nations dialoguing"
@@ -66,6 +66,10 @@ All the path parameters in the [Rig Veda API](api_rv.md) return a response in th
 ```
 
 In Rig Veda, books (or mandals) contain chapters, and chapters (or suktas) contain verses. If a sukta has more than one verse, and if the poets are different in these verses, it's fair to assume that the sukta is a conversation between these poets.
+
+!!! note "Entity relationship"
+
+    For information on how mandals, suktas, poets, and gods are connected to each other, see the entity-relationship diagram at [About Rig Veda](about_rv.md).
 
 The following algorithm uses the `/book/{mandal}` path parameter to identify such suktas.
 
