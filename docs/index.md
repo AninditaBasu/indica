@@ -110,7 +110,7 @@ The APIs are hosted on Heroku, where I have a limit of 500 hours a month. This l
 
 ??? question "What is the source of this data?"
 
-    See [About these APIs](about_mb.md).
+    See [About the Rig Veda API](about_rv.md), [About the Vedic Society API](about_vs.md), and [About the Mahabharat query service](about_mb.md).
 
 ??? warning "I found an error in the data."
 

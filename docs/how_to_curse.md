@@ -42,7 +42,7 @@ All the path parameters in the [Vedic Society API](api_vs.md) return a response 
 }
 ```
 
-First, you find words that from those categories that have an element of evil or of suffering in them (for example, `snake`, `worm`, or `poison`). And then, you string those words together to form sentences. 
+First, you find words from those categories that have an element of evil or of suffering in them (for example, `snake`, `worm`, or `poison`). And then, you string those words together to form sentences. 
 
 The following pseudocode uses the `disease` and `family` categories to create a curse.
 
