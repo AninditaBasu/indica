@@ -20,3 +20,7 @@ The data is from the following books:
 -  [Mahabharata: A Cultural Index (M A Mehendale)](http://www.sanskrit-lexicon.uni-koeln.de/scans/MCIScan/2014/web/webtc/download.html)
 -  [Index to the Names in the Mahabharata (Sorensen)](http://www.sanskrit-lexicon.uni-koeln.de/scans/INMScan/2013/web/webtc/download.html)
 -  [A Classical Dictionary of Hindu Mythology and Religion (John Dowson)](https://archive.org/details/aclassicaldictio00dowsuoft/page/n28/mode/2up)
+
+<hr/>
+
+{%include 'common/coffee.md'%}
