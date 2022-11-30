@@ -5,7 +5,6 @@ author: Anindita Basu
 og_title: The Indica APIs
 og_description: JSON dictionaries of data from ancient India. Includes metadata of all the verses in Rig Veda (rishis, gods, chhandas) and a description of all nouns in vedic literature (including the flora, fauna, geography, food, relationships, and objects).
 og_image: images/signboard.png
-ᴴₒᴴₒᴴₒ: true
 ---
 
 # Indica APIs
