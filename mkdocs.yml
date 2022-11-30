@@ -39,6 +39,7 @@ theme:
       accent: green
     features:
       - navigation.top
+      - toc.follow
 # mkdocs-material theme entries end here
 # ===============================
 #
