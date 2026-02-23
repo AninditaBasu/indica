@@ -28,7 +28,7 @@ This API fetches the meanings of nouns from vedic literature.  The nouns are cat
 
 ## Base URL
 
-`https://api-vs.herokuapp.com/vs/v2/`
+`https://indica-1hwj.onrender.com/vs/v2`
 
 ## Methods
 
@@ -40,7 +40,7 @@ Only `GET` calls are supported.
 
     ```shell
     curl -X 'GET' \
-        'https://api-vs.herokuapp.com/vs/v2/words/ash' \
+        'https://indica-1hwj.onrender.com/vs/v2/words/ash' \
         -H 'accept: application/json'
     ```
 

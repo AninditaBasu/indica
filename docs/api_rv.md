@@ -35,7 +35,7 @@ An explanation of the various elements in Rig Veda (and this API) is contained i
 
 ## Base URL
 
-`https://api-rv.herokuapp.com/rv/v2/meta/`
+`https://indica-1hwj.onrender.com/rv/v2/meta`
 
 The request URL is formed by appending an endpoint to the base URL.
 
@@ -49,7 +49,7 @@ Only `GET` calls are supported.
 
     ```shell
     curl -X 'GET' \
-        'https://api-rv.herokuapp.com/rv/v2/meta/god/ganga' \
+        'https://indica-1hwj.onrender.com/rv/v2/meta/god/ganga' \
         -H 'accept: application/json'
     ```
 

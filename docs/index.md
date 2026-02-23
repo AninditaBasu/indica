@@ -55,7 +55,9 @@ The APIs are hosted on Heroku, where I have a limit of 500 hours a month. This l
 
 === "Rig Veda API"
 
-    -  2.0 (July 2022)
+    -  2.0.1 (February 2026)
+	    -  Changed the endpoint to `https://indica-1hwj.onrender.com/rv/v2/meta`
+	-  2.0 (July 2022)
 	    -  Deprecated all query parameters
 		-  Introduced the following path parameters:
 		    -  `/book/{mandal}`
@@ -78,7 +80,9 @@ The APIs are hosted on Heroku, where I have a limit of 500 hours a month. This l
 
 === "Vedic Society API"
 
-    -  2.0 (July 2022)
+    -  2.0.1 (February 2026)
+	    -  Changed the endpoint to `https://indica-1hwj.onrender.com/vs/v2`    
+	-  2.0 (July 2022)
 	    -  Deprecated all query parameters
 		-  Introduced the following path parameters:
 		    -  `/words/{word}`
@@ -121,7 +125,7 @@ The APIs are hosted on Heroku, where I have a limit of 500 hours a month. This l
 
 ??? info "And you are...?"
 
-    [Anindita Basu](https://twitter.com/@anindita_basu).
+    [Anindita Basu](https://x.com/@anindita_basu).
 
 <hr/>
 
