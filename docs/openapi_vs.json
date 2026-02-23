@@ -18,8 +18,8 @@
   },
   "servers": [
     {
-      "url": "https://api-vs.herokuapp.com/vs/v2/",
-      "description": "Offline every night 12 hours from 9 PM IST"
+      "url": "https://indica-1hwj.onrender.com/vs/v2/",
+      "description": "Vedic Society API"
     }
   ],
   "paths": {

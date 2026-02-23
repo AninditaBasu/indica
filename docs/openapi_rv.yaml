@@ -17,8 +17,8 @@ externalDocs:
   url: https://aninditabasu.github.io/indica/
 
 servers:
-- url: https://api-rv.herokuapp.com/rv/v2/meta
-  description: Offline every night 12 hours from 9 PM IST
+- url: https://indica-1hwj.onrender.com/rv/v2/meta
+  description: Rig Veda API
   
 paths:
   /book/{mandal}:
