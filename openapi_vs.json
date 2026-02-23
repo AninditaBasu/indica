@@ -1,0 +1,189 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "version": "2.0.0",
+    "title": "Vedic Society API",
+    "description": "## Nouns in vedic literature \nThis API returns the word definitions of nouns in vedic literature. The collection includes flora, fauna, geography, food, relationships, and objects but not proper nouns.",
+    "contact": {
+      "email": "ab.techwriter@gmail.com"
+    },
+    "license": {
+      "name": "MIT license",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  },
+  "externalDocs": {
+    "description": "Indica APIs home",
+    "url": "https://aninditabasu.github.io/indica/"
+  },
+  "servers": [
+    {
+      "url": "https://indica-1hwj.onrender.com/vs/v2/",
+      "description": "Vedic Society API"
+    }
+  ],
+  "paths": {
+    "/words/{word}": {
+      "get": {
+        "summary": "Find words",
+        "description": "Returns all nouns, transliterated from Sanskrit to the roman script, that contains the specified word or phrase.<br/><br/>\nCan take partial strings. For example, `shat` returns the entries for all words that contain `shat`, for example, `kshatriya`, `prishat`, or `shatapati`.<br/><br/>\nIs not case sensitive. For example, the input `sha` is treated to be the same as `Sha`, `sHa`, or `SHA`.",
+        "parameters": [
+          {
+            "name": "word",
+            "in": "path",
+            "description": "Word",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns a response from the API app. If the query has any results, a JSON response is returned. If the query did not find a match in the database, a text message is returned.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Nouns"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/descriptions/{description}": {
+      "get": {
+        "summary": "Find meanings that contain a phrase",
+        "description": "Returns all nouns where the meaning contains the specified phrase.<br/><br/>\nCan take partial strings. For example, `tra` returns all nouns that have `tra` in their meanings.<br/><br/>\nIs not case sensitive. For example, the input `tra` is treated to be the same as `Tra`, `tRa`, or `TRA`.",
+        "parameters": [
+          {
+            "name": "description",
+            "in": "path",
+            "description": "Word meaning",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns a response from the API app. If the query has any results, a JSON response is returned. If the query did not find a match in the database, a text message is returned.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Nouns"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/categories/{category}": {
+      "get": {
+        "summary": "Find all nouns in a category",
+        "description": "Returns all nouns that belong to the specified category.<br/><br/>\nA noun can belong to more than one category. For example, `aj` is both an animal and the name of a tribe.",
+        "parameters": [
+          {
+            "name": "category",
+            "in": "path",
+            "description": "Category of the noun",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "grass",
+                "plant",
+                "tree",
+                "animal",
+                "bird",
+                "cattle",
+                "fish",
+                "insect",
+                "snake",
+                "worm",
+                "building",
+                "chariot",
+                "food",
+                "grain",
+                "metal",
+                "object",
+                "ship",
+                "weapon",
+                "war",
+                "number",
+                "distance",
+                "time",
+                "weight",
+                "mountain",
+                "place",
+                "river",
+                "astronomy",
+                "disease",
+                "literature",
+                "medicine",
+                "poison",
+                "subject",
+                "dicing",
+                "games",
+                "music",
+                "clothing",
+                "hair",
+                "ornament",
+                "law",
+                "morals",
+                "agriculture",
+                "caste",
+                "family",
+                "occupation",
+                "priest",
+                "royalty",
+                "trade",
+                "tribe"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns a response from the API app. If the query has any results, a JSON response is returned. If the query did not find a match in the database, a text message is returned.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Nouns"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Nouns": {
+        "type": "object",
+        "properties": {
+          "nagari": {
+            "type": "string",
+            "description": "Noun, in the Nagari script"
+          },
+          "word": {
+            "type": "string",
+            "description": "Noun, in the Roman script"
+          },
+          "description": {
+            "type": "string",
+            "description": "Meaning of the noun"
+          },
+          "category": {
+            "type": "string",
+            "description": "Category the noun belongs to"
+          }
+        }
+      }
+    }
+  }
+}
