@@ -2,7 +2,7 @@
 title: The Indica APIs
 ---
 
-# Indica APIs
+# The Indica APIs
 
 ---
 
@@ -14,8 +14,8 @@ Indologists have sifted through these oral traditions and compiled scholarly boo
 
 These APIs aim to bridge that gap. The APIs speak in JSON, which is a language notation that's understood by almost all machines today.
 
-- [Rig Veda API](api_rv.md)
-- [Vedic Society API](api_vs.md)
+- [Rig Veda API](topics/api_rv.md)
+- [Vedic Society API](topics/api_vs.md)
 
 ## Authentication
 
@@ -93,7 +93,7 @@ The APIs are hosted on the free tier of Render, which has hourly limits. I am ne
 {% include admonition.html
    type="note"
    title="What is the source of this data?"
-   content="See [About the Rig Veda API](about_rv.md) and [About the Vedic Society API](about_vs.md)."
+   content="See [About the Rig Veda API](topics/about_rv.md) and [About the Vedic Society API](topics/about_vs.md)."
 %}
 
 {% include admonition.html
@@ -107,3 +107,7 @@ The APIs are hosted on the free tier of Render, which has hourly limits. I am ne
    title="And you are...?"
    content="[Anindita Basu](https://x.com/anindita_basu)."
 %}
+
+-----------
+
+![logo](images/logo.png)
