@@ -1,7 +1,5 @@
 ---
 title: The Indica APIs
-description: JSON dictionaries of data from ancient India. Includes metadata of all the verses in Rig Veda (rishis, gods, chhandas) and a description of all nouns in vedic literature (including the flora, fauna, geography, food, relationships, and objects).
-author: Anindita Basu
 ---
 
 # Indica APIs
@@ -95,8 +93,6 @@ The APIs are hosted on the free tier of Render, which has hourly limits. I am ne
 > Please log an issue in this GitHub repository.
 
 > [!NOTE] "And you are...?"
-> [Anindita Basu](https://x.com/@anindita_basu).
+> [Anindita Basu](https://x.com/anindita_basu).
 
----
 
-{%include 'common/coffee.md'%}
