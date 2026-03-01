@@ -12,4 +12,5 @@ plugins:
 ledger:
   preset: palmleaf
 
+copyright_start: 2018
 
