@@ -14,8 +14,8 @@ Indologists have sifted through these oral traditions and compiled scholarly boo
 
 These APIs aim to bridge that gap. The APIs speak in JSON, which is a language notation that's understood by almost all machines today.
 
-    - [Rig Veda API](api_rv.md)
-	- [Vedic Society API](api_vs.md)
+- [Rig Veda API](api_rv.md)
+- [Vedic Society API](api_vs.md)
 
 ## Authentication
 
@@ -35,64 +35,75 @@ The APIs are hosted on the free tier of Render, which has hourly limits. I am ne
 
 ### Rig Veda API
 
-    -  2.0.1 (February 2026)
-	    -  Changed the endpoint to `https://indica-1hwj.onrender.com/rv/v2/meta`
-	-  2.0 (July 2022)
-	    -  Deprecated all query parameters
-		-  Introduced the following path parameters:
-		    -  `/book/{mandal}`
-		    -  `/meter/{meter}`
-		    -  `/poet/{sungby}`
-		    -  `/poetcategory/{poetcategory}`
-		    -  `/god/{sungfor}`
-		    -  `/god/{sungfor}/{mandal}`
-		    -  `/godbypoet/{sungfor}/{sungby}`
-		    -  `/godcategory/{sungforcategory}`
-			-  `/godcategorybypoetcategory/{sungforcategory}/{sungbycategory}`
-		-  Changed the endpoint to `https://api-rv.herokuapp.com/rv/v2/meta/`
-	-  1.2 (December 2020)
-	    -  Changed the endpoint to `https://api-rv.herokuapp.com/rv/v1`
-	-  1.1 (October 2018)
-	    - Changed the endpoint from `https://sheetlabs.com/RV/` to `https://sheetlabs.com/IND/`
-		-  Added the following two parameters: `sungbycategory` and `sungforcategory`
-	-  1.0 (August 2018)
-	    -  First release
+-  2.0.1 (February 2026)
+    -  Changed the endpoint to `https://indica-1hwj.onrender.com/rv/v2/meta`
+-  2.0 (July 2022)
+    -  Deprecated all query parameters
+	-  Introduced the following path parameters:
+	    -  `/book/{mandal}`
+	    -  `/meter/{meter}`
+	    -  `/poet/{sungby}`
+	    -  `/poetcategory/{poetcategory}`
+	    -  `/god/{sungfor}`
+	    -  `/god/{sungfor}/{mandal}`
+	    -  `/godbypoet/{sungfor}/{sungby}`
+	    -  `/godcategory/{sungforcategory}`
+		-  `/godcategorybypoetcategory/{sungforcategory}/{sungbycategory}`
+	-  Changed the endpoint to `https://api-rv.herokuapp.com/rv/v2/meta/`
+-  1.2 (December 2020)
+    -  Changed the endpoint to `https://api-rv.herokuapp.com/rv/v1`
+-  1.1 (October 2018)
+    - Changed the endpoint from `https://sheetlabs.com/RV/` to `https://sheetlabs.com/IND/`
+	-  Added the following two parameters: `sungbycategory` and `sungforcategory`
+-  1.0 (August 2018)
+    -  First release
 
 ### Vedic Society API
 
-    -  2.0.1 (February 2026)
-	    -  Changed the endpoint to `https://indica-1hwj.onrender.com/vs/v2`    
-	-  2.0 (July 2022)
-	    -  Deprecated all query parameters
-		-  Introduced the following path parameters:
-		    -  `/words/{word}`
-			-  `/descriptions/{description}`
-			-  `/categories/{category}`
-		-  Changed the endpoint to `https://api-vs.herokuapp.com/vs/v2/`
-    -  1.2 (December 2020)
-	    -  Changed the endpoint to `https://api-vs.herokuapp.com/vs/v1`
-	-  1.1 (October 2018)
-	    - Changed the endpoint from `https://sheetlabs.com/RV/` to `https://sheetlabs.com/IND/`
-	-  1.0 (August 2018)
-	    -  First release
+-  2.0.1 (February 2026)
+    -  Changed the endpoint to `https://indica-1hwj.onrender.com/vs/v2`    
+-  2.0 (July 2022)
+    -  Deprecated all query parameters
+	-  Introduced the following path parameters:
+	    -  `/words/{word}`
+		-  `/descriptions/{description}`
+		-  `/categories/{category}`
+	-  Changed the endpoint to `https://api-vs.herokuapp.com/vs/v2/`
+-  1.2 (December 2020)
+    -  Changed the endpoint to `https://api-vs.herokuapp.com/vs/v1`
+-  1.1 (October 2018)
+    - Changed the endpoint from `https://sheetlabs.com/RV/` to `https://sheetlabs.com/IND/`
+-  1.0 (August 2018)
+    -  First release
 
 ## Coffee chat
 
-> [!NOTE] "Why did you make these APIs?"
-> Because they weren't there.
+{% include admonition.html
+   type="note"
+   title="Why did you make these APIs?"
+   content="Because they weren't there."
+%}
 
-> [!TIP] "What can I do with this data?"
-> You can process the data to make visually appealing or easily consumable information. Some examples are at [HowTo-s and dataviz](tags.md).
-> 
-> Also, I'll be very happy to link back to your implementation or app if you send me a URL.
+{% include admonition.html
+   type="tip"
+   title="What can I do with this data?"
+   content="You can process the data to make visually appealing or easily consumable information. See the example visualisations."
+%}
 
-> [!NOTE] "What is the source of this data?"
-> See [About the Rig Veda API](about_rv.md) and [About the Vedic Society API](about_vs.md).
+{% include admonition.html
+   type="note"
+   title="What is the source of this data?"
+   content="See [About the Rig Veda API](about_rv.md) and [About the Vedic Society API](about_vs.md)."
+%}
 
-> [!WARNING] "I found an error in the data."
-> Please log an issue in this GitHub repository.
+{% include admonition.html
+   type="warning"
+   title="I found an error in the data."
+   content="Please log an issue in the [GitHub repository](https://github.com/AninditaBasu/indica)."
+%}
 
-> [!NOTE] "And you are...?"
-> [Anindita Basu](https://x.com/anindita_basu).
-
-
+{% include admonition.html
+   type="note"
+   title="And you are...?"
+   content="[Anindita Basu](https://x.com/anindita_basu)."
+%}

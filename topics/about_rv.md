@@ -31,13 +31,13 @@ Here's an example response:
 
 ```json
 	{
-    	"mandal": 10,
-	    "meter": "Jagati",
-	    "sukta": 75,
-	    "sungby": "Sindhukshit Praiyamedh",
-	    "sungbycategory": "human male",
-	    "sungfor": "Ganga",
-	    "sungforcategory": "divine female"
+    "mandal": 10,
+	"meter": "Jagati",
+	"sukta": 75,
+	"sungby": "Sindhukshit Praiyamedh",
+	"sungbycategory": "human male",
+	"sungfor": "Ganga",
+	"sungforcategory": "divine female"
 	}
 ```
 
@@ -103,11 +103,4 @@ For example, consider sukta 24 of mandal 1. It has verses addressed to five gods
     "meter": "Trishtup"
   }
 ```
-
-## Related
-
--  [Rig Veda API reference](api_rv.md)
--  [Tutorial: Vedic soliloquies](how_to_soliloquy.md)
--  [Tutorial: Vedic dialogues](how_to_dialogues.md)
--  [Dataviz: Meters pie chart](datavis_meters_pie.md)
 

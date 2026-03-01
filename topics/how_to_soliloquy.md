@@ -19,7 +19,7 @@ Here is an example of a soliloquy.
     A dagger of the mind, a false creation,
     Proceeding from the heat-oppressed brain?
 
-    Shakespeare, William. "Macbeth". 
+    - Shakespeare, William. "Macbeth". 
 ```
 
 And here's an example of a monologue.
@@ -34,7 +34,7 @@ And here's an example of a monologue.
     My heart is in the coffin there with Caesar,
     And I must pause till it come back to me.
 
-    Shakespeare, William. "Julius Caesar".
+    - Shakespeare, William. "Julius Caesar".
 ```
 
 Soliloquies and monologues are as old as humankind. People were speaking to themselves, and speaking without waiting for a response, ever since they started speaking. Rig Veda, possibly the oldest book in the world, also has people soliloquising and monologising.
@@ -147,7 +147,7 @@ These steps use the `/poetcategory/{poetcategory}` path parameter.
 	
 1.  Iterate over this list, pick the mandal and sukta number combination, and look up the poem.
 
-Wikisource is good resource for ancient texts, so you can go read the poems there. The URLs at Wikisource are in the following format: `https://en.wikisource.org/wiki/The_Hymns_of_the_Rigveda/Book_1/Hymn_2`. Therefore, compose the URLs to match this scheme.
+	Wikisource is good resource for ancient texts, so you can go read the poems there. The URLs at Wikisource are in the following format: `https://en.wikisource.org/wiki/The_Hymns_of_the_Rigveda/Book_1/Hymn_2`. Therefore, compose the URLs to match this scheme.
 
 	```python
 	for item in soliloquy_unique:

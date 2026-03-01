@@ -51,17 +51,17 @@ For the request parameters, see [Endpoints](#endpoints).
 For the response parameters, see [Response parameters](#response-parameters).
 
 ```json
-	[
+[
   	{
-    	"mandal": 10,
-	    "meter": "Jagati",
-	    "sukta": 75,
-	    "sungby": "Sindhukshit Praiyamedh",
-	    "sungbycategory": "human male",
-	    "sungfor": "Ganga",
-	    "sungforcategory": "divine female"
+    "mandal": 10,
+	"meter": "Jagati",
+	"sukta": 75,
+	"sungby": "Sindhukshit Praiyamedh",
+	"sungbycategory": "human male",
+	"sungfor": "Ganga",
+	"sungforcategory": "divine female"
 	  }
-	]
+]
 ```
 
 ## Endpoints
@@ -192,18 +192,18 @@ Here's a description of these parameter.
 -  `mandal`: The book number. Rig Veda has 10 books.
 -  `sukta`: The chapter number. Books contain chapters. The number of chapters in each book is different. For example, mandal 5 contains 87 suktas while mandal 4 contains 58. The highest value possible for this parameter is 191 (which is the number of suktas in the 1st and 10th mandals). The following table lists the number of chapters in each book.
 	
-	    | Mandal (book) | Sukta (chapter) |
-	    | --- | --- |
-	    | 1 | 191 |
-	    | 2 | 43 |
-	    | 3 | 62 |
-	    | 4 | 58 |
-	    | 5 | 87 | 
-	    | 6 | 75 |
-	    | 7 | 104 |
-	    | 8 | 103 |
-	    | 9 | 114 |
-	    | 10 | 191 |
+	| Mandal (book) | Sukta (chapter) |
+	| --- | --- |
+	| 1 | 191 |
+	| 2 | 43 |
+	| 3 | 62 |
+	| 4 | 58 |
+	| 5 | 87 | 
+	| 6 | 75 |
+	| 7 | 104 |
+	| 8 | 103 |
+	| 9 | 114 |
+	| 10 | 191 |
 
 -  `meter`: The poetic meter.
 -  `sungby`: The poet.
@@ -213,5 +213,5 @@ Here's a description of these parameter.
 
 ## Live sandbox
 
-See [Rig Veda API: Try it out](https://aninditabasu.github.io/indica/openapi_rv.html).
+See [Rig Veda API: Try it out](openapi_rv.md).
 

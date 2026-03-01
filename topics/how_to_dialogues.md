@@ -10,19 +10,19 @@ A _dialogue_ is a conversation between two or more people in a book, play, or fi
 
 Here's an example of a normal human dialogue:
 
-```
+<pre>
     Bertie: Tell me, Jeeves, were you always like this, or did it come on suddenly?
-	Jeeves: Sir? 
-	Bertie: The brain, the grey matter. Were you an outstandingly brilliant child?
-	Jeeves: My mother thought me intelligent, Sir. 
-	Bertie: Well, you can't go by that! My mother thought me intelligent!
+    Jeeves: Sir? 
+    Bertie: The brain, the grey matter. Were you an outstandingly brilliant child?
+    Jeeves: My mother thought me intelligent, Sir. 
+    Bertie: Well, you can't go by that! My mother thought me intelligent!
 
     - Woodehouse, P. G. "Very Good, Jeeves".
-```
+</pre>
 
-And, here's an example of nations dialoguing
+And, here's an example of nations dialoguing:
 
-```
+<pre>
     We have agreed that a conference of United Nations should be called
 	to meet at San Francisco in the United States on April 25, 1945, 
 	to prepare the charter of such an organization, along the lines proposed 
@@ -37,7 +37,7 @@ And, here's an example of nations dialoguing
 	the text of the proposals on voting procedure will be made public.
 
     - Yalta Conference Agreement, 1945
-```
+</pre>
 
 Rig Veda doesn't contain conversations between countries, but it does contain human conversations.  This tutorial shows you how to find (and read) these conversations.
 
@@ -181,7 +181,7 @@ These steps use the `/book/{mandal}` path parameter.
 
 You now have a list of the dialogue verses in the mandal.
 
-Result 1: Mandal has dialogue hymns
+### Result 1: Mandal has dialogue hymns
 
 ```bash
     mandal 1 has 191 suktas
@@ -195,7 +195,7 @@ Result 1: Mandal has dialogue hymns
     3 poets in sukta 179
 ```
 
-Result 2: Mandal doesn't have dialogue hymns
+### Result 2: Mandal doesn't have dialogue hymns
 
 ```bash
     mandal 6 has 75 suktas

@@ -43,9 +43,3 @@ Here's an example response:
 
 The nouns are categorised into flora, fauna, geography, food, relationships, and more groups. The JSON response contains the word in the Nagari script, the word transliterated into the Roman script, the meaning of the word, and the category the word belongs to.
 
-## Related
-
--  [Vedic Society API reference](api_vs.md)
--  [Tutorial: Vedic curses](how_to_curse.md)
--  [Dataviz: Word cloud](datavis_wordcloud.md)
-

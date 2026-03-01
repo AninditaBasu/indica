@@ -44,8 +44,8 @@ Marked with `'`:
 ```text
     तत्स॑वि॒तुर्वरे॑ण्यं॒ भर्गो॑ दे॒वस्य॑ धीमहि ।
     धियो॒ यो नः॑ प्रचो॒दया॑त् ॥
-    
-	- Rig Veda, 3.62.10
+
+    - Rig Veda, 3.62.10
 ```
 
 This tutorial shows you how to draw a piechart of the vedic meters.
@@ -180,14 +180,14 @@ for item in counts:
 
 You can generate similar piecharts of the gods in a mandal, or all gods in all mandals, or a specific god in all mandals. Ditto for the poets.
 
-Example: Pie chart, gods
+### Example: Pie chart, gods
 
 ![pie chart of gods in rig veda](../images/gods_pie.png)
 
-Example: Pie chart, poets
+### Example: Pie chart, poets
 
 ![pie chart of poets in rig veda](../images/poets_pie_all.png)
 
-Example: Pie chart, god categories
+### Example: Pie chart, god categories
 
 ![pie chart of god categories in rig veda](../images/gods_cat_pie.png)

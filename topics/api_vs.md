@@ -42,21 +42,21 @@ For the request parameters, see [Endpoints](#endpoints).
 For the response parameters, see [Response parameters](#response-parameters).
 
 ```json
-	[
-	  {
-	    "category": "law",
-	    "description": "defendant, mentioned in the list of victims of purushmedh (human sacrifice)",
-	    "nagari": "अभिप्रश्निन",
-	    "word": "abhiprashnin"
-	  },
-	  {
-	    "category": "plant",
-	    "description": "Odina pinnata, Prosopis spicigera, or Mimosa suma",
-	    "nagari": "अजशृङ्गी",
-	    "word": "ajashringi"
-	  },
+[
+	{
+	"category": "law",
+	"description": "defendant, mentioned in the list of victims of purushmedh (human sacrifice)",
+	"nagari": "अभिप्रश्निन",
+	"word": "abhiprashnin"
+	},
+	{
+	"category": "plant",
+	"description": "Odina pinnata, Prosopis spicigera, or Mimosa suma",
+	"nagari": "अजशृङ्गी",
+	"word": "ajashringi"
+	},
 	  ...
-	]
+]
 ```
 
 ## Endpoints
@@ -126,5 +126,5 @@ The `word`, `description`, and `category` parameters are already described in [E
 
 ## Live sandbox
 
-See [Vedic Society API: Try it out](https://aninditabasu.github.io/indica/openapi_vs.html).
+See [Vedic Society API: Try it out](openapi_vs.md).
 
