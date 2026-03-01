@@ -108,6 +108,3 @@ The APIs are hosted on the free tier of Render, which has hourly limits. I am ne
    content="[Anindita Basu](https://x.com/anindita_basu)."
 %}
 
------------
-
-![logo](images/logo.png)
