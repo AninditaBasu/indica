@@ -18,13 +18,13 @@
       url: topics/openapi_vs.html   
 - title: How-tos and visualisations
   children:
-    - title: Pie chart: Poetic meters
+    - title: "Pie chart: Poetic meters"
       url: topics/datavis_meters_pie.html
-    - title: Word cloud: Noun descriptions
+    - title: "Word cloud: Noun descriptions"
       url: topics/datavis_wordcloud.html
-    - title: HowTo: Vedic curses
+    - title: "HowTo: Vedic curses"
       url: topics/how_to_curses.html
-    - title: HowTo: Vedic dialogues
+    - title: "HowTo: Vedic dialogues"
       url: topics/how_to_dialogues.html 
-    - title: HowTo: Vedic soliloquies
+    - title: "HowTo: Vedic soliloquies"
       url: topics/how_to_soliloquy.html 
