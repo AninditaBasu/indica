@@ -1,0 +1,30 @@
+- title: Home
+  url: /
+- title: Rig Veda API
+  children:
+    - title: About the API
+      url: topics/about_rv.html
+    - title: Reference documentation
+      url: topics/api_rv.html
+    - title: Sandbox (interactive)
+      url: topics/openapi_rv.html      
+- title: Vedic Society API
+  children:
+    - title: About the API
+      url: topics/about_vs.html
+    - title: Reference documentation
+      url: topics/api_vs.html
+    - title: Sandbox (interactive)
+      url: topics/openapi_vs.html   
+- title: How-tos and visualisations
+  children:
+    - title: Meters pie chart
+      url: topics/datavis_meters_pie.html
+    - title: Word cloud
+      url: topics/datavis_wordcloud.html
+    - title: Vedic curses
+      url: topics/how_to_curses.html
+    - title: Vedic dialogues
+      url: topics/how_to_dialogues.html 
+    - title: Vedic soliloquies
+      url: topics/how_to_soliloquy.html 
