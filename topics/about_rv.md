@@ -31,7 +31,7 @@ Here's an example response:
 
 ```json
 	{
-    "mandal": 10,
+	"mandal": 10,
 	"meter": "Jagati",
 	"sukta": 75,
 	"sungby": "Sindhukshit Praiyamedh",

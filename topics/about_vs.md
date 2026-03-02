@@ -6,7 +6,7 @@ title: About the Vedic Society API
 
 <hr/>
 
-This API contains the meanings of all nouns, except proper nouns, from the entire vedic corpus. Vedic literature comprises four vedas (Rig, Sama, Yajur, and Atharv). Each veda is a set of these articles:
+This API contains the meanings of all nouns, except proper nouns, from the entire vedic corpus. Vedic literature comprises four vedas (Rig, Sama, Yajur, and Atharv). Each veda is a set of the following books:
 
 -  Samhitas: Hymns or songs to gods
 -  Brahmanas: Instructions on rituals

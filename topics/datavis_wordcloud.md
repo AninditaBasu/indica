@@ -40,7 +40,7 @@ The following pseudocode shows how to generate the corpus.
 category_list = [category1, category2, category3, ...]
 where /categories/{category} == <item from category_list>:
 	get description
-    append to word_list
+	append to word_list
 convert word_list to word_text
 ```
 
@@ -63,9 +63,7 @@ This example uses the [WordCloud for Python](https://amueller.github.io/word_clo
 	headers = {
 	    'accept': 'application/json',
 	}
-
 	url = "https://indica-1hwj.onrender.com/vs/v2/categories/clothing"
-
 	response = requests.get(url, headers=headers)
 	response_json = json.loads(json.dumps(response.json()))
 	```
@@ -73,8 +71,7 @@ This example uses the [WordCloud for Python](https://amueller.github.io/word_clo
 1.  Loop through the returned JSON, pick `description`, and add it to a list.
 
     ```python
-	word_list = []
-	
+	word_list = []	
 	for entry in response_json:
 		word_list.append(entry['description'])
 	```
@@ -82,8 +79,7 @@ This example uses the [WordCloud for Python](https://amueller.github.io/word_clo
 1.  Make a `GET` call for the next category on the list, pick the description, and append it to `word_list`.
 1.  Convert the list to a single block of text, where each list item is separated by a single space.
 
-    ```python
-	
+    ```python	
 	text = " ".join(word_list)
 	
 	```
@@ -93,10 +89,8 @@ This example uses the [WordCloud for Python](https://amueller.github.io/word_clo
     ```python
 	# generate a word cloud image
 	wordcloud = WordCloud().generate(text)
-
 	# lower max_font_size
-	wordcloud = WordCloud(max_font_size=40).generate(text)
-	
+	wordcloud = WordCloud(max_font_size=40).generate(text)	
 	# plot the chart
 	plt.figure()
 	plt.imshow(wordcloud, interpolation="bilinear")

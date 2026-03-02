@@ -39,7 +39,7 @@ No marks:
     - Rig Veda, 3.62.10
 ```
 
-Marked with `'`:
+Marked with `'` to show how the rhythm should flow:
 
 ```text
     तत्स॑वि॒तुर्वरे॑ण्यं॒ भर्गो॑ दे॒वस्य॑ धीमहि ।
@@ -110,11 +110,8 @@ After collecting the data, use your favourite data-visualiser to create a pie ch
 	headers = {
 	    'accept': 'application/json',
 	}
-
 	url = "https://indica-1hwj.onrender.com/rv/v2/meta/book/1"
-
-	import json
-	
+	import json	
 	response = requests.get(url, headers=headers)
 	response_json = json.loads(json.dumps(response.json()))
 	```
@@ -122,8 +119,7 @@ After collecting the data, use your favourite data-visualiser to create a pie ch
 1.  Loop through the returned JSON, pick `meter`, and add it to a list.
 
     ```python
-	meters = []
-	
+	meters = []	
 	for entry in response_json:
 		meters.append(entry['meter'])
 	```
@@ -132,8 +128,7 @@ After collecting the data, use your favourite data-visualiser to create a pie ch
 1.  Count the number of occurence of each meter.
 
     ```python
-	from collections import Counter
-	
+	from collections import Counter	
 	counts = Counter(meters)
 	#print(len(counts), counts)
 	```
@@ -148,10 +143,8 @@ After collecting the data, use your favourite data-visualiser to create a pie ch
 	    labels.append(item)
 	    sizes.append(counts[item])
 	#print(len(labels), labels)
-	#print(len(sizes), sizes)
-	
+	#print(len(sizes), sizes)	
 	import matplotlib.pyplot as plt
-
 	fig1, ax1 = plt.subplots()
 	ax1.pie(sizes, labels=labels, autopct='%1.1f%%', shadow=True, startangle=90)
 	ax1.axis('equal')

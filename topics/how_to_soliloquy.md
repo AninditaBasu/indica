@@ -122,9 +122,7 @@ These steps use the `/poetcategory/{poetcategory}` path parameter.
 	headers = {
 	    'accept': 'application/json',
 	}
-
 	url_suffix = "https://indica-1hwj.onrender.com/rv/v2/meta/poetcategory/"
-
 	import json
 	for item in category:
 		url = url_suffix + item
@@ -135,8 +133,7 @@ These steps use the `/poetcategory/{poetcategory}` path parameter.
 1.  Loop through the returned JSON and find verses where `sungby` is the same as `sungfor`. Append those verses to the result list.
 
     ```python
-	soliloquy = []
-	
+	soliloquy = []	
 	for entry in response_json:
         if entry['sungby'] == entry['sungfor']:
             soliloquy.append(entry)
@@ -145,8 +142,7 @@ These steps use the `/poetcategory/{poetcategory}` path parameter.
 1.  Clean the result list of duplicate entries.
 
 	```python
-	soliloquy_unique = []
-	
+	soliloquy_unique = []	
 	for entry in soliloquy:
        if entry in soliloquy_unique:
            continue
@@ -162,7 +158,6 @@ These steps use the `/poetcategory/{poetcategory}` path parameter.
 	for item in soliloquy_unique:
         poem = "Mandala_" + str(item['mandal']) + "/Hymn_" + str(item['sukta'])
         poem_list.append(poem)
-
 	for item in poem_list:
     	url = url_suffix + item
     	print(url)
@@ -187,7 +182,6 @@ https://en.wikisource.org/wiki/The_Hymns_of_the_Rigveda/Book_4/Hymn_42
 https://en.wikisource.org/wiki/The_Hymns_of_the_Rigveda/Book_10/Hymn_119
 https://en.wikisource.org/wiki/The_Hymns_of_the_Rigveda/Book_10/Hymn_139
 
-Process finished with exit code 0
 ```
 
 ## What to do next

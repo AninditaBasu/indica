@@ -62,14 +62,14 @@ For the response parameters, see [Response parameters](#response-parameters).
 ```json
 [
   	{
-    "mandal": 10,
-	"meter": "Jagati",
-	"sukta": 75,
-	"sungby": "Sindhukshit Praiyamedh",
-	"sungbycategory": "human male",
-	"sungfor": "Ganga",
-	"sungforcategory": "divine female"
-	  }
+  	"mandal": 10,
+  	"meter": "Jagati",
+  	"sukta": 75,
+  	"sungby": "Sindhukshit Praiyamedh",
+  	"sungbycategory": "human male",
+  	"sungfor": "Ganga",
+  	"sungforcategory": "divine female"
+  	}
 ]
 ```
 

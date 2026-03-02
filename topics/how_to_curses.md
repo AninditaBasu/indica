@@ -65,9 +65,7 @@ curse = 'May your ' + <family_word> + ' be blighted with ' + <disease_word> + '.
 	headers = {
 	    'accept': 'application/json',
 	}
-
 	url = "https://indica-1hwj.onrender.com/vs/v2/categories/disease"
-
 	response = requests.get(url, headers=headers)
 	response_json = json.loads(json.dumps(response.json()))
 	```
@@ -76,8 +74,7 @@ curse = 'May your ' + <family_word> + ' be blighted with ' + <disease_word> + '.
 
     ```python
 	import json
-	diseases = {}
-	
+	diseases = {}	
 	for entry in response_json:
         diseases.update({entry['word']:entry['description']})
 	```

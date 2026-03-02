@@ -10,7 +10,7 @@ A _dialogue_ is a conversation between two or more people in a book, play, or fi
 
 Here's an example of a normal human dialogue:
 
-<pre>
+```bash
     Bertie: Tell me, Jeeves, were you always like this, or did it come on suddenly?
     Jeeves: Sir? 
     Bertie: The brain, the grey matter. Were you an outstandingly brilliant child?
@@ -18,7 +18,7 @@ Here's an example of a normal human dialogue:
     Bertie: Well, you can't go by that! My mother thought me intelligent!
 
     - Woodehouse, P. G. "Very Good, Jeeves".
-</pre>
+```
 
 And, here's an example of nations dialoguing:
 
@@ -122,11 +122,8 @@ These steps use the `/book/{mandal}` path parameter.
 	headers = {
 	    'accept': 'application/json',
 	}
-
 	url = "https://indica-1hwj.onrender.com/rv/v2/meta/book/1"
-
-	import json
-	
+	import json	
 	response = requests.get(url, headers=headers)
 	response_json = json.loads(json.dumps(response.json()))
 	```
@@ -134,8 +131,7 @@ These steps use the `/book/{mandal}` path parameter.
 1.  Loop through the returned JSON and find the number of verses in the mandal. You'll use this number to run a counter in a later step.
 
     ```python
-	sukta_numbers = []
-	
+	sukta_numbers = []	
 	for entry in response_json:
         sukta_numbers.append(entry['sukta'])
 	number_of_suktas = max(sukta_numbers)
@@ -146,8 +142,7 @@ These steps use the `/book/{mandal}` path parameter.
 1.  Loop through the returned JSON again, pick `sukta` and `sungby`, and add them to a list. This is the list of all verses_by_poets in the mandal.
 
     ```python
-	poet_list = []
-	
+	poet_list = []	
 	for entry in response_json:
         for entry in entry_full:
 		text = str(entry['sukta']) + "-" + entry['sungby']

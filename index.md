@@ -101,6 +101,6 @@ What is the source of this data?
 I found an error in the data."
 : Please log an issue in the [GitHub repository](https://github.com/AninditaBasu/indica).
 
-And you are...?"
+And you are...?
 : [Anindita Basu](https://x.com/anindita_basu).
 
