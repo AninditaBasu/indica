@@ -21,6 +21,15 @@ Let him dry up from the root.
 
 This tutorial shows you how to curse like you were living in the vedic times.
 
+---------
+
+**On this page**
+
+* TOC
+{:toc}
+
+---------
+
 ## Algorithm
 
 All the path parameters in the [Vedic Society API](api_vs.md) return a response in the same JSON structure.

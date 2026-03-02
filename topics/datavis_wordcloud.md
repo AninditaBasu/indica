@@ -10,6 +10,15 @@ A _word cloud_ is an image composed of words in a book or large piece of text, w
 
 This tutorial shows you how to use the noun descriptions in the [Vedic Society API](api_vs.md) to generate a word cloud.
 
+---------
+
+**On this page**
+
+* TOC
+{:toc}
+
+---------
+
 ## Algorithm
 
 All the path parameters in the [Vedic Society API](api_vs.md) return a response in the same JSON structure.

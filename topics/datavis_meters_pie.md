@@ -52,6 +52,15 @@ This tutorial shows you how to draw a piechart of the vedic meters.
 
 ![pie chart of meters in rig veda](../images/meters_pie.png)
 
+---------
+
+**On this page**
+
+* TOC
+{:toc}
+
+---------
+
 ## Algorithm
 
 All the path parameters in the [Rig Veda API](api_rv.md) return a response in the same JSON structure.

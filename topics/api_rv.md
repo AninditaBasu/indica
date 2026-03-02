@@ -22,6 +22,15 @@ This API fetches metadata of the hymns in Rig Veda. The JSON response contains v
 ]
 ```
 
+---------
+
+**On this page**
+
+* TOC
+{:toc}
+
+---------
+
 ## Context
 
 An explanation of the various elements in Rig Veda (and this API) is contained in [About the Rig Veda API](about_rv.md).

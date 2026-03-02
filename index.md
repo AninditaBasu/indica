@@ -14,6 +14,17 @@ Indologists have sifted through these oral traditions and compiled scholarly boo
 
 These APIs aim to bridge that gap. The APIs speak in JSON, which is a language notation that's understood by almost all machines today.
 
+---------
+
+**On this page**
+
+* TOC
+{:toc}
+
+---------
+
+## APIs
+
 - [Rig Veda API](topics/api_rv.md)
 - [Vedic Society API](topics/api_vs.md)
 
@@ -78,33 +89,18 @@ The APIs are hosted on the free tier of Render, which has hourly limits. I am ne
 
 ## Coffee chat
 
-{% include admonition.html
-   type="note"
-   title="Why did you make these APIs?"
-   content="Because they weren't there."
-%}
+Why did you make these APIs?
+: Because they weren't there.
 
-{% include admonition.html
-   type="tip"
-   title="What can I do with this data?"
-   content="You can process the data to make visually appealing or easily consumable information. See the example visualisations."
-%}
+What can I do with this data?
+: You can process the data to make visually appealing or easily consumable information. See the example visualisations.
 
-{% include admonition.html
-   type="note"
-   title="What is the source of this data?"
-   content="See [About the Rig Veda API](topics/about_rv.md) and [About the Vedic Society API](topics/about_vs.md)."
-%}
+What is the source of this data?
+: See [About the Rig Veda API](topics/about_rv.md) and [About the Vedic Society API](topics/about_vs.md).
 
-{% include admonition.html
-   type="warning"
-   title="I found an error in the data."
-   content="Please log an issue in the [GitHub repository](https://github.com/AninditaBasu/indica)."
-%}
+I found an error in the data."
+: Please log an issue in the [GitHub repository](https://github.com/AninditaBasu/indica).
 
-{% include admonition.html
-   type="note"
-   title="And you are...?"
-   content="[Anindita Basu](https://x.com/anindita_basu)."
-%}
+And you are...?"
+: [Anindita Basu](https://x.com/anindita_basu).
 

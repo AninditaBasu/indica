@@ -19,6 +19,15 @@ This API fetches the meanings of nouns from vedic literature.  The nouns are cat
 ]
 ```
 
+---------
+
+**On this page**
+
+* TOC
+{:toc}
+
+---------
+
 ## Base URL
 
 `https://indica-1hwj.onrender.com/vs/v2`

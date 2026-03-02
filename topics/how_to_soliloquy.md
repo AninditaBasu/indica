@@ -41,6 +41,15 @@ Soliloquies and monologues are as old as humankind. People were speaking to them
 
 This tutorial shows you how to find (and read) the soliloquies and monologues in Rig Veda.
 
+---------
+
+**On this page**
+
+* TOC
+{:toc}
+
+---------
+
 ## Algorithm
 
 All the path parameters in the [Rig Veda API](api_rv.md) return a response in the same JSON structure.
