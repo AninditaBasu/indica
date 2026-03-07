@@ -144,27 +144,20 @@ Code snippet for Python:
 lines = []
 lines.append("```mermaid")
 lines.append("graph TD")
-
-
 # Create node IDs
 def node_id(name):
     return name.replace(" ", "_").replace("'", "")
-
-
 # Create nodes
 for e in events:
     name = e["eventName"]
     nid = node_id(name)
     lines.append(f'{nid}["{name}"]')
-
 # Create edges from followedBy
 for e in events:
     src = node_id(e["eventName"])
-
     for nxt in e.get("eventFollowedBy", []):
         dst = node_id(nxt)
         lines.append(f"{src} --> {dst}")
-
 lines.append("```")
 
 ```
