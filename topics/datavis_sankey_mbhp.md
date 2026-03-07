@@ -9,7 +9,7 @@ config:
 
 <hr/>
 
-This timeline is generated from the data returned by `/mb/v1/weapons`.
+This diagram is generated from the data returned by `/mb/v1/weapons`.
 
 ```mermaid
 sankey-beta
