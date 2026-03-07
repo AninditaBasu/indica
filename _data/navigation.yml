@@ -28,6 +28,8 @@
   children:
     - title: "Pie chart: Poetic meters"
       url: topics/datavis_meters_pie.html
+    - title: "Timeline: Mahabharat"
+      url: topics/datavis_timeline.html
     - title: "Word cloud: Noun descriptions"
       url: topics/datavis_wordcloud.html
     - title: "HowTo: Vedic curses"

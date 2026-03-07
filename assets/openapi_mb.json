@@ -3,7 +3,7 @@
   "info": {
     "version": "1.0.0",
     "title": "Mahabharat API",
-    "description": "## Knowledge graph API for Mahabharat\nThsis API returns information about people, events, and journeys.",
+    "description": "## Knowledge graph API for Mahabharat\nThis API returns information about people, events, and journeys.",
     "contact": {
       "email": "ab.techwriter@gmail.com"
     },
@@ -283,15 +283,7 @@
             "in": "query",
             "schema": {
               "type": "string",
-              "enum": ["basic"]
-            }
-          },
-          {
-            "name": "expand",
-            "in": "query",
-            "schema": {
-              "type": "string",
-              "enum": ["true", "false"]
+              "enum": ["full"]
             }
           }
         ],
@@ -582,7 +574,6 @@
         "type": "object",
         "properties": {
           "eventName": { "type": "string" },
-          "eventParent": {"type": "string", "nullable": true},
           "eventPrecededBy": {
             "type": "array",
             "items": { "type": "string" }

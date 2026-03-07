@@ -23,11 +23,6 @@ These APIs aim to bridge that gap. The APIs speak in JSON, which is a language n
 
 ---------
 
-## APIs
-
-- [Rig Veda API](topics/api_rv.md)
-- [Vedic Society API](topics/api_vs.md)
-
 ## Authentication
 
 Not needed. These are open APIs.
@@ -101,7 +96,7 @@ What can I do with this data?
 : You can process the data to make visually appealing or easily consumable information. See the example visualisations.
 
 What is the source of this data?
-: See [About the Rig Veda API](topics/about_rv.md) and [About the Vedic Society API](topics/about_vs.md).
+: See [About the Rig Veda API](topics/about_rv.md), [About the Vedic Society API](topics/about_vs.md), and [About the Mahabharat API](topics/about_mb.md).
 
 I found an error in the data."
 : Please log an issue in the [GitHub repository](https://github.com/AninditaBasu/indica).
