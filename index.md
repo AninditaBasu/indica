@@ -87,6 +87,11 @@ The APIs are hosted on the free tier of Render, which has hourly limits. I am ne
 -  1.0 (August 2018)
     -  First release
 
+### Mahabharat API
+
+-  1.0.0 (February 2026)
+    -  First release
+
 ## Coffee chat
 
 Why did you make these APIs?

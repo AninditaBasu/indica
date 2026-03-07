@@ -1,5 +1,5 @@
 ---
 layout: api-swagger
-title: REST API interactive
+title: Vedic society API sandbox
 openapi: /assets/openapi_vs.json
 ---

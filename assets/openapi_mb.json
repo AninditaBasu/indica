@@ -1,0 +1,673 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Mahabharat API",
+    "description": "## Knowledge graph API for Mahabharat\nThsis API returns information about people, events, and journeys.",
+    "contact": {
+      "email": "ab.techwriter@gmail.com"
+    },
+    "license": {
+      "name": "MIT license",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  },
+  "externalDocs": {
+    "description": "Indica APIs home",
+    "url": "https://aninditabasu.github.io/indica/"
+  },
+  "servers": [
+    {
+      "url": "https://indica-1hwj.onrender.com/mb/v1",
+      "description": "Mahabharat API"
+    }
+  ],
+  "paths": {
+    "/persons": {
+      "get": {
+        "summary": "List all persons",
+        "description": "Returns a list of all persons.\n\nThe default response has names and summary information. Query parameters can be used for  obtaining fuller information.",
+        "parameters": [
+          {
+            "name": "fields",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": ["basic"]
+            }
+          },
+          {
+            "name": "expand",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": ["true", "false"]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of persons",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Person"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/persons/{name}": {
+      "get": {
+        "summary": "Get person by name",
+        "description": "Returns information about the specified person.\n\nThe default response has summary information. Query parameters can be used for fuller information.",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": ["basic"]
+            }
+          },
+          {
+            "name": "expand",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": ["true", "false"]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Person object",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Person"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Person not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/persons/{name}/armour": {
+      "get": {
+        "summary": "Get the panoply of a person",
+        "description": "Returns a list of weapons and other implements of the specified person.",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Armour information",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Armour"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/persons/{name}/journeys": {
+      "get": {
+        "summary": "Get all journeys associated with a person",
+        "description": "Returns a list of all journeys underatken by the specified person.\n\nThe default response has names and summary information. Query parameters can be used for obtaining fuller information.",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "expand",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": ["true", "false"]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Journeys",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Journey"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/explore/{name}": {
+      "get": {
+        "summary": "Get complete details of a person",
+        "description": "Returns information about the specified person.\n\nEvents, weapons, journeys are all reckoned.",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Aggregated exploration result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExplorePersonResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/weapons": {
+      "get": {
+        "summary": "List all weapons",
+        "description": "Returns a list of all weapons.",
+        "responses": {
+          "200": {
+            "description": "Weapons",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { "$ref": "#/components/schemas/Weapon" }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/weapons/{name}": {
+      "get": {
+        "summary": "Get weapon by name",
+        "description": "Returns the details of the specified weapon.",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Weapon",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Weapon" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/weapons/{name}/owners": {
+      "get": {
+        "summary": "List all persons owning a weapon",
+        "description": "Returns a list of all persons who own the specified weapon.",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of person names",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { "type": "string" }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/events": {
+      "get": {
+        "summary": "List all events",
+        "description": "Returns a list of all events.\n\nThe default response has names and summary information. Query parameters can be used for obtaining fuller information.",
+        "parameters": [
+          {
+            "name": "fields",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": ["basic"]
+            }
+          },
+          {
+            "name": "expand",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": ["true", "false"]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Events",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { "$ref": "#/components/schemas/Event" }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/events/{name}": {
+      "get": {
+        "summary": "Get event by name",
+        "description": "Returns the details of the specified event.\n\nThe default response has names and summary information. Query parameters can be used for obtaining fuller information.",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Event",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Event" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/clans": {
+      "get": {
+        "summary": "List all clans",
+        "description": "Returns a list of all clans.",
+        "responses": {
+          "200": {
+            "description": "Clans",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { "$ref": "#/components/schemas/Clan" }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/clans/{name}": {
+      "get": {
+        "summary": "Get clan by name",
+        "description": "Returns the details of the specified clan.",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Clan",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Clan" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/journeys": {
+      "get": {
+        "summary": "List all journeys",
+        "description": "Returns a list of all journeys, with detailed information.",
+        "parameters": [
+          {
+            "name": "person",
+            "in": "query",
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "place",
+            "in": "query",
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "expand",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": ["true", "false"]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Journeys",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { "$ref": "#/components/schemas/Journey" }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/journeys/{name}": {
+      "get": {
+        "summary": "Get journey by name",
+        "description": "Returns information of the specified journey.\n\nDetails of persons and paths is included.",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Journey",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Journey" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/places": {
+      "get": {
+        "summary": "List all places",
+        "description": "Returns information about all places.",
+        "responses": {
+          "200": {
+            "description": "Places",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { "$ref": "#/components/schemas/Place" }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/places/{name}": {
+      "get": {
+        "summary": "Get place by name",
+        "description": "Returns the details of the specified place.\n\nThe default response has names and summary information. Query parameters can be used for obtaining fuller information.",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Place",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Place" }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Error": {
+        "type": "object",
+        "properties": {
+          "error": { "type": "string" }
+        }
+      },
+      "Armour": {
+        "type": "object",
+        "properties": {
+          "weapons": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/Weapon" }
+          },
+          "panoplies": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/Panoply" }
+          }
+        }
+      },
+      "ExplorePersonResponse": {
+        "type": "object",
+        "properties": {
+          "person": { "type": "string" },
+          "clan": { "$ref": "#/components/schemas/Clan" },
+          "armour": { "$ref": "#/components/schemas/Armour" },
+          "events": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/Event" }
+          },
+          "journeys": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/Journey" }
+          },
+          "places": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "death": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/Death" }
+          }
+        }
+      },
+      "Person": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "aliases": { "type": "array", "items": { "type": "string" } },
+          "shortDesc": { "type": "string" },
+          "gender": { "type": "string" },
+          "clan": { "type": "string" },
+          "fatherReal": { "type": "string" },
+          "motherReal": { "type": "string" },
+          "fatherAdoptive": { "type": "string" },
+          "motherAdoptive": { "type": "string" },
+          "childrenReal": { "type": "array", "items": { "type": "string" } },
+          "childrenAdopted": { "type": "array", "items": { "type": "string" } },
+          "spouses": { "type": "array", "items": { "type": "string" } },
+          "foughtWar": {"type": "string", "nullable": true},
+          "aliveAtWarStart": {"type": "string", "nullable": true},
+          "aliveAtWarEnd": {"type": "string", "nullable": true},
+          "weapons": { "type": "array", "items": { "type": "string" } },
+          "longDesc": { "type": "string" }
+        }
+      },
+      "Weapon": {
+        "type": "object",
+        "properties": {
+          "weaponName": { "type": "string" },
+          "weaponDescription": { "type": "string" },
+          "weaponAntidote": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "weaponHP": { "type": "string" }
+        }
+      },
+      "Clan": {
+        "type": "object",
+        "properties": {
+          "clanName": { "type": "string" },
+          "clanAliases": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "clanHome": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "clanInfo": { "type": "string" }
+        }
+      },
+      "Event": {
+        "type": "object",
+        "properties": {
+          "eventName": { "type": "string" },
+          "eventParent": {"type": "string", "nullable": true},
+          "eventPrecededBy": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "eventFollowedBy": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "eventLocation": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "eventDescription": { "type": "string" },
+          "eventPersons": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        }
+      },
+      "Journey": {
+        "type": "object",
+        "properties": {
+          "journeyName": { "type": "string" },
+          "journeyRoute": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "journeyPersons": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "journeyEvent": { "type": "string" }
+        }
+      },
+      "Panoply": {
+        "type": "object",
+        "properties": {
+          "person": { "type": "string" },
+          "chariotBanner": { "type": "string" },
+          "bow": { "type": "string" },
+          "sword": { "type": "string" },
+          "conch": { "type": "string" },
+          "chariotHorses": { "type": "string" }
+        }
+      },
+      "Place": {
+        "type": "object",
+        "properties": {
+          "placeNameEpic": { "type": "string" },
+          "placeAliasEpic": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "placeNameHistorical": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "placeNameCurrent": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "placeCountryCurrent": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "placeType": { "type": "string" },
+          "placeInfo": { "type": "string" }
+        }
+      },
+      "Death": {
+        "type": "object",
+        "properties": {
+          "personName": { "type": "string" },
+          "personKilledWhoAll": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "personKilledByWhom": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "personKilledHow": { "type": "string" },
+          "personKilledAtEvent": {"type": "string", "nullable": true}
+        }
+      }
+    }
+  }
+}

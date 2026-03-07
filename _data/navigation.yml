@@ -15,7 +15,15 @@
     - title: Reference documentation
       url: topics/api_vs.html
     - title: Sandbox (interactive)
-      url: topics/openapi_vs.html   
+      url: topics/openapi_vs.html
+- title: Mahabharat API
+  children:
+    - title: About the API
+      url: topics/about_mb.html
+    - title: Reference documentation
+      url: topics/api_mb.html
+    - title: Sandbox (interactive)
+      url: topics/openapi_mb.html   
 - title: How-tos and visualisations
   children:
     - title: "Pie chart: Poetic meters"

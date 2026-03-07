@@ -1,5 +1,5 @@
 ---
 layout: api-swagger
-title: REST API interactive
+title: Rig Veda API sandbox
 openapi: /assets/openapi_rv.json
 ---
