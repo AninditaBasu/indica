@@ -4,7 +4,7 @@ title: Mahabharat API reference documentation
 
 # Mahabharat API reference
 
-{hr/}
+<hr/>
 
 This API fetches information from Mahabharat. The JSON response contains data about people and events.
 
@@ -20,7 +20,7 @@ This API fetches information from Mahabharat. The JSON response contains data ab
 
 ## Context
 
-An explanation of the various endpoints in this API is contained in [About the Mahabharat API](about_mb.md).
+An explanation of the connection between the fields of the several endpoints in this API is contained in [About the Mahabharat API](about_mb.md).
 
 ## Base URL
 
