@@ -1,5 +1,8 @@
 ---
 title: Timeline: Sankey diagram: Mahabharat weapons in Potterworld
+config:
+  sankey:
+    showValues: false
 ---
 
 # Sankey diagram: Mahabharat weapons in Potterworld
