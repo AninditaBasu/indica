@@ -45,6 +45,7 @@ Jata_killing["Jata killing"]
 Yaksh_battle_for_lotus["Yaksh battle for lotus"]
 Duryodhan-Gandharv_fight["Duryodhan-Gandharv fight"]
 Draupadi_abduction["Draupadi abduction"]
+Narayani_yagna["Narayani yagna"]
 Karn-Indra_barter["Karn-Indra barter"]
 Incognito_year_begins["Incognito year begins"]
 Keechak_killing["Keechak killing"]
@@ -97,6 +98,7 @@ Shishupal_killing --> Dice_game
 Shishupal_killing --> Shalwa-Yadav_battle
 Dice_game --> Dice_exile_begins
 Dice_exile_begins --> Kirmir_killing
+Dice_exile_begins --> Narayani_yagna
 Shalwa-Yadav_battle --> Abhimanyu-Uttara_wedding
 Shalwa-Yadav_battle --> Yadav_brawl
 Kirmir_killing --> Pilgrimage_of_other_Pandavas_begins
@@ -110,8 +112,9 @@ Jata_killing --> Yaksh_battle_for_lotus
 Yaksh_battle_for_lotus --> Duryodhan-Gandharv_fight
 Duryodhan-Gandharv_fight --> Draupadi_abduction
 Draupadi_abduction --> Incognito_year_begins
+Narayani_yagna --> Karn-Indra_barter
 Karn-Indra_barter --> Incognito_year_begins
-Incognito_year_begins --> Cattle_raid
+Incognito_year_begins --> Keechak_killing
 Keechak_killing --> Cattle_raid
 Cattle_raid --> Abhimanyu-Uttara_wedding
 Abhimanyu-Uttara_wedding --> Krishna_on_peace_mission
