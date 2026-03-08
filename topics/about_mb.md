@@ -107,12 +107,11 @@ erDiagram
     PERSON ||--|{ CLAN : belongs_to
     PERSON ||--|| EVENT : is_killed_at
 	PERSON ||--|| DEATH : dies
+	PERSON }|--|{ JOURNEY : undertakes
     EVENT }|--|{ PLACE : happens_at
     EVENT ||--|{ JOURNEY : can_contain
     CLAN ||--|{ PLACE : lives_at
     JOURNEY ||--|{ PATH : contains
-	JOURNEY ||--|{ PERSON : contains
-	JOURNEY ||--|| EVENT : happens_because
     PATH ||--|{ PLACE : passes_through
 
 ```
