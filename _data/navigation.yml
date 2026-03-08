@@ -32,6 +32,8 @@
       url: topics/datavis_timeline.html
     - title: "Sankey diagram: Mahabharat weapons in Potterworld"
       url: topics/datavis_sankey_mbhp.html
+    - title: "Route map: Jarasandh killing"
+      url: topics/datavis_routemap.html  
     - title: "Word cloud: Noun descriptions"
       url: topics/datavis_wordcloud.html
     - title: "HowTo: Vedic curses"
