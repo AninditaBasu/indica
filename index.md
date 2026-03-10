@@ -29,9 +29,9 @@ Not needed. These are open APIs.
 
 ## License
 
-These APIs are distributed under the MIT license. This means you are free to use the data any which way you want, so long as you don't hold me liable and you give me an attribution. See [The MIT License (MIT)](https://opensource.org/licenses/MIT).
+These APIs are distributed under the [MIT license](https://opensource.org/licenses/MIT).
 
-All content on this website, unless otherwise stated, is distributed under the Creative Commons license. This means the content is dedicated as-is, without any liability, to the worldwide public domain. See [The Creative Commons Zero v1.0 Universal license](https://wiki.creativecommons.org/wiki/CC0_FAQ).
+All content on this website, unless otherwise stated, is distributed under the [Creative Commons (CC-BY-4.0) license](https://creativecommons.org/licenses/by/4.0/).
 
 ## Rate limits
 
@@ -98,7 +98,7 @@ What can I do with this data?
 What is the source of this data?
 : See [About the Rig Veda API](topics/about_rv.md), [About the Vedic Society API](topics/about_vs.md), and [About the Mahabharat API](topics/about_mb.md).
 
-I found an error in the data."
+I found an error in the data.
 : Please log an issue in the [GitHub repository](https://github.com/AninditaBasu/indica).
 
 And you are...?

@@ -24,12 +24,12 @@ erDiagram
         string name PK
         string_array aliases
         string shortDesc
-		gender
-		clan FK
-		fatherReal
-		motherReal
-		fatherAdoptive
-		motherAdoptive
+		string gender
+		string clan FK
+		string fatherReal
+		string motherReal
+		string fatherAdoptive
+		string motherAdoptive
 		string_array childrenReal
 		string_array childrenAdopted
 		string_array spouses

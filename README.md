@@ -1,9 +1,10 @@
 # Indica APIs
 
-The following two APIs are available: 
+The following APIs are available: 
 
 - Rig Veda API: Metadata for the Rig Veda. Contains info about the gods and poets, their categories, and poem meters used in all of the Rig Veda verses
-- Vedic Soceity API: A descriptions of all the nouns  mentioned in vedic literature (proper nouns aren't included, though)
+- Vedic Soceity API: Descriptions of all the nouns  mentioned in vedic literature (proper nouns aren't included, though)
+- Mahabharat API: Information about people and events in the Mahabharat
 
 <hr/>
 
