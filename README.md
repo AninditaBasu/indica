@@ -16,3 +16,7 @@ See [Indica documentation](https://aninditabasu.github.io/indica/).
 
 The APIs are openly available through `GET` calls, and return data in the `JSON` format. You can programmatically process the data to make visually appealing or easily consumable information.
 
+![Jarasandh-elimination journey](images/map_jarasandh_killing.png)
+
+![poets of the rig veda](images/rishis.png)
+
