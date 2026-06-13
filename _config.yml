@@ -12,7 +12,13 @@ plugins:
 ledger:
   preset: palmleaf
 
+author: Anindita Basu
 copyright_start: 2018
+
+footer:
+  data_notice: "Curated reference dataset"
+  docs_license: "CC BY 4.0"
+  data_license: "CC BY-NC 4.0"
 
 kramdown:
   toc_levels: 2..3
