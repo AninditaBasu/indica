@@ -3,7 +3,7 @@ title: Route map of the Jarasandh episode in the Mahabharat
 description: Plot a route map after querying the API for details about places in the journey that Krishna, Bheem, and Arjuna undertook to kill Jarasandh, the king of Magadh in the Mahabharat.
 summary: Tutorial for building a datavis of the journey undertaken to kill Jarasandh.
 
-version: v2
+version: v1
 status: stable
 base_path: /mb/v1
 
@@ -25,7 +25,7 @@ related:
   - title: Visualising the Mahabharat timeline
     type: datavis
     url: /topics/datavis_timeline.html
-	
+
   - title: About the Mahabharat API
     type: explanation
     url: /topics/about_mb.html

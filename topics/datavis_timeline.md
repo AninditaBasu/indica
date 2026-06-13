@@ -3,7 +3,7 @@ title: The Mahabharat timeline
 description: Build a visual, event-led timeline of the Mahabharat after querying the API for details about the events in the Mahabharat.
 summary: Tutorial for building a chronology of the Mahabharat.
 
-version: v2
+version: v1
 status: stable
 base_path: /mb/v1
 
@@ -25,7 +25,7 @@ related:
   - title: Visualising the weapons in Mahabharat and the Harry Potter world
     type: tutorial
     url: /topics/datavis_sankey_mbhp.html
-	
+
   - title: About the Mahabharat API
     type: explanation
     url: /topics/about_mb.html

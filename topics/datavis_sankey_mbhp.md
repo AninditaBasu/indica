@@ -7,7 +7,7 @@ config:
   sankey:
     showValues: false
 
-version: v2
+version: v1
 status: stable
 base_path: /mb/v1
 
