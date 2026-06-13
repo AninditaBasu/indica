@@ -18,15 +18,15 @@ tags:
   - api
 
 related:
-  - title: The Vedic hymns metadata
+  - title: Vedic hymns metadata
     type: explanation
     url: /topics/about_rv.html
 
-  - title: The nouns in the Vedic corpus
+  - title: Nouns in the Vedic corpus
     type: explanation
     url: /topics/about_vs.html
 
-  - title: The Mahabharat data
+  - title: Mahabharat data
     type: explanation
     url: /topics/about_mb.html
 ---

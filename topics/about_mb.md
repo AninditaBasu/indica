@@ -26,7 +26,7 @@ related:
     type: datavis
     url: /topics/datavis_timeline.html
 	
-  - title: Visualising the route map of the Jarasandh episode in the Mahabharat
+  - title: Visualising the route map of the Jarasandh episode in Mahabharat
     type: datavis
     url: /topics/datavis_routemap.html
 
