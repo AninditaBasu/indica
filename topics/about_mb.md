@@ -3,7 +3,7 @@ title: About the the Mahabharat API
 description: Query the API for details about the characters in the Mahabharat, the places they lived in, the events and journeys that they participated in, their family relationships, their battles and deaths, the armours they carried, and more.
 summary: Structured data for the people, places, and events in the Mahabharat.
 
-version: v2
+version: v1
 status: stable
 base_path: /mb/v1
 
@@ -25,7 +25,7 @@ related:
   - title: Visualising the Mahabharat timeline
     type: datavis
     url: /topics/datavis_timeline.html
-	
+
   - title: Visualising the route map of the Jarasandh episode in Mahabharat
     type: datavis
     url: /topics/datavis_routemap.html

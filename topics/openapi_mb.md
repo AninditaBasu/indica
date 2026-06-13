@@ -32,7 +32,7 @@ related:
   - title: Visualising the Mahabharat timeline
     type: datavis
     url: /topics/datavis_timeline.html
-	
+
   - title: Visualising the route map of the Jarasandh episode in the Mahabharat
     type: datavis
     url: /topics/datavis_routemap.html

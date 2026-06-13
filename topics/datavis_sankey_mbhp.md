@@ -29,7 +29,7 @@ related:
   - title: Visualising the Mahabharat timeline
     type: datavis
     url: /topics/datavis_timeline.html
-	
+
   - title: About the Mahabharat API
     type: explanation
     url: /topics/about_mb.html
