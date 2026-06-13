@@ -1,5 +1,42 @@
 ---
-title: About the Mahabharat API
+title: About the the Mahabharat API
+description: Query the API for details about the characters in the Mahabharat, the places they lived in, the events and journeys that they participated in, their family relationships, their battles and deaths, the armours they carried, and more.
+summary: Structured data for the people, places, and events in the Mahabharat.
+
+version: v2
+status: stable
+base_path: /mb/v1
+
+canonical: https://aninditabasu.github.io/indica/topics/about_mb.html
+
+tags:
+  - itihasa
+  - sanskrit
+  - history
+  - epic
+  - ancient-india
+  - api
+
+related:
+  - title: Visualising the weapons in Mahabharat and the Harry Potter world
+    type: tutorial
+    url: /topics/datavis_sankey_mbhp.html
+
+  - title: Visualising the Mahabharat timeline
+    type: datavis
+    url: /topics/datavis_timeline.html
+	
+  - title: Visualising the route map of the Jarasandh episode in the Mahabharat
+    type: datavis
+    url: /topics/datavis_routemap.html
+
+  - title: Mahabharat API reference documentation
+    type: reference
+    url: /topics/api_mb.html
+
+  - title: Mahabharat API sandbox
+    type: openapi
+    url: /topics/openapi_mb.html
 ---
 
 # About the Mahabharat API

@@ -1,5 +1,43 @@
 ---
-title: Vedic dialogues
+title: Finding conversations in the Rig Veda
+description: Read the dialogues after querying the API for hymns that are conversations.
+summary: Tutorial for finding instances of beings, whether human or divine or animal, talking with each other in the Rig Veda.
+
+version: v2
+status: stable
+base_path: /rv/v2
+
+canonical: https://aninditabasu.github.io/indica/topics/how_to_dialogues.html
+
+tags:
+  - sruti
+  - rig-veda
+  - vedic
+  - sanskrit
+  - history
+  - api
+  - liturgy
+
+related:
+  - title: Visualising Rig Vedic meters
+    type: datavis
+    url: /topics/datavis_meters_pie.html
+
+  - title: Finding soliloquies in the Rig Veda
+    type: tutorial
+    url: /topics/how_to_soliloquy.html
+
+  - title: About the Rig Veda API
+    type: explanation
+    url: /topics/about_rv.html
+
+  - title: Rig Veda API reference documentation
+    type: reference
+    url: /topics/api_rv.html
+
+  - title: Rig Veda API sandbox
+    type: openapi
+    url: /topics/openapi_rv.html
 ---
 
 # HowTo: Vedic dialogues

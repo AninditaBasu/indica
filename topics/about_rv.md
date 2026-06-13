@@ -1,5 +1,43 @@
 ---
 title: About the Rig Veda API
+description: Query the API for mandal, sukta, poet, deity, meter, and category of the Rig Veda hymns.
+summary: Structured metadata for Rig Veda hymns, poets, deities, and metrical traditions.
+
+version: v2
+status: stable
+base_path: /rv/v2
+
+canonical: https://aninditabasu.github.io/indica/topics/about_rv.html
+
+tags:
+  - sruti
+  - rig-veda
+  - vedic
+  - sanskrit
+  - history
+  - api
+  - liturgy
+
+related:
+  - title: Visualising the Rig Vedic meters
+    type: datavis
+    url: /topics/datavis_meters_pie.html
+
+  - title: Finding conversations in the Rig Veda
+    type: tutorial
+    url: /topics/how_to_dialogues.html
+
+  - title: Finding soliloquies in the Rig Veda
+    type: tutorial
+    url: /topics/how_to_soliloquy.html
+
+  - title: Rig Veda API reference documentation
+    type: reference
+    url: /topics/api_rv.html
+
+  - title: Rig Veda API sandbox
+    type: openapi
+    url: /topics/openapi_rv.html
 ---
 
 # About the Rig Veda API

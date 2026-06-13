@@ -1,12 +1,41 @@
 ---
 title: The Indica APIs
+description: Structured APIs for Vedic hymns, Vedic material culture, and the people, places, and events of the Mahabharat epic.
+summary: Structured textual and cultural data from ancient Indian literature.
+
+status: stable
+canonical: https://aninditabasu.github.io/indica/
+
+tags:
+  - vedic
+  - itihasa
+  - sanskrit
+  - mythology
+  - ancient-india
+  - material-culture
+  - liturgy
+  - lexicon
+  - api
+
+related:
+  - title: The Vedic hymns metadata
+    type: explanation
+    url: /topics/about_rv.html
+
+  - title: The nouns in the Vedic corpus
+    type: explanation
+    url: /topics/about_vs.html
+
+  - title: The Mahabharat data
+    type: explanation
+    url: /topics/about_mb.html
 ---
 
 # The Indica APIs
 
 ---
 
-The Indica APIs give you JSON dictionaries of data from ancient India.
+The Indica APIs give you JSON dictionaries of data from ancient India. 
 
 Do we know what life was like in ancient India? That depends. To begin with, `ancient` itself is open to several definitions. And secondly, our knowledge of the past is fragmented. We know about ancient India through its songs and stories, transmitted orally for the most part from one generation to the next.
 

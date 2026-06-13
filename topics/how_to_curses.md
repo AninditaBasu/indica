@@ -1,5 +1,38 @@
 ---
-title: Vedic curses
+title: Building curses from vedic nouns
+description: Build a curse generator after querying the API for words that have a negative connotation.
+summary: Tutorial for cursing like you live in vedic times.
+
+version: v2
+status: stable
+base_path: /vs/v2
+
+canonical: https://aninditabasu.github.io/indica/topics/how_to_curses.html
+
+tags:
+  - vedic
+  - sanskrit
+  - history
+  - material culture
+  - api
+
+related:
+  - title: Visualising the frequency of terms in the vedic corpus
+    type: datavis
+    url: /topics/datavis_wordcloud.html
+
+  - title: About the Vedic Society API
+    type: explanation
+    url: /topics/about_vs.html
+
+  - title: Vedic society API reference documentation
+    type: reference
+    url: /topics/api_vs.html
+
+  - title: Vedic society API sandbox
+    type: openapi
+    url: /topics/openapi_vs.html
+---
 ---
 
 # HowTo: Vedic curses

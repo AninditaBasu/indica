@@ -1,5 +1,45 @@
 ---
 title: Rig Veda API reference documentation
+description: Endpoints specs, schemas, and parameters for mandal, sukta, poet, deity, meter, and category of the Rig Veda hymns.
+summary: Structured metadata for Rig Veda hymns, poets, deities, and metrical traditions.
+
+version: v2
+status: stable
+base_path: /rv/v2
+
+canonical: https://aninditabasu.github.io/indica/topics/api_rv.html
+
+tags:
+  - sruti
+  - rig-veda
+  - vedic
+  - sanskrit
+  - history
+  - api
+  - liturgy
+
+related:
+  - title: Visualising Rig Vedic meters
+    type: datavis
+    url: /topics/datavis_meters_pie.html
+
+  - title: Finding conversations in the Rig Veda
+    type: tutorial
+    url: /topics/how_to_dialogues.html
+
+  - title: Finding soliloquies in the Rig Veda
+    type: tutorial
+    url: /topics/how_to_soliloquy.html
+
+  - title: About the Rig Veda API
+    type: explanation
+    url: /topics/about_rv.html
+
+  - title: Rig Veda API sandbox
+    type: openapi
+    url: /topics/openapi_rv.html
+---
+
 ---
 
 # Rig Veda API reference
@@ -72,6 +112,15 @@ For the response parameters, see [Response parameters](#response-parameters).
   	}
 ]
 ```
+
+## Status codes
+
+| Code | Explanation |
+| ----   | ------------ | 
+| 200   | OK               | 
+| 404   | Not found   | 
+| 429   | Too many requests | 
+| 500   | Internal server error |
 
 ## Endpoints
 

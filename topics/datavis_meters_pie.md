@@ -1,5 +1,44 @@
 ---
-title: Pie chart of vedic metres
+title: Visualising Rig Vedic meters
+description: Plot a pie graph after querying the API for meters in the hymns of the Rig Veda.
+summary: Tutorial for creating a pie graph of vedic meters.
+
+version: v2
+status: stable
+base_path: /rv/v2
+
+canonical: https://aninditabasu.github.io/indica/topics/datavis_meters_pie.html
+
+tags:
+  - sruti
+  - rig-veda
+  - vedic
+  - sanskrit
+  - history
+  - api
+  - liturgy
+
+related:
+  - title: Finding conversations in the Rig Veda
+    type: tutorial
+    url: /topics/how_to_dialogues.html
+
+  - title: Finding soliloquies in the Rig Veda
+    type: tutorial
+    url: /topics/how_to_soliloquy.html
+
+  - title: About the Rig Veda API
+    type: explanation
+    url: /topics/about_rv.html
+
+  - title: Rig Veda API reference documentation
+    type: reference
+    url: /topics/api_rv.html
+
+  - title: Rig Veda API sandbox
+    type: openapi
+    url: /topics/openapi_rv.html
+---
 ---
 
 # Pie chart: Poetic meters

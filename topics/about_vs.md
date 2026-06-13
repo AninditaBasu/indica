@@ -1,5 +1,37 @@
 ---
 title: About the Vedic Society API
+description: Query the API for meanings of all nouns, except proper nouns, from the entire vedic corpus (Rig Veda, Sama Veda, Yajur Veda, and Atharv Veda).
+summary: Structured data for all nouns in the vedic corpus.
+
+version: v2
+status: stable
+base_path: /vs/v2
+
+canonical: https://aninditabasu.github.io/indica/topics/about_vs.html
+
+tags:
+  - vedic
+  - sanskrit
+  - history
+  - material culture
+  - api
+
+related:
+  - title: Building curses from vedic nouns
+    type: tutorial
+    url: /topics/how_to_curses.html
+
+  - title: Visualising the frequency of terms in the vedic corpus
+    type: datavis
+    url: /topics/datavis_wordcloud.html
+
+  - title: Vedic society API reference documentation
+    type: reference
+    url: /topics/api_vs.html
+
+  - title: Vedic society API sandbox
+    type: openapi
+    url: /topics/openapi_vs.html
 ---
 
 # About the Vedic Society API

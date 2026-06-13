@@ -1,5 +1,38 @@
 ---
 title: Vedic Society API reference documentation
+description: Endpoints specs, schemas, and parameters for all nouns, except proper nouns, from the entire vedic corpus (Rig Veda, Sama Veda, Yajur Veda, and Atharv Veda).
+summary: Structured data for all nouns in the vedic corpus.
+
+version: v2
+status: stable
+base_path: /vs/v2
+
+canonical: https://aninditabasu.github.io/indica/topics/api_vs.html
+
+tags:
+  - vedic
+  - sanskrit
+  - history
+  - material culture
+  - api
+
+related:
+  - title: Building curses from vedic nouns
+    type: tutorial
+    url: /topics/how_to_curses.html
+
+  - title: Visualising the frequency of terms in the vedic corpus
+    type: datavis
+    url: /topics/datavis_wordcloud.html
+
+  - title: About the Vedic Society API
+    type: explanation
+    url: /topics/about_vs.html
+
+  - title: Vedic society API sandbox
+    type: openapi
+    url: /topics/openapi_vs.html
+---
 ---
 
 # Vedic Society API
@@ -67,6 +100,15 @@ For the response parameters, see [Response parameters](#response-parameters).
 	  ...
 ]
 ```
+
+## Status codes
+
+| Code | Explanation |
+| ----   | ------------ | 
+| 200   | OK               | 
+| 404   | Not found   | 
+| 429   | Too many requests | 
+| 500   | Internal server error |
 
 ## Endpoints
 

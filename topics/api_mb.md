@@ -1,13 +1,49 @@
 ---
 title: Mahabharat API reference documentation
+description: Endpoints specs, schemas, and parameters for the characters in the Mahabharat, the places they lived in, the events and journeys that they participated in, their family relationships, their battles and deaths, the armours they carried, and more.
+summary: Structured data for the people, places, and events in the Mahabharat.
+
+version: v2
+status: stable
+base_path: /mb/v1
+
+canonical: https://aninditabasu.github.io/indica/topics/api_mb.html
+
+tags:
+  - itihasa
+  - sanskrit
+  - history
+  - epic
+  - ancient-india
+  - api
+
+related:
+  - title: Visualising the weapons in Mahabharat and the Harry Potter world
+    type: tutorial
+    url: /topics/datavis_sankey_mbhp.html
+
+  - title: Visualising the Mahabharat timeline
+    type: datavis
+    url: /topics/datavis_timeline.html
+	
+  - title: Visualising the route map of the Jarasandh episode in the Mahabharat
+    type: datavis
+    url: /topics/datavis_routemap.html
+
+  - title: About the the Mahabharat API
+    type: explanation
+    url: /topics/about_mb.html
+
+  - title: Mahabharat API sandbox
+    type: openapi
+    url: /topics/openapi_mb.html
 ---
 
 # Mahabharat API reference
 
 <hr/>
 
-This API fetches information from Mahabharat. The JSON response contains data about people and events.
-
+This API fetches information from Mahabharat. The JSON response contains data about people, places, and events.
 
 ---------
 
@@ -31,6 +67,15 @@ The request URL is formed by appending an endpoint to the base URL.
 ## Methods
 
 Only `GET` calls are supported.
+
+## Status codes
+
+| Code | Explanation |
+| ----   | ------------ | 
+| 200   | OK               | 
+| 404   | Not found   | 
+| 429   | Too many requests | 
+| 500   | Internal server error |
 
 ## Endpoints
 
