@@ -9,8 +9,8 @@ info:
   contact:
     email: ab.techwriter@gmail.com 
   license:
-    name: MIT license
-    url: https://opensource.org/licenses/MIT
+    name: CC BY-NC 4.0
+    url: https://creativecommons.org/licenses/by-nc/4.0/
 
 externalDocs:
   description: Indica APIs home
