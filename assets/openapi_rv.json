@@ -1,9 +1,9 @@
 {
   "openapi": "3.0.0",
   "info": {
-    "version": "3.0.0",
+    "version": "3.0.1",
     "title": "Rig Veda API",
-    "description": "Metadata API for the Rig Veda. Makes available relationships among mandals, hymns (suktas), poets, gods, and meters.",
+    "description": "Metadata API for the Rig Veda. Makes available relationships among mandals, suktas, poets, gods, and meters.",
     "contact": {
       "email": "ab.techwriter@gmail.com"
     },
@@ -51,7 +51,7 @@
             }
           },
           "400": {
-            "description": "Invalid mandal"
+            "description": "Only 10 mandals in Rig Veda"
           }
         }
       }
@@ -117,9 +117,6 @@
           },
           {
             "$ref": "#/components/parameters/PageParam"
-          },
-          {
-            "$ref": "#/components/parameters/LimitParam"
           }
         ],
         "responses": {
@@ -145,14 +142,14 @@
           },
           {
             "$ref": "#/components/parameters/PageParam"
-          },
-          {
-            "$ref": "#/components/parameters/LimitParam"
           }
         ],
         "responses": {
           "200": {
             "description": "Meter counts or expanded meter list"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
           }
         }
       }
@@ -170,14 +167,14 @@
           },
           {
             "$ref": "#/components/parameters/PageParam"
-          },
-          {
-            "$ref": "#/components/parameters/LimitParam"
           }
         ],
         "responses": {
           "200": {
             "description": "Poet counts or expanded list"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
           }
         }
       }
@@ -195,14 +192,14 @@
           },
           {
             "$ref": "#/components/parameters/PageParam"
-          },
-          {
-            "$ref": "#/components/parameters/LimitParam"
           }
         ],
         "responses": {
           "200": {
             "description": "Mandal counts or expanded hymn list"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
           }
         }
       }
@@ -220,14 +217,14 @@
           },
           {
             "$ref": "#/components/parameters/PageParam"
-          },
-          {
-            "$ref": "#/components/parameters/LimitParam"
           }
         ],
         "responses": {
           "200": {
             "description": "Meter counts or expanded meter list"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
           }
         }
       }
@@ -245,14 +242,14 @@
           },
           {
             "$ref": "#/components/parameters/PageParam"
-          },
-          {
-            "$ref": "#/components/parameters/LimitParam"
           }
         ],
         "responses": {
           "200": {
             "description": "God counts or expanded list"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
           }
         }
       }
@@ -260,19 +257,34 @@
 
     "/meters": {
       "get": {
-        "summary": "Get all meter counts"
+        "summary": "Get all meter counts",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/MeterCounts"
+          }
+        }
       }
     },
 
     "/sungforcategories": {
       "get": {
-        "summary": "Get the counts for the categories of gods"
+        "summary": "Get the counts for the categories of gods",
+        "responses": {
+          "200": {
+            "description": "Counts of sungfor categories"
+          }
+        }
       }
     },
 
     "/sungbycategories": {
       "get": {
-        "summary": "Get the counts for the categories of poets"
+        "summary": "Get the counts for the categories of poets",
+        "responses": {
+          "200": {
+            "description": "Counts of sungby categories"
+          }
+        }
       }
     },
 
@@ -288,9 +300,6 @@
           },
           {
             "$ref": "#/components/parameters/PageParam"
-          },
-          {
-            "$ref": "#/components/parameters/LimitParam"
           }
         ],
         "responses": {
@@ -326,9 +335,6 @@
           },
           {
             "$ref": "#/components/parameters/PageParam"
-          },
-          {
-            "$ref": "#/components/parameters/LimitParam"
           }
         ],
         "responses": {
@@ -344,43 +350,92 @@
 
     "/monologues": {
       "get": {
-        "summary": "Get hymns where the poet is singing to their own self"
+        "summary": "Get hymns where the poet is singing to their own self",
+        "responses": {
+          "200": {
+            "description": "Paginated monologue hymns",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MonologueResults"
+                }
+              }
+            }
+          }
+        }
       }
     },
 
     "/conversations": {
       "get": {
-        "summary": "Get hymns that have gods and poets talking with each other"
+        "summary": "Get hymns that have gods and poets talking with each other",
+        "responses": {
+          "200": {
+            "description": "Paginated conversation hymns",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConversationResults"
+                }
+              }
+            }
+          }
+        }
       }
     },
 
     "/godlist": {
       "get": {
-        "summary": "List all gods"
+        "summary": "List all gods",
+        "responses": {
+          "200": {
+            "description": "Alphabetical list of gods"
+          }
+        }
       }
     },
 
     "/poetlist": {
       "get": {
-        "summary": "List all poets"
+        "summary": "List all poets",
+        "responses": {
+          "200": {
+            "description": "Alphabetical list of poets"
+          }
+        }
       }
     },
 
     "/meterlist": {
       "get": {
-        "summary": "List all meters"
+        "summary": "List all meters",
+        "responses": {
+          "200": {
+            "description": "Alphabetical list of meters"
+          }
+        }
       }
     },
 
     "/godcategorieslist": {
       "get": {
-        "summary": "List all god categories"
+        "summary": "List all god categories",
+        "responses": {
+          "200": {
+            "description": "Alphabetical list of god categories"
+          }
+        }
       }
     },
 
     "/poetcategorieslist": {
       "get": {
-        "summary": "List all poet categories"
+        "summary": "List all poet categories",
+        "responses": {
+          "200": {
+            "description": "Alphabetical list of poet categories"
+          }
+        }
       }
     }
   },
@@ -435,18 +490,6 @@
           "minimum": 1,
           "default": 1
         }
-      },
-
-      "LimitParam": {
-        "name": "limit",
-        "in": "query",
-        "required": false,
-        "schema": {
-          "type": "integer",
-          "minimum": 1,
-          "maximum": 50,
-          "default": 10
-        }
       }
     },
 
@@ -486,45 +529,6 @@
         }
       },
 
-      "HymnRef": {
-        "type": "object",
-        "properties": {
-          "mandal": {
-            "type": "integer"
-          },
-          "sukta": {
-            "type": "integer"
-          }
-        }
-      },
-
-      "Meta": {
-        "type": "object",
-        "properties": {
-          "mandal": {
-            "type": "integer"
-          },
-          "sukta": {
-            "type": "integer"
-          },
-          "meter": {
-            "type": "string"
-          },
-          "sungby": {
-            "type": "string"
-          },
-          "sungbycategory": {
-            "$ref": "#/components/schemas/SungbyCategory"
-          },
-          "sungfor": {
-            "type": "string"
-          },
-          "sungforcategory": {
-            "$ref": "#/components/schemas/SungforCategory"
-          }
-        }
-      },
-
       "SungbyCategory": {
         "type": "string",
         "enum": [
@@ -555,7 +559,7 @@
         ]
       },
 
-      "PaginatedResults": {
+      "MonologueResults": {
         "type": "object",
         "properties": {
           "total": {
@@ -569,7 +573,69 @@
           },
           "results": {
             "type": "array",
-            "items": {}
+            "items": {
+              "type": "object",
+              "properties": {
+                "mandal": {
+                  "type": "integer"
+                },
+                "sukta": {
+                  "type": "integer"
+                },
+                "sungby": {
+                  "type": "string"
+                },
+                "sungbycategory": {
+                  "$ref": "#/components/schemas/SungbyCategory"
+                }
+              }
+            }
+          }
+        }
+      },
+
+      "ConversationResults": {
+        "type": "object",
+        "properties": {
+          "total": {
+            "type": "integer"
+          },
+          "pages": {
+            "type": "integer"
+          },
+          "page": {
+            "type": "integer"
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "mandal": {
+                  "type": "integer"
+                },
+                "sukta": {
+                  "type": "integer"
+                },
+                "participants": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "participant": {
+                        "type": "string"
+                      },
+                      "participantcategory": {
+                        "type": "string"
+                      },
+                      "role": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
           }
         }
       }

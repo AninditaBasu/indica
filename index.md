@@ -84,6 +84,31 @@ The APIs are hosted on the free tier of Render, which has time limits. I am not 
 
 ### Rig Veda API
 
+-  3.0 (June 2026)
+    -  Deprecated all parameters of v2.0
+	-  Introduced the following path parameters:
+	    -  `/mandal/{n}`
+	    -  `/mandal/{n}/meters`
+	    -  `/mandal/{n}/sungfor`
+	    -  `/mandal/{n}/sungby`
+	    -  `/sungfor/{god}/mandals`
+	    -  `/sungfor/{god}/meters`
+	    -  `/sungfor/{god}/sungby`
+	    -  `/sungby/{poet}/mandals`
+	    -  `/sungby/{poet}/meters`
+	    -  `/sungby/{poet}/sungfor`
+	    -  `/meters`
+	    -  `/sungforcategories`
+	    -  `/sungbycategories`
+	    -  `/pairs/{god}/{poet}`
+	    -  `/pairs/{godcategory}/{poetcategory}`
+	    -  `/monologues`
+	    -  `/conversations`
+	    -  `/godlist`
+	    -  `/poetlist`
+	    -  `/meterlist`
+	    -  `/godcategorieslist`
+	    -  `/poetcategorieslist`
 -  2.0.1 (February 2026)
     -  Changed the endpoint to `https://indica-1hwj.onrender.com/rv/v2/meta`
 -  2.0 (July 2022)

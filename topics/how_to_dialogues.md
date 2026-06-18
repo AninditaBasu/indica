@@ -3,9 +3,9 @@ title: Finding conversations in the Rig Veda
 description: Read the dialogues after querying the API for hymns that are conversations.
 summary: Tutorial for finding instances of beings, whether human or divine or animal, talking with each other in the Rig Veda.
 
-version: v2
+version: v3
 status: stable
-base_path: /rv/v2
+base_path: /rv/v3
 
 canonical: https://aninditabasu.github.io/indica/topics/how_to_dialogues.html
 
@@ -77,7 +77,7 @@ And, here's an example of nations dialoguing:
     - Yalta Conference Agreement, 1945
 </pre>
 
-Rig Veda doesn't contain conversations between countries, but it does contain human conversations.  This tutorial shows you how to find (and read) these conversations.
+Rig Veda doesn't contain conversations between countries, but it does contain human conversations.  This tutorial shows you how to find these conversations.
 
 ---------
 
@@ -88,163 +88,74 @@ Rig Veda doesn't contain conversations between countries, but it does contain hu
 
 ---------
 
-## Algorithm
+## Endpoint to use
 
-All the path parameters in the [Rig Veda API](api_rv.md) return a response in the same JSON structure.
+```
+/conversations
+```
 
-```json
+## Result
+
+A list of dictionaries with the following structure:
+
+```
 {
-  "mandal": 0,
-  "sukta": 0,
-  "meter": "string",
-  "sungby": "string",
-  "sungbycategory": "string",
-  "sungfor": "string",
-  "sungforcategory": "string"
-}
-```
-
-In Rig Veda, books (or mandals) contain chapters, and chapters (or suktas) contain verses. If a sukta has more than one verse, and if the poets are different in these verses, it's fair to assume that the sukta is a conversation between these poets.
-
-{% include admonition.html
-   type="tip"
-   title="Tip"
-   content="For information on how mandals, suktas, poets, and gods are connected to each other, see the entity-relationship diagram at [About Rig Veda](about_rv.md)."
-%}
-
-The following algorithm uses the `/book/{mandal}` path parameter to identify such suktas.
-
-1.  Fetch all the verses in a mandal.
-1.  For each verse, make a `sukta`-`sungby` string and add it to a list.
-
-    ```bash
-	...
-	8-Trishira Tvashtra
-	9-Trishira Tvashtra
-	9-Trishira Tvashtra
-	10-Yami Vaivasvati
-	10-Yama Vaivasvat
-	11-Havirdhan Angi
-	11-Havirdhan Angi
-	...
-	```
-	
-1.  Clean this list of duplicates.
-
-    ```bash
-	...
-	8-Trishira Tvashtra
-	9-Trishira Tvashtra
-	10-Yami Vaivasvati
-	10-Yama Vaivasvat
-	11-Havirdhan Angi
-	...
-	```
-	
-1.  Iterate over this list to find instances where the same `sukta` occurs more than once (that is, the same `sukta` is tagged to more than one `sungby`). These are the verses that have more than one poet.
-
-    ```bash
-	...
-	10-Yami Vaivasvati
-	10-Yama Vaivasvat
-	...
-	```
-
-## Example code in Python
-
-These steps use the `/book/{mandal}` path parameter.
-
-1.  Make a `GET` call for any mandal. The following example makes a call to the first mandal.
-
-    ```python
-	headers = {
-	    'accept': 'application/json',
-	}
-	url = "https://indica-1hwj.onrender.com/rv/v2/meta/book/1"
-	import json	
-	response = requests.get(url, headers=headers)
-	response_json = json.loads(json.dumps(response.json()))
-	```
-
-1.  Loop through the returned JSON and find the number of verses in the mandal. You'll use this number to run a counter in a later step.
-
-    ```python
-	sukta_numbers = []	
-	for entry in response_json:
-        sukta_numbers.append(entry['sukta'])
-	number_of_suktas = max(sukta_numbers)
-	number_of_suktas = max(sukta_numbers)
-	print("mandal", mandal, "has", number_of_suktas, "suktas")
-	```
-
-1.  Loop through the returned JSON again, pick `sukta` and `sungby`, and add them to a list. This is the list of all verses_by_poets in the mandal.
-
-    ```python
-	poet_list = []	
-	for entry in response_json:
-        for entry in entry_full:
-		text = str(entry['sukta']) + "-" + entry['sungby']
-		poet_list.append(text)
-	#print("poet list", len(poet_list), poet_list)
-	```
-
-1.  Clean the result list of duplicate entries. Because, the same poet might have sung all verses in a sukta, but if there are 5 verses in the sukta, the list will have 5 entries.
-
-	```python
-	unique = []
-	duplicates = []
-	for entry in poet_list:
-		if entry in unique:
-			duplicates.append(entry)
-		else:
-			unique.append(entry)
-	```
-
-1.  Iterate over this clean list, and pick the verses that have more than one entry. These are the dialogue verses.
-
-	```python
-	print("==========================")
-	print("mandal " + str(mandal) + " conversations")
-	print("==========================")
-	counter = 1
-	conversation_count = 0
-	while counter <= number_of_suktas:
-		text_to_search = str(counter) + '-'
-		conversation = sum(word.startswith(text_to_search) for line in unique for word in line.split())
-		if conversation > 1:
-			print(conversation, "poets in sukta", counter)
-			conversation_count = conversation_count + 1
-		counter = counter + 1
-	if conversation_count == 0:
-    print("No conversations in this book")
-	```
-
-## Results
-
-You now have a list of the dialogue verses in the mandal.
-
-### Result 1: Mandal has dialogue hymns
-
-```bash
-    mandal 1 has 191 suktas
-    ==========================
-    mandal 1 conversations
-    ==========================
-    5 poets in sukta 100
-    3 poets in sukta 126
-    3 poets in sukta 165
-    2 poets in sukta 170
-    3 poets in sukta 179
-```
-
-### Result 2: Mandal doesn't have dialogue hymns
-
-```bash
-    mandal 6 has 75 suktas
-    ==========================
-    mandal 6 conversations
-    ==========================
-    No conversations in this book
+      "mandal": 4,
+      "participants": [
+        {
+          "participant": "Trasadasyu Paurukutsya",
+          "participantcategory": "human male",
+          "role": "sungby"
+        },
+        {
+          "participant": "Trasadasyu Paurukutsya",
+          "participantcategory": "human male",
+          "role": "sungfor"
+        },
+        {
+          "participant": "Indra",
+          "participantcategory": "divine male",
+          "role": "sungfor"
+        },
+        {
+          "participant": "Varun",
+          "participantcategory": "divine male",
+          "role": "sungfor"
+        }
+      ],
+      "sukta": 42
+},
+{
+      "mandal": 5,
+      "participants": [
+        {
+          "participant": "Atri Bhaum",
+          "participantcategory": "human male",
+          "role": "sungby"
+        },
+        {
+          "participant": "Indra",
+          "participantcategory": "divine male",
+          "role": "sungfor"
+        },
+        {
+          "participant": "Surya",
+          "participantcategory": "divine male",
+          "role": "sungfor"
+        },
+        {
+          "participant": "Surya",
+          "participantcategory": "divine male",
+          "role": "sungby"
+        },
+        {
+          "participant": "Atri Bhaum",
+          "participantcategory": "human male",
+          "role": "sungfor"
+        }
+      ],
+      "sukta": 40
+},
 ```
 
 ## What to do next

@@ -3,11 +3,11 @@ title: Finding soliloquies in the Rig Veda
 description: Read the soliloquies after querying the API for hymns that are monologues.
 summary: Tutorial for finding instances of beings, whether human or divine or animal, speaking to themselves or to the world in the Rig Veda.
 
-version: v2
+version: v3
 status: stable
-base_path: /rv/v2
+base_path: /rv/v3
 
-canonical: https://aninditabasu.github.io/indica/topics/how_to_dialogues.html
+canonical: https://aninditabasu.github.io/indica/topics/how_to_soliloquy.html
 
 tags:
   - sruti
@@ -77,7 +77,7 @@ And here's an example of a monologue.
 
 Soliloquies and monologues are as old as humankind. People were speaking to themselves, and speaking without waiting for a response, ever since they started speaking. Rig Veda, possibly the oldest book in the world, also has people soliloquising and monologising.
 
-This tutorial shows you how to find (and read) the soliloquies and monologues in Rig Veda.
+This tutorial shows you how to find the soliloquies and monologues in Rig Veda.
 
 ---------
 
@@ -88,141 +88,38 @@ This tutorial shows you how to find (and read) the soliloquies and monologues in
 
 ---------
 
-## Algorithm
+## Endpoint to use
 
-All the path parameters in the [Rig Veda API](api_rv.md) return a response in the same JSON structure.
+```
+/monologues
+```
 
-```json
+## Result
+
+A list of dictionaries with the following structure:
+
+```
+...
 {
-  "mandal": 0,
-  "sukta": 0,
-  "meter": "string",
-  "sungby": "string",
-  "sungbycategory": "string",
-  "sungfor": "string",
-  "sungforcategory": "string"
-}
-```
-
-Because you're interested in people talking to themselves, you need the verses where `sungby` is the same as `sungfor`. To do so, you can use any of the path parameters to get all verses in all books, and then programmatically extract only those verses where the poet is the same as the god.
-
-{% include admonition.html
-   type="tip"
-   title="Tip"
-   content="For information on how mandals, suktas, poets, and gods are connected to each other, see the entity-relationship diagram at [About Rig Veda](about_rv.md)."
-%}
-
-The steps for getting this filtered list verses will depend on the path parameter that you use. The following pseudocodes show the steps with 3 different path parameters.
-
-### Method 1
-
-If you use the `/book/{mandal}` path parameter:
-	
-1.  Start a counter from 1.
-1.  Create an empty list to store the results.
-1.  Get all verses of the mandal, where `{mandal}` is equal to the counter value.
-1.  Loop through the returned JSON and find verses where `sungby` is the same as `sungfor`. Append those verses to the list.
-1.  Increase the counter by 1.
-1.  Repeat the previous steps till counter value is 11.
-1.  Remove duplicate entries from the list.
-1.  Iterate over this list, pick the mandal and sukta number combination, and use your favourite search engine to look up the poem.
-
-### Method 2
-
-If you use the `/poetcategory/{poetcategory}` path parameter:
-
-1.  Create a list where the list items are the available categories.
-1.  Create an empty list to store the results.
-1.  Loop through the category list to get all verses where `{poetcategory}` is equal to the category list item.
-1.  Loop through the returned JSON and find verses where `sungby` is the same as `sungfor`. Append those verses to the empty list.
-1.  Pick up the next item from the category list, and repeat steps 2, 3, and 4.
-1.  Repeat the previous steps till there are no more items in the category list.
-1.  Remove duplicate entries from the generated result list.
-1.  Iterate over this list, pick the mandal and sukta number combination, and use your favourite search engine to look up the poem.
-
-### Method 3
-
-If you use the  `/godcategory/{sungforcategory}` path parameter, the steps are the same as that for the `/poetcategory/{poetcategory}`. The only difference is, in step 1, the available categories in the `/godcategory/{sungforcategory}` list is different from the ones in `/poetcategory/{poetcategory}`.
-
-## Example code in Python
-
-These steps use the `/poetcategory/{poetcategory}` path parameter.
-
-1.  Create a list of all available categories.
-
-    ```python
-	categories = ["animal", "demon male", "divine female", "divine male", "human female", "human male"]
-	```
-
-1.  Iterate over this list and make a `GET` call for each category to the `/poetcategory/{poetcategory}` path parameter.
-
-    ```python
-	headers = {
-	    'accept': 'application/json',
-	}
-	url_suffix = "https://indica-1hwj.onrender.com/rv/v2/meta/poetcategory/"
-	import json
-	for item in category:
-		url = url_suffix + item
-		response = requests.get(url, headers=headers)
-		response_json = json.loads(json.dumps(response.json()))
-	```
-
-1.  Loop through the returned JSON and find verses where `sungby` is the same as `sungfor`. Append those verses to the result list.
-
-    ```python
-	soliloquy = []	
-	for entry in response_json:
-        if entry['sungby'] == entry['sungfor']:
-            soliloquy.append(entry)
-	```
-
-1.  Clean the result list of duplicate entries.
-
-	```python
-	soliloquy_unique = []	
-	for entry in soliloquy:
-       if entry in soliloquy_unique:
-           continue
-       else:
-           soliloquy_unique.append(entry)
-	```
-	
-1.  Iterate over this list, pick the mandal and sukta number combination, and look up the poem.
-
-	Wikisource is good resource for ancient texts, so you can go read the poems there. The URLs at Wikisource are in the following format: `https://en.wikisource.org/wiki/The_Hymns_of_the_Rigveda/Book_1/Hymn_2`. Therefore, compose the URLs to match this scheme.
-
-	```python
-	for item in soliloquy_unique:
-        poem = "Mandala_" + str(item['mandal']) + "/Hymn_" + str(item['sukta'])
-        poem_list.append(poem)
-	for item in poem_list:
-    	url = url_suffix + item
-    	print(url)
-	```
-
-## Results
-
-You now have a list of URLs for the soliloquies and monologues in Rig Veda.
-
-```
-https://en.wikisource.org/wiki/The_Hymns_of_the_Rigveda/Book_10/Hymn_159
-https://en.wikisource.org/wiki/The_Hymns_of_the_Rigveda/Book_10/Hymn_48
-https://en.wikisource.org/wiki/The_Hymns_of_the_Rigveda/Book_10/Hymn_49
-https://en.wikisource.org/wiki/The_Hymns_of_the_Rigveda/Book_10/Hymn_50
-https://en.wikisource.org/wiki/The_Hymns_of_the_Rigveda/Book_10/Hymn_53
-https://en.wikisource.org/wiki/The_Hymns_of_the_Rigveda/Book_10/Hymn_79
-https://en.wikisource.org/wiki/The_Hymns_of_the_Rigveda/Book_10/Hymn_80
-https://en.wikisource.org/wiki/The_Hymns_of_the_Rigveda/Book_10/Hymn_124
-https://en.wikisource.org/wiki/The_Hymns_of_the_Rigveda/Book_10/Hymn_140
-https://en.wikisource.org/wiki/The_Hymns_of_the_Rigveda/Book_10/Hymn_125
-https://en.wikisource.org/wiki/The_Hymns_of_the_Rigveda/Book_4/Hymn_42
-https://en.wikisource.org/wiki/The_Hymns_of_the_Rigveda/Book_10/Hymn_119
-https://en.wikisource.org/wiki/The_Hymns_of_the_Rigveda/Book_10/Hymn_139
-
+      "mandal": 4,
+      "sukta": 42,
+      "sungby": "Trasadasyu Paurukutsya",
+      "sungbycategory": "human male"
+},
+{
+      "mandal": 10,
+      "sukta": 48,
+      "sungby": "Indra Vaikunth",
+      "sungbycategory": "divine male"
+},
+...
 ```
 
 ## What to do next
+
+Iterate over the response to pick the mandal and sukta number combination, and look up the poem.
+
+Wikisource is good resource for ancient texts, so you can go read the poems there. The URLs at Wikisource are in the following format: `https://en.wikisource.org/wiki/The_Hymns_of_the_Rigveda/Book_1/Hymn_2`. Therefore, compose the URLs to match this scheme.
 
 Maybe read the poem in the original Sanskrit?
 

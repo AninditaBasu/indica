@@ -3,9 +3,9 @@ title: About the Rig Veda API
 description: Query the API for mandal, sukta, poet, deity, meter, and category of the Rig Veda hymns.
 summary: Structured metadata for Rig Veda hymns, poets, deities, and metrical traditions.
 
-version: v2
+version: v3
 status: stable
-base_path: /rv/v2
+base_path: /rv/v3
 
 canonical: https://aninditabasu.github.io/indica/topics/about_rv.html
 
