@@ -142,6 +142,6 @@ plt.savefig("gods_pie_chart.png", dpi=300, bbox_inches="tight")
 plt.show()
 ```
 
-##What to do next
+## What to do next
 
 Draw similar charts for poets.
