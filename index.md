@@ -43,9 +43,13 @@ Indologists have sifted through these oral traditions and compiled scholarly boo
 
 These APIs aim to bridge that gap. The APIs speak in JSON, which is a language notation that's understood by almost all machines today. You can use the data returned by these APIs to build stories through visuals like these:
 
-<img src="images/map_jarasandh_killing.png" alt="Jarasandh-elimination journey" width="40%">
-
-<img src="images/rishis.png" alt="poets of the rig veda" width="40%">
+<table border="0">
+<tr>
+<td style="width: 45%;"><a href="images/map_jarasandh_killing.png"><img src="images/map_jarasandh_killing.png" alt="Jarasandh-elimination journey" width="40%"></a></td>
+<td style="width: 5%;">&nbsp;&nbsp;</td>
+<td style="width: 45%;"><a href="images/rishis.png"><img src="images/rishis.png" alt="poets of the rig veda" width="40%"></a><td>
+<tr>
+</table>
 
 ---------
 

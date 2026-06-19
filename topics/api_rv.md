@@ -23,6 +23,10 @@ related:
     type: datavis
     url: /topics/datavis_meters_pie.html
 
+  - title: Visualising Rig Vedic gods
+    type: datavis
+    url: /topics/datavis_gods_pie.html
+
   - title: Finding conversations in the Rig Veda
     type: tutorial
     url: /topics/how_to_dialogues.html
@@ -34,8 +38,6 @@ related:
   - title: Rig Veda API sandbox
     type: openapi
     url: /topics/openapi_rv.html
----
-
 ---
 
 # Rig Veda API reference
@@ -503,6 +505,32 @@ This endpoint can be queried with `?expand=true` to get further details:
       "sungbycategory": "divine female"
     },
 ...
+```
+
+### `/hymns`
+
+Returns the count of all hymns that match the specified query parameters. Requires at least one query parameter and can take up to four from among the following parameters: `sungby`, `sungfor`, `mandal`, and `meter`.
+
+For example, `/rv/v3/hymns?sungfor=agni&meter=gayatri` returns all hymns to Agni in the Gayatri meter:
+
+```
+{
+  "count": 18,
+  "hymns": [
+    {
+      "mandal": 1,
+      "sukta": 1
+    },
+    {
+      "mandal": 1,
+      "sukta": 12
+    },
+...
+ ],
+  "mandal": 1,
+  "meter": "gayatri",
+  "sungfor": "agni"
+}
 ```
 
 ### `/pairs/{god}/{poet}`

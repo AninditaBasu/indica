@@ -1,3 +1,36 @@
+---
+title: Change log of the Indica API
+description: Detailed release notes of the three Indica APIs, namely, Rig Veda API, Vedic Society API, and Mahabharat API.
+summary: Release notes of the Indica API.
+
+status: stable
+canonical: https://aninditabasu.github.io/indica/topics/changelog.html
+
+tags:
+  - vedic
+  - itihasa
+  - sanskrit
+  - mythology
+  - ancient-india
+  - material-culture
+  - liturgy
+  - lexicon
+  - api
+
+related:
+  - title: Vedic hymns metadata
+    type: explanation
+    url: /topics/about_rv.html
+
+  - title: Nouns in the Vedic corpus
+    type: explanation
+    url: /topics/about_vs.html
+
+  - title: Mahabharat data
+    type: explanation
+    url: /topics/about_mb.html
+---
+
 # Change log
 
 ---------

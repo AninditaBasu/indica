@@ -23,6 +23,10 @@ related:
     type: datavis
     url: /topics/datavis_meters_pie.html
 
+  - title: Visualising Rig Vedic gods
+    type: datavis
+    url: /topics/datavis_gods_pie.html
+
   - title: Finding conversations in the Rig Veda
     type: tutorial
     url: /topics/how_to_dialogues.html

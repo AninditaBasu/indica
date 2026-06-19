@@ -28,6 +28,8 @@
   children:
     - title: "Pie chart: Poetic meters"
       url: topics/datavis_meters_pie.html
+    - title: "Pie chart: Gods"
+      url: topics/datavis_gods_pie.html
     - title: "Timeline: Mahabharat"
       url: topics/datavis_timeline.html
     - title: "Sankey diagram: Mahabharat weapons in Potterworld"
@@ -40,3 +42,5 @@
       url: topics/how_to_curses.html
     - title: "HowTo: Vedic dialogues"
       url: topics/how_to_dialogues.html
+- title: "Change log"
+  url: topics/changelog.html

@@ -33,7 +33,6 @@ related:
     type: openapi
     url: /topics/openapi_vs.html
 ---
----
 
 # HowTo: Vedic curses
 

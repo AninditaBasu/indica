@@ -23,6 +23,14 @@ related:
     type: tutorial
     url: /topics/how_to_dialogues.html
 
+  - title: Visualising Rig Vedic gods
+    type: datavis
+    url: /topics/datavis_gods_pie.html
+
+  - title: Finding conversations in the Rig Veda
+    type: tutorial
+    url: /topics/how_to_dialogues.html
+
   - title: About the Rig Veda API
     type: explanation
     url: /topics/about_rv.html
@@ -34,7 +42,6 @@ related:
   - title: Rig Veda API sandbox
     type: openapi
     url: /topics/openapi_rv.html
----
 ---
 
 # Pie chart: Poetic meters

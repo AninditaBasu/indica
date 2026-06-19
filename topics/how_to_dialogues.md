@@ -23,6 +23,10 @@ related:
     type: datavis
     url: /topics/datavis_meters_pie.html
 
+  - title: Visualising Rig Vedic gods
+    type: datavis
+    url: /topics/datavis_gods_pie.html
+
   - title: About the Rig Veda API
     type: explanation
     url: /topics/about_rv.html
