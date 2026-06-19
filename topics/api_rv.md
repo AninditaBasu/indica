@@ -46,20 +46,6 @@ related:
 
 This API fetches metadata of the hymns in Rig Veda. The JSON response contains verse-by-verse information on poets, gods, their categories, and the poetic meters.
 
-```json
-[
-  {
-    "mandal": 1,
-    "meter": "Gayatri",
-    "sukta": 1,
-    "sungby": "Madhuchchhanda Vaishwamitra",
-    "sungbycategory": "human male",
-    "sungfor": "Agni",
-    "sungforcategory": "divine male"
-  }
-]
-```
-
 ---------
 
 **On this page**
@@ -75,7 +61,7 @@ An explanation of the various elements in Rig Veda (and this API) is contained i
 
 ## Base URL
 
-`https://indica-1hwj.onrender.com/rv/v2/meta`
+`https://indica-1hwj.onrender.com/rv/v3`
 
 The request URL is formed by appending an endpoint to the base URL.
 
@@ -140,13 +126,15 @@ For the response parameters, see [Response parameters](#response-parameters).
 
 ## Endpoints
 
-All parameters are path parameters. To form the request URL, the endpoint must be appended to the base URL.
+To form the request URL, the endpoint must be appended to the base URL.
 
 ```bash
 request URL = base URL + endpoint
 ```
 
-Some of the endpoints can be expanded for details; such endpoints are usually paginated. For these endpoints, the following query parameters are valid: `?expand=true` and `?expand=true&page=N`.
+Some endpoints need a path parameter. Some other don't, but might need a query parameter.
+
+Some of the endpoints can be expanded for details; the results of such endpoints are usually paginated. For these endpoints, the following query parameters are valid: `?expand=true` and `?expand=true&page={n}`.
 
 The following endpoints are available. 
 
@@ -248,6 +236,8 @@ This endpoint can be queried with `?expand=true` to get the mandals and suktas o
 ...
 ```
 
+If the result runs into several pages, use the `?expand=true&page={n}` query parameter.
+
 ### `/sungfor/{god}/meters`
 
 Returns the count of all meters, separately, used in hymns to the specified god. For example, `/sungfor/agni/meters` returns the count of all meters used in all hymns to Agni.
@@ -282,6 +272,8 @@ This endpoint can be queried with `?expand=true` to get further details:
 ...
 ```
 
+If the result runs into several pages, use the `?expand=true&page={n}` query parameter.
+
 ### `/sungfor/{god}/sungby`
 
 Returns the count of all poets, separately, who've composed hymns to the specified god. For example, `/sungfor/agni/sungby` returns the count of all poets who've sung to Agni.
@@ -314,6 +306,8 @@ This endpoint can be queried with `?expand=true` to get further details:
     },
 ...
 ```
+
+If the result runs into several pages, use the `?expand=true&page={n}` query parameter.
 
 ### `/sungby/{poet}/mandals`
 
@@ -350,6 +344,8 @@ This endpoint can be queried with `?expand=true` to get further details:
 ...
 ```
 
+If the result runs into several pages, use the `?expand=true&page={n}` query parameter.
+
 ### `/sungby/{poet}/meters`
 
 Returns the count of all meters, separately, employed by the specified poet. For example, `/sungby/Medhatithi Kanv/meters` returns the count of all meters used by Medhatithi Kanv.
@@ -378,6 +374,8 @@ This endpoint can be queried with `?expand=true` to get further details:
   "sungby": "Medhatithi Kanv",
 ...
 ```
+
+If the result runs into several pages, use the `?expand=true&page={n}` query parameter.
 
 ### `/sungby/{poet}/sungfor`
 
@@ -417,9 +415,11 @@ This endpoint can be queried with `?expand=true` to get further details:
 ...
 ```
 
+If the result runs into several pages, use the `?expand=true&page={n}` query parameter.
+
 ### `/meters`
 
-Returns the counts of all meters used in all verses of the Rig Veda.
+Returns the counts of all meters used in all verses of the Rig Veda. This endpoint does not take any path parameters.
 
 ```
 {
@@ -453,9 +453,11 @@ This endpoint can be queried with `?expand=true` to get further details:
 ...
 ```
 
+If the result runs into several pages, use the `?expand=true&page={n}` query parameter.
+
 ### `/sungforcategories`
 
-Returns the counts of hymns to the categories, separately, of all the gods in the Rig Veda. 
+Returns the counts of hymns to the categories, separately, of all the gods in the Rig Veda.  This endpoint does not take any path parameters.
 
 ```
 ...
@@ -478,9 +480,11 @@ This endpoint can be queried with `?expand=true` to get further details:
 ...
 ```
 
+If the result runs into several pages, use the `?expand=true&page={n}` query parameter.
+
 ### `/poetcategories`
 
-Returns the counts of hymns by the categories, separately, of all the poets in the Rig Veda. 
+Returns the counts of hymns by the categories, separately, of all the poets in the Rig Veda.  This endpoint does not take any path parameters.
 
 ```
 ...
@@ -507,11 +511,13 @@ This endpoint can be queried with `?expand=true` to get further details:
 ...
 ```
 
+If the result runs into several pages, use the `?expand=true&page={n}` query parameter.
+
 ### `/hymns`
 
-Returns the count of all hymns that match the specified query parameters. Requires at least one query parameter and can take up to four from among the following parameters: `sungby`, `sungfor`, `mandal`, and `meter`.
+Returns the count of all hymns that match the specified query parameters. Requires at least one query parameter and can take up to four from among these: `sungby`, `sungfor`, `mandal`, and `meter`.
 
-For example, `/rv/v3/hymns?sungfor=agni&meter=gayatri` returns all hymns to Agni in the Gayatri meter:
+For example, `/rv/v3/hymns?sungfor=agni&meter=gayatri` returns all hymns to Agni in the Gayatri meter, like this:
 
 ```
 {
@@ -555,23 +561,7 @@ Returns all mandal and suktas that contains hymns to the specified god by the sp
 
 `{god}` and `{poet}` are string parameters.
 
-If the results contain more than one page, this endpoint can be queried with `?expand=true&page=N` to get a specific page:
-
-```
-{
-  "page": 2,
-  "pages": 2,
-  "results": [
-    {
-      "mandal": 1,
-      "sukta": 150
-    }
-  ],
-  "sungby": "Dirghatamas Auchathya",
-  "sungfor": "agni",
-  "total": 11
-}
-```
+If the result runs into several pages, use the `?expand=true&page={n}` query parameter.
 
 ### `/pairs/{godcategory}/{poetcategory}`
 
@@ -603,11 +593,11 @@ Returns all mandal and suktas that contains hymns to the specified category of g
 
 `{godcategory}` and `{poetcategory}` are string parameters.
 
-If the results contain more than one page, this endpoint can be queried with `?expand=true&page=N` to get a specific page.
+If the result runs into several pages, use the `?expand=true&page={n}` query parameter.
 
 ### `/monologues`
 
-Returns all hymns where the poet is singing to their own self.
+Returns all hymns where the poet is singing to their own self. This endpoint does not take any parameters.
 
 ```
 ...
@@ -620,11 +610,11 @@ Returns all hymns where the poet is singing to their own self.
 ...
 ```
 
-If the results contain more than one page, this endpoint can be queried with `?expand=true&page=N` to get a specific page.
+If the result runs into several pages, use the `?expand=true&page={n}` query parameter.
 
-### `//conversations`
+### `/conversations`
 
-Returns all hymns where the poets and gods are singing to each other.
+Returns all hymns where the poets and gods are singing to each other. This endpoint does not take any parameters.
 
 ```
 ...
@@ -657,31 +647,31 @@ Returns all hymns where the poets and gods are singing to each other.
 ...
 ```
 
-If the results contain more than one page, this endpoint can be queried with `?expand=true&page=N` to get a specific page.
+If the result runs into several pages, use the `?expand=true&page={n}` query parameter.
 
 ### `/godlist`
 
-Returns a list of all gods in the Rig Veda.
+Returns a list of all gods in the Rig Veda. This endpoint does not take any parameters.
 
 ### `/poetlist`
 
-Returns a list of all poets in the Rig Veda.
+Returns a list of all poets in the Rig Veda. This endpoint does not take any parameters.
 
 ### `/meterlist`
 
-Returns a list of all meters in the Rig Veda.
+Returns a list of all meters in the Rig Veda. This endpoint does not take any parameters.
 
 ### `/godcategorieslist`
 
-Returns a list of all categories of gods in the Rig Veda.
+Returns a list of all categories of gods in the Rig Veda. This endpoint does not take any parameters.
 
 ### `/poetcategorieslist`
 
-Returns a list of all categories of poets in the Rig Veda.
+Returns a list of all categories of poets in the Rig Veda. This endpoint does not take any parameters.
 
 ## Response parameters
 
-The following response parameters are common to almost all endpoints.
+Depending on the endpoint, the response can contain the following parameters:
 
 -  `mandal`: The book number. Rig Veda has 10 books.
 -  `sukta`: The chapter number. Books contain chapters. The number of chapters in each book is different. For example, mandal 5 contains 87 suktas while mandal 4 contains 58. The highest value possible for this parameter is 191 (which is the number of suktas in the 1st and 10th mandals). The following table lists the number of chapters in each book.
@@ -701,10 +691,7 @@ The following response parameters are common to almost all endpoints.
 
 -  `meter`: The poetic meter.
 -  `sungby`: The poet.
--  `sungbycategory`: The category of the poet. 
 -  `sungfor`: The god.
--  `sungforcategory`: The category of the god. 
-
 
 ## Live sandbox
 

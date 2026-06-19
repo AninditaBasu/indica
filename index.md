@@ -33,7 +33,7 @@ related:
 
 # The Indica APIs
 
----
+<hr/>
 
 The Indica APIs give you JSON dictionaries of data from ancient India. 
 
@@ -43,7 +43,7 @@ Indologists have sifted through these oral traditions and compiled scholarly boo
 
 These APIs aim to bridge that gap. The APIs speak in JSON, which is a language notation that's understood by almost all machines today. You can use the data returned by these APIs to build stories through visuals like these:
 
-<p style="font-size: 50%;">To see a larger image, click the image.</p>
+<p style="font-size: 75%;">To see a larger image, click the image.</p>
 <table style="border: none !important;">
   <tr>
     <td style="border: none !important; width: 45%;">
