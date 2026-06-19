@@ -1,7 +1,7 @@
 ---
 title: Finding conversations in the Rig Veda
-description: Read the dialogues after querying the API for hymns that are conversations.
-summary: Tutorial for finding instances of beings, whether human or divine or animal, talking with each other in the Rig Veda.
+description: Read the dialogues, monologues, and soliloquies after querying the API for hymns that are conversations, whether with one's own self or with some other being.
+summary: Tutorial for finding instances of beings, whether human or divine or animal, talking to themselves or with each other in the Rig Veda.
 
 version: v3
 status: stable
@@ -23,10 +23,6 @@ related:
     type: datavis
     url: /topics/datavis_meters_pie.html
 
-  - title: Finding soliloquies in the Rig Veda
-    type: tutorial
-    url: /topics/how_to_soliloquy.html
-
   - title: About the Rig Veda API
     type: explanation
     url: /topics/about_rv.html
@@ -44,9 +40,7 @@ related:
 
 <hr/>
 
-A _dialogue_ is a conversation between two or more people in a book, play, or film. Sometimes, countries also have dialgues amongst themselves, and these instances too can be said to belong to a play or film.
-
-Here's an example of a normal human dialogue:
+A _dialogue_ is a conversation between two or more people in a book, play, or film. 
 
 ```bash
     Bertie: Tell me, Jeeves, were you always like this, or did it come on suddenly?
@@ -58,26 +52,27 @@ Here's an example of a normal human dialogue:
     - Woodehouse, P. G. "Very Good, Jeeves".
 ```
 
-And, here's an example of nations dialoguing:
+A _soliloquy_ is an act of speaking one's thoughts aloud when alone, or regardless of any listeners, especially by a character in a play. When directed to any listeners, a soliloquy is called a _monologue_. 
 
-<pre>
-    We have agreed that a conference of United Nations should be called
-	to meet at San Francisco in the United States on April 25, 1945, 
-	to prepare the charter of such an organization, along the lines proposed 
-	in the informal conversations at Dumbarton Oaks.
-	
-	The Government of China and the Provisional Government of France 
-	will be immediately consulted and invited to sponsor invitations to 
-	the conference jointly with the Governments of the United States, 
-	Great Britain, and the Union of Soviet Socialist Republics. 
-	
-	As soon as the consultation with China and France has been completed, 
-	the text of the proposals on voting procedure will be made public.
+Here is an example of a soliloquy.
 
-    - Yalta Conference Agreement, 1945
-</pre>
+```
+    Is this a dagger which I see before me,
+    The handle toward my hand? Come, let me clutch thee.
 
-Rig Veda doesn't contain conversations between countries, but it does contain human conversations.  This tutorial shows you how to find these conversations.
+    - Shakespeare, William. "Macbeth". 
+```
+
+And here's an example of a monologue.
+
+```
+    I speak not to disprove what Brutus spoke,
+    But here I am to speak what I do know.
+
+    - Shakespeare, William. "Julius Caesar".
+```
+
+Rig Veda contains not only conversations between gods and poets but also monologues and soliloquies.  This tutorial shows you how to find these conversations.
 
 ---------
 
@@ -88,15 +83,15 @@ Rig Veda doesn't contain conversations between countries, but it does contain hu
 
 ---------
 
-## Endpoint to use
+## Endpoints to use
 
-```
-/conversations
-```
+- `/conversations`
+- `/monologues`
 
-## Result
 
-A list of dictionaries with the following structure:
+## API response
+
+For conversations, a list of dictionaries, with the following structure, is returned:
 
 ```
 {
@@ -158,6 +153,28 @@ A list of dictionaries with the following structure:
 },
 ```
 
+For monologues, the result looks something like this:
+
+```
+{
+  "page": 1,
+  "pages": 2,
+  "results": [
+    {
+      "mandal": 4,
+      "sukta": 42,
+      "sungby": "Trasadasyu Paurukutsya",
+      "sungbycategory": "human male"
+    },
+    {
+      "mandal": 10,
+      "sukta": 48,
+      "sungby": "Indra Vaikunth",
+      "sungbycategory": "divine male"
+    },
+...
+```
+
 ## What to do next
 
 Read the verse, maybe? Wikisource is good resource for ancient texts, so you can go read the poems there. The URLs at Wikisource are in the following format: `https://en.wikisource.org/wiki/The_Rig_Veda/Mandala_1/Hymn_2`. Therefore, compose the URLs to match this scheme, and look up the verses.
@@ -167,4 +184,25 @@ Read the verse, maybe? Wikisource is good resource for ancient texts, so you can
 My favourite conversation in Rig Veda is in the tenth mandal and contained in veser 95: [https://en.wikisource.org/wiki/The_Hymns_of_the_Rigveda/Book_10/Hymn_95](https://en.wikisource.org/wiki/The_Hymns_of_the_Rigveda/Book_10/Hymn_95).
 
 It's a conversation between a king named Pururava Aila and his queen Urvashi.
+
+And my favourite soliloquy is this one: [https://en.wikisource.org/wiki/The_Hymns_of_the_Rigveda/Book_10/Hymn_125](https://en.wikisource.org/wiki/The_Hymns_of_the_Rigveda/Book_10/Hymn_125).
+
+This is the metadata for this poem:
+
+```
+{
+      "mandal": 10,
+      "sukta": 125,
+      "sungby": "Vagambhrini",
+      "sungbycategory": "human female"
+}
+```
+
+Sanskrit version: [https://sa.wikisource.org/wiki/ऋग्वेदः_सूक्तं_१०.१२५ ](https://sa.wikisource.org/wiki/ऋग्वेदः_सूक्तं_१०.१२५).
+
+A musical rendering:
+
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4mnYGUG890pny5QTjCaZWr?utm_source=generator" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+
+
 

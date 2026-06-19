@@ -27,10 +27,6 @@ related:
     type: tutorial
     url: /topics/how_to_dialogues.html
 
-  - title: Finding soliloquies in the Rig Veda
-    type: tutorial
-    url: /topics/how_to_soliloquy.html
-
   - title: Rig Veda API reference documentation
     type: reference
     url: /topics/api_rv.html

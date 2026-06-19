@@ -3,9 +3,9 @@ title: Visualising Rig Vedic meters
 description: Plot a pie graph after querying the API for meters in the hymns of the Rig Veda.
 summary: Tutorial for creating a pie graph of vedic meters.
 
-version: v2
+version: v3
 status: stable
-base_path: /rv/v2
+base_path: /rv/v3
 
 canonical: https://aninditabasu.github.io/indica/topics/datavis_meters_pie.html
 
@@ -22,10 +22,6 @@ related:
   - title: Finding conversations in the Rig Veda
     type: tutorial
     url: /topics/how_to_dialogues.html
-
-  - title: Finding soliloquies in the Rig Veda
-    type: tutorial
-    url: /topics/how_to_soliloquy.html
 
   - title: About the Rig Veda API
     type: explanation
@@ -89,7 +85,7 @@ Marked with `'` to show how the rhythm should flow:
 
 This tutorial shows you how to draw a piechart of the vedic meters.
 
-![pie chart of meters in rig veda](../images/meters_pie.png)
+![pie chart of meters in rig veda](../images/meters_pie_chart.png)
 
 ---------
 
@@ -100,135 +96,123 @@ This tutorial shows you how to draw a piechart of the vedic meters.
 
 ---------
 
-## Algorithm
+## Endpoint to use
 
-All the path parameters in the [Rig Veda API](api_rv.md) return a response in the same JSON structure.
+```
+/meters
+```
 
-```json
+## API response
+
+```
 {
-  "mandal": 0,
-  "sukta": 0,
-  "meter": "string",
-  "sungby": "string",
-  "sungbycategory": "string",
-  "sungfor": "string",
-  "sungforcategory": "string"
+  "meters": {
+    "Abhisarini": 2,
+    "Anushtup": 281,
+    "Ashti": 6,
+    "Atidhriti": 1,
+    "Atyashti": 28,
+    "Brihati": 91,
+    "Dhriti": 4,
+    "Gayatri": 469,
+    "Jagati": 540,
+    "Kakumanyamkushira": 1,
+    "Kakup": 9,
+    "Kriti": 1,
+    "Nyangkusarini": 2,
+    "Pankti": 108,
+    "Pipilika Madhya": 1,
+    "Pragath": 81,
+    "Pratishtha": 1,
+    "Purastajjyoti": 1,
+    "Shakchari": 16,
+    "Trishtup": 1230,
+    "Uparishtajjyoti": 2,
+    "Ushnik": 76,
+    "Vardhamana": 2,
+    "Virangarupa": 8,
+    "Virat": 64
+  }
 }
 ```
 
-In Rig Veda, books (or mandals) contain chapters, and chapters (or suktas) contain verses. Each verse is composed in one - and only one - meter.
-
-{% include admonition.html
-   type="tip"
-   title="Tip"
-   content="For information on how mandals, suktas, poets, and gods are connected to each other, see the entity-relationship diagram at [About Rig Veda](about_rv.md)."
-%}
-
-The following pseudocode uses the `/book/{mandal}` path parameter to fetch the data for meters, and generate the label names and numbers for a pie chart.
-
-```bash
-while book_number < 11:
-	GET /book/book_number
-	for entry in GET_response:
-		add <meter> to meter_list
-	book_number = book_number + 1
-count (<meter> in meter_list)
-count (sum of occurence of <meter> in meter_list)
-plot chart:
-	labels = <meter>
-	sizes = sum of occurence
-```
-
-After collecting the data, use your favourite data-visualiser to create a pie chart. The following example code uses the `matplotlib` Python package.
-
-## Example code in Python
-
-1.  Make a `GET` call for the first mandal.
-
-    ```python
-	headers = {
-	    'accept': 'application/json',
-	}
-	url = "https://indica-1hwj.onrender.com/rv/v2/meta/book/1"
-	import json	
-	response = requests.get(url, headers=headers)
-	response_json = json.loads(json.dumps(response.json()))
-	```
-
-1.  Loop through the returned JSON, pick `meter`, and add it to a list.
-
-    ```python
-	meters = []	
-	for entry in response_json:
-		meters.append(entry['meter'])
-	```
-
-1.  Make a `GET` call for mandals 2 through 10, pick the meters, and append them to the `meters` list.
-1.  Count the number of occurence of each meter.
-
-    ```python
-	from collections import Counter	
-	counts = Counter(meters)
-	#print(len(counts), counts)
-	```
-	
-1.  From the counter dictionary, extract the meter names and numbers. Then, use the `matplotlib` library to draw the pie chart.
-
-    ```python
-	labels = []
-	sizes = []
-	for item in counts:
-	#    print(item, counts[item])
-	    labels.append(item)
-	    sizes.append(counts[item])
-	#print(len(labels), labels)
-	#print(len(sizes), sizes)	
-	import matplotlib.pyplot as plt
-	fig1, ax1 = plt.subplots()
-	ax1.pie(sizes, labels=labels, autopct='%1.1f%%', shadow=True, startangle=90)
-	ax1.axis('equal')
-	plt.show()
-	```
-
-## Results
-
-You should be able to see a pie chart like this:
-
-![pie chart of meters in rig veda](../images/meters_pie_all.png)
-
-As you can see, a bunch of meters are so small that they have tiny slices in the pie and their names form a blur of overwritten text. One option for getting a neater chart is to club all such tiny slices together into one larger slice. In the following code snippet, all slices that are smaller than 3% of the total are clubbed into one slice.
+## Code to plot the pie chart
 
 ```python
-labels = []
-sizes = []
-others = 0
-for item in counts:
-#	print(item, counts[item])
-	if int(counts[item])/total > 0.03:
-	    labels.append(item)
-	    sizes.append(counts[item])
-	else:
-	    others = others + int(counts[item])
-#	print(len(labels), labels)
-#	print(len(sizes), sizes)
-	labels.append("Others")
-	sizes.append(others)
-#	print(len(labels), labels)
-#	print(len(sizes), sizes)
+import json
+import matplotlib.pyplot as plt
+
+# API response
+data = {
+    "meters": {
+        "Abhisarini": 2,
+        "Anushtup": 281,
+        "Ashti": 6,
+        "Atidhriti": 1,
+        "Atyashti": 28,
+        "Brihati": 91,
+        "Dhriti": 4,
+        "Gayatri": 469,
+        "Jagati": 540,
+        "Kakumanyamkushira": 1,
+        "Kakup": 9,
+        "Kriti": 1,
+        "Nyangkusarini": 2,
+        "Pankti": 108,
+        "Pipilika Madhya": 1,
+        "Pragath": 81,
+        "Pratishtha": 1,
+        "Purastajjyoti": 1,
+        "Shakchari": 16,
+        "Trishtup": 1230,
+        "Uparishtajjyoti": 2,
+        "Ushnik": 76,
+        "Vardhamana": 2,
+        "Virangarupa": 8,
+        "Virat": 64
+    }
+}
+
+# Extract labels and sizes
+labels = list(data["meters"].keys())
+sizes = list(data["meters"].values())
+
+# Optional: group tiny slices into "Others" for readability
+threshold = 30
+filtered_labels = []
+filtered_sizes = []
+other_sum = 0
+
+for label, size in zip(labels, sizes):
+    if size < threshold:
+        other_sum += size
+    else:
+        filtered_labels.append(label)
+        filtered_sizes.append(size)
+
+if other_sum > 0:
+    filtered_labels.append("Others")
+    filtered_sizes.append(other_sum)
+
+# Create figure
+plt.figure(figsize=(12, 12))
+
+# Plot pie chart
+plt.pie(
+    filtered_sizes,
+    labels=filtered_labels,
+    autopct='%1.1f%%',
+    startangle=140
+)
+
+plt.title("Meters in the Rig Veda")
+plt.axis('equal')  # Keeps the pie a perfect circle
+
+# Save image
+plt.savefig("meters_pie_chart.png", dpi=300, bbox_inches="tight")
+
+# Show plot
+plt.show()
+
 ```
-	
-## What to do next
 
-You can generate similar piecharts of the gods in a mandal, or all gods in all mandals, or a specific god in all mandals. Ditto for the poets.
-
-### Example: Pie chart, gods
-
-![pie chart of gods in rig veda](../images/gods_pie.png)
-
-### Example: Pie chart, poets
-
-![pie chart of poets in rig veda](../images/poets_pie_all.png)
-
-### Example: Pie chart, god categories
-
-![pie chart of god categories in rig veda](../images/gods_cat_pie.png)
