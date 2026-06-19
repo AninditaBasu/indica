@@ -288,6 +288,61 @@
       }
     },
 
+    "/hymns": {
+      "get": {
+        "summary": "Get the count of hymns that match one or more filters",
+        "description": "Requires at least 1 query parameter, and can take upto 4 query parameters, from `sungfor`, `sungby`, `meter`, and `mandal`. Returns unique hymn references.",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/HymnSungforParam"
+          },
+          {
+            "$ref": "#/components/parameters/HymnSungbyParam"
+          },
+          {
+            "$ref": "#/components/parameters/HymnMeterParam"
+          },
+          {
+            "$ref": "#/components/parameters/HymnMandalParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Matching hymns",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "count": {
+                      "type": "integer"
+                    },
+                    "hymns": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "mandal": {
+                            "type": "integer"
+                          },
+                          "sukta": {
+                            "type": "integer"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "At least one filter is required"
+          }
+        }
+      }
+    },
+
     "/pairs/{god}/{poet}": {
       "get": {
         "summary": "Get the hymns for a god-poet pair",
@@ -489,6 +544,44 @@
           "type": "integer",
           "minimum": 1,
           "default": 1
+        }
+      },
+
+      "HymnSungforParam": {
+        "name": "sungfor",
+        "in": "query",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
+
+      "HymnSungbyParam": {
+        "name": "sungby",
+        "in": "query",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
+
+      "HymnMeterParam": {
+        "name": "meter",
+        "in": "query",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
+
+      "HymnMandalParam": {
+        "name": "mandal",
+        "in": "query",
+        "required": false,
+        "schema": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 10
         }
       }
     },
