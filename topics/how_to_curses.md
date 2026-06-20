@@ -146,5 +146,7 @@ May your बाल  be blighted with अर्शस.
 अर्शस = arshas (haemorrhoids)
 ```
 
+![example curse](../images/VS_2.png)
+
 Or, maybe make the curses more colourful? You could compose entire verses by picking random entries from the following categories: `snake`, `worm`, `insect`, `weapon`, `medicine`, `poison`.
 

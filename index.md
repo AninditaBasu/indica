@@ -57,9 +57,9 @@ These APIs aim to bridge that gap. The APIs speak in JSON, which is a language n
     <td style="border: none !important; width: 5%;">&nbsp;</td>
 
     <td style="border: none !important; width: 45%;">
-      <a href="images/rishis.png">
-        <img src="images/rishis.png"
-             alt="poets of the rig veda"
+      <a href="images/gods.png">
+        <img src="images/gods.png"
+             alt="gods of the rig veda"
              width="100%">
       </a>
     </td>
