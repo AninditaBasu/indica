@@ -93,7 +93,7 @@ Marked with `'` to show how the rhythm should flow:
 This tutorial shows you how to draw a piechart of the vedic meters.
 
 <p style="font-size: 75%;">To see a larger image, click the image.</p>
-<a href="../images/meters_pie_chart.png"><img src="../images/meters_pie_chart.png"  alt="pie chart of meter in rig veda" width="50%"></a>
+<a href="../images/meters_pie_chart.png"><img src="../images/meters_pie_chart.png"  alt="pie chart of meter in rig veda" width="75%"></a>
 
 ---------
 
