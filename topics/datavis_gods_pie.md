@@ -40,7 +40,7 @@ related:
 
 <hr/>
 
-This tutorial shows you how to draw a piechart of the vedic meters.
+This tutorial shows you how to draw a piechart of gods in Rig Veda.
 
 <p style="font-size: 75%;">To see a larger image, click the image.</p>
 <a href="../images/gods_pie_chart.png"><img src="../images/gods_pie_chart.png"  alt="pie chart of gods in rig veda" width="75%"></a>
