@@ -38,9 +38,37 @@ related:
 
 # Rig Veda API reference
 
-{hr/}
+<hr/>
 
-This API fetches metadata of the hymns in Rig Veda. The JSON response contains verse-by-verse information on poets, gods, their categories, and the poetic meters.
+This API fetches metadata of the hymns in Rig Veda. The JSON response contains information on poets, gods, and meters.
+
+The following table is a snapshot of the available endpoints and the questions they answer.
+
+| Endpoint  | Question that's answered by the default mode    | Question that's answered by the expanded mode  |
+| ---------- | -------------------------------------------- | ---------------------------------------------- |
+| `/mandal/{n}`  | How many hymns are there in this mandal?  | -  |
+| `/mandal/{n}/meters`  | What meters occur in this mandal, and how many times?  | -  |
+| `/mandal/{n}/sungfor`  | Which gods are praised in this mandal, and how many hymns are for each? | -  |
+| `/mandal/{n}/sungby`  | Which poets composed hymns in this mandal, and how many hymns did each compose? | -  |
+| `/sungfor/{god}/mandals` | In which mandals is this god praised, and how many hymns in each mandal? | Which specific hymns (mandal+sukta) are sung for this god? |
+| `/sungfor/{god}/meters`   | What meters are used in hymns for this god, and how often? | Which specific hymns for this god use which meter?  |
+| `/sungfor/{god}/sungby`  | Which poets sang for this god, and how many hymns did each compose? | For each poet who sang for this god, what metrical distribution do their hymns have? |
+| `/sungby/{poet}/mandals` | In which mandals does this poet appear, and how many hymns in each mandal? | Which specific hymns (mandal+sukta) were composed by this poet? |
+| `/sungby/{poet}/meters` | What meters does this poet use, and how often? | Which specific hymns by this poet use which meter, and for whom were they sung? |
+| `/sungby/{poet}/sungfor` | Which gods does this poet sing for, and how many hymns for each? | Which specific hymns by this poet are addressed to which god, and in what meter? |
+| `/meters`  | What meters exist in the corpus, and how often does each occur?  | -   |
+| `/sungforcategories`  | What god-categories exist in the corpus, and how many hymns belong to each? | Which specific hymns belong to each god-category? |
+| `/sungbycategories`  | What poet-categories exist in the corpus, and how many hymns belong to each? | Which specific hymns belong to each poet-category? |
+| `/hymns`  | Which hymns match the given filters? | -  |
+| `/pairs/{god}/{poet}`   | -    | Which hymns represent this sungfor + sungby pair, and in what meter?  |
+| `/pairs/{godcategory}/{poetcategory}` | - | Which hymns match this sungforcategory + sungbycategory pair?  |
+| `/monologues`  | Which hymns are self-addressed ? | - |
+| `/conversations`  | Which hymns contain overlapping speakers and addressees?   | -  |
+| `/godlist`  | Who are all distinct gods in the corpus?  | -  |
+| `/poetlist`  | Who are all distinct poets in the corpus?  | -  |
+| `/meterlist` | What are all distinct meters in the corpus?  | - |
+| `/godcategorieslist`  | What are all valid god categories? | -  |
+| `/poetcategorieslist`  | What are all valid poet categories?  | -  |
 
 ---------
 
@@ -84,27 +112,7 @@ For the response parameters, see [Response parameters](#response-parameters).
   "meters": {
     "Abhisarini": 2,
     "Anushtup": 281,
-    "Ashti": 6,
-    "Atidhriti": 1,
-    "Atyashti": 28,
-    "Brihati": 91,
-    "Dhriti": 4,
-    "Gayatri": 469,
-    "Jagati": 540,
-    "Kakumanyamkushira": 1,
-    "Kakup": 9,
-    "Kriti": 1,
-    "Nyangkusarini": 2,
-    "Pankti": 108,
-    "Pipilika Madhya": 1,
-    "Pragath": 81,
-    "Pratishtha": 1,
-    "Purastajjyoti": 1,
-    "Shakchari": 16,
-    "Trishtup": 1230,
-    "Uparishtajjyoti": 2,
-    "Ushnik": 76,
-    "Vardhamana": 2,
+...
     "Virangarupa": 8,
     "Virat": 64
   }
@@ -131,36 +139,6 @@ request URL = base URL + endpoint
 Some endpoints need a path parameter. Some other don't, but might need a query parameter.
 
 Some of the endpoints can be expanded for details. If there are more than 27 results, the response is paginated. For such endpoints, the following query parameters are valid: `?expand=true` and `?expand=true&page={n}`.
-
-The following table is a snapshot of the available endpoints and the questions they answer.
-
-| Endpoint  | Question that's answered by the default mode    | Question that's answered by the expanded mode  |
-| ---------- | -------------------------------------------- | ---------------------------------------------- |
-| `/mandal/{n}`  | How many hymns are there in this mandal?  | -  |
-| `/mandal/{n}/meters`  | What meters occur in this mandal, and how many times?  | -  |
-| `/mandal/{n}/sungfor`  | Which gods are praised in this mandal, and how many hymns are for each? | -  |
-| `/mandal/{n}/sungby`  | Which poets composed hymns in this mandal, and how many hymns did each compose? | -  |
-| `/sungfor/{god}/mandals` | In which mandals is this god praised, and how many hymns in each mandal? | Which specific hymns (mandal+sukta) are sung for this god? |
-| `/sungfor/{god}/meters`   | What meters are used in hymns for this god, and how often? | Which specific hymns for this god use which meter?  |
-| `/sungfor/{god}/sungby`  | Which poets sang for this god, and how many hymns did each compose? | For each poet who sang for this god, what metrical distribution do their hymns have? |
-| `/sungby/{poet}/mandals` | In which mandals does this poet appear, and how many hymns in each mandal? | Which specific hymns (mandal+sukta) were composed by this poet? |
-| `/sungby/{poet}/meters` | What meters does this poet use, and how often? | Which specific hymns by this poet use which meter, and for whom were they sung? |
-| `/sungby/{poet}/sungfor` | Which gods does this poet sing for, and how many hymns for each? | Which specific hymns by this poet are addressed to which god, and in what meter? |
-| `/meters`  | What meters exist in the corpus, and how often does each occur?  | -   |
-| `/sungforcategories`  | What god-categories exist in the corpus, and how many hymns belong to each? | Which specific hymns belong to each god-category? |
-| `/sungbycategories`  | What poet-categories exist in the corpus, and how many hymns belong to each? | Which specific hymns belong to each poet-category? |
-| `/hymns`  | Which hymns match the given filters? | -  |
-| `/pairs/{god}/{poet}`   | -    | Which hymns represent this sungfor + sungby pair, and in what meter?  |
-| `/pairs/{godcategory}/{poetcategory}` | - | Which hymns match this sungforcategory + sungbycategory pair?  |
-| `/monologues`  | Which hymns are self-addressed ? | - |
-| `/conversations`  | Which hymns contain overlapping speakers and addressees?   | -  |
-| `/godlist`  | Who are all distinct gods in the corpus?  | -  |
-| `/poetlist`  | Who are all distinct poets in the corpus?  | -  |
-| `/meterlist` | What are all distinct meters in the corpus?  | - |
-| `/godcategorieslist`  | What are all valid god categories? | -  |
-| `/poetcategorieslist`  | What are all valid poet categories?  | -  |
-
-The following sections contain details about these endpoints. 
 
 ### `/mandal/{n}`
 
