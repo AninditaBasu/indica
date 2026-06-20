@@ -25,10 +25,6 @@ related:
     type: datavis
     url: /topics/datavis_gods_pie.html
 
-  - title: Finding conversations in the Rig Veda
-    type: tutorial
-    url: /topics/how_to_dialogues.html
-
   - title: Rig Veda API reference documentation
     type: reference
     url: /topics/api_rv.html

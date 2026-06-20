@@ -19,10 +19,6 @@ tags:
   - liturgy
 
 related:
-  - title: Finding conversations in the Rig Veda
-    type: tutorial
-    url: /topics/how_to_dialogues.html
-
   - title: Visualising Rig Vedic meters
     type: datavis
     url: /topics/datavis_meters_pie.html

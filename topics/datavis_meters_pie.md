@@ -19,10 +19,6 @@ tags:
   - liturgy
 
 related:
-  - title: Finding conversations in the Rig Veda
-    type: tutorial
-    url: /topics/how_to_dialogues.html
-
   - title: Visualising Rig Vedic gods
     type: datavis
     url: /topics/datavis_gods_pie.html
@@ -47,6 +43,11 @@ related:
 # Pie chart: Poetic meters
 
 <hr/>
+
+This tutorial shows you how to draw a piechart of the vedic meters.
+
+<p style="font-size: 75%;">To see a larger image, click the image.</p>
+<a href="../images/meters_pie_chart.png"><img src="../images/meters_pie_chart.png"  alt="pie chart of meter in rig veda" width="50%"></a>
 
 Poetry is always meant to rendered aloud and, during its recitation, it's the _meter_ that sets its rhythm. Consider the following example, and read it out aloud. 
 
@@ -89,11 +90,6 @@ Marked with `'` to show how the rhythm should flow:
 
     - Rig Veda, 3.62.10
 ```
-
-This tutorial shows you how to draw a piechart of the vedic meters.
-
-<p style="font-size: 75%;">To see a larger image, click the image.</p>
-<a href="../images/meters_pie_chart.png"><img src="../images/meters_pie_chart.png"  alt="pie chart of meter in rig veda" width="75%"></a>
 
 ---------
 
