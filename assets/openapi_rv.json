@@ -27,28 +27,11 @@
       "get": {
         "summary": "Get the hymn count in a mandal",
         "parameters": [
-          {
-            "$ref": "#/components/parameters/MandalParam"
-          }
+          { "$ref": "#/components/parameters/MandalParam" }
         ],
         "responses": {
           "200": {
-            "description": "Hymn count in the mandal",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "mandal": {
-                      "type": "integer"
-                    },
-                    "hymns": {
-                      "type": "integer"
-                    }
-                  }
-                }
-              }
-            }
+            "description": "Hymn count in the mandal"
           },
           "400": {
             "description": "Only 10 mandals in Rig Veda"
@@ -61,9 +44,7 @@
       "get": {
         "summary": "Get the meter counts in a mandal",
         "parameters": [
-          {
-            "$ref": "#/components/parameters/MandalParam"
-          }
+          { "$ref": "#/components/parameters/MandalParam" }
         ],
         "responses": {
           "200": {
@@ -77,9 +58,7 @@
       "get": {
         "summary": "Get the counts of the various gods in a mandal",
         "parameters": [
-          {
-            "$ref": "#/components/parameters/MandalParam"
-          }
+          { "$ref": "#/components/parameters/MandalParam" }
         ],
         "responses": {
           "200": {
@@ -93,9 +72,7 @@
       "get": {
         "summary": "Get the counts of the various poets in a mandal",
         "parameters": [
-          {
-            "$ref": "#/components/parameters/MandalParam"
-          }
+          { "$ref": "#/components/parameters/MandalParam" }
         ],
         "responses": {
           "200": {
@@ -109,15 +86,10 @@
       "get": {
         "summary": "Get all mandals in which a god is sung to",
         "parameters": [
-          {
-            "$ref": "#/components/parameters/GodParam"
-          },
-          {
-            "$ref": "#/components/parameters/ExpandParam"
-          },
-          {
-            "$ref": "#/components/parameters/PageParam"
-          }
+          { "$ref": "#/components/parameters/GodParam" },
+          { "$ref": "#/components/parameters/ExpandParam" },
+          { "$ref": "#/components/parameters/PageParam" },
+          { "$ref": "#/components/parameters/LimitParam" }
         ],
         "responses": {
           "200": {
@@ -134,15 +106,10 @@
       "get": {
         "summary": "Get all meters used for singing to a god",
         "parameters": [
-          {
-            "$ref": "#/components/parameters/GodParam"
-          },
-          {
-            "$ref": "#/components/parameters/ExpandParam"
-          },
-          {
-            "$ref": "#/components/parameters/PageParam"
-          }
+          { "$ref": "#/components/parameters/GodParam" },
+          { "$ref": "#/components/parameters/ExpandParam" },
+          { "$ref": "#/components/parameters/PageParam" },
+          { "$ref": "#/components/parameters/LimitParam" }
         ],
         "responses": {
           "200": {
@@ -159,19 +126,21 @@
       "get": {
         "summary": "Get all poets that sang to a specific god",
         "parameters": [
-          {
-            "$ref": "#/components/parameters/GodParam"
-          },
-          {
-            "$ref": "#/components/parameters/ExpandParam"
-          },
-          {
-            "$ref": "#/components/parameters/PageParam"
-          }
+          { "$ref": "#/components/parameters/GodParam" },
+          { "$ref": "#/components/parameters/ExpandParam" },
+          { "$ref": "#/components/parameters/PageParam" },
+          { "$ref": "#/components/parameters/LimitParam" }
         ],
         "responses": {
           "200": {
-            "description": "Poet counts or expanded list"
+            "description": "Poet counts or expanded poet-meter distribution",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SungforSungbyExpanded"
+                }
+              }
+            }
           },
           "404": {
             "$ref": "#/components/responses/NotFound"
@@ -184,15 +153,10 @@
       "get": {
         "summary": "Get all mandals that the hymns of a poet are included in",
         "parameters": [
-          {
-            "$ref": "#/components/parameters/PoetParam"
-          },
-          {
-            "$ref": "#/components/parameters/ExpandParam"
-          },
-          {
-            "$ref": "#/components/parameters/PageParam"
-          }
+          { "$ref": "#/components/parameters/PoetParam" },
+          { "$ref": "#/components/parameters/ExpandParam" },
+          { "$ref": "#/components/parameters/PageParam" },
+          { "$ref": "#/components/parameters/LimitParam" }
         ],
         "responses": {
           "200": {
@@ -209,15 +173,10 @@
       "get": {
         "summary": "Get all meters used by a specific poet",
         "parameters": [
-          {
-            "$ref": "#/components/parameters/PoetParam"
-          },
-          {
-            "$ref": "#/components/parameters/ExpandParam"
-          },
-          {
-            "$ref": "#/components/parameters/PageParam"
-          }
+          { "$ref": "#/components/parameters/PoetParam" },
+          { "$ref": "#/components/parameters/ExpandParam" },
+          { "$ref": "#/components/parameters/PageParam" },
+          { "$ref": "#/components/parameters/LimitParam" }
         ],
         "responses": {
           "200": {
@@ -234,15 +193,10 @@
       "get": {
         "summary": "Get all gods that a poet sang to",
         "parameters": [
-          {
-            "$ref": "#/components/parameters/PoetParam"
-          },
-          {
-            "$ref": "#/components/parameters/ExpandParam"
-          },
-          {
-            "$ref": "#/components/parameters/PageParam"
-          }
+          { "$ref": "#/components/parameters/PoetParam" },
+          { "$ref": "#/components/parameters/ExpandParam" },
+          { "$ref": "#/components/parameters/PageParam" },
+          { "$ref": "#/components/parameters/LimitParam" }
         ],
         "responses": {
           "200": {
@@ -269,9 +223,14 @@
     "/sungforcategories": {
       "get": {
         "summary": "Get the counts for the categories of gods",
+        "parameters": [
+          { "$ref": "#/components/parameters/ExpandParam" },
+          { "$ref": "#/components/parameters/PageParam" },
+          { "$ref": "#/components/parameters/LimitParam" }
+        ],
         "responses": {
           "200": {
-            "description": "Counts of sungfor categories"
+            "description": "Counts or expanded hymn list"
           }
         }
       }
@@ -280,9 +239,14 @@
     "/sungbycategories": {
       "get": {
         "summary": "Get the counts for the categories of poets",
+        "parameters": [
+          { "$ref": "#/components/parameters/ExpandParam" },
+          { "$ref": "#/components/parameters/PageParam" },
+          { "$ref": "#/components/parameters/LimitParam" }
+        ],
         "responses": {
           "200": {
-            "description": "Counts of sungby categories"
+            "description": "Counts or expanded hymn list"
           }
         }
       }
@@ -290,51 +254,16 @@
 
     "/hymns": {
       "get": {
-        "summary": "Get the count of hymns that match one or more filters",
-        "description": "Requires at least 1 query parameter, and can take upto 4 query parameters, from `sungfor`, `sungby`, `meter`, and `mandal`. Returns unique hymn references.",
+        "summary": "Get hymns matching one or more filters",
         "parameters": [
-          {
-            "$ref": "#/components/parameters/HymnSungforParam"
-          },
-          {
-            "$ref": "#/components/parameters/HymnSungbyParam"
-          },
-          {
-            "$ref": "#/components/parameters/HymnMeterParam"
-          },
-          {
-            "$ref": "#/components/parameters/HymnMandalParam"
-          }
+          { "$ref": "#/components/parameters/HymnSungforParam" },
+          { "$ref": "#/components/parameters/HymnSungbyParam" },
+          { "$ref": "#/components/parameters/HymnMeterParam" },
+          { "$ref": "#/components/parameters/HymnMandalParam" }
         ],
         "responses": {
           "200": {
-            "description": "Matching hymns",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "count": {
-                      "type": "integer"
-                    },
-                    "hymns": {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "properties": {
-                          "mandal": {
-                            "type": "integer"
-                          },
-                          "sukta": {
-                            "type": "integer"
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
+            "description": "Matching hymns"
           },
           "400": {
             "description": "At least one filter is required"
@@ -345,24 +274,16 @@
 
     "/pairs/{god}/{poet}": {
       "get": {
-        "summary": "Get the hymns for a god-poet pair",
+        "summary": "Get hymns for a god-poet pair",
         "parameters": [
-          {
-            "$ref": "#/components/parameters/GodParam"
-          },
-          {
-            "$ref": "#/components/parameters/PoetParam"
-          },
-          {
-            "$ref": "#/components/parameters/PageParam"
-          }
+          { "$ref": "#/components/parameters/GodParam" },
+          { "$ref": "#/components/parameters/PoetParam" },
+          { "$ref": "#/components/parameters/PageParam" },
+          { "$ref": "#/components/parameters/LimitParam" }
         ],
         "responses": {
           "200": {
             "description": "Matching hymns"
-          },
-          "404": {
-            "$ref": "#/components/responses/NotFound"
           }
         }
       }
@@ -370,7 +291,7 @@
 
     "/pairs/{godcategory}/{poetcategory}": {
       "get": {
-        "summary": "Get the hymns for a god-category and poet-category pair",
+        "summary": "Get hymns for a god-category and poet-category pair",
         "parameters": [
           {
             "name": "godcategory",
@@ -388,16 +309,12 @@
               "$ref": "#/components/schemas/SungbyCategory"
             }
           },
-          {
-            "$ref": "#/components/parameters/PageParam"
-          }
+          { "$ref": "#/components/parameters/PageParam" },
+          { "$ref": "#/components/parameters/LimitParam" }
         ],
         "responses": {
           "200": {
             "description": "Matching hymns"
-          },
-          "404": {
-            "$ref": "#/components/responses/NotFound"
           }
         }
       }
@@ -405,17 +322,14 @@
 
     "/monologues": {
       "get": {
-        "summary": "Get hymns where the poet is singing to their own self",
+        "summary": "Get hymns where the poet sings to themselves",
+        "parameters": [
+          { "$ref": "#/components/parameters/PageParam" },
+          { "$ref": "#/components/parameters/LimitParam" }
+        ],
         "responses": {
           "200": {
-            "description": "Paginated monologue hymns",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/MonologueResults"
-                }
-              }
-            }
+            "description": "Paginated monologue hymns"
           }
         }
       }
@@ -423,17 +337,14 @@
 
     "/conversations": {
       "get": {
-        "summary": "Get hymns that have gods and poets talking with each other",
+        "summary": "Get hymns that are dialogues",
+        "parameters": [
+          { "$ref": "#/components/parameters/PageParam" },
+          { "$ref": "#/components/parameters/LimitParam" }
+        ],
         "responses": {
           "200": {
-            "description": "Paginated conversation hymns",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ConversationResults"
-                }
-              }
-            }
+            "description": "Paginated conversation hymns"
           }
         }
       }
@@ -441,56 +352,31 @@
 
     "/godlist": {
       "get": {
-        "summary": "List all gods",
-        "responses": {
-          "200": {
-            "description": "Alphabetical list of gods"
-          }
-        }
+        "summary": "List all gods"
       }
     },
 
     "/poetlist": {
       "get": {
-        "summary": "List all poets",
-        "responses": {
-          "200": {
-            "description": "Alphabetical list of poets"
-          }
-        }
+        "summary": "List all poets"
       }
     },
 
     "/meterlist": {
       "get": {
-        "summary": "List all meters",
-        "responses": {
-          "200": {
-            "description": "Alphabetical list of meters"
-          }
-        }
+        "summary": "List all meters"
       }
     },
 
     "/godcategorieslist": {
       "get": {
-        "summary": "List all god categories",
-        "responses": {
-          "200": {
-            "description": "Alphabetical list of god categories"
-          }
-        }
+        "summary": "List all god categories"
       }
     },
 
     "/poetcategorieslist": {
       "get": {
-        "summary": "List all poet categories",
-        "responses": {
-          "200": {
-            "description": "Alphabetical list of poet categories"
-          }
-        }
+        "summary": "List all poet categories"
       }
     }
   },
@@ -547,10 +433,21 @@
         }
       },
 
+      "LimitParam": {
+        "name": "limit",
+        "in": "query",
+        "required": false,
+        "schema": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 50,
+          "default": 27
+        }
+      },
+
       "HymnSungforParam": {
         "name": "sungfor",
         "in": "query",
-        "required": false,
         "schema": {
           "type": "string"
         }
@@ -559,7 +456,6 @@
       "HymnSungbyParam": {
         "name": "sungby",
         "in": "query",
-        "required": false,
         "schema": {
           "type": "string"
         }
@@ -568,7 +464,6 @@
       "HymnMeterParam": {
         "name": "meter",
         "in": "query",
-        "required": false,
         "schema": {
           "type": "string"
         }
@@ -577,7 +472,6 @@
       "HymnMandalParam": {
         "name": "mandal",
         "in": "query",
-        "required": false,
         "schema": {
           "type": "integer",
           "minimum": 1,
@@ -588,14 +482,7 @@
 
     "responses": {
       "NotFound": {
-        "description": "Resource not found",
-        "content": {
-          "application/json": {
-            "schema": {
-              "$ref": "#/components/schemas/Error"
-            }
-          }
-        }
+        "description": "Resource not found"
       },
 
       "MeterCounts": {
@@ -616,8 +503,7 @@
         "type": "object",
         "properties": {
           "error": {
-            "type": "string",
-            "example": "Resource not found"
+            "type": "string"
           }
         }
       },
@@ -652,7 +538,7 @@
         ]
       },
 
-      "MonologueResults": {
+      "SungforSungbyExpanded": {
         "type": "object",
         "properties": {
           "total": {
@@ -669,66 +555,20 @@
             "items": {
               "type": "object",
               "properties": {
-                "mandal": {
-                  "type": "integer"
-                },
-                "sukta": {
-                  "type": "integer"
-                },
-                "sungby": {
+                "poet": {
                   "type": "string"
                 },
-                "sungbycategory": {
-                  "$ref": "#/components/schemas/SungbyCategory"
-                }
-              }
-            }
-          }
-        }
-      },
-
-      "ConversationResults": {
-        "type": "object",
-        "properties": {
-          "total": {
-            "type": "integer"
-          },
-          "pages": {
-            "type": "integer"
-          },
-          "page": {
-            "type": "integer"
-          },
-          "results": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "properties": {
-                "mandal": {
-                  "type": "integer"
-                },
-                "sukta": {
-                  "type": "integer"
-                },
-                "participants": {
-                  "type": "array",
-                  "items": {
-                    "type": "object",
-                    "properties": {
-                      "participant": {
-                        "type": "string"
-                      },
-                      "participantcategory": {
-                        "type": "string"
-                      },
-                      "role": {
-                        "type": "string"
-                      }
-                    }
+                "meters": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "integer"
                   }
                 }
               }
             }
+          },
+          "sungfor": {
+            "type": "string"
           }
         }
       }

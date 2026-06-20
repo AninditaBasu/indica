@@ -1,7 +1,7 @@
 ---
 title: Rig Veda API reference documentation
-description: Endpoints specs, schemas, and parameters for mandal, sukta, poet, deity, meter, and category of the Rig Veda hymns.
-summary: Structured metadata for Rig Veda hymns, poets, deities, and metrical traditions.
+description: Endpoints specs, schemas, and parameters for mandal, sukta, poet, god, meter, and category of the Rig Veda hymns.
+summary: Structured metadata for Rig Veda hymns, poets, gods, and metrical traditions.
 
 version: v3
 status: stable
@@ -38,7 +38,7 @@ related:
 
 # Rig Veda API reference
 
-<hr/>
+{hr/}
 
 This API fetches metadata of the hymns in Rig Veda. The JSON response contains verse-by-verse information on poets, gods, their categories, and the poetic meters.
 
@@ -130,9 +130,37 @@ request URL = base URL + endpoint
 
 Some endpoints need a path parameter. Some other don't, but might need a query parameter.
 
-Some of the endpoints can be expanded for details; the results of such endpoints are usually paginated. For these endpoints, the following query parameters are valid: `?expand=true` and `?expand=true&page={n}`.
+Some of the endpoints can be expanded for details. If there are more than 27 results, the response is paginated. For such endpoints, the following query parameters are valid: `?expand=true` and `?expand=true&page={n}`.
 
-The following endpoints are available. 
+The following table is a snapshot of the available endpoints and the questions they answer.
+
+| Endpoint  | Question that's answered by the default mode    | Question that's answered by the expanded mode  |
+| ---------- | -------------------------------------------- | ---------------------------------------------- |
+| `/mandal/{n}`  | How many hymns are there in this mandal?  | -  |
+| `/mandal/{n}/meters`  | What meters occur in this mandal, and how many times?  | -  |
+| `/mandal/{n}/sungfor`  | Which gods are praised in this mandal, and how many hymns are for each? | -  |
+| `/mandal/{n}/sungby`  | Which poets composed hymns in this mandal, and how many hymns did each compose? | -  |
+| `/sungfor/{god}/mandals` | In which mandals is this god praised, and how many hymns in each mandal? | Which specific hymns (mandal+sukta) are sung for this god? |
+| `/sungfor/{god}/meters`   | What meters are used in hymns for this god, and how often? | Which specific hymns for this god use which meter?  |
+| `/sungfor/{god}/sungby`  | Which poets sang for this god, and how many hymns did each compose? | For each poet who sang for this god, what metrical distribution do their hymns have? |
+| `/sungby/{poet}/mandals` | In which mandals does this poet appear, and how many hymns in each mandal? | Which specific hymns (mandal+sukta) were composed by this poet? |
+| `/sungby/{poet}/meters` | What meters does this poet use, and how often? | Which specific hymns by this poet use which meter, and for whom were they sung? |
+| `/sungby/{poet}/sungfor` | Which gods does this poet sing for, and how many hymns for each? | Which specific hymns by this poet are addressed to which god, and in what meter? |
+| `/meters`  | What meters exist in the corpus, and how often does each occur?  | -   |
+| `/sungforcategories`  | What god-categories exist in the corpus, and how many hymns belong to each? | Which specific hymns belong to each god-category? |
+| `/sungbycategories`  | What poet-categories exist in the corpus, and how many hymns belong to each? | Which specific hymns belong to each poet-category? |
+| `/hymns`  | Which hymns match the given filters? | -  |
+| `/pairs/{god}/{poet}`   | -    | Which hymns represent this sungfor + sungby pair, and in what meter?  |
+| `/pairs/{godcategory}/{poetcategory}` | - | Which hymns match this sungforcategory + sungbycategory pair?  |
+| `/monologues`  | Which hymns are self-addressed ? | - |
+| `/conversations`  | Which hymns contain overlapping speakers and addressees?   | -  |
+| `/godlist`  | Who are all distinct gods in the corpus?  | -  |
+| `/poetlist`  | Who are all distinct poets in the corpus?  | -  |
+| `/meterlist` | What are all distinct meters in the corpus?  | - |
+| `/godcategorieslist`  | What are all valid god categories? | -  |
+| `/poetcategorieslist`  | What are all valid poet categories?  | -  |
+
+The following sections contain details about these endpoints. 
 
 ### `/mandal/{n}`
 
@@ -289,16 +317,13 @@ This endpoint can be queried with `?expand=true` to get further details:
 
 ```
 ...
-  "results": [
+"results": [
     {
-      "mandal": 1,
-      "sukta": 1,
-      "sungby": "Madhuchchhanda Vaishwamitra"
-    },
-    {
-      "mandal": 1,
-      "sukta": 12,
-      "sungby": "Medhatithi Kanv"
+      "meters": {
+        "Jagati": 1,
+        "Trishtup": 1
+      },
+      "poet": "Chitramaha Vasishth"
     },
 ...
 ```
@@ -344,14 +369,14 @@ If the result runs into several pages, use the `?expand=true&page={n}` query par
 
 ### `/sungby/{poet}/meters`
 
-Returns the count of all meters, separately, employed by the specified poet. For example, `/sungby/Medhatithi Kanv/meters` returns the count of all meters used by Medhatithi Kanv.
+Returns the count of all meters, separately, employed by the specified poet. For example, `/sungby/Dirghatamas Auchathya/meters` returns the count of all meters used by Medhatithi Kanv.
 
 ```
 ...
 {
   "meters": {
-    "Anushtup": 6,
-    "Brihati": 3,
+    "Anushtup": 16,
+    "Jagati": 19,
 ...
 ```
 
@@ -363,11 +388,12 @@ This endpoint can be queried with `?expand=true` to get further details:
 ...
     {
       "mandal": 1,
-      "meter": "Gayatri",
-      "sukta": 13
-    }
+      "meter": "Anushtup",
+      "sukta": 142,
+      "sungfor": "Ila"
+    },
   ],
-  "sungby": "Medhatithi Kanv",
+  "sungby": "Dirghatamas Auchathya",
 ...
 ```
 
@@ -395,18 +421,9 @@ This endpoint can be queried with `?expand=true` to get further details:
 ...
     {
       "mandal": 1,
+      "meter": "Gayatri",
       "sukta": 13,
-      "sungfor": "Tanunapat"
-    },
-    {
-      "mandal": 1,
-      "sukta": 13,
-      "sungfor": "Grass"
-    },
-    {
-      "mandal": 1,
-      "sukta": 13,
-      "sungfor": "Ila"
+      "sungfor": "Usha"
     },
 ...
 ```
@@ -426,30 +443,6 @@ Returns the counts of all meters used in all verses of the Rig Veda. This endpoi
     "Atidhriti": 1,
 ...
 ```
-
-This endpoint can be queried with `?expand=true` to get further details:
-
-```
-...
-    {
-      "mandal": 8,
-      "meter": "Kakup",
-      "sukta": 46
-    },
-    {
-      "mandal": 8,
-      "meter": "Brihati",
-      "sukta": 46
-    },
-    {
-      "mandal": 8,
-      "meter": "Anushtup",
-      "sukta": 46
-    },
-...
-```
-
-If the result runs into several pages, use the `?expand=true&page={n}` query parameter.
 
 ### `/sungforcategories`
 
@@ -537,20 +530,22 @@ For example, `/rv/v3/hymns?sungfor=agni&meter=gayatri` returns all hymns to Agni
 
 ### `/pairs/{god}/{poet}`
 
-Returns all mandal and suktas that contains hymns to the specified god by the specified poet.  For example, `/pairs/agni/Dirghatamas Auchathya` returns all hymns (mandals and suktas) to Agni by Dirghatamas Auchathya.
+Returns all mandal and suktas that contains hymns to the specified god by the specified poet.  For example, `/pairs/agni/Vishwamitra Gathin` returns all hymns (mandals and suktas) to Agni by Dirghatamas Auchathya.
 
 ```
 ...
     {
-      "mandal": 1,
-      "sukta": 148
+      "mandal": 3,
+      "meter": "Jagati",
+      "sukta": 29
     },
     {
-      "mandal": 1,
-      "sukta": 149
+      "mandal": 3,
+      "meter": "Trishtup",
+      "sukta": 57
     }
   ],
-  "sungby": "Dirghatamas Auchathya",
+  "sungby": "Vishwamitra Gathin",
   "sungfor": "agni",
 ...
 ```
