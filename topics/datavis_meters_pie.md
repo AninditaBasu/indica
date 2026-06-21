@@ -44,12 +44,12 @@ related:
 
 <hr/>
 
-This tutorial shows you how to draw a piechart of the vedic meters.
+This chart is generated from the data returned by the `/rv/v3/meters` endpoint.
 
 <p style="font-size: 75%;">To see a larger image, click the image.</p>
-<a href="../images/meters_pie_chart.png"><img src="../images/meters_pie_chart.png"  alt="pie chart of meter in rig veda" width="50%"></a>
+<a href="../images/meters_pie_chart.png"><img src="../images/meters_pie_chart.png"  alt="pie chart of meters in rig veda" width="50%"></a>
 
-Rig Veda is poetry. Its verses have a certain lilt, beat, rhythm, and meter that turn the words into charming lyrical music when recited aloud. Traditional methods, transmitted orally, teach how to recite the verses in the proper rhythm, the correct _meter_.
+Rig Veda is poetry. Its verses have a certain lilt, beat, rhythm ( _meter_ ) that turn the words into charming lyrical music when recited aloud.
 
 ---------
 
@@ -60,7 +60,26 @@ Rig Veda is poetry. Its verses have a certain lilt, beat, rhythm, and meter that
 
 ---------
 
-## Endpoint to use
+## What this chart shows
+
+At first glance, the following things stand out immediately:
+
+-  Trishtup dominates, accounting for over 40% of the corpus. That makes it the default poetic rhythm of the Rig Veda.
+-  Jagati and Gayatri together make up another third of the corpus, meaning that just three meters account for most hymns.
+-  Anushtup, which later becomes the dominant meter of classical Sanskrit epics, is relatively minor here.
+-  The minor meters together account for only about 17% of the corpus.
+
+From this distribution, one might be inclined to think that Rigvedic poetry relied on a few highly stable rhythmic templates that were used more for structure than for ornamentation or experimentation.
+
+## What to explore next
+
+-  Why does Trishtup dominate? Is it associated with specific gods, poets, or mandals? Use the `/mandal/{n}/meters`, `/sungfor/{god}/meters`, and `/sungby/{poet}/meters` endpoints.
+-  Do certain gods prefer certain meters? Use the `/sungfor/{god}/meters` endpoint.
+-  Do certain poets prefer certain meters? Use the `/sungby/{poet}/meters` endpoint.
+-  Do meters cluster by mandal? Use the `/mandal/{n}/meters` endpoint.
+-  Which mandals contain Anushtup, the meter that has only a 9% share here but went on to dominate almost the entire epic literature? Use the `/mandal/{n}/meters` endpoint.
+
+## Endpoint to use for this pie chart
 
 `/meters` returns the following response:
 
@@ -179,6 +198,3 @@ function generatePieChart(data, threshold):
 
     save image
 ```
-
-An example code in Python is given in [pie chart of meters](https://github.com/AninditaBasu/indica/blob/master/examples/pie_plain.py). 
-

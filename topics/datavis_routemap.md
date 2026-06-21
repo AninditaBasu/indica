@@ -45,7 +45,8 @@ related:
 
 This route map is generated from data returned by `/mb/v1/journeys/{name}` endpoint, with full details (`?expand=true`) where `{name}` = `Jarasandh killing`.
 
-![Route map for Jarasandh killing](../images/map_jarasandh_killing.png)
+<p style="font-size: 75%;">To see a larger image, click the image.</p>
+<a href="../images/map_jarasandh_killing.png"><img src="../images/map_jarasandh_killing.png"  alt="Route map for Jarasandh killing" width="50%"></a>
 
 ---------
 
@@ -56,7 +57,23 @@ This route map is generated from data returned by `/mb/v1/journeys/{name}` endpo
 
 ---------
 
-## Endpoint to use
+## What this map shows
+
+At first glance, what stands out immediately is the circular route:
+
+-  The onward journey is through a northern, lesser travelled route bordering on the Himalayan terai region.
+-  The return journey is through a straight route on the Gangetic plains.
+
+From this map, it is evident that the travellers went out of their way to conceal their travel till they reached their destination (Magadh).
+
+## What to explore next
+
+-  What events preceded and followed this killing? Use the `/events` series of endpoints.
+-  What other journeys did the travellers on this route go on? Use the `/journeys/{name}` endpoint.
+-  What were the places along this route like? Do they exist today, and if they do, what are their names today? Use the `/places/{name}` endpoint. 
+-  Were the places along this route frequent pitstops for other journeys too? Use the `/journeys?place={place}` endpoint.
+
+## Endpoint to use for this map
 
 `/mb/v1/journeys/Jarasandh killing` returns the following response:
 
@@ -80,7 +97,7 @@ This route map is generated from data returned by `/mb/v1/journeys/{name}` endpo
 }
 ``` 
 
-The `journeyRoute` list is of interest here. Detailed route information was obtained by using the `?expand=true` query parameter.
+It's the `journeyRoute` list that is of interest here. To get detailed route information, use the `?expand=true` query parameter.
 
 ```json
 ...
