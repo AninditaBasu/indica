@@ -111,39 +111,38 @@ Rig Veda is poetry. Its verses have a certain lilt, beat, rhythm, and meter that
 ### Steps
 
 1.  Extract categories and values.
-   1.  Read the input dataset.
-   1.  Separate it into:
-     -  `labels` = list of category names
-     -  `values` = list of corresponding counts
+    1.  Read the input dataset.
+    1.  Separate it into:
+         -  `labels` = list of category names.
+         -  `values` = list of corresponding counts.
 1.  Group low-frequency categories so that the chart is not cluttered by numerous tiny slices.
-   1.  Initialise:
-     -  `filtered_labels` as empty
-     -  `filtered_values` as empty
-     -  `other_total = 0`
-   1.  For each `(label, value)` pair:
-     -  If `value < threshold`:
-       -  Add `value` to `other_total`
-     -  Else:
-       -  Append `label` to `filtered_labels`
-       -  Append `value` to `filtered_values`
-   1.  After processing all items:
-     -  If `other_total > 0`:
-       -  Append `"Others"` to `filtered_labels`
-       -  Append `other_total` to `filtered_values`
+    1.  Initialise:
+         -  `filtered_labels` as empty.
+         -  `filtered_values` as empty.
+         -  `other_total = 0`.
+    1.  For each `(label, value)` pair:
+         -  If `value < threshold`, add `value` to `other_total`.
+         -  Else:
+             -  Append `label` to `filtered_labels`.
+             -  Append `value` to `filtered_values`.
+    1.  After processing all items:
+         -  If `other_total > 0`:
+             -  Append `"Others"` to `filtered_labels`.
+             -  Append `other_total` to `filtered_values`.
 1.  Assign colours.
-   1.  Generate one colour for each resulting category.
-   1.  If the number of categories exceeds the palette size, reuse colours cyclically.
-   1.  If an `"Others"` category exists, override its colour with a neutral colour like grey.
+    1.  Generate one colour for each resulting category.
+    1.  If the number of categories exceeds the palette size, reuse colours cyclically.
+    1.  If an `"Others"` category exists, override its colour with a neutral colour like grey.
 1.  Create the chart canvas.
-   1.  Initialise a drawing surface with fixed dimensions and background colour.
-   1.  Reserve space for header, main chart area, and footer.
+    1.  Initialise a drawing surface with fixed dimensions and background colour.
+    1.  Reserve space for header, main chart area, and footer.
 1.  Add the metadata. Place the header at the top and the footer at the bottom.
 1.  Render the pie chart.
-   1.  Draw a pie chart where each slice corresponds to a category and the slice size is proportional to the category count.
-   1.  Display the category labels outside or near the slices, and the percentage labels inside the slices.
-   1.  Apply visual styling for start rotation angle, slice borders, label distances, and percentage text distances.
-   1.  Ensure that the chart uses an equal aspect ratio so that the pie remains circular.
-   1.  Draw a border frame around the full visualisation area, flush to the edges.
+    1.  Draw a pie chart where each slice corresponds to a category and the slice size is proportional to the category count.
+    1.  Display the category labels outside or near the slices, and the percentage labels inside the slices.
+    1.  Apply visual styling for start rotation angle, slice borders, label distances, and percentage text distances.
+    1.  Ensure that the chart uses an equal aspect ratio so that the pie remains circular.
+    1.  Draw a border frame around the full visualisation area, flush to the edges.
 1.  Export the output. Save the rendered chart as an image file with high resolution and a tight bounding box.
  
 ## Pseudocode
