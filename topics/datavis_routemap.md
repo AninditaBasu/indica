@@ -47,10 +47,29 @@ This route map is generated from data returned by `/mb/v1/journeys/{name}` endpo
 
 ![Route map for Jarasandh killing](../images/map_jarasandh_killing.png)
 
-The summary journey route is this:
+---------
+
+**On this page**
+
+* TOC
+{:toc}
+
+---------
+
+## Endpoint to use
+
+`/mb/v1/journeys/Jarasandh killing` returns the following response:
 
 ```json
-"journeyRoute": [
+{
+  "journeyEvent": "Rajasuya yagya",
+  "journeyName": "Jarasandh killing",
+  "journeyPersons": [
+    "Arjun",
+    "Bheem",
+    "Krishna"
+  ],
+  "journeyRoute": [
     "Indraprastha",
     "Kurujangal to Kalakuta",
     "Kalakuta to the east to Mithila",
@@ -58,9 +77,75 @@ The summary journey route is this:
     "Girivraj",
     "Girivraj to Indraprastha"
   ]
+}
+``` 
+
+The `journeyRoute` list is of interest here. Detailed route information was obtained by using the `?expand=true` query parameter.
+
+```json
+...
+  "journeyRoute": [
+    "Indraprastha",
+    "Kurujangal to Kalakuta",
+    "Kalakuta to the east to Mithila",
+    "Mithila to Magadh",
+    "Girivraj",
+    "Girivraj to Indraprastha"
+  ],
+  "journeyRouteFull": [null, {
+      "pathCurrent": [
+        "Hapur (India)",
+        "Garhmukteshwar (India)",
+        "Gajraula (India)",
+        "Dhampur (India)",
+        "Kalagarh (India)"
+      ],
+      "pathNameEpic": "Kurujangal to Kalakuta"
+    },
+    {
+      "pathCurrent": [
+        "Kalagarh (India)",
+        "Kashipur (India)",
+        "Pantnagar (India)",
+        "Pilibhit (India)",
+        "Lakhimpur Kheri (India)",
+        "Bahraich (India)",
+        "Shravasti (India)",
+        "Kapilvastu (Nepal)",
+        "Kudiya (Nepal)",
+        "Bagaha (Nepal)",
+        "Birganj (Nepal)",
+        "Mithila (Nepal)"
+      ],
+      "pathNameEpic": "Kalakuta to the east to Mithila"
+    },
+    {
+      "pathCurrent": [
+        "Mithila (Nepal)",
+        "Janakpur (Nepal)",
+        "Madhubani (India)",
+        "Darbhanga (India)",
+        "Samastipur (India)",
+        "Patna (India)",
+        "Rajgir (India)"
+      ],
+      "pathNameEpic": "Mithila to Magadh"
+    },
+    null, {
+      "pathCurrent": [
+        "Rajgir (India)",
+        "Varanasi (India)",
+        "Kaushambi (India)",
+        "Mathura (India)",
+        "New Delhi (India)"
+      ],
+      "pathNameEpic": "Girivraj to Indraprastha"
+    }
+  ]
+...
 ```
 
-The detailed route information was obtained by using the `?expand=true` query parameter.
+## Cartographic libraries
 
 The following components were used to generate the map:
 
@@ -74,12 +159,12 @@ The following components were used to generate the map:
     - `Matplotlib`, for creating the figure and exporting the `.png` image
     - `Contextily`, for adding the terrain basemap tiles
 
-The workflow is as follows:
+## Algorithm
 
-1. Geocode the place names (`GeoPy`)
-1. Create point geometries from the coordinates (`Shapely`)
-1. Store the geometries in a geospatial data frame (`GeoPandas`)
-1. Create the figure and axes (`Matplotlib`)
-1. Add the terrain basemap tiles (`Contextily`)
-1. Plot the locations and export the image (`GeoPandas` + `Matplotlib`)
+1.  Geocode the place names (`GeoPy`).
+1.  Create point geometries from the coordinates (`Shapely`).
+1.  Store the geometries in a geospatial data frame (`GeoPandas`).
+1.  Create the figure and axes (`Matplotlib`).
+1.  Add the terrain basemap tiles (`Contextily`).
+1.  Plot the locations and export the image (`GeoPandas` + `Matplotlib`).
 

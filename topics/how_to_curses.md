@@ -40,6 +40,8 @@ related:
 
 A _curse_ is a word or phrase that's uttered with complete seriousness, with the intention to invoke a supernatural power that can cause harm or injury to someone or something.
 
+![example curse](../images/VS_2.png)
+
 Curses are born of human emotions and, therefore, are as old as humanity itself. The vedas, which are among the oldest text in a Indo-European language, contain interesting curses (in addition to the solemn hymns to gods, for which they're better known).  Atharva Veda is, in fact, more a compendium of curses than of grateful hymns to gods. Here's an example curse from Atharva Veda.
 
 ```text
@@ -145,8 +147,6 @@ May your बाल  be blighted with अर्शस.
 बाल = bal (boy)
 अर्शस = arshas (haemorrhoids)
 ```
-
-![example curse](../images/VS_2.png)
 
 Or, maybe make the curses more colourful? You could compose entire verses by picking random entries from the following categories: `snake`, `worm`, `insect`, `weapon`, `medicine`, `poison`.
 
