@@ -1,7 +1,7 @@
 {
   "openapi": "3.0.0",
   "info": {
-    "version": "1.0.0",
+    "version": "2.0.0",
     "title": "Mahabharat API",
     "description": "## Knowledge graph API for Mahabharat\nThis API returns information about people, events, and journeys.",
     "contact": {
@@ -18,7 +18,7 @@
   },
   "servers": [
     {
-      "url": "https://indica-1hwj.onrender.com/mb/v1",
+      "url": "https://indica-1hwj.onrender.com/mb/v2",
       "description": "Mahabharat API"
     }
   ],
@@ -26,14 +26,14 @@
     "/persons": {
       "get": {
         "summary": "List all persons",
-        "description": "Returns a list of all persons.\n\nThe default response has names and summary information. Query parameters can be used for  obtaining fuller information.",
         "parameters": [
           {
             "name": "fields",
             "in": "query",
             "schema": {
               "type": "string",
-              "enum": ["basic"]
+              "enum": ["basic", "details"],
+              "default": "basic"
             }
           },
           {
@@ -41,20 +41,35 @@
             "in": "query",
             "schema": {
               "type": "string",
-              "enum": ["true", "false"]
+              "enum": ["true", "false"],
+              "default": "false"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "default": 1
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "default": 10,
+              "maximum": 50
             }
           }
         ],
         "responses": {
           "200": {
-            "description": "List of persons",
+            "description": "Paginated list of persons",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Person"
-                  }
+                  "$ref": "#/components/schemas/PaginatedPersons"
                 }
               }
             }
@@ -62,10 +77,21 @@
         }
       }
     },
+
+    "/persons/names": {
+      "get": {
+        "summary": "List all person names",
+        "responses": {
+          "200": {
+            "description": "Person names"
+          }
+        }
+      }
+    },
+
     "/persons/{name}": {
       "get": {
         "summary": "Get person by name",
-        "description": "Returns information about the specified person.\n\nThe default response has summary information. Query parameters can be used for fuller information.",
         "parameters": [
           {
             "name": "name",
@@ -78,7 +104,8 @@
             "in": "query",
             "schema": {
               "type": "string",
-              "enum": ["basic"]
+              "enum": ["basic", "details"],
+              "default": "basic"
             }
           },
           {
@@ -102,22 +129,15 @@
             }
           },
           "404": {
-            "description": "Person not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
+            "$ref": "#/components/responses/NotFound"
           }
         }
       }
     },
+
     "/persons/{name}/armour": {
       "get": {
-        "summary": "Get the panoply of a person",
-        "description": "Returns a list of weapons and other implements of the specified person.",
+        "summary": "Get person armour",
         "parameters": [
           {
             "name": "name",
@@ -128,7 +148,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Armour information",
+            "description": "Armour info",
             "content": {
               "application/json": {
                 "schema": {
@@ -136,14 +156,17 @@
                 }
               }
             }
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
           }
         }
       }
     },
+
     "/persons/{name}/journeys": {
       "get": {
-        "summary": "Get all journeys associated with a person",
-        "description": "Returns a list of all journeys underatken by the specified person.\n\nThe default response has names and summary information. Query parameters can be used for obtaining fuller information.",
+        "summary": "Get journeys of a person",
         "parameters": [
           {
             "name": "name",
@@ -158,29 +181,43 @@
               "type": "string",
               "enum": ["true", "false"]
             }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "schema": { "type": "integer", "default": 1 }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "default": 10,
+              "maximum": 50
+            }
           }
         ],
         "responses": {
           "200": {
-            "description": "Journeys",
+            "description": "Paginated journeys",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Journey"
-                  }
+                  "$ref": "#/components/schemas/PaginatedJourneys"
                 }
               }
             }
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
           }
         }
       }
     },
+
     "/explore/{name}": {
       "get": {
-        "summary": "Get complete details of a person",
-        "description": "Returns information about the specified person.\n\nEvents, weapons, journeys are all reckoned.",
+        "summary": "Explore person",
         "parameters": [
           {
             "name": "name",
@@ -191,7 +228,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Aggregated exploration result",
+            "description": "Explore response",
             "content": {
               "application/json": {
                 "schema": {
@@ -199,22 +236,40 @@
                 }
               }
             }
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
           }
         }
       }
     },
+
     "/weapons": {
       "get": {
         "summary": "List all weapons",
-        "description": "Returns a list of all weapons.",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "schema": { "type": "integer", "default": 1 }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "default": 10,
+              "maximum": 50
+            }
+          }
+        ],
         "responses": {
           "200": {
-            "description": "Weapons",
+            "description": "Paginated weapons",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": { "$ref": "#/components/schemas/Weapon" }
+                  "$ref": "#/components/schemas/PaginatedWeapons"
                 }
               }
             }
@@ -222,10 +277,19 @@
         }
       }
     },
+
+    "/weapons/names": {
+      "get": {
+        "summary": "List all weapon names",
+        "responses": {
+          "200": { "description": "Weapon names" }
+        }
+      }
+    },
+
     "/weapons/{name}": {
       "get": {
         "summary": "Get weapon by name",
-        "description": "Returns the details of the specified weapon.",
         "parameters": [
           {
             "name": "name",
@@ -236,36 +300,54 @@
         ],
         "responses": {
           "200": {
-            "description": "Weapon",
+            "description": "Weapon object",
             "content": {
               "application/json": {
-                "schema": { "$ref": "#/components/schemas/Weapon" }
+                "schema": {
+                  "$ref": "#/components/schemas/Weapon"
+                }
               }
             }
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
           }
         }
       }
     },
+
     "/weapons/{name}/owners": {
       "get": {
-        "summary": "List all persons owning a weapon",
-        "description": "Returns a list of all persons who own the specified weapon.",
+        "summary": "Get owners of a weapon",
         "parameters": [
           {
             "name": "name",
             "in": "path",
             "required": true,
             "schema": { "type": "string" }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "schema": { "type": "integer", "default": 1 }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "default": 10,
+              "maximum": 50
+            }
           }
         ],
         "responses": {
           "200": {
-            "description": "List of person names",
+            "description": "Paginated owners",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": { "type": "string" }
+                  "$ref": "#/components/schemas/PaginatedStringList"
                 }
               }
             }
@@ -273,28 +355,50 @@
         }
       }
     },
+
     "/events": {
       "get": {
         "summary": "List all events",
-        "description": "Returns a list of all events.\n\nThe default response has names and summary information. Query parameters can be used for obtaining fuller information.",
         "parameters": [
           {
             "name": "fields",
             "in": "query",
             "schema": {
               "type": "string",
-              "enum": ["full"]
+              "enum": ["basic", "details"],
+              "default": "basic"
+            }
+          },
+          {
+            "name": "expand",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": ["true", "false"]
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "schema": { "type": "integer", "default": 1 }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "default": 10,
+              "maximum": 50
             }
           }
         ],
         "responses": {
           "200": {
-            "description": "Events",
+            "description": "Paginated events",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": { "$ref": "#/components/schemas/Event" }
+                  "$ref": "#/components/schemas/PaginatedEvents"
                 }
               }
             }
@@ -302,42 +406,89 @@
         }
       }
     },
+
+    "/events/names": {
+      "get": {
+        "summary": "List event names",
+        "responses": {
+          "200": {
+            "description": "Event names"
+          }
+        }
+      }
+    },
+
     "/events/{name}": {
       "get": {
         "summary": "Get event by name",
-        "description": "Returns the details of the specified event.\n\nThe default response has names and summary information. Query parameters can be used for obtaining fuller information.",
         "parameters": [
           {
             "name": "name",
             "in": "path",
             "required": true,
             "schema": { "type": "string" }
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": ["basic", "details"]
+            }
+          },
+          {
+            "name": "expand",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": ["true", "false"]
+            }
           }
         ],
         "responses": {
           "200": {
-            "description": "Event",
+            "description": "Event object",
             "content": {
               "application/json": {
-                "schema": { "$ref": "#/components/schemas/Event" }
+                "schema": {
+                  "$ref": "#/components/schemas/Event"
+                }
               }
             }
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
           }
         }
       }
     },
+
     "/clans": {
       "get": {
         "summary": "List all clans",
-        "description": "Returns a list of all clans.",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "schema": { "type": "integer", "default": 1 }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "default": 10,
+              "maximum": 50
+            }
+          }
+        ],
         "responses": {
           "200": {
-            "description": "Clans",
+            "description": "Paginated clans",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": { "$ref": "#/components/schemas/Clan" }
+                  "$ref": "#/components/schemas/PaginatedClans"
                 }
               }
             }
@@ -345,10 +496,21 @@
         }
       }
     },
+
+    "/clans/names": {
+      "get": {
+        "summary": "List clan names",
+        "responses": {
+          "200": {
+            "description": "Clan names"
+          }
+        }
+      }
+    },
+
     "/clans/{name}": {
       "get": {
         "summary": "Get clan by name",
-        "description": "Returns the details of the specified clan.",
         "parameters": [
           {
             "name": "name",
@@ -359,20 +521,25 @@
         ],
         "responses": {
           "200": {
-            "description": "Clan",
+            "description": "Clan object",
             "content": {
               "application/json": {
-                "schema": { "$ref": "#/components/schemas/Clan" }
+                "schema": {
+                  "$ref": "#/components/schemas/Clan"
+                }
               }
             }
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
           }
         }
       }
     },
+
     "/journeys": {
       "get": {
         "summary": "List all journeys",
-        "description": "Returns a list of all journeys, with detailed information.",
         "parameters": [
           {
             "name": "person",
@@ -391,16 +558,29 @@
               "type": "string",
               "enum": ["true", "false"]
             }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "schema": { "type": "integer", "default": 1 }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "default": 10,
+              "maximum": 50
+            }
           }
         ],
         "responses": {
           "200": {
-            "description": "Journeys",
+            "description": "Paginated journeys",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": { "$ref": "#/components/schemas/Journey" }
+                  "$ref": "#/components/schemas/PaginatedJourneys"
                 }
               }
             }
@@ -408,42 +588,81 @@
         }
       }
     },
+
+    "/journeys/names": {
+      "get": {
+        "summary": "List journey names",
+        "responses": {
+          "200": {
+            "description": "Journey names"
+          }
+        }
+      }
+    },
+
     "/journeys/{name}": {
       "get": {
         "summary": "Get journey by name",
-        "description": "Returns information of the specified journey.\n\nDetails of persons and paths is included.",
         "parameters": [
           {
             "name": "name",
             "in": "path",
             "required": true,
             "schema": { "type": "string" }
+          },
+          {
+            "name": "expand",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": ["true", "false"]
+            }
           }
         ],
         "responses": {
           "200": {
-            "description": "Journey",
+            "description": "Journey object",
             "content": {
               "application/json": {
-                "schema": { "$ref": "#/components/schemas/Journey" }
+                "schema": {
+                  "$ref": "#/components/schemas/Journey"
+                }
               }
             }
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
           }
         }
       }
     },
+
     "/places": {
       "get": {
         "summary": "List all places",
-        "description": "Returns information about all places.",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "schema": { "type": "integer", "default": 1 }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "default": 10,
+              "maximum": 50
+            }
+          }
+        ],
         "responses": {
           "200": {
-            "description": "Places",
+            "description": "Paginated places",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": { "$ref": "#/components/schemas/Place" }
+                  "$ref": "#/components/schemas/PaginatedPlaces"
                 }
               }
             }
@@ -451,10 +670,21 @@
         }
       }
     },
+
+    "/places/names": {
+      "get": {
+        "summary": "List place names",
+        "responses": {
+          "200": {
+            "description": "Place names"
+          }
+        }
+      }
+    },
+
     "/places/{name}": {
       "get": {
         "summary": "Get place by name",
-        "description": "Returns the details of the specified place.\n\nThe default response has names and summary information. Query parameters can be used for obtaining fuller information.",
         "parameters": [
           {
             "name": "name",
@@ -465,25 +695,134 @@
         ],
         "responses": {
           "200": {
-            "description": "Place",
+            "description": "Place object",
             "content": {
               "application/json": {
-                "schema": { "$ref": "#/components/schemas/Place" }
+                "schema": {
+                  "$ref": "#/components/schemas/Place"
+                }
               }
             }
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
           }
         }
       }
     }
   },
+
   "components": {
+    "responses": {
+      "NotFound": {
+        "description": "Resource not found",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            }
+          }
+        }
+      }
+    },
+
     "schemas": {
+      "PaginationMeta": {
+        "type": "object",
+        "properties": {
+          "page": { "type": "integer" },
+          "limit": { "type": "integer" },
+          "total": { "type": "integer" },
+          "pages": { "type": "integer" },
+          "hasNext": { "type": "boolean" },
+          "hasPrev": { "type": "boolean" }
+        }
+      },
+
+      "PaginatedPersons": {
+        "type": "object",
+        "properties": {
+          "meta": { "$ref": "#/components/schemas/PaginationMeta" },
+          "data": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/Person" }
+          }
+        }
+      },
+
+      "PaginatedWeapons": {
+        "type": "object",
+        "properties": {
+          "meta": { "$ref": "#/components/schemas/PaginationMeta" },
+          "data": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/Weapon" }
+          }
+        }
+      },
+
+      "PaginatedEvents": {
+        "type": "object",
+        "properties": {
+          "meta": { "$ref": "#/components/schemas/PaginationMeta" },
+          "data": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/Event" }
+          }
+        }
+      },
+
+      "PaginatedJourneys": {
+        "type": "object",
+        "properties": {
+          "meta": { "$ref": "#/components/schemas/PaginationMeta" },
+          "data": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/Journey" }
+          }
+        }
+      },
+
+      "PaginatedClans": {
+        "type": "object",
+        "properties": {
+          "meta": { "$ref": "#/components/schemas/PaginationMeta" },
+          "data": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/Clan" }
+          }
+        }
+      },
+
+      "PaginatedPlaces": {
+        "type": "object",
+        "properties": {
+          "meta": { "$ref": "#/components/schemas/PaginationMeta" },
+          "data": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/Place" }
+          }
+        }
+      },
+
+      "PaginatedStringList": {
+        "type": "object",
+        "properties": {
+          "meta": { "$ref": "#/components/schemas/PaginationMeta" },
+          "data": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        }
+      },
+
       "Error": {
         "type": "object",
         "properties": {
           "error": { "type": "string" }
         }
       },
+
       "Armour": {
         "type": "object",
         "properties": {
@@ -497,20 +836,15 @@
           }
         }
       },
+
       "ExplorePersonResponse": {
         "type": "object",
         "properties": {
           "person": { "type": "string" },
           "clan": { "$ref": "#/components/schemas/Clan" },
           "armour": { "$ref": "#/components/schemas/Armour" },
-          "events": {
-            "type": "array",
-            "items": { "$ref": "#/components/schemas/Event" }
-          },
-          "journeys": {
-            "type": "array",
-            "items": { "$ref": "#/components/schemas/Journey" }
-          },
+          "events": { "$ref": "#/components/schemas/PaginatedEvents" },
+          "journeys": { "$ref": "#/components/schemas/PaginatedJourneys" },
           "places": {
             "type": "array",
             "items": { "type": "string" }

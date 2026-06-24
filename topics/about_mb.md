@@ -3,9 +3,9 @@ title: About the the Mahabharat API
 description: Query the API for details about the characters in the Mahabharat, the places they lived in, the events and journeys that they participated in, their family relationships, their battles and deaths, the armours they carried, and more.
 summary: Structured data for the people, places, and events in the Mahabharat.
 
-version: v1
+version: v2
 status: stable
-base_path: /mb/v1
+base_path: /mb/v2
 
 canonical: https://aninditabasu.github.io/indica/topics/about_mb.html
 
@@ -43,15 +43,7 @@ related:
 
 <hr/>
 
-This API contains data from the Mahabharat.
-
-The data is from the following books: 
-
--  [The Mahabharata of Vyasa (K M Ganguli)](https://archive.org/details/TheMahabharataOfKrishna-dwaipayanaVyasa)
--  [Puranic Encyclopedia (Vettam Mani)](https://www.sanskrit-lexicon.uni-koeln.de/scans/PEScan/2020/web/index.php)
--  [Mahabharata: A Cultural Index (M A Mehendale)](https://www.sanskrit-lexicon.uni-koeln.de/scans/MCIScan/2020/web/index.php)
--  [Index to the Names in the Mahabharata (S. Sorensen)](https://www.sanskrit-lexicon.uni-koeln.de/scans/INMScan/2020/web/index.php)
--  [A Classical Dictionary of Hindu Mythology and Religion (John Dowson)](https://archive.org/details/aclassicaldictio00dowsuoft/page/n28/mode/2up)
+This API is for data from the Mahabharat.
 
 The JSON structure of the returned data depends on the endpoint you call and the query parameters (when available) you add to the endpoint. The following entity diagram explains the connections between the various data points.
 

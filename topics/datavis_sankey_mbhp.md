@@ -7,9 +7,9 @@ config:
   sankey:
     showValues: false
 
-version: v1
+version: v2
 status: stable
-base_path: /mb/v1
+base_path: /mb/v2
 
 canonical: https://aninditabasu.github.io/indica/topics/datavis_sankey_mbhp.html
 
@@ -47,7 +47,7 @@ related:
 
 <hr/>
 
-This diagram is generated from the data returned by `/mb/v1/weapons`.
+This diagram is generated from the data returned by `/mb/v2/weapons`.
 
 ```mermaid
 sankey-beta

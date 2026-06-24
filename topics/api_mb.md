@@ -1,11 +1,11 @@
 ---
 title: Mahabharat API reference documentation
-description: Endpoints specs, schemas, and parameters for the characters in the Mahabharat, the places they lived in, the events and journeys that they participated in, their family relationships, their battles and deaths, the armours they carried, and more.
+description: Endpoints specs, schemas, and parameters for the characters in the Mahabharat, the places associated with them, the events and journeys that they participated in, their family relationships, their battles and deaths, the armours they carried, and more.
 summary: Structured data for the people, places, and events in the Mahabharat.
 
-version: v1
+version: v2
 status: stable
-base_path: /mb/v1
+base_path: /mb/v2
 
 canonical: https://aninditabasu.github.io/indica/topics/api_mb.html
 
@@ -43,7 +43,7 @@ related:
 
 <hr/>
 
-This API fetches information from Mahabharat. The JSON response contains data about people, places, and events.
+This API returns structured data from the Mahabharat. The JSON response contains data about people, places, and events.
 
 ---------
 
@@ -60,7 +60,7 @@ An explanation of the connection between the fields of the several endpoints in 
 
 ## Base URL
 
-`https://indica-1hwj.onrender.com/mb/v1`
+`https://indica-1hwj.onrender.com/mb/v2`
 
 The request URL is formed by appending an endpoint to the base URL.
 
@@ -77,6 +77,42 @@ Only `GET` calls are supported.
 | 429   | Too many requests | 
 | 500   | Internal server error |
 
+## Pagination
+
+Response for the following collection endpoints are paginated:
+
+-  `/persons`
+-  `/persons/{name}/journeys`
+-  `/weapons`
+-  `/weapons/{name}/owners`
+-  `/events`
+-  `/clans`
+-  `/journeys`
+-  `/places`
+
+The available query parameters are:
+
+| Parameter | Type    | Default | Meaning   |
+| --------- | ------- | ------: | ------------- |
+| `page`    | integer |     `1` | Page number  |
+| `limit`   | integer |    `10` | Number of items on a page (max: 50) |
+
+When a response is paginated, it has the following structure:
+
+```
+{
+  "meta": {
+    "page": 1,
+    "limit": 10,
+    "total": 125,
+    "pages": 13,
+    "hasNext": true,
+    "hasPrev": false
+  },
+  "data": []
+}
+```
+
 ## Endpoints
 
 Parameters are path parameters and, optionally, query parameters. To form the request URL, the endpoint must be appended to the base URL.
@@ -89,7 +125,7 @@ For some endpoints, the following query parameters are available.
 
 | Parameter | Values                      | Meaning                  |
 | ----------- | ---------------------- | -------------------- |
-| `fields`  | `basic` (default) or `full` | Controls returned fields |
+| `fields`  | `basic` (default) or `details` | Controls returned fields |
 | `expand`  | `true` or  `false`           | Expands related data     |
 
 The following endpoints are available. 
@@ -116,7 +152,7 @@ These endpoints return lists of available entity names, for use in other endpoin
 | GET    | `/persons/{name}/armour`   | Get the panoply of a specific person |
 | GET    | `/persons/{name}/journeys` | Get the journeys that a specific person went on  |
 
-Query parameters are available for `/persons` and `/persons/{name}`. If `expand` is `true`, full details are returned for `armour`, `clan`, and `deaths`.
+Query parameters are available for `/persons` and `/persons/{name}`. If `expand` is `true`, full details are given inline for `armour`, `clan`, and `deaths`.
 
 The response schema is like this:
 
@@ -165,85 +201,51 @@ The response schema is like this:
 
 ```
 {
-  "person": "string",
-  "clan": {
-    "clanName": "string",
-    "clanAliases": [
-      "string"
-    ],
-    "clanHome": [
-      "string"
-    ],
-    "clanInfo": "string"
-  },
   "armour": {
-    "weapons": [
-      {
-        "weaponName": "string",
-        "weaponDescription": "string",
-        "weaponAntidote": [
-          "string"
-        ],
-        "weaponHP": "string"
-      }
-    ],
-    "panoplies": [
-      {
-        "person": "string",
-        "chariotBanner": "string",
-        "bow": "string",
-        "sword": "string",
-        "conch": "string",
-        "chariotHorses": "string"
-      }
-    ]
+    "panoplies": [],
+    "weapons": []
   },
-  "events": [
-    {
-      "eventName": "string",
-      "eventPrecededBy": [
-        "string"
-      ],
-      "eventFollowedBy": [
-        "string"
-      ],
-      "eventLocation": [
-        "string"
-      ],
-      "eventDescription": "string",
-      "eventPersons": [
-        "string"
-      ]
-    }
-  ],
-  "journeys": [
-    {
-      "journeyName": "string",
-      "journeyRoute": [
-        "string"
-      ],
-      "journeyPersons": [
-        "string"
-      ],
-      "journeyEvent": "string"
-    }
-  ],
-  "places": [
-    "string"
-  ],
+  "clan": {
+    "clanAliases": [],
+    "clanHome": [
+      "forests"
+    ],
+    "clanInfo": "",
+    "clanName": ""
+  },
   "death": [
     {
-      "personName": "string",
-      "personKilledWhoAll": [
-        "string"
-      ],
-      "personKilledByWhom": [
-        "string"
-      ],
-      "personKilledHow": "string",
-      "personKilledAtEvent": "string"
+      "personKilledAtEvent": "",
+      "personKilledByWhom": [],
+      "personKilledHow": "",
+      "personKilledWhoAll": [],
+      "personName": ""
     }
-  ]
+  ],
+  "events": {
+    "data": [],
+    "meta": {
+      "hasNext": false,
+      "hasPrev": false,
+      "limit": integer,
+      "page": integer,
+      "pages": integer,
+      "total": integer
+    }
+  },
+  "journeys": {
+    "data": [],
+    "meta": {
+      "hasNext": boolean,
+      "hasPrev": boolean,
+      "limit": integer,
+      "page": integer,
+      "pages": integer,
+      "total": integer
+    }
+  },
+  "person": "",
+  "places": []
 }
 ```
 
@@ -277,7 +279,7 @@ The response schema is like this:
 | GET    | `/events`        | List all events   |
 | GET    | `/events/{name}` | Get the details of a specific event |
 
-If the `expand` query parameter is `true`, `eventPersons` and `eventLocations` contain full details.
+Query parameters are available for both `/events` and `/events/{name}`. If the `expand` query parameter is `true`, `eventPersons` and `eventLocations` contain full details.
 
 The response schema is like this:
 
@@ -332,6 +334,8 @@ The response schema is like this:
 | ------ | ------------------ | ------------------- |
 | GET    | `/journeys`        | List all journeys       |
 | GET    | `/journeys/{name}` | Get the details of a specific journey |
+
+The query parameter `expand=true` expands `journeyRoute` into full path objects and `journeyPersons` into full person objects.
 
 In addition to `expand=true`, which expands routes and persons, the following query parameters are also available:
 

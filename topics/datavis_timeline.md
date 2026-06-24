@@ -3,9 +3,9 @@ title: The Mahabharat timeline
 description: Build a visual, event-led timeline of the Mahabharat after querying the API for details about the events in the Mahabharat.
 summary: Tutorial for building a chronology of the Mahabharat.
 
-version: v1
+version: v2
 status: stable
-base_path: /mb/v1
+base_path: /mb/v2
 
 canonical: https://aninditabasu.github.io/indica/topics/datavis_timeline.html
 
@@ -43,7 +43,7 @@ related:
 
 <hr/>
 
-This timeline is generated from the data returned by `/mb/v1/events?fields=full`.
+This timeline is generated from the data returned by `/mb/v2/events?fields=full`.
 
 ```mermaid
 graph TD

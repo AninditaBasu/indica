@@ -113,10 +113,10 @@ Why did you make these APIs?
 : Because they weren't there.
 
 What can I do with this data?
-: You can process the data to make visually appealing or easily consumable information. See the example visualisations.
+: You can process the data to make visually appealing or easily consumable information. See the topics in the `Example usage` section.
 
 What is the source of this data?
-: See [About the Rig Veda API](topics/about_rv.md), [About the Vedic Society API](topics/about_vs.md), and [About the Mahabharat API](topics/about_mb.md).
+: See [Data sources](topics/data_sources.md).
 
 I found an error in the data.
 : Please log an issue in the [GitHub repository](https://github.com/AninditaBasu/indica).

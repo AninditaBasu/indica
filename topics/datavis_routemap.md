@@ -3,9 +3,9 @@ title: Route map of the Jarasandh episode in the Mahabharat
 description: Plot a route map after querying the API for details about places in the journey that Krishna, Bheem, and Arjuna undertook to kill Jarasandh, the king of Magadh in the Mahabharat.
 summary: Tutorial for building a datavis of the journey undertaken to kill Jarasandh.
 
-version: v1
+version: v2
 status: stable
-base_path: /mb/v1
+base_path: /mb/v2
 
 canonical: https://aninditabasu.github.io/indica/topics/datavis_routemap.html
 
@@ -43,7 +43,7 @@ related:
 
 <hr/>
 
-This route map is generated from data returned by `/mb/v1/journeys/{name}` endpoint, with full details (`?expand=true`) where `{name}` = `Jarasandh killing`.
+This route map is generated from data returned by `/mb/v2/journeys/{name}` endpoint, with full details (`?expand=true`) where `{name}` = `Jarasandh killing`.
 
 <p style="font-size: 75%;">To see a larger image, click the image.</p>
 <a href="../images/map_jarasandh_killing.png"><img src="../images/map_jarasandh_killing.png"  alt="Route map for Jarasandh killing" width="50%"></a>
@@ -75,7 +75,7 @@ From this map, it is evident that the travellers went out of their way to concea
 
 ## Endpoint to use for this map
 
-`/mb/v1/journeys/Jarasandh killing` returns the following response:
+`/mb/v2/journeys/Jarasandh killing` returns the following response:
 
 ```json
 {

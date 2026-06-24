@@ -114,5 +114,7 @@ related:
 
 ## Mahabharat API
 
+-  2.0.0 (June 2026)
+    -  Introduced query parameters for pagination and the number of responses on a page 
 -  1.0.0 (February 2026)
     -  First release

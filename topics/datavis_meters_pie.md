@@ -44,12 +44,10 @@ related:
 
 <hr/>
 
-This chart is generated from the data returned by the `/rv/v3/meters` endpoint.
+Rig Veda is poetry. Its verses have a certain lilt, beat, rhythm ( _meter_ ) that turn the words into charming lyrical music when recited aloud. This chart of the vedic meters is generated from the data returned by the `/rv/v3/meters` endpoint.
 
 <p style="font-size: 75%;">To see a larger image, click the image.</p>
 <a href="../images/meters_pie_chart.png"><img src="../images/meters_pie_chart.png"  alt="pie chart of meters in rig veda" width="50%"></a>
-
-Rig Veda is poetry. Its verses have a certain lilt, beat, rhythm ( _meter_ ) that turn the words into charming lyrical music when recited aloud.
 
 ---------
 
