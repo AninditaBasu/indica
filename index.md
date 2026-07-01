@@ -107,6 +107,10 @@ The APIs are hosted on the free tier of Render, which has time limits. I am not 
 
 See [change log](topics/changelog.md).
 
+## Acknowledgement
+
+The logo of this website was created with help from [@Nash_Siddiqui](https://x.com/Nash_Siddiqui), who's deciphered the IVC script.
+
 ## Coffee chat
 
 Why did you make these APIs?
