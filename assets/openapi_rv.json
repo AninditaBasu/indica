@@ -351,34 +351,109 @@
     },
 
     "/godlist": {
-      "get": {
-        "summary": "List all gods"
-      }
-    },
-
-    "/poetlist": {
-      "get": {
-        "summary": "List all poets"
-      }
-    },
-
-    "/meterlist": {
-      "get": {
-        "summary": "List all meters"
-      }
-    },
-
-    "/godcategorieslist": {
-      "get": {
-        "summary": "List all god categories"
-      }
-    },
-
-    "/poetcategorieslist": {
-      "get": {
-        "summary": "List all poet categories"
+  "get": {
+    "summary": "List all gods",
+    "responses": {
+      "200": {
+        "description": "Alphabetically sorted list of gods",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        }
       }
     }
+  }
+},
+
+    "/poetlist": {
+  "get": {
+    "summary": "List all poets",
+    "responses": {
+      "200": {
+        "description": "Alphabetically sorted list of poets",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+},
+
+    "/meterlist": {
+  "get": {
+    "summary": "List all meters",
+    "responses": {
+      "200": {
+        "description": "Alphabetically sorted list of meters",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+},
+
+    "/godcategorieslist": {
+  "get": {
+    "summary": "List all categories for gods",
+    "responses": {
+      "200": {
+        "description": "Alphabetically sorted list of categories",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+},
+
+    "/poetcategorieslist": {
+  "get": {
+    "summary": "List all categories for the poets",
+    "responses": {
+      "200": {
+        "description": "Alphabetically sorted list of categories of poets",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
   },
 
   "components": {
