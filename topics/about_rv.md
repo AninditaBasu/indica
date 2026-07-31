@@ -53,5 +53,26 @@ erDiagram
   verse ||--|{ god : is_sung_for
 ```
 
-Rig Veda API fetches the metadata of verses and, therefore, contains a separate entry for each of these possibilities wherever they occur.
+Rig Veda API fetches metadata at the sukta level. Therefore, it contains a separate entry for each of these possibilities (god, poet, meter) whenever they occur in a sukta. For example, sukta 53 in mandal 1 has verses in two meters and, therefore, the data is like this:
+
+```
+  {
+    "mandal": 1,
+    "sukta": 53,
+    "sungby": "Savya Angiras",
+    "sungbycategory": "human male",
+    "sungfor": "Indra",
+    "sungforcategory": "divine male",
+    "meter": "Jagati"
+  },
+  {
+    "mandal": 1,
+    "sukta": 53,
+    "sungby": "Savya Angiras",
+    "sungbycategory": "human male",
+    "sungfor": "Indra",
+    "sungforcategory": "divine male",
+    "meter": "Trishtup"
+  },
+```
 
