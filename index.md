@@ -119,7 +119,7 @@ Why did you make these APIs?
 : Because they weren't there.
 
 What can I do with this data?
-: You can process the data to make visually appealing or easily consumable information. See the topics in the `Example usage` section.
+: You can process the data to make visually appealing or easily consumable information. See the topics in the `Example usage` section. Also see [Indica stories](https://medium.com/@indica-stories).
 
 What is the source of this data?
 : See [Data sources](topics/data_sources.md).
