@@ -66,6 +66,8 @@ These APIs aim to bridge that gap. The APIs speak in JSON, which is a language n
   </tr>
 </table>
 
+To read a few data-driven stories, see [Indica stories](https://medium.com/@indica-stories).
+
 ---------
 
 **On this page**
