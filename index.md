@@ -66,7 +66,7 @@ These APIs aim to bridge that gap. The APIs speak in JSON, which is a language n
   </tr>
 </table>
 
-To read a few data-driven stories, see [Indica stories](https://medium.com/@indica-stories).
+To read a few data-driven stories, see [Indica stories](https://medium.com/@indica-stories). To see a weekly newspaper where regular columns are derived from API data, see [Indica Times](https://indicatimes.in/).
 
 ---------
 
@@ -119,7 +119,7 @@ Why did you make these APIs?
 : Because they weren't there.
 
 What can I do with this data?
-: You can process the data to make visually appealing or easily consumable information. See the topics in the `Example usage` section. Also see [Indica stories](https://medium.com/@indica-stories).
+: You can process the data to make visually appealing or easily consumable information. See the topics in the `Example usage` section. Also see [India Times](https://indicatimes.in/) and [Indica stories](https://medium.com/@indica-stories).
 
 What is the source of this data?
 : See [Data sources](topics/data_sources.md).

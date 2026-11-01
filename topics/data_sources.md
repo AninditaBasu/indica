@@ -36,7 +36,9 @@ related:
 Data for the Indica APIs is curated from the following books:
 
 -  [A Classical Dictionary of Hindu Mythology and Religion (John Dowson)](https://archive.org/details/aclassicaldictio00dowsuoft/page/n28/mode/2up)
+-  [A Dictionary of the Vedic Rituals based on the Srauta and Grhya Sutras (Chitrabhanu Sen](https://archive.org/details/a-dictionary-of-the-vedic-rituals-chitrabhanu-sen/page/n1/mode/2up)
 -  [Index to the Names in the Mahabharata (S. Sorensen)](https://www.sanskrit-lexicon.uni-koeln.de/scans/INMScan/2020/web/index.php)
+-  BORI's Critical Edition of the Mahabharat, [the English translation by Bibek Debroy](https://archive.org/details/the-mahabharata-set-of-10-volumes)
 -  [Mahabharata: A Cultural Index (M A Mehendale)](https://www.sanskrit-lexicon.uni-koeln.de/scans/MCIScan/2020/web/index.php)
 -  [Puranic Encyclopedia (Vettam Mani)](https://www.sanskrit-lexicon.uni-koeln.de/scans/PEScan/2020/web/index.php)
 -  Rig Veda Samhita, the English translation according to H. H. Wilson and the Bhashya of Sayanacharya (Ravi Prakash Arya and K. L. Joshi), Volumes 1 through 4
